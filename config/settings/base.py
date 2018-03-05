@@ -9,12 +9,18 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-import environ
 import os
+
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = environ.Path(__file__) - 3
 
+env = environ.Env()
+
+CONFIG_DIR = env.path(
+    'SOM_CAS_CONFIG', default=os.path.join(str(BASE_DIR), 'config/conf.yaml')
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -24,9 +30,6 @@ SECRET_KEY = '=&^f4p(*53em6ptyp+19ch(j0g&^ai0lk+c(mk!f95c1&#a!2g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 DJANGO_APPS = [
@@ -45,7 +48,6 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'som_cas'
 ]
-
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -78,6 +80,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+AUTH_USER_MODEL = 'som_cas.SomUser'
+
+AUTHENTICATION_BACKENDS = [
+    'som_cas.backends.SocisBackend',
+    'som_cas.backends.ClientesBackend',
+    'django.contrib.auth.backends.ModelBackend'
+]
 
 
 # Database
@@ -139,3 +149,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(str(BASE_DIR), 'static'),
+)
