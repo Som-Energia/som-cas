@@ -20,6 +20,7 @@ logs
 
 ### Configuration files
 *.yaml
+*.ini
 
 ### Vim template
 # Swap

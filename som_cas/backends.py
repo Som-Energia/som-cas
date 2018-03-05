@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import check_password
 from django.db import connections
 
+
 logger = logging.getLogger(__name__)
 
 UserModel = get_user_model()
@@ -25,7 +26,8 @@ class SocisBackend(object):
         except UserModel.DoesNotExist:
             UserModel().set_password(password)
         else:
-            if check_password(password, user.password):
+            if check_password(password, user.password) and self.is_soci(user):
+                user.save()
                 return user
 
         return None
@@ -35,13 +37,19 @@ class SocisBackend(object):
             conditions='id = \'{}\''
         )
         try:
-            user = self.__fetch_user_from_db(socis_by_id.format(user_id))
+            user = UserModel.objects.get(id=user_id)
         except UserModel.DoesNotExist:
             return None
         else:
-            return user
+            return user if self.is_soci(user) else None
+
+    def is_soci(self, user):
+        return user.www_soci is not None
 
     def _fetch_user_from_db(self, user_query):
+        """
+        Fetch a user from database defined in 'users_db' DATABASES settings.
+        """
         try:
             with connections['users_db'].cursor() as cursor:
                 cursor.execute(user_query)
@@ -60,4 +68,12 @@ class SocisBackend(object):
 
 
 class ClientesBackend(object):
-    pass
+    """
+     Backend athentication for general clients in Som Energia
+    """
+
+    def authenticate(self, request, username=None, password=None, **kwargs):
+        pass
+
+    def get_user(self, user_id):
+        pass

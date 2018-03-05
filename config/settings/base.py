@@ -18,7 +18,7 @@ BASE_DIR = environ.Path(__file__) - 3
 
 env = environ.Env()
 
-CONFIG_DIR = env.path(
+CONFIG_FILE = env.path(
     'SOM_CAS_CONFIG', default=os.path.join(str(BASE_DIR), 'config/conf.yaml')
 )
 
@@ -89,29 +89,6 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend'
 ]
 
-
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kasko_db',
-        'USER': 'kasko',
-        'PASSWORD': '4321',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
-    'users_db': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'somdb',
-        'USER': 'usom',
-        'PASSWORD': '4321',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -150,6 +127,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    os.path.join(str(BASE_DIR), 'static'),
-)
+STATIC_ROOT = os.path.join(str(BASE_DIR), 'som_cas/static')
