@@ -1,12 +1,11 @@
 from django.test import Client, TestCase
-
 from som_cas.backends import SocisBackend
 
 
 class TestSocisBackend(TestCase):
 
     def setUp(self):
-        pass
+        self.c = Client()
 
     def test_authenticate(self):
         pass

@@ -4,7 +4,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import check_password
 from django.db import connections
 
-
 logger = logging.getLogger(__name__)
 
 UserModel = get_user_model()
@@ -33,9 +32,6 @@ class SocisBackend(object):
         return None
 
     def get_user(self, user_id):
-        socis_by_id = self.BASE_QUERY_SOCIS.format(
-            conditions='id = \'{}\''
-        )
         try:
             user = UserModel.objects.get(id=user_id)
         except UserModel.DoesNotExist:
