@@ -1,3 +1,14 @@
-from django.test import TestCase
+from django.test import Client, TestCase
+from som_cas.backends import SocisBackend
 
-# Create your tests here.
+
+class TestSocisBackend(TestCase):
+
+    def setUp(self):
+        self.c = Client()
+
+    def test_authenticate(self):
+        pass
+
+    def test_get_user(self):
+        pass

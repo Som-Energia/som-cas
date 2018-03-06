@@ -1,0 +1,5 @@
+Django==1.11.10
+django-environ==0.4.4
+django-mama-cas==2.3.0
+psycopg2==2.7.4
+PyYAML==3.12

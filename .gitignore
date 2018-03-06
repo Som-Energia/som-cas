@@ -18,6 +18,9 @@ logs
 ### Thumbnails
 ._*
 
+### Configuration files
+*.yaml
+*.ini
 
 ### Vim template
 # Swap

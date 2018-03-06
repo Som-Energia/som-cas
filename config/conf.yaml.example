@@ -1,0 +1,28 @@
+# General configuration parameters
+
+# Super secret key.
+secret_key: 'kjs%45&dshf78sdf@(kg\jbnkl23#+'
+
+# Database definition
+databases:
+  ## Database for som_cas service
+  som_cas:
+    name: 'cas_db'
+    user: 'cas_user'
+    password: 'password'
+    host: 'host'
+    port: 'port'
+  ## Database where users will be fetched
+  users_db:
+    name: 'users_db_name'
+    user: 'users_db_user'
+    password: 'password'
+    host: 'host'
+    port: '54321'
+
+# Logger definitions
+logging:
+  ## Level definition for log messages. Can be: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: 'INFO'
+  ## Place where live the log file
+  file: '/var/log/som_cas/som_cas.log'
