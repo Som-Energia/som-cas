@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls import include, url, static
+from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('mama_cas.urls')),
+    url(r'rosetta/', include('rosetta.urls'))
 ]
 
 if settings.DEBUG:
     urlpatterns += static.static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += i18n_patterns(
+    url(r'', include('mama_cas.urls')),
+)

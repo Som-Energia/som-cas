@@ -37,3 +37,6 @@ Session.vim
 
 # Auto-generated tag files
 tags
+
+# Compiled messages
+*.mo

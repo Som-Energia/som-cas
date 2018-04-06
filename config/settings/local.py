@@ -2,6 +2,7 @@ from .base import *
 
 
 ALLOWED_HOSTS = [
+    'localhost',
     'cas.somenergia.coop'
 ]
 
@@ -26,6 +27,10 @@ DATABASES = {
         'PORT': '5432'
     }
 }
+
+TEMPLATES[0]['OPTIONS']['context_processors'].append(
+    'django.template.context_processors.debug'
+)
 
 
 MAMA_CAS_SERVICES = [
