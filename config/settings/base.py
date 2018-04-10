@@ -106,7 +106,7 @@ LANGUAGE = [
 ]
 
 LOCALE_PATHS = [
-    os.path.join(str(BASE_DIR), 'som_cas/translations/locale'),
+    os.path.join(str(BASE_DIR), 'som_cas/locale'),
 ]
 
 TIME_ZONE = 'UTC'
