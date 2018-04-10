@@ -21,7 +21,9 @@ class SocisBackend(object):
             conditions='username = \'{}\''
         )
         try:
-            user = self._fetch_user_from_db(socis_by_username.format(username))
+            user = self._fetch_user_from_db(
+                socis_by_username.format(username.upper())
+            )
         except UserModel.DoesNotExist:
             UserModel().set_password(password)
         else:
