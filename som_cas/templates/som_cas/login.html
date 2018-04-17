@@ -43,8 +43,13 @@
                         </div>
                         {% endif %}
 
-                        <div>
-                            <a href="https://oficinavirtual.somenergia.coop/es/activacion/" class="txt3" target="_blank"> {% trans 'Forgot Password?' %} </a>
+                        <div id=forgot_pass>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% if LANGUAGE_CODE != 'en' %}
+                                <a href="https://oficinavirtual.somenergia.coop/{{ LANGUAGE_CODE }}/activacion/" class="txt3" target="_blank"> {% trans 'Forgot Password?' %} </a>
+                            {% else %}
+                                <a href="https://oficinavirtual.somenergia.coop/activacion/" class="txt3" target="_blank"> {% trans 'Forgot Password?' %} </a>
+                            {% endif %}
                         </div>
                     </div>
 
