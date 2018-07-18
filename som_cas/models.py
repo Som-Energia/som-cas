@@ -22,3 +22,7 @@ class SomUser(AbstractUser):
 
     def __str__(self):
         return self.__repr__()
+
+    @property
+    def is_soci(self):
+        return self.www_soci is not None

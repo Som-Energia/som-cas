@@ -92,6 +92,9 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend'
 ]
 
+SOCIS_QUERY = 'select * from som_users where {conditions}'
+
+CLIENTS_QUERY = 'select * from som_users where {conditions}'
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
