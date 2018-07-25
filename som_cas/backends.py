@@ -3,6 +3,7 @@ import logging
 from django.db import connections
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.hashers import check_password
 
 logger = logging.getLogger(__name__)
@@ -10,21 +11,10 @@ logger = logging.getLogger(__name__)
 UserModel = get_user_model()
 
 
-class SomAuthBackend(object):
-    """
-    Base class for Authentication backends in Som Energia
-    """
-
-    def authenticate(self, request, username=None, password=None, **kwargs):
-        raise NotImplemented
-
-    def get_user(self, user_id):
-        raise NotImplemented
-
-
 class SomUserMixin(object):
     """
-    Mixing class for obtain a ?service=https%3A%2F%2Fparticipa.somenergia.coop:8080user from 'users_db' DATABASE
+
+    Mixing class for obtain a user from 'users_db' DATABASE
     """
 
     def fetch_user_from_db(self, user_query, *query_args):
@@ -54,20 +44,16 @@ class SomServiceMixin(object):
     """
 
     def get_service(self, request):
-        method = getattr(request, request.method, request.GET)
-
-        logger.debug(request.path_info)
-
-        return method.get('service', '')
+        return request.GET.get('service', None)
 
 
-class SocisBackend(SomAuthBackend, SomUserMixin):
+class SocisBackend(SomUserMixin):
     """
     Backend athentication for SomEnergia socis
     """
 
     BASE_QUERY_SOCIS = getattr(
-        settings, 'SOCIS_QUERY', 'select * from auth_user where {conditions};'
+        settings, 'BASE_QUERY', 'select * from auth_user where {conditions};'
     )
 
     def authenticate(self, request, username=None, password=None, **kwargs):
@@ -78,6 +64,8 @@ class SocisBackend(SomAuthBackend, SomUserMixin):
             user = self.fetch_user_from_db(
                 socis_by_username, username.upper()
             )
+            logger.debug('User: %s, soci: %s, pass: %s', user, user.www_soci is not None, check_password(password, user.password))
+
         except UserModel.DoesNotExist:
             UserModel().set_password(password)
         else:
@@ -89,26 +77,26 @@ class SocisBackend(SomAuthBackend, SomUserMixin):
 
     def get_user(self, user_id):
         try:
-            user = UserModel.objectSomServiceMixins.get(id=user_id)
+            user = UserModel.objects.get(id=user_id)
         except UserModel.DoesNotExist:
             return None
         else:
             return user if user.is_soci else None
 
 
-class ClientsBackend(SomAuthBackend, SomUserMixin, SomServiceMixin):
+class ClientsBackend(SomUserMixin, SomServiceMixin):
     """
      Backend athentication for general clients in Som Energia
     """
 
-    BASE_QUERY_CLIENTS = getattr(
-        settings, 'CLIENTS_QUERY', 'select * from auth_user where {conditions};'
+    BASE_QUERY = getattr(
+        settings, 'BASE_QUERY', 'select * from auth_user where {conditions};'
     )
 
-    SERVICES_ALLOWED = ['']
+    SERVICES_ALLOWED = []
 
     def authenticate(self, request, username=None, password=None, **kwargs):
-        clients_by_username = self.BASE_QUERY_CLIENTS.format(
+        clients_by_username = self.BASE_QUERY.format(
             conditions='username = %s'
         )
         try:
@@ -119,8 +107,11 @@ class ClientsBackend(SomAuthBackend, SomUserMixin, SomServiceMixin):
             UserModel().set_password(password)
         else:
             self.service = self.get_service(request)
-            logger.debug(self.service)
-            if check_password(password, user.password) and self._check_service(self.service):
+            logger.debug('Service: %s', self.service)
+            can_authenticate = check_password(password, user.password) and \
+                self._check_service(self.service)
+
+            if can_authenticate:
                 user.save()
                 return user
 
@@ -132,7 +123,41 @@ class ClientsBackend(SomAuthBackend, SomUserMixin, SomServiceMixin):
         except UserModel.DoesNotExist:
             return None
         else:
-            return user
+            return user if self._check_service(self.service) else None
 
     def _check_service(self, service):
         return service in self.SERVICES_ALLOWED
+
+
+class SomAuthBackend(ModelBackend):
+    """
+    Base class for Authentication backends in Som Energia
+    """
+
+    BACKENDS = {
+        'socis': SocisBackend,
+        'clients': ClientsBackend
+    }
+
+    def authenticate(self, request, username=None, password=None, **kwargs):
+        args = (request, username, password, )
+        user = super().authenticate(*args, **kwargs)
+        backend = self._get_user_backend(user)
+        logger.debug('Backend: %s', backend)
+        if backend:
+            return backend().authenticate(*args, **kwargs)
+
+        return user
+
+    def get_user(self, user_id):
+        user = super().get_user(user_id)
+        backend = self._get_user_backend(user)
+        if backend:
+            return backend().get_user(user_id)
+
+        return user
+
+    def _get_user_backend(self, user):
+        return user and user.groups.first() and self.BACKENDS.get(
+            user.groups.first().name
+        )

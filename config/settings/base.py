@@ -88,13 +88,12 @@ AUTH_USER_MODEL = 'som_cas.SomUser'
 
 AUTHENTICATION_BACKENDS = [
     'som_cas.backends.SocisBackend',
-    'som_cas.backends.ClientesBackend',
-    'django.contrib.auth.backends.ModelBackend'
+    'som_cas.backends.ClientsBackend',
+    'som_cas.backends.SomAuthBackend'
 ]
 
-SOCIS_QUERY = 'select * from som_users where {conditions}'
+BASE_QUERY = 'select * from som_users where {conditions}'
 
-CLIENTS_QUERY = 'select * from som_users where {conditions}'
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
