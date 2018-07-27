@@ -1,6 +1,8 @@
 import logging
+from urllib.parse import urlparse, parse_qsl
 
 from django.contrib.auth import login
+from django.http import JsonResponse
 
 from mama_cas.views import LoginView
 from mama_cas.models import ServiceTicket
@@ -9,19 +11,31 @@ from mama_cas.utils import redirect
 logger = logging.getLogger('som_cas')
 
 
+def get_ticket(url):
+    parsed_url = urlparse(url)
+    return dict(parse_qsl(parsed_url.query))
+
+
+def get_service(url):
+    return urlparse(url).netloc
+
+
+def build_response_data(url):
+    response_data = {
+        'service': get_service(url)
+    }
+    response_data.update(get_ticket(url))
+
+    return response_data
+
+
 class SomLoginView(LoginView):
 
     def form_valid(self, form):
-        login(self.request, form.user, 'som_cas.backends.SomAuthBackend')
-        logger.info("Single sign-on session started for %s" % form.user)
+        response = super().form_valid(form)
 
-        if form.cleaned_data.get('warn'):
-            self.request.session['warn'] = True
+        if 'application/json' in self.request.META['HTTP_ACCEPT'].split(','):
+            response_data = build_response_data(response.url)
+            response = JsonResponse(response_data)
 
-        service = self.request.GET.get('service')
-        if service:
-            st = ServiceTicket.objects.create_ticket(
-                service=service, user=self.request.user, primary=True
-            )
-            return redirect(service, params={'ticket': st.ticket})
-        return redirect('cas_login')
+        return response

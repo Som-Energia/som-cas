@@ -64,7 +64,6 @@ class SocisBackend(SomUserMixin):
             user = self.fetch_user_from_db(
                 socis_by_username, username.upper()
             )
-            logger.debug('User: %s, soci: %s, pass: %s', user, user.www_soci is not None, check_password(password, user.password))
 
         except UserModel.DoesNotExist:
             UserModel().set_password(password)
@@ -143,7 +142,6 @@ class SomAuthBackend(ModelBackend):
         args = (request, username, password, )
         user = super().authenticate(*args, **kwargs)
         backend = self._get_user_backend(user)
-        logger.debug('Backend: %s', backend)
         if backend:
             return backend().authenticate(*args, **kwargs)
 

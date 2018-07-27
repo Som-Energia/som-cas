@@ -43,7 +43,16 @@ MAMA_CAS_SERVICES = [
         'LOGOUT_URL': 'http://participa.somenergia.coop:8080/logout',
         'PROXY_ALLOW': False,
         'PROXY_PATTERN': r'^http[s]?://participa\.somenergia\.coop:8080',
+    },
+    {
+        'SERVICE': r'^http[s]?://api\.somenergia\.coop[/]?.*',
+        'CALLBACKS': [
+            'som_cas.callbacks.api',
+        ],
+        'LOGOUT_ALLOW': False,
+        'PROXY_ALLOW': False,
     }
+
 ]
 
 MAMA_CAS_SERVICE_BACKENDS = [
