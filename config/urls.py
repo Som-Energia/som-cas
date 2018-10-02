@@ -17,13 +17,10 @@ from django.conf import settings
 from django.conf.urls import include, url, static
 from django.contrib import admin
 
-from som_cas.views import SomLoginView
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'rosetta/', include('rosetta.urls')),
-    # url(r'', include('mama_cas.urls')),
-    url(r'^login', SomLoginView.as_view(), name='cas_login')
+    url(r'', include('mama_cas.urls')),
 ]
 
 if settings.DEBUG:

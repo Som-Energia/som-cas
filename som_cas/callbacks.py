@@ -13,9 +13,9 @@ def participa(user, service):
     return attributes
 
 
-def api(user, service):
+def forum(user, service):
     """
-    Attributes for participa.somenergia.coop service
+    Attributes for forum.somenergia.coop service
     """
     attributes = {
         'username': user.username,

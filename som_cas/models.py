@@ -25,4 +25,4 @@ class SomUser(AbstractUser):
 
     @property
     def is_soci(self):
-        return self.www_soci is not None
+        return self.www_soci is not None or self.www_soci

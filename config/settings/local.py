@@ -45,11 +45,12 @@ MAMA_CAS_SERVICES = [
         'PROXY_PATTERN': r'^http[s]?://participa\.somenergia\.coop:8080',
     },
     {
-        'SERVICE': r'^http[s]?://api\.somenergia\.coop[/]?.*',
+        'SERVICE': r'^http[s]?://forum\.somenergia\.coop[/]?.*',
         'CALLBACKS': [
-            'som_cas.callbacks.api',
+            'som_cas.callbacks.forum',
         ],
-        'LOGOUT_ALLOW': False,
+        'LOGOUT_ALLOW': True,
+        'LOGOUT_URL': 'http://forum.somenergia.coop:8080/logout',
         'PROXY_ALLOW': False,
     }
 
@@ -61,15 +62,18 @@ MAMA_CAS_SERVICE_BACKENDS = [
 
 MAMA_CAS_LOGIN_TEMPLATE = 'som_cas/login.html'
 
+CLIENT_SERVICES_ALLOWED = [
+    r'^http[s]?://forum\.somenergia\.coop[/]?.*'
+]
 
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    # 'filters': {
-    #     'require_debug_false': {
-    #         '()': 'django.utils.log.RequireDebugFalse'
-    #     }
-    # },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
     'formatters': {
         'simple': {
             'format': '%(levelname)s %(asctime)s %(module)s '
