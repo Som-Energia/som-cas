@@ -28,6 +28,12 @@ class SocisBackend(object):
             UserModel().set_password(password)
         else:
             if check_password(password, user.password) and self.is_soci(user):
+                if 'agvirtual' in request.GET.get('service', ''):
+                    if self.__member_in_registry(user):
+                        user.save()
+                        return user
+                    return None
+
                 user.save()
                 return user
 
@@ -63,6 +69,9 @@ class SocisBackend(object):
                 return UserModel(**raw_user)
             else:
                 raise UserModel.DoesNotExist()
+
+    def __member_in_registry(self, member):
+        return True
 
 
 class ClientesBackend(object):
