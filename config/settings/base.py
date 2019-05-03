@@ -97,7 +97,7 @@ AUTHENTICATION_BACKENDS = [
 
 LANGUAGE_CODE = 'es-ES'
 
-LANGUAGE = [
+LANGUAGES = [
     ('ca', _('Catalan')),
     ('en', _('English')),
     ('es', _('Spanish')),
@@ -128,3 +128,4 @@ STATIC_ROOT = os.path.join(str(BASE_DIR), 'som_cas/static')
 # Rosetta conf
 ROSETTA_ENABLE_REFLANG = True
 ROSETTA_SHOW_AT_ADMIN_PANEL = True
+ROSETTA_LOGIN_URL = '/admin'
