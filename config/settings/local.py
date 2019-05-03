@@ -35,14 +35,12 @@ TEMPLATES[0]['OPTIONS']['context_processors'].append(
 
 MAMA_CAS_SERVICES = [
     {
-        'SERVICE': r'^http[s]?://participa\.somenergia\.coop:8080[/]?.*',
+        'SERVICE': r'^http[s]?://blacklight\.somenergia\.coop:6789[/]?.*',
         'CALLBACKS': [
             'som_cas.callbacks.participa',
         ],
         'LOGOUT_ALLOW': True,
-        'LOGOUT_URL': 'http://participa.somenergia.coop:8080/logout',
-        'PROXY_ALLOW': False,
-        'PROXY_PATTERN': r'^http[s]?://participa\.somenergia\.coop:8080',
+        'LOGOUT_URL': 'http://blacklight.somenergia.coop:6789/logout',
     }
 ]
 
@@ -79,7 +77,7 @@ LOGGING = {
         },
     },
     'loggers': {
-        'django.request': {
+        'django': {
             'handlers': ['console'],
             'level': 'DEBUG',
             'propagate': True

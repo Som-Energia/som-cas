@@ -1,0 +1,15 @@
+root = true
+
+[*]
+end_of_line = lf
+insert_final_new_line = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+[*.{py,html,js}]
+indent_style = tab
+indent_size = 4
+
+[*.{yaml,css}]
+indent_style = tab
+indent_size = 2
