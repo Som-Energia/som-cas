@@ -10,8 +10,3 @@
     {% endfor %}
 {% endif %}
 
-{% if messages %}
-    {% for message in messages %}
-        <div class="warning m-b-36 {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}</div>
-    {% endfor %}
-{% endif %}

@@ -1,12 +1,33 @@
 import logging
+import json
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import check_password
 from django.db import connections
 
+from som_cas.models import AgRegistration
+
 logger = logging.getLogger(__name__)
 
 UserModel = get_user_model()
+
+
+def member_in_registry(member):
+    registry = AgRegistration.objects.first()
+    registered_members = json.loads(
+        registry.registration_file.read()
+    )
+
+    logger.debug(
+        'Checking member %s in %s registry',
+        member.username, registry.registration_file.name
+    )
+    for register in registered_members:
+        for _, nif in register['registration_form_answers'].items():
+            if member.username.upper() == nif.upper():
+                return True
+    return False
 
 
 class SocisBackend(object):
@@ -28,8 +49,9 @@ class SocisBackend(object):
             UserModel().set_password(password)
         else:
             if check_password(password, user.password) and self.is_soci(user):
-                if 'agvirtual' in request.GET.get('service', ''):
-                    if self.__member_in_registry(user):
+                logger.debug(request.GET.get('service'))
+                if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
+                    if member_in_registry(user):
                         user.save()
                         return user
                     return None
@@ -40,6 +62,9 @@ class SocisBackend(object):
         return None
 
     def get_user(self, user_id):
+
+        logger.debug('Getting user' + '*' * 30)
+
         try:
             user = UserModel.objects.get(id=user_id)
         except UserModel.DoesNotExist:
@@ -70,8 +95,6 @@ class SocisBackend(object):
             else:
                 raise UserModel.DoesNotExist()
 
-    def __member_in_registry(self, member):
-        return True
 
 
 class ClientesBackend(object):

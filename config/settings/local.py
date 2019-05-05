@@ -40,7 +40,15 @@ MAMA_CAS_SERVICES = [
             'som_cas.callbacks.participa',
         ],
         'LOGOUT_ALLOW': True,
-        'LOGOUT_URL': 'http://blacklight.somenergia.coop:6789/logout',
+        'LOGOUT_URL': 'http://blacklight.somenergia.coop:6789/',
+    },
+    {
+        'SERVICE': r'^http[s]?://8hours\.somenergia\.local:9876[/]?.*',
+        'CALLBACKS': [
+            'som_cas.callbacks.participa',
+        ],
+        'LOGOUT_ALLOW': True,
+        'LOGOUT_URL': 'http://8hours.somenergia.local:9876/logout',
     }
 ]
 
@@ -49,6 +57,10 @@ MAMA_CAS_SERVICE_BACKENDS = [
 ]
 
 MAMA_CAS_LOGIN_TEMPLATE = 'som_cas/login.html'
+
+MAMA_CAS_FOLLOW_LOGOUT_URL = True
+
+CUSTOM_REGISTRATION_SERVICES = '8hours'
 
 
 LOGGING = {

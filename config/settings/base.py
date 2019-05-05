@@ -60,6 +60,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+	'som_cas.middleware.SomAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'som_cas.middleware.CasLanguageMiddleware'
@@ -89,7 +90,7 @@ AUTH_USER_MODEL = 'som_cas.SomUser'
 AUTHENTICATION_BACKENDS = [
     'som_cas.backends.SocisBackend',
     'som_cas.backends.ClientesBackend',
-    'django.contrib.auth.backends.ModelBackend'
+#     'django.contrib.auth.backends.ModelBackend'
 ]
 
 # Internationalization
