@@ -4,6 +4,7 @@ from django.utils.functional import SimpleLazyObject
 
 from som_cas import utils
 
+
 class CasLanguageMiddleware(object):
     """
     Custom middleware to enable custom language in CAS login view
