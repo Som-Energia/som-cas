@@ -18,6 +18,8 @@ ALLOWED_HOSTS = [
     'cas.somenergia.coop'
 ]
 
+UPLOAD_DIR = config['upload_dir']
+
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 

@@ -1,6 +1,8 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext as _
+
 
 class SomUser(AbstractUser):
     """
@@ -27,7 +29,7 @@ class SomUser(AbstractUser):
 class AgRegistration(models.Model):
 
     registration_file = models.FileField(
-        upload_to='registered_members',
+        upload_to=settings.UPLOAD_DIR,
         verbose_name=_('Registration file'),
         help_text=_('File in json format with all register members '
                        'for the virtual assambley')
