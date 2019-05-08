@@ -62,6 +62,7 @@ MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
 CUSTOM_REGISTRATION_SERVICES = '8hours'
 
+UPLOAD_DIR = 'registered_members'
 
 LOGGING = {
     'version': 1,

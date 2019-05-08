@@ -26,3 +26,6 @@ logging:
   level: 'INFO'
   ## Place where live the log file
   file: '/var/log/som_cas/som_cas.log'
+
+# Members upload dir
+upload_dir: registered_members
