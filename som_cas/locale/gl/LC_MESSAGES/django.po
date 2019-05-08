@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-06 15:07+0000\n"
+"PO-Revision-Date: 2018-04-09 12:09+0000\n"
+"Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.8.1\n"
+
+#: config/settings/base.py:100
+msgid "Catalan"
+msgstr ""
+
+#: config/settings/base.py:101
+msgid "English"
+msgstr ""
+
+#: config/settings/base.py:102
+msgid "Spanish"
+msgstr ""
+
+#: config/settings/base.py:103
+msgid "Basque"
+msgstr ""
+
+#: config/settings/base.py:104
+msgid "Galician"
+msgstr ""
+
+#: som_cas/templates/base.html:11
+msgid "Som Energia Authentication System"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:17
+msgid "Account Login"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:23
+msgid "Username"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:24
+msgid "Username is required"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:25
+msgid "NIF, CIF o NIE"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:29
+#, fuzzy
+msgid "Password"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:30
+msgid "Password is required"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:47
+msgid "Forgot Password?"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:52
+msgid "Login"
+msgstr ""

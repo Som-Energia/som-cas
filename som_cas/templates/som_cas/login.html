@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block css %}
+    {{ block.super }}
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/util.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+                <form class="login100-form validate-form flex-sb flex-w" method="post">
+                    {% csrf_token %}
+                    <img src="{% static 'images/logo-somenergia-transparent.png'%}" width="90" height="90" class="d-inline-block align-top" alt="Som Energia Logo">
+                    <span class="login100-form-title p-b-32"> {% trans 'Account Login' %}</span>
+
+                    {% include "_messages.html" %}
+
+                    <span class="txt1 p-b-11">{% trans 'Username' %}</span>
+                    <div class="wrap-input100 validate-input m-b-36" data-validate = "{% trans 'Username is required' %}">
+                        <input class="input100" type="text" id="id_username" name="username" placeholder="{% trans 'NIF, CIF o NIE' %}" value="{{ form.username.value|default_if_none:''}}" required autofocus >
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <span class="txt1 p-b-11">{% trans 'Password' %}</span>
+                    <div class="wrap-input100 validate-input m-b-12" data-validate = "{% trans 'Password is required' %}">
+                        <span class="btn-show-pass">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                        <input class="input100" type="password" id="id_password" name="password" placeholder="{{ form.password.label }}" required >
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="flex-sb-m w-full p-b-48">
+                        {% if 'warn' in form.fields %}
+                        <div class="contact100-form-checkbox">
+                            <input class="input-checkbox100" id="id_warn" type="checkbox" name="warn">
+                            <label class="label-checkbox100" for="id_warn"> {{ form.warn.label }} </label>
+                        </div>
+                        {% endif %}
+
+                        <div id=forgot_pass>
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% if LANGUAGE_CODE != 'en' %}
+                                <a href="https://oficinavirtual.somenergia.coop/{{ LANGUAGE_CODE }}/registro/" class="txt3" target="_blank"> {% trans 'Forgot Password?' %} </a>
+                            {% else %}
+                                <a href="https://oficinavirtual.somenergia.coop/registro/" class="txt3" target="_blank"> {% trans 'Forgot Password?' %} </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button class="login100-form-btn"  type="submit">{% trans "Login" %} </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    {{block.super}}
+    <script src="{% static 'js/som_cas.js' %}"></script>
+{% endblock %}

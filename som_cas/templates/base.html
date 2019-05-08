@@ -1,0 +1,38 @@
+{% load i18n static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Som Energia Authentication">
+    <meta name="author" content="Som Energia">
+	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+    {% block title %}
+      <title> {% trans 'Som Energia Authentication System' %} </title>
+    {% endblock %}
+
+    {% block css %}
+      <!-- Bootstrap core CSS -->
+      <link href="{% static 'css/vendors/bootstrap.min.css' %}" rel="stylesheet">
+
+      <!-- Font Awesome -->
+      <link href="{% static 'css/vendors/fontawesome-all.min.css' %}" rel="stylesheet">
+
+    {% endblock %}
+
+  </head>
+
+  <body>
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+
+    {% block js %}
+      <script src="{% static 'js/vendors/jquery-3.3.1.min.js' %}" ></script>
+      <script src="{% static 'js/vendors/bootstrap.min.js' %}"></script>
+    {% endblock%}
+  </body>
+</html>

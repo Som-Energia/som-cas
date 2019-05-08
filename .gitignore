@@ -18,6 +18,9 @@ logs
 ### Thumbnails
 ._*
 
+### Configuration files
+*.yaml
+*.ini
 
 ### Vim template
 # Swap
@@ -34,3 +37,5 @@ Session.vim
 
 # Auto-generated tag files
 tags
+
+registered_members
