@@ -7,7 +7,8 @@ def participa(user, service):
         'first_name': user.first_name,
         'last_name': user.last_name,
         'email': user.email,
-        'soci': user.www_soci
+        'soci': user.www_soci,
+        'locale': user.lang
     }
 
     return attributes
