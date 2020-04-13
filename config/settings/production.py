@@ -3,12 +3,6 @@ from django.core.exceptions import ImproperlyConfigured
 
 from .base import *
 
-try:
-    with open(str(CONFIG_FILE), 'r') as f:
-        config = yaml.load(f.read())
-except FileNotFoundError:
-    msg = 'Configuration file {} is not defined'
-    raise ImproperlyConfigured(msg.format(str(CONFIG_FILE)))
 
 DEBUG = False
 

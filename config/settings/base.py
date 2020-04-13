@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 import environ
+import yaml
 from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -23,8 +24,12 @@ CONFIG_FILE = env.path(
 	'SOM_CAS_CONFIG', default=os.path.join(str(BASE_DIR), 'config/conf.yaml')
 )
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
+try:
+    with open(str(CONFIG_FILE), 'r') as f:
+        config = yaml.load(f.read(), Loader=yaml.Loader)
+except FileNotFoundError:
+    msg = 'Configuration file {} is not defined'
+    raise ImproperlyConfigured(msg.format(str(CONFIG_FILE)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '=&^f4p(*53em6ptyp+19ch(j0g&^ai0lk+c(mk!f95c1&#a!2g'

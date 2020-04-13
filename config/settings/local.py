@@ -3,28 +3,25 @@ from .base import *
 
 ALLOWED_HOSTS = [
     'localhost',
-    'cas.somenergia.coop'
 ]
 
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
+db_conf = config['databases']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kasko_db',
-        'USER': 'kasko',
-        'PASSWORD': '4321',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': db_conf['som_cas']['name'],
+        'USER': db_conf['som_cas']['user'],
+        'PASSWORD': db_conf['som_cas']['password'],
+        'HOST': db_conf['som_cas']['host'],
+        'PORT': db_conf['som_cas']['port']
     },
     'users_db': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'somdb',
-        'USER': 'usom',
-        'PASSWORD': '4321',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': db_conf['users_db']['name'],
+        'USER': db_conf['users_db']['user'],
+        'PASSWORD': db_conf['users_db']['password'],
+        'HOST': db_conf['users_db']['host'],
+        'PORT': db_conf['users_db']['port']
     }
 }
 
@@ -32,25 +29,7 @@ TEMPLATES[0]['OPTIONS']['context_processors'].append(
     'django.template.context_processors.debug'
 )
 
-
-MAMA_CAS_SERVICES = [
-    {
-        'SERVICE': r'^http[s]?://blacklight\.somenergia\.coop:6789[/]?.*',
-        'CALLBACKS': [
-            'som_cas.callbacks.participa',
-        ],
-        'LOGOUT_ALLOW': True,
-        'LOGOUT_URL': 'http://blacklight.somenergia.coop:6789/',
-    },
-    {
-        'SERVICE': r'^http[s]?://8hours\.somenergia\.local:9876[/]?.*',
-        'CALLBACKS': [
-            'som_cas.callbacks.participa',
-        ],
-        'LOGOUT_ALLOW': True,
-        'LOGOUT_URL': 'http://8hours.somenergia.local:9876/logout',
-    }
-]
+MAMA_CAS_SERVICES = config.get('mama_cas_services', [])
 
 MAMA_CAS_SERVICE_BACKENDS = [
     'mama_cas.services.backends.SettingsBackend'
@@ -67,11 +46,6 @@ UPLOAD_DIR = 'registered_members'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    # 'filters': {
-    #     'require_debug_false': {
-    #         '()': 'django.utils.log.RequireDebugFalse'
-    #     }
-    # },
     'formatters': {
         'simple': {
             'format': '%(levelname)s %(asctime)s %(module)s '
@@ -92,7 +66,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True
         },
         'som_cas': {

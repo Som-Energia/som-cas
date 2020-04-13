@@ -8,7 +8,7 @@ databases:
   ## Database for som_cas service
   som_cas:
     name: 'cas_db'
-    user: 'cas_user'
+    user: 'cas_db_user'
     password: 'password'
     host: 'host'
     port: 'port'
@@ -20,11 +20,25 @@ databases:
     host: 'host'
     port: '54321'
 
+# Allowed services definitions
+## For more options and information see: https://django-mama-cas.readthedocs.io/en/latest/settings.html
+mama_cas_services:
+  - service: r'^http[s]?://blacklight\.somenergia\.coop:6789[/]?.*'
+    callbacks:
+      - 'som_cas.callbacks.participa'
+    logout_allow: true
+    logout_url: 'http://blacklight.somenergia.coop:6789/'
+  - service: r'^http[s]?://8hours\.somenergia\.local:9876[/]?.*'
+    callbacks:
+      - 'som_cas.callbacks.participa'
+    logout_allow: true
+    logout_url: 'http://8hours.somenergia.local:9876/logout'
+
 # Logger definitions
 logging:
   ## Level definition for log messages. Can be: DEBUG, INFO, WARNING, ERROR, CRITICAL
   level: 'INFO'
-  ## Place where live the log file
+  ## Place where lives the log file
   file: '/var/log/som_cas/som_cas.log'
 
 # Members upload dir
