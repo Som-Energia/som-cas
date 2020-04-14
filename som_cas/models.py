@@ -4,6 +4,17 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext as _
 
 
+class RegistrationChoices:
+
+    INPERSON = 'in_person'
+    VIRTUAL = 'virtual'
+
+    choices = (
+        (INPERSON, _('In person')),
+        (VIRTUAL, _('Virtual')),
+    )
+
+
 class SomUser(AbstractUser):
     """
     User definition for our autentication service
@@ -26,16 +37,74 @@ class SomUser(AbstractUser):
         return self.__repr__()
 
 
-class AgRegistration(models.Model):
-
-    registration_file = models.FileField(
-        upload_to=settings.UPLOAD_DIR,
-        verbose_name=_('Registration file'),
-        help_text=_('File in json format with all register members '
-                       'for the virtual assambley')
+class Assambley(models.Model):
+    """
+    Assambley definition
+    """
+    name = models.CharField(
+        max_length=150,
+        unique_for_year="date",
+        verbose_name=_('Assambley name'),
+        help_text=_('Name of the assambley, eg: Asamblea 2020')
     )
 
+    registered = models.ManyToManyField(
+        SomUser,
+        through='AgRegistration',
+        through_fields=('assambley', 'member'),
+    )
 
+    date = models.DateField(
+        verbose_name=_("Start time"),
+        help_text=_("Date when this occurrence end")
+    )
+
+    active = models.BooleanField(
+        verbose_name=('Active'),
+        help_text=_('Assembley state')
+    )
+
+    def __repr__(self):
+        return f'<Assambley({self.name})>'
+
+    def __str__(self):
+        return self.__repr__()
+
+
+class AgRegistration(models.Model):
+
+    assambley = models.ForeignKey(
+        Assambley,
+        on_delete=models.CASCADE,
+        verbose_name=_('Assambley'),
+        help_text=_('Assambley for this registration')
+    )
+
+    member = models.ForeignKey(
+        SomUser,
+        on_delete=models.CASCADE,
+        verbose_name=_('Member'),
+        help_text=_('Member for this registration')
+    )
+
+    date = models.DateField(
+        auto_now_add=True,
+        verbose_name=_('Registration date'),
+        help_text=_('Member registration date')
+    )
+
+    registration_type = models.CharField(
+        max_length=15,
+        choices=RegistrationChoices.choices,
+        verbose_name=_('Registration type'),
+        help_text=_('Type of registration: if virtual or in person')
+    )
+
+    def __repr__(self):
+        return f'<AgRegistration({self.assambley.name}, {self.member.username})>'
+
+    def __str__(self):
+        return self.__repr__()
 # class AssambleyRegister(models.Model):
 
 #     member = models.ForeignKey(
