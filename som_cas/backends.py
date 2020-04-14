@@ -7,7 +7,7 @@ from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.hashers import check_password
 from django.db import connections
 
-from som_cas.models import AgRegistration
+from som_cas.models import AgRegistration, RegistrationChoices
 
 logger = logging.getLogger(__name__)
 
@@ -15,20 +15,13 @@ UserModel = get_user_model()
 
 
 def member_in_registry(member):
-	registry = AgRegistration.objects.first()
-	registered_members = json.loads(
-		registry.registration_file.read()
+	registry = AgRegistration.objects.filter(
+		member=member,
+		assambley__active=True,
+		registration_type=RegistrationChoices.VIRTUAL
 	)
 
-	logger.debug(
-		'Checking member %s in %s registry',
-		member.username, registry.registration_file.name
-	)
-	for register in registered_members:
-		for _, nif in register['registration_form_answers'].items():
-			if member.username.upper() == nif.upper():
-				return True
-	return False
+	return registry.exists()
 
 
 class SocisBackend(object):
