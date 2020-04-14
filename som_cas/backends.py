@@ -8,20 +8,11 @@ from django.contrib.auth.hashers import check_password
 from django.db import connections
 
 from som_cas.models import AgRegistration, RegistrationChoices
+from som_cas.utils import register_member_in_virtual_assembly
 
 logger = logging.getLogger(__name__)
 
 UserModel = get_user_model()
-
-
-def member_in_registry(member):
-	registry = AgRegistration.objects.filter(
-		member=member,
-		assambley__active=True,
-		registration_type=RegistrationChoices.VIRTUAL
-	)
-
-	return registry.exists()
 
 
 class SocisBackend(object):
@@ -41,22 +32,22 @@ class SocisBackend(object):
 			)
 		except UserModel.DoesNotExist:
 			UserModel().set_password(password)
+			return None
 		else:
-			if check_password(password, user.password) and self.is_soci(user):
-				logger.debug(request.GET.get('service'))
-				if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-					if member_in_registry(user):
-						user.save()
-						return user
-					return None
+			if not check_password(password, user.password):
+				return None
+			if not self.is_soci(user):
+				return None
 
-				user.save()
-				return user
-
-		return None
+			logger.debug(request.GET.get('service'))
+			if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
+				registry = register_member_in_virtual_assembly(user)	
+				if registry is None:
+	 				return None
+			user.save()
+			return user
 
 	def get_user(self, user_id):
-
 		try:
 			user = UserModel.objects.get(id=user_id)
 		except UserModel.DoesNotExist:

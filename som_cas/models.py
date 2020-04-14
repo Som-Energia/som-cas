@@ -37,21 +37,21 @@ class SomUser(AbstractUser):
         return self.__repr__()
 
 
-class Assambley(models.Model):
+class Assembly(models.Model):
     """
-    Assambley definition
+    Assembly definition
     """
     name = models.CharField(
         max_length=150,
         unique_for_year="date",
-        verbose_name=_('Assambley name'),
-        help_text=_('Name of the assambley, eg: Asamblea 2020')
+        verbose_name=_('Assembly name'),
+        help_text=_('Name of the assembly, eg: Asamblea 2020')
     )
 
     registered = models.ManyToManyField(
         SomUser,
         through='AgRegistration',
-        through_fields=('assambley', 'member'),
+        through_fields=('assembly', 'member'),
     )
 
     date = models.DateField(
@@ -65,7 +65,7 @@ class Assambley(models.Model):
     )
 
     def __repr__(self):
-        return f'<Assambley({self.name})>'
+        return f'<Assembly({self.name})>'
 
     def __str__(self):
         return self.__repr__()
@@ -73,11 +73,11 @@ class Assambley(models.Model):
 
 class AgRegistration(models.Model):
 
-    assambley = models.ForeignKey(
-        Assambley,
+    assembly = models.ForeignKey(
+        Assembly,
         on_delete=models.CASCADE,
-        verbose_name=_('Assambley'),
-        help_text=_('Assambley for this registration')
+        verbose_name=_('Assembly'),
+        help_text=_('Assembly for this registration')
     )
 
     member = models.ForeignKey(
@@ -101,18 +101,8 @@ class AgRegistration(models.Model):
     )
 
     def __repr__(self):
-        return f'<AgRegistration({self.assambley.name}, {self.member.username})>'
+        return f'<AgRegistration({self.assembly.name}, {self.member.username})>'
 
     def __str__(self):
         return self.__repr__()
-# class AssambleyRegister(models.Model):
 
-#     member = models.ForeignKey(
-#         SomUser,
-#         on_delete=models.CASCADE,
-#         related_name='assambley_register'
-#     )
-
-#     registration_code = models.CharField(max_length=64, blank=True, null=True)
-
-#     assambley_year = models.DateField()

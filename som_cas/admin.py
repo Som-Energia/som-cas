@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from .models import SomUser, AgRegistration, Assambley
+from .models import SomUser, AgRegistration, Assembly
 
 
 class MemberInline(admin.TabularInline):
-    model = Assambley.registered.through
+    model = Assembly.registered.through
     extra = 0
 
 
@@ -26,8 +26,8 @@ class SomUserAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(Assambley)
-class AssambleyAdmin(admin.ModelAdmin):
+@admin.register(Assembly)
+class AssemblyAdmin(admin.ModelAdmin):
     inlines = (MemberInline, )
 
 
