@@ -20,12 +20,12 @@ class TestUtils(TestCase):
 
 	def setUp(self):
 		self.user = self.create(SomUser,
-			username="Pin Pam",
+			username="Alice",
 			www_soci=666,
 		)
 
 		self.other_user = self.create(SomUser,
-			username="Pan Pim",
+			username="Bob",
 			www_soci=999,
 		)
 
@@ -128,7 +128,13 @@ class TestUtils(TestCase):
 		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
 		self.assertEqual(list(AgRegistration.objects.all()), [registration, result])
 
-#	 def test__register_member_in_virtual_assembly__noActiveAssembly(self):
+	def test__register_member_in_virtual_assembly__noActiveAssembly(self):
+		self.assembly.active=False
+		self.assembly.save()
+		result = register_member_in_virtual_assembly(self.user)
+		self.assertEqual(result, None)
+		self.assertEqual(list(AgRegistration.objects.all()), [])
+
 
 
 class TestSocisBackend(TestCase):
