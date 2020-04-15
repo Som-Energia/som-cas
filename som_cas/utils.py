@@ -10,7 +10,7 @@ def member_in_virtual_registry(member):
 	registry = AgRegistration.objects.filter(
 		member=member,
 		assembly__active=True,
-	#	registration_type=RegistrationChoices.VIRTUAL
+		registration_type=RegistrationChoices.VIRTUAL,
 	)
 	return registry.exists()
 
