@@ -31,20 +31,6 @@ def register_member_in_virtual_assembly(member):
 	return registration
 
 
-	assembly = Assembly.objects.get(active=True)
-
-	registration, _ = AgRegistration.objects.get_or_create(
-		member=member,
-		assembly=assembly,
-		defaults=dict(
-			registration_type=RegistrationChoices.VIRTUAL
-		),
-	)
-	if registration.registration_type == RegistrationChoices.INPERSON:
-		return None
-	return registration
-
-
 def get_user(request):
 	user = auth.get_user(request)
 
