@@ -53,12 +53,12 @@ class TestUtils(TestCase):
 		self.assertEqual(member_in_virtual_registry(self.user), True)
 
 	def test__member_in_virtual_registry__otherUserRegistered(self):
-		assembly = AgRegistration(
+		registration = AgRegistration(
 			member=self.other_user, # This changes
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		assembly.save()
+		registration.save()
 		self.assertEqual(member_in_virtual_registry(self.user), False)
 
 
