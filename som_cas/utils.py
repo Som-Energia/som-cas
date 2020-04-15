@@ -16,7 +16,7 @@ def member_in_virtual_registry(member):
 
 
 def register_member_in_virtual_assembly(member):
-
+	return None
 	assembly = Assembly.objects.get(active=True)
 
 	registration, _ = AgRegistration.objects.get_or_create(
