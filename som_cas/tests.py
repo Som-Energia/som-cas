@@ -100,6 +100,8 @@ class TestUtils(TestCase):
 		result = register_member_in_virtual_assembly(self.user)
 		self.assertTrue(result)
 		self.assertEqual(list(AgRegistration.objects.all()), [result])
+		self.assertEqual(result.member, self.user)
+		self.assertEqual(result.assembly, self.assembly)
 		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
 
 	def test__register_member_in_virtual_assembly__olderAssembly(self):
@@ -110,9 +112,23 @@ class TestUtils(TestCase):
 		)
 		result = register_member_in_virtual_assembly(self.user)
 		self.assertEqual(list(AgRegistration.objects.all()), [registration, result])
+		self.assertEqual(result.member, self.user)
 		self.assertEqual(result.assembly, self.assembly)
 		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
 
+	def test__register_member_in_virtual_assembly__otherPersonRegistered(self):
+		registration = self.create(AgRegistration,
+			member=self.other_user, # This changes
+			assembly=self.assembly,
+			registration_type=RegistrationChoices.VIRTUAL,
+		)
+		result = register_member_in_virtual_assembly(self.user)
+		self.assertEqual(result.member, self.user)
+		self.assertEqual(result.assembly, self.assembly)
+		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
+		self.assertEqual(list(AgRegistration.objects.all()), [registration, result])
+
+#	 def test__register_member_in_virtual_assembly__noActiveAssembly(self):
 
 
 class TestSocisBackend(TestCase):

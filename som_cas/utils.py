@@ -18,10 +18,9 @@ def member_in_virtual_registry(member):
 def register_member_in_virtual_assembly(member):
 	assembly = Assembly.objects.all().last()
 	registration, _ = AgRegistration.objects.get_or_create(
-		#member=member,
+		member=member,
 		assembly=assembly,
 		defaults=dict(
-			member=member,
 			registration_type=RegistrationChoices.VIRTUAL,
 		),
 	)
