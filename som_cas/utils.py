@@ -16,7 +16,10 @@ def member_in_virtual_registry(member):
 
 
 def register_member_in_virtual_assembly(member):
-	return None
+	registration = AgRegistration.objects.get()
+	if registration.registration_type == RegistrationChoices.INPERSON:
+		return None
+	return registration
 	assembly = Assembly.objects.get(active=True)
 
 	registration, _ = AgRegistration.objects.get_or_create(
