@@ -1,17 +1,18 @@
 from django.conf import settings
 from django.contrib import auth
-
-
-from som_cas.backends import member_in_registry
-
+from som_cas.models import (
+	AgRegistration,
+	RegistrationChoices,
+	Assembly,
+)
 
 def member_in_virtual_registry(member):
-       registry = AgRegistration.objects.filter(
-	       member=member,
-	       assambley__active=True,
-	       registration_type=RegistrationChoices.VIRTUAL
-       )
-       return registry.exists()
+	registry = AgRegistration.objects.all(
+	#	member=member,
+	#	assembly__active=True,
+	#	registration_type=RegistrationChoices.VIRTUAL
+	)
+	return registry.exists()
 
 
 def register_member_in_virtual_assembly(member):
