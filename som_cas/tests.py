@@ -61,6 +61,15 @@ class TestUtils(TestCase):
 		registration.save()
 		self.assertEqual(member_in_virtual_registry(self.user), False)
 
+	def test__member_in_virtual_registry__inOlderAssembly(self):
+		registration = AgRegistration(
+			member=self.user,
+			assembly=self.old_assembly,
+			registration_type=RegistrationChoices.VIRTUAL,
+		)
+		registration.save()
+		self.assertEqual(member_in_virtual_registry(self.user), False)
+
 
 class TestSocisBackend(TestCase):
 

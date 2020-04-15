@@ -9,7 +9,7 @@ from som_cas.models import (
 def member_in_virtual_registry(member):
 	registry = AgRegistration.objects.filter(
 		member=member,
-	#	assembly__active=True,
+		assembly__active=True,
 	#	registration_type=RegistrationChoices.VIRTUAL
 	)
 	return registry.exists()
