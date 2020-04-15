@@ -13,73 +13,68 @@ from som_cas.models import (
 
 class TestUtils(TestCase):
 
+	def create(self, clss, **kwds):
+		obj = clss(**kwds)
+		obj.save()
+		return obj
+
 	def setUp(self):
-		self.user = SomUser(
+		self.user = self.create(SomUser,
 			username="Pin Pam",
 			www_soci=666,
 		)
-		self.user.save()
 
-		self.other_user = SomUser(
+		self.other_user = self.create(SomUser,
 			username="Pan Pim",
 			www_soci=999,
 		)
-		self.other_user.save()
 
-		self.old_assembly = Assembly(
+		self.old_assembly = self.create(Assembly,
 			name='Assamblea 2019',
 			date='2019-03-20',
 			active=False,
 		)
-		self.old_assembly.save()
 
-		self.assembly = Assembly(
+		self.assembly = self.create(Assembly,
 			name='Assamblea 2020',
 			date='2020-03-20',
 			active=True,
 		)
-		self.assembly.save()
 
 	def test__member_in_virtual_registry__noRegistration(self):
 		self.assertEqual(member_in_virtual_registry(self.user), False)
 
 	def test__member_in_virtual_registry__whenYes(self):
-		registration = AgRegistration(
+		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		registration.save()
 		self.assertEqual(member_in_virtual_registry(self.user), True)
 
 	def test__member_in_virtual_registry__otherUserRegistered(self):
-		registration = AgRegistration(
+		registration = self.create(AgRegistration,
 			member=self.other_user, # This changes
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		registration.save()
 		self.assertEqual(member_in_virtual_registry(self.user), False)
 
 	def test__member_in_virtual_registry__inOlderAssembly(self):
-		registration = AgRegistration(
+		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.old_assembly,
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		registration.save()
 		self.assertEqual(member_in_virtual_registry(self.user), False)
 
 	def test__member_in_virtual_registry__inPerson(self):
-		registration = AgRegistration(
+		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.INPERSON,
 		)
-		registration.save()
 		self.assertEqual(member_in_virtual_registry(self.user), False)
-
-
 
 class TestSocisBackend(TestCase):
 
