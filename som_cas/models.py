@@ -106,3 +106,4 @@ class AgRegistration(models.Model):
     def __str__(self):
         return self.__repr__()
 
+# vim: et ts=4 sw=4

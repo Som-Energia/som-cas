@@ -40,3 +40,5 @@ def get_user(request):
 		return user if member_in_virtual_registry(user) else auth.models.AnonymousUser()
 
 	return user
+
+# vim: noet ts=4 sw=4

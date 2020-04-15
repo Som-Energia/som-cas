@@ -12,3 +12,5 @@ class TestSocisBackend(TestCase):
 
     def test_get_user(self):
         pass
+
+# vim: noet sw=4 ts=4
