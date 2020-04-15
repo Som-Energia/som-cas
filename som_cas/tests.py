@@ -96,6 +96,13 @@ class TestUtils(TestCase):
 		self.assertEqual(result, registration)
 		self.assertEqual(list(AgRegistration.objects.all()), [registration])
 
+	def test__register_member_in_virtual_assembly__notRegistered(self):
+		result = register_member_in_virtual_assembly(self.user)
+		self.assertTrue(result)
+		self.assertEqual(list(AgRegistration.objects.all()), [result])
+		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
+
+
 class TestSocisBackend(TestCase):
 
     def setUp(self):
