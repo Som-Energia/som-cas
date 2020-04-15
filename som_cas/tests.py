@@ -63,7 +63,7 @@ class TestUtils(TestCase):
 	def test__member_in_virtual_registry__inOlderAssembly(self):
 		registration = self.create(AgRegistration,
 			member=self.user,
-			assembly=self.old_assembly,
+			assembly=self.old_assembly, # This changes
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
 		self.assertEqual(member_in_virtual_registry(self.user), False)
@@ -72,7 +72,7 @@ class TestUtils(TestCase):
 		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.assembly,
-			registration_type=RegistrationChoices.INPERSON,
+			registration_type=RegistrationChoices.INPERSON, # This changes
 		)
 		self.assertEqual(member_in_virtual_registry(self.user), False)
 
