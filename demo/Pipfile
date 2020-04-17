@@ -13,4 +13,4 @@ flake8 = "*"
 cryptography = "*"
 python-cas = "*"
 aiohttp-session = "*"
-
+flask = "*"
