@@ -40,11 +40,11 @@ class SocisBackend(object):
 				return None
 
 			logger.debug(request.GET.get('service'))
+			user.save()
 			if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
 				registry = register_member_in_virtual_assembly(user)	
 				if registry is None:
 	 				return None
-			user.save()
 			return user
 
 	def get_user(self, user_id):
