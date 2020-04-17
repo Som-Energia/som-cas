@@ -15,7 +15,7 @@ Actually there are three projects, `8hours`, `black-ligth` and `cas-api`.
 ```bash
 $> pipenv run python main.py
 ```
-`cas-api` is an intent to authenticate apis in cas. It is a work in progress and not is working.
+`cas-api` is an intent to authenticate apis in cas. It is a work in progress and is not working.
 
 # Configurate clients
 When clients are up und running, then you have to add two entries in your `/etc/hosts` to simulate that they are two diferent applications. A possible configuration could be:
@@ -23,7 +23,7 @@ When clients are up und running, then you have to add two entries in your `/etc/
 127.0.0.1       blacklight.somenergia.coop 8hours.somenergia.local
 ```
 
-Now you can especify in som-settings this two services in the setting `mama_cas_services` that is in the file conf.yaml.
+Now you can especify in som- cas settings this two services in the setting `mama_cas_services` that is in the file conf.yaml.
 
 
 
