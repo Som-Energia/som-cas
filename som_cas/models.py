@@ -45,24 +45,22 @@ class SomUser(AbstractUser):
         return registry.exists()
 
     def registerInVirtualAssembly(self):
-        return register_member_in_virtual_assembly(self)
+        assembly = (Assembly.objects.filter(active=True) or [None])[0]
+        if not assembly: return None
+
+        registration, _ = AgRegistration.objects.get_or_create(
+            member=self,
+            assembly=assembly,
+            defaults=dict(
+                registration_type=RegistrationChoices.VIRTUAL,
+            ),
+        )
+        if registration.registration_type == RegistrationChoices.INPERSON:
+            return None
+        return registration
 
 def register_member_in_virtual_assembly(member):
-	assembly = (Assembly.objects.filter(active=True) or [None])[0]
-	if not assembly: return None
-
-	registration, _ = AgRegistration.objects.get_or_create(
-		member=member,
-		assembly=assembly,
-		defaults=dict(
-			registration_type=RegistrationChoices.VIRTUAL,
-		),
-	)
-	if registration.registration_type == RegistrationChoices.INPERSON:
-		return None
-	return registration
-
- 
+    member.registerInVirtualAssembly()
 
 class Assembly(models.Model):
     """

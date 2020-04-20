@@ -4,23 +4,9 @@ from som_cas.models import (
 	AgRegistration,
 	RegistrationChoices,
 	Assembly,
+	register_member_in_virtual_assembly,
 )
 
-
-def register_member_in_virtual_assembly(member):
-	assembly = (Assembly.objects.filter(active=True) or [None])[0]
-	if not assembly: return None
-
-	registration, _ = AgRegistration.objects.get_or_create(
-		member=member,
-		assembly=assembly,
-		defaults=dict(
-			registration_type=RegistrationChoices.VIRTUAL,
-		),
-	)
-	if registration.registration_type == RegistrationChoices.INPERSON:
-		return None
-	return registration
 
 
 def get_user(request):

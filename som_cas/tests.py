@@ -75,26 +75,14 @@ class TestUtils(TestCase):
 		)
 		self.assertEqual(self.user.isVirtualRegisteredInActiveAssembly(), False)
 
-
-
 	def test__register_member_in_virtual_assembly__inPerson(self):
 		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.INPERSON,
 		)
-		result = register_member_in_virtual_assembly(self.user)
+		result = self.user.registerInVirtualAssembly()
 		self.assertEqual(result, None)
-		self.assertEqual(list(AgRegistration.objects.all()), [registration])
-
-	def test__register_member_in_virtual_assembly__virtual(self):
-		registration = self.create(AgRegistration,
-			member=self.user,
-			assembly=self.assembly,
-			registration_type=RegistrationChoices.VIRTUAL,
-		)
-		result = register_member_in_virtual_assembly(self.user)
-		self.assertEqual(result, registration)
 		self.assertEqual(list(AgRegistration.objects.all()), [registration])
 
 	def test__register_member_in_virtual_assembly__virtual(self):
@@ -108,7 +96,7 @@ class TestUtils(TestCase):
 		self.assertEqual(list(AgRegistration.objects.all()), [registration])
 
 	def test__register_member_in_virtual_assembly__notRegistered(self):
-		result = register_member_in_virtual_assembly(self.user)
+		result = self.user.registerInVirtualAssembly()
 		self.assertTrue(result)
 		self.assertEqual(list(AgRegistration.objects.all()), [result])
 		self.assertEqual(result.member, self.user)
@@ -121,7 +109,7 @@ class TestUtils(TestCase):
 			assembly=self.old_assembly, # This changes
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		result = register_member_in_virtual_assembly(self.user)
+		result = self.user.registerInVirtualAssembly()
 		self.assertEqual(list(AgRegistration.objects.all()), [registration, result])
 		self.assertEqual(result.member, self.user)
 		self.assertEqual(result.assembly, self.assembly)
@@ -133,7 +121,7 @@ class TestUtils(TestCase):
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		result = register_member_in_virtual_assembly(self.user)
+		result = self.user.registerInVirtualAssembly()
 		self.assertEqual(result.member, self.user)
 		self.assertEqual(result.assembly, self.assembly)
 		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
@@ -142,7 +130,7 @@ class TestUtils(TestCase):
 	def test__register_member_in_virtual_assembly__noActiveAssembly(self):
 		self.assembly.active=False
 		self.assembly.save()
-		result = register_member_in_virtual_assembly(self.user)
+		result = self.user.registerInVirtualAssembly()
 		self.assertEqual(result, None)
 		self.assertEqual(list(AgRegistration.objects.all()), [])
 
