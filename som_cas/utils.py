@@ -4,9 +4,7 @@ from som_cas.models import (
 	AgRegistration,
 	RegistrationChoices,
 	Assembly,
-	register_member_in_virtual_assembly,
 )
-
 
 
 def get_user(request):

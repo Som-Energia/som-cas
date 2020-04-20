@@ -7,7 +7,7 @@ from som_cas.models import (
 	RegistrationChoices,
 )
 
-class TestUtils(TestCase):
+class Test_SomUsers(TestCase):
 
 	def create(self, clss, **kwds):
 		obj = clss(**kwds)

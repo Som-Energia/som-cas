@@ -8,7 +8,6 @@ from django.contrib.auth.hashers import check_password
 from django.db import connections
 
 from som_cas.models import AgRegistration, RegistrationChoices
-from som_cas.utils import register_member_in_virtual_assembly
 
 logger = logging.getLogger(__name__)
 
@@ -42,7 +41,7 @@ class SocisBackend(object):
 			logger.debug(request.GET.get('service'))
 			user.save()
 			if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-				registry = register_member_in_virtual_assembly(user)	
+				registry = user.registerInVirtualAssembly()	
 				if registry is None:
 	 				return None
 			return user

@@ -59,8 +59,6 @@ class SomUser(AbstractUser):
             return None
         return registration
 
-def register_member_in_virtual_assembly(member):
-    member.registerInVirtualAssembly()
 
 class Assembly(models.Model):
     """
