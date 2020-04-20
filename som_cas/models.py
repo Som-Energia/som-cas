@@ -44,8 +44,6 @@ class SomUser(AbstractUser):
         )
         return registry.exists()
 
-def member_in_virtual_registry(member):
-    return member.isVirtualRegisteredInActiveAssembly()
 
 class Assembly(models.Model):
     """

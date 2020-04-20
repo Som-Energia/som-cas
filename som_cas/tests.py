@@ -1,7 +1,6 @@
 from django.test import Client, TestCase
 from som_cas.backends import SocisBackend
 from som_cas.utils import (
-	member_in_virtual_registry,
 	register_member_in_virtual_assembly,
 )
 from som_cas.models import (

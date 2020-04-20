@@ -4,7 +4,6 @@ from som_cas.models import (
 	AgRegistration,
 	RegistrationChoices,
 	Assembly,
-	member_in_virtual_registry,
 )
 
 
@@ -31,7 +30,9 @@ def get_user(request):
 		return user
 
 	if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-		return user if member_in_virtual_registry(user) else auth.models.AnonymousUser()
+		if user.isVirtualRegisteredInActiveAssembly():
+			return user
+		return auth.models.AnonymousUser()
 
 	return user
 
