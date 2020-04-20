@@ -1,8 +1,5 @@
 from django.test import Client, TestCase
 from som_cas.backends import SocisBackend
-from som_cas.utils import (
-	register_member_in_virtual_assembly,
-)
 from som_cas.models import (
 	SomUser,
 	Assembly,
@@ -75,7 +72,7 @@ class TestUtils(TestCase):
 		)
 		self.assertEqual(self.user.isVirtualRegisteredInActiveAssembly(), False)
 
-	def test__register_member_in_virtual_assembly__inPerson(self):
+	def test__registerInVirtualAssembly__inPerson(self):
 		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.assembly,
@@ -85,7 +82,7 @@ class TestUtils(TestCase):
 		self.assertEqual(result, None)
 		self.assertEqual(list(AgRegistration.objects.all()), [registration])
 
-	def test__register_member_in_virtual_assembly__virtual(self):
+	def test__registerInVirtualAssembly__virtual(self):
 		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.assembly,
@@ -95,7 +92,7 @@ class TestUtils(TestCase):
 		self.assertEqual(result, registration)
 		self.assertEqual(list(AgRegistration.objects.all()), [registration])
 
-	def test__register_member_in_virtual_assembly__notRegistered(self):
+	def test__registerInVirtualAssembly__notRegistered(self):
 		result = self.user.registerInVirtualAssembly()
 		self.assertTrue(result)
 		self.assertEqual(list(AgRegistration.objects.all()), [result])
@@ -103,7 +100,7 @@ class TestUtils(TestCase):
 		self.assertEqual(result.assembly, self.assembly)
 		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
 
-	def test__register_member_in_virtual_assembly__olderAssembly(self):
+	def test__registerInVirtualAssembly__olderAssembly(self):
 		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.old_assembly, # This changes
@@ -115,7 +112,7 @@ class TestUtils(TestCase):
 		self.assertEqual(result.assembly, self.assembly)
 		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
 
-	def test__register_member_in_virtual_assembly__otherPersonRegistered(self):
+	def test__registerInVirtualAssembly__otherPersonRegistered(self):
 		registration = self.create(AgRegistration,
 			member=self.other_user, # This changes
 			assembly=self.assembly,
@@ -127,7 +124,7 @@ class TestUtils(TestCase):
 		self.assertEqual(result.registration_type, RegistrationChoices.VIRTUAL)
 		self.assertEqual(list(AgRegistration.objects.all()), [registration, result])
 
-	def test__register_member_in_virtual_assembly__noActiveAssembly(self):
+	def test__registerInVirtualAssembly__noActiveAssembly(self):
 		self.assembly.active=False
 		self.assembly.save()
 		result = self.user.registerInVirtualAssembly()
