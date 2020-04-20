@@ -41,40 +41,42 @@ class TestUtils(TestCase):
 			active=True,
 		)
 
-	def test__member_in_virtual_registry__noRegistration(self):
-		self.assertEqual(member_in_virtual_registry(self.user), False)
+	def test__isVirtualRegisteredInActiveAssembly__noRegistration(self):
+		self.assertEqual(self.user.isVirtualRegisteredInActiveAssembly(), False)
 
-	def test__member_in_virtual_registry__whenYes(self):
+	def test__isVirtualRegisteredInActiveAssembly__whenYes(self):
 		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		self.assertEqual(member_in_virtual_registry(self.user), True)
+		self.assertEqual(self.user.isVirtualRegisteredInActiveAssembly(), True)
 
-	def test__member_in_virtual_registry__otherUserRegistered(self):
+	def test__isVirtualRegisteredInActiveAssembly__otherUserRegistered(self):
 		registration = self.create(AgRegistration,
 			member=self.other_user, # This changes
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		self.assertEqual(member_in_virtual_registry(self.user), False)
+		self.assertEqual(self.user.isVirtualRegisteredInActiveAssembly(), False)
 
-	def test__member_in_virtual_registry__inOlderAssembly(self):
+	def test__isVirtualRegisteredInActiveAssembly__inOlderAssembly(self):
 		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.old_assembly, # This changes
 			registration_type=RegistrationChoices.VIRTUAL,
 		)
-		self.assertEqual(member_in_virtual_registry(self.user), False)
+		self.assertEqual(self.user.isVirtualRegisteredInActiveAssembly(), False)
 
-	def test__member_in_virtual_registry__inPerson(self):
+	def test__isVirtualRegisteredInActiveAssembly__inPerson(self):
 		registration = self.create(AgRegistration,
 			member=self.user,
 			assembly=self.assembly,
 			registration_type=RegistrationChoices.INPERSON, # This changes
 		)
-		self.assertEqual(member_in_virtual_registry(self.user), False)
+		self.assertEqual(self.user.isVirtualRegisteredInActiveAssembly(), False)
+
+
 
 	def test__register_member_in_virtual_assembly__inPerson(self):
 		registration = self.create(AgRegistration,

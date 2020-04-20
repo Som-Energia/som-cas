@@ -36,6 +36,16 @@ class SomUser(AbstractUser):
     def __str__(self):
         return self.__repr__()
 
+    def isVirtualRegisteredInActiveAssembly(self):
+        registry = AgRegistration.objects.filter(
+            member=self,
+            assembly__active=True,
+            registration_type=RegistrationChoices.VIRTUAL,
+        )
+        return registry.exists()
+
+def member_in_virtual_registry(member):
+    return member.isVirtualRegisteredInActiveAssembly()
 
 class Assembly(models.Model):
     """

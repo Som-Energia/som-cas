@@ -4,15 +4,8 @@ from som_cas.models import (
 	AgRegistration,
 	RegistrationChoices,
 	Assembly,
+	member_in_virtual_registry,
 )
-
-def member_in_virtual_registry(member):
-	registry = AgRegistration.objects.filter(
-		member=member,
-		assembly__active=True,
-		registration_type=RegistrationChoices.VIRTUAL,
-	)
-	return registry.exists()
 
 
 def register_member_in_virtual_assembly(member):
