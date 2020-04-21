@@ -1,8 +1,10 @@
 from django.conf import settings
 from django.contrib import auth
-
-
-from som_cas.backends import member_in_registry
+from som_cas.models import (
+	AgRegistration,
+	RegistrationChoices,
+	Assembly,
+)
 
 
 def get_user(request):
@@ -12,6 +14,10 @@ def get_user(request):
 		return user
 
 	if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-		return user if member_in_registry(user) else auth.models.AnonymousUser()
+		if user.isVirtualRegisteredInActiveAssembly():
+			return user
+		return auth.models.AnonymousUser()
 
 	return user
+
+# vim: noet ts=4 sw=4

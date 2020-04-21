@@ -1,0 +1,77 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% block title %}
+      <title>8 Hours</title>
+    {% endblock %}
+
+    {% block css %}
+
+      <!-- Bootstrap core CSS -->
+      <link href="static/css/bootstrap.css" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="static/css/sticky-footer-navbar.css" rel="stylesheet">
+      <link href="static/css/fontawesome-all.min.css" rel="stylesheet">
+    {% endblock%}
+
+  </head>
+
+  <body>
+    {% block header%}
+      <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md fixed-top">
+          <a class="navbar-brand" href="/">
+            <img src="static/images/hand-rock-solid.svg"  width="40" height="40" class="d-inline-block align-top" alt="Responsive image">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavCollapse">
+            <div class="container navbar-nav">
+            </div>
+          	{% if not request.user %}
+            <a class=" btn btn-outline-primary" href="{{login_url}}">Log In</a>
+            {% else %}
+          	<ul class="navbar-nav">
+          		<li class="navbar-item dropdown">
+          			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          				Bienvenido, {{ request.user.first_name }} {{ request.user.last_name }}
+          			</a>
+          			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          				<a class="dropdown-item" href="{{logout_url}}">Log out</a>
+          			</div>
+          		</li>
+          	</ul>
+            {% endif %}
+          </div>
+        </nav>
+      </header>
+    {% endblock %}
+
+    {% block content%}
+
+    {% endblock %}
+    <!-- Begin page content -->
+
+    {% block footer %}
+      <footer class="footer">
+        <div class="container">
+          <span class="text-muted"> Made with <i class="fas fa-heart"></i> at Som Energia</span>
+        </div>
+      </footer>
+    {% endblock %}
+
+    {% block js %}
+      <script src="static/js/jquery-3.3.1.min.js" ></script>
+      <script src="static/js/bootstrap.js"></script>
+    {% endblock%}
+  </body>
+</html>

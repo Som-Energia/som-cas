@@ -4,6 +4,17 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext as _
 
 
+class RegistrationChoices:
+
+    INPERSON = 'in_person'
+    VIRTUAL = 'virtual'
+
+    choices = (
+        (INPERSON, _('In person')),
+        (VIRTUAL, _('Virtual')),
+    )
+
+
 class SomUser(AbstractUser):
     """
     User definition for our autentication service
@@ -25,25 +36,97 @@ class SomUser(AbstractUser):
     def __str__(self):
         return self.__repr__()
 
+    def isVirtualRegisteredInActiveAssembly(self):
+        registry = AgRegistration.objects.filter(
+            member=self,
+            assembly__active=True,
+            registration_type=RegistrationChoices.VIRTUAL,
+        )
+        return registry.exists()
+
+    def registerInVirtualAssembly(self):
+        assembly = (Assembly.objects.filter(active=True) or [None])[0]
+        if not assembly: return None
+
+        registration, _ = AgRegistration.objects.get_or_create(
+            member=self,
+            assembly=assembly,
+            defaults=dict(
+                registration_type=RegistrationChoices.VIRTUAL,
+            ),
+        )
+        if registration.registration_type == RegistrationChoices.INPERSON:
+            return None
+        return registration
+
+
+class Assembly(models.Model):
+    """
+    Assembly definition
+    """
+    name = models.CharField(
+        max_length=150,
+        unique_for_year="date",
+        verbose_name=_('Assembly name'),
+        help_text=_('Name of the assembly, eg: Asamblea 2020')
+    )
+
+    registered = models.ManyToManyField(
+        SomUser,
+        through='AgRegistration',
+        through_fields=('assembly', 'member'),
+    )
+
+    date = models.DateField(
+        verbose_name=_("Start time"),
+        help_text=_("Date when this occurrence end")
+    )
+
+    active = models.BooleanField(
+        verbose_name=('Active'),
+        help_text=_('Assembley state')
+    )
+
+    def __repr__(self):
+        return f'<Assembly({self.name})>'
+
+    def __str__(self):
+        return self.__repr__()
+
 
 class AgRegistration(models.Model):
 
-    registration_file = models.FileField(
-        upload_to=settings.UPLOAD_DIR,
-        verbose_name=_('Registration file'),
-        help_text=_('File in json format with all register members '
-                       'for the virtual assambley')
+    assembly = models.ForeignKey(
+        Assembly,
+        on_delete=models.CASCADE,
+        verbose_name=_('Assembly'),
+        help_text=_('Assembly for this registration')
     )
 
+    member = models.ForeignKey(
+        SomUser,
+        on_delete=models.CASCADE,
+        verbose_name=_('Member'),
+        help_text=_('Member for this registration')
+    )
 
-# class AssambleyRegister(models.Model):
+    date = models.DateField(
+        auto_now_add=True,
+        verbose_name=_('Registration date'),
+        help_text=_('Member registration date')
+    )
 
-#     member = models.ForeignKey(
-#         SomUser,
-#         on_delete=models.CASCADE,
-#         related_name='assambley_register'
-#     )
+    registration_type = models.CharField(
+        max_length=15,
+        choices=RegistrationChoices.choices,
+        verbose_name=_('Registration type'),
+        help_text=_('Type of registration: if virtual or in person')
+    )
 
-#     registration_code = models.CharField(max_length=64, blank=True, null=True)
+    def __repr__(self):
+        return f'<AgRegistration({self.assembly.name}, {self.member.username})>'
 
-#     assambley_year = models.DateField()
+    def __str__(self):
+        return self.__repr__()
+
+# vim: et ts=4 sw=4

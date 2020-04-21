@@ -7,28 +7,11 @@ from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.hashers import check_password
 from django.db import connections
 
-from som_cas.models import AgRegistration
+from som_cas.models import AgRegistration, RegistrationChoices
 
 logger = logging.getLogger(__name__)
 
 UserModel = get_user_model()
-
-
-def member_in_registry(member):
-	registry = AgRegistration.objects.first()
-	registered_members = json.loads(
-		registry.registration_file.read()
-	)
-
-	logger.debug(
-		'Checking member %s in %s registry',
-		member.username, registry.registration_file.name
-	)
-	for register in registered_members:
-		for _, nif in register['registration_form_answers'].items():
-			if member.username.upper() == nif.upper():
-				return True
-	return False
 
 
 class SocisBackend(object):
@@ -48,22 +31,22 @@ class SocisBackend(object):
 			)
 		except UserModel.DoesNotExist:
 			UserModel().set_password(password)
+			return None
 		else:
-			if check_password(password, user.password) and self.is_soci(user):
-				logger.debug(request.GET.get('service'))
-				if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-					if member_in_registry(user):
-						user.save()
-						return user
-					return None
+			if not check_password(password, user.password):
+				return None
+			if not self.is_soci(user):
+				return None
 
-				user.save()
-				return user
-
-		return None
+			logger.debug(request.GET.get('service'))
+			user.save()
+			if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
+				registry = user.registerInVirtualAssembly()	
+				if registry is None:
+	 				return None
+			return user
 
 	def get_user(self, user_id):
-
 		try:
 			user = UserModel.objects.get(id=user_id)
 		except UserModel.DoesNotExist:

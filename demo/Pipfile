@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+aiohttp = "*"
+aiohttp-jinja2 = "*"
+ipython = "*"
+flake8 = "*"
+cryptography = "*"
+python-cas = "*"
+aiohttp-session = "*"
+flask = "*"
