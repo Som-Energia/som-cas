@@ -50,7 +50,8 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
 	'mama_cas',
-	'rosetta'
+	'rosetta',
+	'anymail'
 ]
 
 LOCAL_APPS = [
