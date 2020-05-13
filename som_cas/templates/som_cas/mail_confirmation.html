@@ -10,6 +10,14 @@
                         <td align="left" valign="top" style="padding:10px 0 20px 0;">
                             <img src="https://www.somenergia.coop/wp-content/uploads/2014/07/logo.png" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo.png">
                         </td>
+                        <td align="right" valign="top" style="padding:10px 0 20px 0;">
+                            {% get_current_language as LANGUAGE_CODE %}
+                                {% if LANGUAGE_CODE == 'ca' %}
+                                    <img src="https://lh3.googleusercontent.com/D3_yDGVd6e7vlolIk0SUy4nA27q3i_wNlmTkbnQVPa3ySFg6eDyOb9L8XDWj04BqTkhCJntZ0RPDDqn81A_sFTL2gCJG9U2btV4a73yYYM0Hn7iadak=w1280" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo_asamblea_ca.png">
+                                {% else %}
+                                    <img src="https://lh3.googleusercontent.com/P5aJpl4BkfmWQFVdlbZWWI4ffF5Q19Ce65my9JeV3jEvDpZT5VmEQxINyv0l4rinsH1pTdaDVkfK8tqg_ioFpUZbmKXrVkQjC6ha9UCDYmg8ByOa45E=w1280" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo_asamblea_es.png">
+                                {% endif %}
+                        </td>
                     </tr>
                     <tr>
                         <td align="left" valign="top" style="padding:10px; color: #333333;">
@@ -29,7 +37,7 @@
                                 <br>
                                 <a href="https://www.somenergia.coop/ca" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">www.somenergia.coop</a>
                                 <br>
-                                <a href="mailto:auto@somenergia.coop" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">info@somenergia.coop</a>
+                                <a href="mailto:participa@somenergia.coop" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">participa@somenergia.coop</a>
                                 <br>
                                 <a href="https://ca.support.somenergia.coop/article/470-com-puc-contactar-amb-la-cooperativa-mail-telefon-etc" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">Contactar amb Som Energia</a>
                             </p>
