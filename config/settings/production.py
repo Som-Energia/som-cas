@@ -8,9 +8,8 @@ DEBUG = False
 
 SECRET_KEY = config['secret_key']
 
-ALLOWED_HOSTS = [
-    'cas.somenergia.coop'
-]
+ALLOWED_HOSTS = config['allowed_hosts']
+
 
 UPLOAD_DIR = config['upload_dir']
 

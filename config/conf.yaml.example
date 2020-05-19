@@ -1,5 +1,9 @@
 # General configuration parameters
 
+# Allowed hosts
+allowed_hosts:
+  - localhost
+
 # Super secret key.
 secret_key: 'kjs%45&dshf78sdf@(kg\jbnkl23#+'
 
@@ -43,3 +47,10 @@ logging:
 
 # Members upload dir
 upload_dir: registered_members
+
+# Email notifications
+sendgrid_api_key: 'key'
+
+email:
+  default_from: 'example@email.com'
+  bcc: 'example@email.com'
