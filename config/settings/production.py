@@ -40,29 +40,7 @@ DATABASES = {
     }
 }
 
-
-MAMA_CAS_SERVICES = [
-    {
-        'SERVICE': r'^http[s]?://participa\.somenergia\.coop[/]?.*',
-        'CALLBACKS': [
-            'som_cas.callbacks.participa',
-        ],
-        'LOGOUT_ALLOW': True,
-        'LOGOUT_URL': 'https://participa.somenergia.coop/logout',
-        'PROXY_ALLOW': False,
-        'PROXY_PATTERN': ''
-    },
-    {
-        'SERVICE': r'^http[s]?://agvirtual\.somenergia\.coop[/]?.*',
-        'CALLBACKS': [
-            'som_cas.callbacks.participa',
-        ],
-        'LOGOUT_ALLOW': True,
-        'LOGOUT_URL': 'https://agvirtual.somenergia.coop/logout',
-        'PROXY_ALLOW': False,
-        'PROXY_PATTERN': ''
-    }
-]
+MAMA_CAS_SERVICES = config.get('mama_cas_services', [])
 
 MAMA_CAS_SERVICE_BACKENDS = [
     'mama_cas.services.backends.SettingsBackend'
@@ -72,8 +50,7 @@ MAMA_CAS_LOGIN_TEMPLATE = 'som_cas/login.html'
 
 MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
-CUSTOM_REGISTRATION_SERVICES = 'agvirtual'
-
+CUSTOM_REGISTRATION_SERVICES = config.get('custom_registration_services', '')
 
 logging_conf = config['logging']
 

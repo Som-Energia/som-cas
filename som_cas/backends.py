@@ -17,6 +17,7 @@ UserModel = get_user_model()
 class SocisBackend(object):
 	"""
 	Backend athentication for SomEnergia socis
+	for more details of the implementation: https://docs.djangoproject.com/en/2.2/topics/auth/customizing/
 	"""
 
 	BASE_QUERY_SOCIS = 'select * from som_users where {conditions};'
