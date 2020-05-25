@@ -7,11 +7,15 @@ from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.hashers import check_password
 from django.db import connections
 
+
 from som_cas.models import AgRegistration, RegistrationChoices
 
 logger = logging.getLogger(__name__)
 
 UserModel = get_user_model()
+
+class RegisterException(Exception):
+    pass
 
 
 class SocisBackend(object):
@@ -44,7 +48,7 @@ class SocisBackend(object):
 			if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
 				registry = user.registerInVirtualAssembly()	
 				if registry is None:
-	 				return None
+	 				raise RegisterException()
 			return user
 
 	def get_user(self, user_id):
