@@ -27,12 +27,12 @@ databases:
 # Allowed services definitions
 ## For more options and information see: https://django-mama-cas.readthedocs.io/en/latest/settings.html
 mama_cas_services:
-  - SERVICE: r'^http[s]?://blacklight\.somenergia\.coop:6789[/]?.*'
+  - SERVICE: '^http[s]?://blacklight\.somenergia\.coop:6789[/]?.*'
     CALLBACKS:
       - 'som_cas.callbacks.participa'
     LOGOUT_ALLOW: true
     LOGOUT_URL: 'http://blacklight.somenergia.coop:6789/'
-  - SERVICE: r'^http[s]?://8hours\.somenergia\.local:9876[/]?.*'
+  - SERVICE: '^http[s]?://8hours\.somenergia\.local:9876[/]?.*'
     CALLBACKS:
       - 'som_cas.callbacks.participa'
     LOGOUT_ALLOW: true
