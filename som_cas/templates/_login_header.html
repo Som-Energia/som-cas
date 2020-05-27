@@ -1,0 +1,8 @@
+{% load i18n static %}
+<img src="{% static 'images/logo-somenergia-transparent.png'%}" width="120" height="120" class="form-title-img d-inline-block align-top" alt="Som Energia Logo">
+{% if assembly %}
+<span class="login100-form-title p-b-16">{% trans 'Join the virtual census!' %}</span>
+<span class="login100-form-title-text p-b-32">{% trans 'Once you have registered, we will see you on the 20th of June!' %}</span>
+{% else %}
+<span class="login100-form-title p-b-32">{% trans 'Engage!' %}</span>
+{% endif %}

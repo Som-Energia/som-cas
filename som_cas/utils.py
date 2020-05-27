@@ -41,4 +41,9 @@ def send_confirmation_email(user, email_template):
 				msg.content_subtype = "html"
 				msg.send()
 
+def assembly_context_processors(request):
+	return {
+		'assembly': settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', False)
+	}
+
 # vim: noet ts=4 sw=4

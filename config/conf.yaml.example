@@ -38,6 +38,8 @@ mama_cas_services:
     LOGOUT_ALLOW: true
     LOGOUT_URL: 'http://8hours.somenergia.local:9876/logout'
 
+custom_registration_services: '8hours'
+
 # Logger definitions
 logging:
   ## Level definition for log messages. Can be: DEBUG, INFO, WARNING, ERROR, CRITICAL

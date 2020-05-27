@@ -13,8 +13,7 @@
             <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
                 <form class="login100-form validate-form flex-sb flex-w" method="post">
                     {% csrf_token %}
-                    <img src="{% static 'images/logo-somenergia-transparent.png'%}" width="90" height="90" class="d-inline-block align-top" alt="Som Energia Logo">
-                    <span class="login100-form-title p-b-32"> {% trans 'Account Login' %}</span>
+                    {% include "_login_header.html" %}
 
                     {% include "_messages.html" %}
 
