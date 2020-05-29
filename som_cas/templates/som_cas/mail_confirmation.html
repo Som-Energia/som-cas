@@ -1,5 +1,10 @@
 {% load i18n %}
 
+{% trans "panell de votacions" as vote_panel %}
+{% trans "a la pàgina web de l’Assemblea" as assembly_web %}
+{% trans "Participa" as participa %}
+{% trans "Moltes gràcies per participar!" as thanks %}
+
 <body style="margin:0; padding:1rem; background-color:#F2F2F2; color: #333333; font-family: Arial,Helvetica,sans-serif;">
   <center>
         <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:640px; width:100%;" bgcolor="#FFFFFF">
@@ -18,9 +23,13 @@
                     </tr>
                     <tr>
                         <td align="left" valign="top" style="padding:10px; color: #333333;">
-                            <p>{% trans "Hola,"%}</p>
-                            <p>{% trans "Hem rebut la teva inscripció a l'Assemblea Virtual. Gràcies per participar" %}.</p>
-                            <p>{% trans "Per a qualsevol dubte o aclariment ens pots escriure a"%} <a href="mailto:participa@somenergia.coop" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">participa@somenergia.coop</a></p>
+                            <p>{% blocktrans %} Hola, {{user.first_name}} {{user.last_name}} {%endblocktrans%}</p>
+                            <p>{% trans "Ja pots accedir al" %}<a href="http://agvirtual.somenergia.coop" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">{{ vote_panel }}.</p>
+							<p>{% trans "Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny <b>de 10 a 13.55 h</b>, durant l’Assemblea General" %}.</p>
+							<p>{% trans "Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>" %}.</p>
+							<p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea" %}  <a href="https://assemblea.somenergia.coop/" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">{{ assembly_web }}</a> {% trans "i al" %} {% trans "Participa" %}.</p>
+
+                            <p>{{ thanks }}</p>
                         </td>
                     </tr>
                     <tr>
