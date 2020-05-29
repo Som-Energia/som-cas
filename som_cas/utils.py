@@ -41,9 +41,21 @@ def send_confirmation_email(user, email_template):
 				msg.content_subtype = "html"
 				msg.send()
 
+
+def getActiveAssembly():
+    from som_cas.models import Assembly
+    return (Assembly.objects.filter(active=True) or [None])[0]
+
 def assembly_context_processors(request):
-	return {
-		'assembly': settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', False)
-	}
+
+	if 	settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
+		return {
+			'isAssembly': True,
+			'assembly': getActiveAssembly()
+		}
+	else:
+		return {
+			'isAssembly': False
+		}
 
 # vim: noet ts=4 sw=4
