@@ -15,20 +15,23 @@
                         <td align="right" valign="top" style="padding:10px 0 20px 0;">
                             {% get_current_language as LANGUAGE_CODE %}
                                 {% if LANGUAGE_CODE == 'ca' %}
-                                    <img src="https://lh3.googleusercontent.com/D3_yDGVd6e7vlolIk0SUy4nA27q3i_wNlmTkbnQVPa3ySFg6eDyOb9L8XDWj04BqTkhCJntZ0RPDDqn81A_sFTL2gCJG9U2btV4a73yYYM0Hn7iadak=w1280" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo_asamblea_ca.png">
+                                    <img src="https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020.png" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo_asamblea_ca.png">
                                 {% else %}
-                                    <img src="https://lh3.googleusercontent.com/P5aJpl4BkfmWQFVdlbZWWI4ffF5Q19Ce65my9JeV3jEvDpZT5VmEQxINyv0l4rinsH1pTdaDVkfK8tqg_ioFpUZbmKXrVkQjC6ha9UCDYmg8ByOa45E=w1280" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo_asamblea_es.png">
+                                    <img src="https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020-es.png" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo_asamblea_es.png">
                                 {% endif %}
                         </td>
                     </tr>
                     <tr>
                         <td align="left" valign="top" style="padding:10px; color: #333333;">
-                            <p>{% blocktrans %} Hola, {{user.first_name}} {{user.last_name}} {%endblocktrans%}</p>
-                            <p>{% trans "Ja pots accedir al" %}<a href="http://agvirtual.somenergia.coop" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">{{ vote_panel }}.</p>
-							<p>{% trans "Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny <b>de 10 a 13.55 h</b>, durant l’Assemblea General" %}.</p>
-							<p>{% trans "Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>" %}.</p>
-							<p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea" %}  <a href="https://assemblea.somenergia.coop/" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">{{ assembly_web }}</a> {% trans "i al" %} {% trans "Participa" %}.</p>
-
+                            <p>{% trans "Hola"%}  {{user.first_name}}, </p>
+                            <p>{% trans "Ja pots accedir al " %}<a href="http://agvirtual.somenergia.coop" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">{{ vote_panel }}</a>.</p>
+							              <p>{% trans "Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny <b>de 10 a 13.55 h</b>, durant l’Assemblea General" %}.</p>
+							              <p>{% trans "Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>" %}.</p>
+                            <p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea a la "%} <a href="https://assemblea.somenergia.coop/" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l’Assemblea" %}</a> {% trans "i al " %}<a href="https://participa.somenergia.coop/users/" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa.</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top" style="padding:10px; color: #333333;">
                             <p>{{ thanks }}</p>
                         </td>
                     </tr>
