@@ -66,7 +66,7 @@ class SomUser(AbstractUser):
 
         if created:
             try:
-                send_confirmation_email(self,'som_cas/mail_confirmation.html')
+                send_confirmation_email(self, 'som_cas/mail_confirmation.html')
                 registration.registration_email_sent = True
                 registration.save()
             except Exception as e:
