@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-01 07:49+0000\n"
+"POT-Creation-Date: 2020-06-01 08:31+0000\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,32 +147,32 @@ msgstr ""
 msgid "Engage!"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:30
+#: som_cas/templates/som_cas/login.html:33
 msgid "Username"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:31
+#: som_cas/templates/som_cas/login.html:34
 msgid "Username is required"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:32
+#: som_cas/templates/som_cas/login.html:35
 msgid "NIF, CIF o NIE"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:36
+#: som_cas/templates/som_cas/login.html:39
 msgid "Password"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:37
+#: som_cas/templates/som_cas/login.html:40
 msgid "Password is required"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:56
-#: som_cas/templates/som_cas/login.html:58
+#: som_cas/templates/som_cas/login.html:59
+#: som_cas/templates/som_cas/login.html:61
 msgid "Forgot Password?"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:64
+#: som_cas/templates/som_cas/login.html:67
 msgid "Login"
 msgstr ""
 
@@ -192,6 +192,10 @@ msgstr ""
 msgid "Moltes gràcies per participar!"
 msgstr ""
 
+#: som_cas/templates/som_cas/mail_confirmation.html:8
+msgid "https://assemblea.somenergia.coop"
+msgstr ""
+
 #: som_cas/templates/som_cas/mail_confirmation.html:18
 msgid "logo de la asamblea 2020"
 msgstr ""
@@ -201,7 +205,7 @@ msgid "Hola"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:24
-msgid "Ja pots accedir al "
+msgid "Ja pots accedir al"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:25
@@ -225,7 +229,7 @@ msgid "pàgina web de l’Assemblea"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
-msgid "i al "
+msgid "i al"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:37

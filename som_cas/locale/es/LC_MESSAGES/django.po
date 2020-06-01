@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-01 07:49+0000\n"
+"POT-Creation-Date: 2020-06-01 08:31+0000\n"
 "PO-Revision-Date: 2020-06-01 08:05+0000\n"
 "Last-Translator: b'  <sistemes@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,8 +51,7 @@ msgstr ""
 #: som_cas/forms.py:33
 msgid "The username or password is not correct"
 msgstr ""
-"El usuario o la contraseña no son correctos, o no eres socio/a de Som "
-"Energia"
+"El usuario o la contraseña no son correctos, o no eres socio/a de Som Energia"
 
 #: som_cas/forms.py:38
 msgid "This user account is disabled"
@@ -135,7 +134,6 @@ msgid "No active assembly"
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:24
-#| msgid "Vote on "
 msgid "Vote on"
 msgstr "¡VOTA EL DÍA"
 
@@ -151,32 +149,32 @@ msgstr "(Son los mismos datos de acceso que en el Participa)"
 msgid "Engage!"
 msgstr "Participa"
 
-#: som_cas/templates/som_cas/login.html:30
+#: som_cas/templates/som_cas/login.html:33
 msgid "Username"
 msgstr "Documento de identidad"
 
-#: som_cas/templates/som_cas/login.html:31
+#: som_cas/templates/som_cas/login.html:34
 msgid "Username is required"
 msgstr "Es necesario el DNI, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:32
+#: som_cas/templates/som_cas/login.html:35
 msgid "NIF, CIF o NIE"
 msgstr "NIF, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:36
+#: som_cas/templates/som_cas/login.html:39
 msgid "Password"
 msgstr "Contraseña "
 
-#: som_cas/templates/som_cas/login.html:37
+#: som_cas/templates/som_cas/login.html:40
 msgid "Password is required"
 msgstr "Es necesaria la contraseña"
 
-#: som_cas/templates/som_cas/login.html:56
-#: som_cas/templates/som_cas/login.html:58
+#: som_cas/templates/som_cas/login.html:59
+#: som_cas/templates/som_cas/login.html:61
 msgid "Forgot Password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: som_cas/templates/som_cas/login.html:64
+#: som_cas/templates/som_cas/login.html:67
 msgid "Login"
 msgstr "Entrar"
 
@@ -196,6 +194,10 @@ msgstr "Participa"
 msgid "Moltes gràcies per participar!"
 msgstr "¡Muchas gracias por paticipar!"
 
+#: som_cas/templates/som_cas/mail_confirmation.html:8
+msgid "https://assemblea.somenergia.coop"
+msgstr ""
+
 #: som_cas/templates/som_cas/mail_confirmation.html:18
 msgid "logo de la asamblea 2020"
 msgstr "logo de la asamblea 2020"
@@ -205,8 +207,9 @@ msgid "Hola"
 msgstr "Hola"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:24
-#| msgid "Ja pots accedir al"
-msgid "Ja pots accedir al "
+#, fuzzy
+#| msgid "Ja pots accedir al "
+msgid "Ja pots accedir al"
 msgstr "Ya puedes acceder al"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:25
@@ -219,26 +222,25 @@ msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid ""
-"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs"
-" com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
+"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
+"com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
 msgstr ""
 "Si finalmente no efectúas ninguna votación el día de la Asamblea, "
 "contabilizarás como  <b>voto presente que se ha abstenido en todas las "
 "preguntas</b>"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
-#| msgid "Trobaràs tota la informació relativa al dia de l’Assemblea"
 msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
 msgstr "Encontrarás toda la información relativa al día de la Asamblea"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
-#| msgid "a la pàgina web de l’Assemblea"
 msgid "pàgina web de l’Assemblea"
 msgstr "en la página web de la Asamblea"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
-#| msgid "i al"
-msgid "i al "
+#, fuzzy
+#| msgid "i al "
+msgid "i al"
 msgstr "y en el"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:37

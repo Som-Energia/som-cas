@@ -5,7 +5,7 @@
 {% trans "a la pàgina web de l’Assemblea" as assembly_web %}
 {% trans "Participa" as participa %}
 {% trans "Moltes gràcies per participar!" as thanks %}
-
+{% trans "https://assemblea.somenergia.coop" as assembly_link %}
 <body style="margin:0; padding:1rem; background-color:#F2F2F2; color: #333333; font-family: Arial,Helvetica,sans-serif;">
   <center>
         <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:640px; width:100%;" bgcolor="#FFFFFF">
@@ -21,10 +21,10 @@
                     <tr>
                         <td align="left" valign="top" style="padding:10px; color: #333333;">
                             <p>{% trans "Hola"%}  {{user.first_name}}, </p>
-                            <p>{% trans "Ja pots accedir al" %} <a href="http://agvirtual.somenergia.coop" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">{{ vote_panel }}</a>.</p>
+                            <p>{% trans "Ja pots accedir al" %} <a href="http://agvirtual.somenergia.coop?locale={{ LANGUAGE_CODE }}" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">{{ vote_panel }}</a>.</p>
 							<p>{% trans "Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny <b>de 10 a 13.55 h</b>, durant l’Assemblea General" %}.</p>
 							<p>{% trans "Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>" %}.</p>
-                            <p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea a la "%} <a href="https://assemblea.somenergia.coop/" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l’Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop/users/" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa.</a></p>
+                            <p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea a la "%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l’Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa.</a></p>
                         </td>
                     </tr>
                     <tr>
