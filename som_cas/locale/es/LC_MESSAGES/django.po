@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-01 08:31+0000\n"
-"PO-Revision-Date: 2020-06-01 08:34+0000\n"
+"PO-Revision-Date: 2020-06-01 09:02+0000\n"
 "Last-Translator: b'  <sistemes@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -197,7 +197,7 @@ msgstr "¡Muchas gracias por paticipar!"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:8
 msgid "https://assemblea.somenergia.coop"
-msgstr ""
+msgstr "https://asamblea.somenergia.coop/"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:18
 msgid "logo de la asamblea 2020"

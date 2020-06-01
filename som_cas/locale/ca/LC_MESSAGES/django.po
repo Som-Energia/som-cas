@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-01 08:31+0000\n"
-"PO-Revision-Date: 2020-06-01 08:34+0000\n"
+"PO-Revision-Date: 2020-06-01 09:35+0000\n"
 "Last-Translator: b'  <sistemes@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -41,7 +41,7 @@ msgstr "Galego"
 
 #: som_cas/forms.py:24
 msgid "You are already registered as presential voter"
-msgstr ""
+msgstr "Ja estàs resgitrat/da per tal de votar presencialment"
 
 #: som_cas/forms.py:28
 msgid "Internal error while authenticating user"
@@ -50,6 +50,7 @@ msgstr ""
 #: som_cas/forms.py:33
 msgid "The username or password is not correct"
 msgstr ""
+"L'usuari o la contrasenya no són correctes, o no ets soci/a de Som Energia"
 
 #: som_cas/forms.py:38
 msgid "This user account is disabled"
@@ -125,7 +126,7 @@ msgstr ""
 
 #: som_cas/templates/base.html:12
 msgid "Som Energia Authentication System"
-msgstr ""
+msgstr "Som Energia Authentication System"
 
 #: som_cas/templates/som_cas/login.html:20
 msgid "No active assembly"
@@ -194,7 +195,7 @@ msgstr "Moltes gràcies per participar!"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:8
 msgid "https://assemblea.somenergia.coop"
-msgstr ""
+msgstr "https://assemblea.somenergia.coop"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:18
 msgid "logo de la asamblea 2020"
