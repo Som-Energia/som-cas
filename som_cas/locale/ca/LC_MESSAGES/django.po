@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-01 08:31+0000\n"
-"PO-Revision-Date: 2020-06-01 07:53+0000\n"
+"PO-Revision-Date: 2020-06-01 08:34+0000\n"
 "Last-Translator: b'  <sistemes@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -205,7 +205,6 @@ msgid "Hola"
 msgstr "Hola"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:24
-#, fuzzy
 #| msgid "Ja pots accedir al "
 msgid "Ja pots accedir al"
 msgstr "Ja pots accedir al"
@@ -220,11 +219,11 @@ msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid ""
-"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
-"com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
+"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs"
+" com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
 msgstr ""
-"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
-"com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
+"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs"
+" com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
 msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
@@ -235,7 +234,6 @@ msgid "pàgina web de l’Assemblea"
 msgstr "pàgina web de l’Assemblea"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
-#, fuzzy
 #| msgid "i al "
 msgid "i al"
 msgstr "i al"

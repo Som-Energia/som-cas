@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-01 08:31+0000\n"
-"PO-Revision-Date: 2020-06-01 08:05+0000\n"
+"PO-Revision-Date: 2020-06-01 08:34+0000\n"
 "Last-Translator: b'  <sistemes@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -51,7 +51,8 @@ msgstr ""
 #: som_cas/forms.py:33
 msgid "The username or password is not correct"
 msgstr ""
-"El usuario o la contraseña no son correctos, o no eres socio/a de Som Energia"
+"El usuario o la contraseña no son correctos, o no eres socio/a de Som "
+"Energia"
 
 #: som_cas/forms.py:38
 msgid "This user account is disabled"
@@ -207,7 +208,6 @@ msgid "Hola"
 msgstr "Hola"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:24
-#, fuzzy
 #| msgid "Ja pots accedir al "
 msgid "Ja pots accedir al"
 msgstr "Ya puedes acceder al"
@@ -222,8 +222,8 @@ msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid ""
-"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
-"com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
+"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs"
+" com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
 msgstr ""
 "Si finalmente no efectúas ninguna votación el día de la Asamblea, "
 "contabilizarás como  <b>voto presente que se ha abstenido en todas las "
@@ -238,7 +238,6 @@ msgid "pàgina web de l’Assemblea"
 msgstr "en la página web de la Asamblea"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
-#, fuzzy
 #| msgid "i al "
 msgid "i al"
 msgstr "y en el"
