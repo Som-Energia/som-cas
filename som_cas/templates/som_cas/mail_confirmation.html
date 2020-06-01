@@ -1,4 +1,5 @@
 {% load i18n %}
+{% language user.locale %}
 
 {% trans "panell de votacions" as vote_panel %}
 {% trans "a la pàgina web de l’Assemblea" as assembly_web %}
@@ -14,11 +15,7 @@
                     <tr>
                         <td align="right" valign="top" style="padding:10px 0 20px 0;">
                             {% get_current_language as LANGUAGE_CODE %}
-                                {% if LANGUAGE_CODE == 'ca' %}
-                                    <img src="https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020.png" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo_asamblea_ca.png">
-                                {% else %}
-                                    <img src="https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020-es.png" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="logo_asamblea_es.png">
-                                {% endif %}
+                            <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020.png {% else %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020-es.png {% endif %} width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
                         </td>
                     </tr>
                     <tr>
@@ -68,3 +65,4 @@
         </table>
 </center>
 </body>
+{% endlanguage %}
