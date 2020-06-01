@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-29 12:07+0000\n"
+"POT-Creation-Date: 2020-06-01 07:33+0000\n"
 "PO-Revision-Date: 2018-04-09 12:07+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,12 +132,10 @@ msgid "No active assembly"
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:24
-msgid "Vote on "
+#, fuzzy
+#| msgid "Vote on "
+msgid "Vote on"
 msgstr "¡VOTA EL DÍA"
-
-#: som_cas/templates/som_cas/login.html:24
-msgid "!"
-msgstr "!"
 
 #: som_cas/templates/som_cas/login.html:25
 msgid "Access the voting panel and participate in the Assembly"
@@ -180,52 +178,69 @@ msgstr "¿Olvidaste tu contraseña?"
 msgid "Login"
 msgstr "Entrar"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:3
+#: som_cas/templates/som_cas/mail_confirmation.html:4
 msgid "panell de votacions"
 msgstr "panel de votaciones"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:4
+#: som_cas/templates/som_cas/mail_confirmation.html:5
 msgid "a la pàgina web de l’Assemblea"
 msgstr "en la página web de la Asamblea"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:5
-#: som_cas/templates/som_cas/mail_confirmation.html:30
+#: som_cas/templates/som_cas/mail_confirmation.html:6
 msgid "Participa"
 msgstr "Participa"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:6
+#: som_cas/templates/som_cas/mail_confirmation.html:7
 msgid "Moltes gràcies per participar!"
 msgstr "¡Muchas gracias para participar!"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:26
-#, python-format
-msgid " Hola, %(user.first_name)s %(user.last_name)s "
-msgstr " Hola, %(user.first_name)s %(user.last_name)s "
+#: som_cas/templates/som_cas/mail_confirmation.html:18
+msgid "logo de la asamblea 2020"
+msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:27
-msgid "Ja pots accedir al"
+#: som_cas/templates/som_cas/mail_confirmation.html:23
+msgid "Hola"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:24
+#, fuzzy
+#| msgid "Ja pots accedir al"
+msgid "Ja pots accedir al "
 msgstr "Ya puedes acceder al"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:28
+#: som_cas/templates/som_cas/mail_confirmation.html:25
 msgid ""
 "Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny "
 "<b>de 10 a 13.55 h</b>, durant l’Assemblea General"
-msgstr "Recuerda que el momento de <b>votar</b> será el <b>sábado día 20</b> de junio "
-"<b>de 10 a 13.55 h</b>, durante la Asamblea General."
+msgstr ""
+"Recuerda que el momento de <b>votar</b> será el <b>sábado día 20</b> de "
+"junio <b>de 10 a 13.55 h</b>, durante la Asamblea General."
 
-#: som_cas/templates/som_cas/mail_confirmation.html:29
+#: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid ""
 "Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
 "com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
-msgstr "Si finalmente no efectúas ninguna votación el día de la Asamblea, contabilizarás "
-"como  <b>voto presente que se ha abstenido en todas las preguntas</b>"
+msgstr ""
+"Si finalmente no efectúas ninguna votación el día de la Asamblea, "
+"contabilizarás como  <b>voto presente que se ha abstenido en todas las "
+"preguntas</b>"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:30
-msgid "Trobaràs tota la informació relativa al dia de l’Assemblea"
+#: som_cas/templates/som_cas/mail_confirmation.html:27
+#, fuzzy
+#| msgid "Trobaràs tota la informació relativa al dia de l’Assemblea"
+msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
 msgstr "Encontrarás toda la información relativa al día de la Asamblea"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:30
-msgid "i al"
+#: som_cas/templates/som_cas/mail_confirmation.html:27
+#, fuzzy
+#| msgid "a la pàgina web de l’Assemblea"
+msgid "pàgina web de l’Assemblea"
+msgstr "en la página web de la Asamblea"
+
+#: som_cas/templates/som_cas/mail_confirmation.html:27
+#, fuzzy
+#| msgid "i al"
+msgid "i al "
 msgstr "y en el"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:37
@@ -239,6 +254,12 @@ msgstr "El equipo de Som Energia"
 #: som_cas/utils.py:36
 msgid "Confirmació d’Inscripció a la Assemblea"
 msgstr "Confirmación de la Inscripción a la Asamblea"
+
+#~ msgid "!"
+#~ msgstr "!"
+
+#~ msgid " Hola, %(user.first_name)s %(user.last_name)s "
+#~ msgstr " Hola, %(user.first_name)s %(user.last_name)s "
 
 #~ msgid "Account Login"
 #~ msgstr "¡Participa!"
