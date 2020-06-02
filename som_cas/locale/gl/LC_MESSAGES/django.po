@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-01 08:31+0000\n"
+"POT-Creation-Date: 2020-06-02 12:43+0000\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,11 +132,12 @@ msgid "No active assembly"
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:24
-msgid "Vote on"
+msgid "ACCESS TO BE ABLE TO VOTE!"
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:25
-msgid "Access the voting panel and participate in the Assembly"
+msgid ""
+"Login with your credentials, you are participating in the General Assembly!"
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:26
@@ -205,7 +206,7 @@ msgid "Hola"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:24
-msgid "Ja pots accedir al"
+msgid "Ja pots votar!"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:25
@@ -216,8 +217,9 @@ msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid ""
-"Si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
-"com a <b>vot present que s’ha abstingut en totes les preguntes</b>"
+"Donat que has accedit al panell de votacions, si finalment no efectues cap "
+"votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que "
+"s’ha abstingut en totes les preguntes</b>."
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
@@ -233,7 +235,7 @@ msgid "i al"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:37
-msgid "Un saludo,"
+msgid "Salut,"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:42
