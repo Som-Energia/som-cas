@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-02 12:43+0000\n"
+"POT-Creation-Date: 2020-06-04 15:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -176,6 +176,7 @@ msgid "Login"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:4
+#: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid "panell de votacions"
 msgstr ""
 
@@ -204,20 +205,17 @@ msgid "Hola"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:24
-msgid "Ja pots votar!"
+msgid "Ja pots votar! :)"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:25
 msgid ""
-"Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny "
-"<b>de 10 a 13.55 h</b>, durant l’Assemblea General"
+"Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de "
+"10 a 13.55 h</b>, durant l’Assemblea General"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
-msgid ""
-"Donat que has accedit al panell de votacions, si finalment no efectues cap "
-"votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que "
-"s’ha abstingut en totes les preguntes</b>."
+msgid "Donat que has accedit al"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
@@ -232,11 +230,11 @@ msgstr ""
 msgid "i al"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:37
+#: som_cas/templates/som_cas/mail_confirmation.html:33
 msgid "Salut,"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:42
+#: som_cas/templates/som_cas/mail_confirmation.html:36
 msgid "L'equip de Som Energia"
 msgstr ""
 

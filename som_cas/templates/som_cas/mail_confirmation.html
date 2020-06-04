@@ -14,37 +14,28 @@
                   <table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:600px; width:100%;">
                     <tr>
                         <td align="right" valign="top" style="padding:10px 0 20px 0;">
-			    {% get_current_language as LANGUAGE_CODE %}
+                          {% get_current_language as LANGUAGE_CODE %}
                             <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020.png {% else %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020-es.png {% endif %}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
-			</td>
+                          </td>
                     </tr>
                     <tr>
                         <td align="left" valign="top" style="padding:10px; color: #333333;">
                             <p>{% trans "Hola"%}  {{user.first_name}}, </p>
-                            <p>{% trans "Ja pots votar!" %} </p>
-							              <p>{% trans "Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny <b>de 10 a 13.55 h</b>, durant l’Assemblea General" %}.</p>
-							              <p>{% trans "Donat que has accedit al panell de votacions, si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>." %}</p>
+                            <p>{% trans "Ja pots votar! :)" %}</p>
+                            <p>{% trans "Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de 10 a 13.55 h</b>, durant l’Assemblea General" %}.</p>
+                            <p>{% trans "Donat que has accedit al" %} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "panell de votacions" %}</a>, si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>." %} {% trans "Aquest fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>."}</p>
                             <p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea a la "%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l’Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa.</a></p>
                         </td>
-                    </tr>
-                    <tr>
                         <td align="left" valign="top" style="padding:10px; color: #333333;">
                             <p>{{ thanks }}</p>
                         </td>
-                    </tr>
-                    <tr>
                         <td align="left" valign="top" style="padding:10px; color: #333333;">
                             <p>{% trans "Salut,"%}</p>
                         </td>
-                    </tr>
-                    <tr>
                         <td align="left" valign="top" style="padding:10px; color: #333333;">
-                            <p>{% trans "L'equip de Som Energia"%}
-                                <br>
-                                <a href="https://www.somenergia.coop/ca" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">www.somenergia.coop</a>
-                                <br>
-                                <a href="mailto:participa@somenergia.coop" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">participa@somenergia.coop</a>
-                                <br>
+                            <p>{% trans "L'equip de Som Energia"%}<br>
+                                <a href="https://www.somenergia.coop/ca" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">www.somenergia.coop</a><br>
+                                <a href="mailto:participa@somenergia.coop" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">participa@somenergia.coop</a><br>
                                 <a href="https://ca.support.somenergia.coop/article/470-com-puc-contactar-amb-la-cooperativa-mail-telefon-etc" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">Contactar amb Som Energia</a>
                             </p>
                         </td>
