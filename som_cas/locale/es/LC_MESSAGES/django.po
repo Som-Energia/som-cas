@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-04 15:14+0000\n"
-"PO-Revision-Date: 2020-06-04 15:28+0000\n"
+"PO-Revision-Date: 2020-06-04 15:57+0000\n"
 "Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
@@ -130,7 +130,7 @@ msgstr "¿Correo de registro enviado?"
 
 #: som_cas/templates/base.html:12
 msgid "Som Energia Authentication System"
-msgstr ""
+msgstr "Som Energia Authentication System"
 
 #: som_cas/templates/som_cas/login.html:20
 msgid "No active assembly"
@@ -167,7 +167,7 @@ msgstr "NIF, CIF o NIE"
 
 #: som_cas/templates/som_cas/login.html:39
 msgid "Password"
-msgstr "Contraseña "
+msgstr "Contraseña"
 
 #: som_cas/templates/som_cas/login.html:40
 msgid "Password is required"
@@ -221,7 +221,7 @@ msgid ""
 "10 a 13.55 h</b>, durant l’Assemblea General"
 msgstr ""
 "Recuerda que el momento de hacerlo será el <b>sábado día 20</b> de junio <b>"
-"de 10 a 13.55 h</b>, durante la Asamblea General."
+"de 10 a 13.55 h</b>, durante la Asamblea General"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid "Donat que has accedit al"
@@ -234,6 +234,11 @@ msgid ""
 "fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja "
 "que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>."
 msgstr ""
+"Si finalmente no efectuas ninguna votación el dia de la Asamblea, "
+"contabilizarás como <b> voto presente que se ha abstenido en todas las "
+"preguntas </b>. Este hecho es relevante para las preguntas que se aprueban "
+"con mayoría reforzada, ya que necesitan ⅔ de votos positivos sobre el <b> "
+"total de votos presentes</b>."
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
 msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
