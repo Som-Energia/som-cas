@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 15:14+0000\n"
+"POT-Creation-Date: 2020-06-04 15:38+0000\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,6 +218,14 @@ msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid "Donat que has accedit al"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:26
+msgid ""
+"si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
+"com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest "
+"fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja "
+"que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>."
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
