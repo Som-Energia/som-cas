@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-02 12:43+0000\n"
-"PO-Revision-Date: 2020-06-01 09:35+0000\n"
-"Last-Translator: b'  <sistemes@somenergia.coop>'\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-06-04 15:14+0000\n"
+"PO-Revision-Date: 2020-06-04 15:56+0000\n"
+"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
+"Language-Team: Catalan <http://traduccio.somenergia.coop/projects/som-cas/"
+"cas/ca/>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.0.4\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
 #: config/settings/base.py:109
@@ -45,7 +46,7 @@ msgstr "Ja estàs resgitrat/da per tal de votar presencialment"
 
 #: som_cas/forms.py:28
 msgid "Internal error while authenticating user"
-msgstr ""
+msgstr "Ha ocorregut un error intern al identificar l'usuari"
 
 #: som_cas/forms.py:33
 msgid "The username or password is not correct"
@@ -54,15 +55,15 @@ msgstr ""
 
 #: som_cas/forms.py:38
 msgid "This user account is disabled"
-msgstr ""
+msgstr "Aquest usuari està desactivat"
 
 #: som_cas/models.py:19
 msgid "In person"
-msgstr ""
+msgstr "En persona"
 
 #: som_cas/models.py:20
 msgid "Virtual"
-msgstr ""
+msgstr "Virtual"
 
 #: som_cas/models.py:85
 msgid "Assembly name"
@@ -86,7 +87,7 @@ msgstr ""
 
 #: som_cas/models.py:117
 msgid "Assembly"
-msgstr ""
+msgstr "Assemblea"
 
 #: som_cas/models.py:118
 msgid "Assembly for this registration"
@@ -118,7 +119,7 @@ msgstr ""
 
 #: som_cas/models.py:143
 msgid "Sent registration email"
-msgstr ""
+msgstr "S'ha enviat el correu de registre?"
 
 #: som_cas/models.py:144
 msgid "Check if registration email was sent to the member"
@@ -130,7 +131,7 @@ msgstr "Som Energia Authentication System"
 
 #: som_cas/templates/som_cas/login.html:20
 msgid "No active assembly"
-msgstr "Ni hi ha cap assemblea activa"
+msgstr "No hi ha cap assemblea activa."
 
 #: som_cas/templates/som_cas/login.html:24
 msgid "ACCESS TO BE ABLE TO VOTE!"
@@ -139,7 +140,8 @@ msgstr "ACCEDEIX PER PODER VOTAR!"
 #: som_cas/templates/som_cas/login.html:25
 msgid ""
 "Login with your credentials, you are participating in the General Assembly!"
-msgstr "En entrar amb les teves dades, estaràs participant de l’Assemblea General!"
+msgstr ""
+"En entrar amb les teves dades, estaràs participant de l’Assemblea General!"
 
 #: som_cas/templates/som_cas/login.html:26
 msgid "(Use the same credentials as in Participa)"
@@ -179,6 +181,7 @@ msgid "Login"
 msgstr "Entrar"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:4
+#: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid "panell de votacions"
 msgstr "panell de votacions"
 
@@ -207,26 +210,32 @@ msgid "Hola"
 msgstr "Hola"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:24
-msgid "Ja pots votar!"
-msgstr "Ja pots votar!"
+msgid "Ja pots votar! :)"
+msgstr "Ja pots votar! :)"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:25
 msgid ""
-"Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny "
-"<b>de 10 a 13.55 h</b>, durant l’Assemblea General"
+"Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de "
+"10 a 13.55 h</b>, durant l’Assemblea General"
 msgstr ""
-"Recorda que el moment de <b>votar</b> serà <b>dissabte dia 20</b> de juny "
-"<b>de 10 a 13.55 h</b>, durant l’Assemblea General"
+"Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de "
+"10 a 13.55 h</b>, durant l’Assemblea General"
+
+#: som_cas/templates/som_cas/mail_confirmation.html:26
+msgid "Donat que has accedit al"
+msgstr "Donat que has accedit al"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid ""
-"Donat que has accedit al panell de votacions, si finalment no efectues cap "
-"votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que "
-"s’ha abstingut en totes les preguntes</b>."
+"si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
+"com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest "
+"fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja "
+"que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>."
 msgstr ""
-"Donat que has accedit al panell de votacions, si finalment no efectues cap "
-"votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que "
-"s’ha abstingut en totes les preguntes</b>."
+"si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
+"com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest "
+"fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja "
+"que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>."
 
 #: som_cas/templates/som_cas/mail_confirmation.html:27
 msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
@@ -240,17 +249,26 @@ msgstr "pàgina web de l’Assemblea"
 msgid "i al"
 msgstr "i al"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:37
+#: som_cas/templates/som_cas/mail_confirmation.html:33
 msgid "Salut,"
 msgstr "Salut,"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:42
+#: som_cas/templates/som_cas/mail_confirmation.html:36
 msgid "L'equip de Som Energia"
 msgstr "L'equip de Som Energia"
 
 #: som_cas/utils.py:36
 msgid "Confirmació d’Inscripció a la Assemblea"
-msgstr "Confirmació d’Inscripció a la Assemblea"
+msgstr "Confirmació d’inscripció a l’Assemblea General"
+
+#~ msgid ""
+#~ "Donat que has accedit al panell de votacions, si finalment no efectues "
+#~ "cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present "
+#~ "que s’ha abstingut en totes les preguntes</b>."
+#~ msgstr ""
+#~ "Donat que has accedit al panell de votacions, si finalment no efectues "
+#~ "cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present "
+#~ "que s’ha abstingut en totes les preguntes</b>."
 
 #~ msgid "Vote on"
 #~ msgstr "Vota el "
