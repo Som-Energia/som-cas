@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 15:14+0000\n"
-"PO-Revision-Date: 2020-06-04 15:57+0000\n"
-"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
+"POT-Creation-Date: 2020-06-04 16:19+0000\n"
+"PO-Revision-Date: 2020-06-04 16:22+0000\n"
+"Last-Translator: Joana Figueira <joana.figueira@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
 "Language: es\n"
@@ -142,43 +142,42 @@ msgstr "¡ACCEDE PARA PODER VOTAR!"
 
 #: som_cas/templates/som_cas/login.html:25
 msgid ""
-"Login with your credentials, you are participating in the General Assembly!"
-msgstr "¡Al entrar con tus datos, estarás participando de la Asamblea General!"
+"En entrar amb les teves dades (les mateixes que per a l’Oficina Virtual), "
+"estaràs participant de l’Assemblea General!"
+msgstr ""
+"¡Al entrar con tus datos (los mismos que para la Oficina Virtual), estarás "
+"participando de la Asamblea General!"
 
-#: som_cas/templates/som_cas/login.html:26
-msgid "(Use the same credentials as in Participa)"
-msgstr "(Son los mismos datos de acceso que en el Participa)"
-
-#: som_cas/templates/som_cas/login.html:28
+#: som_cas/templates/som_cas/login.html:27
 msgid "Engage!"
 msgstr "Participa"
 
-#: som_cas/templates/som_cas/login.html:33
+#: som_cas/templates/som_cas/login.html:32
 msgid "Username"
 msgstr "Documento de identidad"
 
-#: som_cas/templates/som_cas/login.html:34
+#: som_cas/templates/som_cas/login.html:33
 msgid "Username is required"
 msgstr "Es necesario el DNI, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:35
+#: som_cas/templates/som_cas/login.html:34
 msgid "NIF, CIF o NIE"
 msgstr "NIF, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:39
+#: som_cas/templates/som_cas/login.html:38
 msgid "Password"
 msgstr "Contraseña"
 
-#: som_cas/templates/som_cas/login.html:40
+#: som_cas/templates/som_cas/login.html:39
 msgid "Password is required"
 msgstr "Es necesaria la contraseña"
 
-#: som_cas/templates/som_cas/login.html:59
-#: som_cas/templates/som_cas/login.html:61
+#: som_cas/templates/som_cas/login.html:58
+#: som_cas/templates/som_cas/login.html:60
 msgid "Forgot Password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: som_cas/templates/som_cas/login.html:67
+#: som_cas/templates/som_cas/login.html:66
 msgid "Login"
 msgstr "Entrar"
 
@@ -220,8 +219,8 @@ msgid ""
 "Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de "
 "10 a 13.55 h</b>, durant l’Assemblea General"
 msgstr ""
-"Recuerda que el momento de hacerlo será el <b>sábado día 20</b> de junio <b>"
-"de 10 a 13.55 h</b>, durante la Asamblea General"
+"Recuerda que el momento de hacerlo será el <b>sábado día 20</b> de junio "
+"<b>de 10 a 13.55 h</b>, durante la Asamblea General"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid "Donat que has accedit al"
@@ -263,6 +262,15 @@ msgstr "El equipo de Som Energia"
 #: som_cas/utils.py:36
 msgid "Confirmació d’Inscripció a la Assemblea"
 msgstr "Confirmación de inscripción a la Asamblea General"
+
+#~ msgid ""
+#~ "Login with your credentials, you are participating in the General "
+#~ "Assembly!"
+#~ msgstr ""
+#~ "¡Al entrar con tus datos, estarás participando de la Asamblea General!"
+
+#~ msgid "(Use the same credentials as in Participa)"
+#~ msgstr "(Son los mismos datos de acceso que en el Participa)"
 
 #~ msgid ""
 #~ "Donat que has accedit al panell de votacions, si finalment no efectues "

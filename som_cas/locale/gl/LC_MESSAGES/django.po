@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-04 15:38+0000\n"
+"POT-Creation-Date: 2020-06-04 16:19+0000\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,43 +137,40 @@ msgstr ""
 
 #: som_cas/templates/som_cas/login.html:25
 msgid ""
-"Login with your credentials, you are participating in the General Assembly!"
+"En entrar amb les teves dades (les mateixes que per a l’Oficina Virtual), "
+"estaràs participant de l’Assemblea General!"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:26
-msgid "(Use the same credentials as in Participa)"
-msgstr ""
-
-#: som_cas/templates/som_cas/login.html:28
+#: som_cas/templates/som_cas/login.html:27
 msgid "Engage!"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:33
+#: som_cas/templates/som_cas/login.html:32
 msgid "Username"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:34
+#: som_cas/templates/som_cas/login.html:33
 msgid "Username is required"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:35
+#: som_cas/templates/som_cas/login.html:34
 msgid "NIF, CIF o NIE"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:39
+#: som_cas/templates/som_cas/login.html:38
 msgid "Password"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:40
+#: som_cas/templates/som_cas/login.html:39
 msgid "Password is required"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:59
-#: som_cas/templates/som_cas/login.html:61
+#: som_cas/templates/som_cas/login.html:58
+#: som_cas/templates/som_cas/login.html:60
 msgid "Forgot Password?"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:67
+#: som_cas/templates/som_cas/login.html:66
 msgid "Login"
 msgstr ""
 
