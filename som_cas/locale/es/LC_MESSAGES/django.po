@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-04 15:14+0000\n"
 "PO-Revision-Date: 2020-06-04 15:24+0000\n"
-"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
+"Last-Translator: Joana Figueira <joana.figueira@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
 "Language: es\n"
@@ -257,7 +257,7 @@ msgstr "El equipo de Som Energia"
 
 #: som_cas/utils.py:36
 msgid "Confirmació d’Inscripció a la Assemblea"
-msgstr "Confirmación de la Inscripción a la Asamblea"
+msgstr "Confirmación de inscripción a la Asamblea General"
 
 #~ msgid ""
 #~ "Donat que has accedit al panell de votacions, si finalment no efectues "
