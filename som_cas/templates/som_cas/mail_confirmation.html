@@ -11,14 +11,14 @@
 <body style="margin:0; padding:1rem; background-color:#F2F2F2; color: #333333; font-family: Arial,Helvetica,sans-serif;">
         <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:640px; width:100%;" bgcolor="#FFFFFF">
             <tr>
-                <td align="left" valign="top" style="padding:10px;">
+                <td align="justify" valign="top" style="padding:10px;">
                   <table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:600px; width:100%;">
                     <tr>
                         <td align="right" valign="top" style="padding:10px 0 20px 0;">
                             <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020.png {% else %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020-es.png {% endif %}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
                         </td>
                     </tr>
-                    <tr align="left" valign="top" style="padding:10px; color: #333333;">
+                    <tr align="justify" valign="top" style="padding:10px; color: #333333;">
                       <td>
                         <p>{% trans "Hola"%}  {{user.first_name}}, </p>
                         <p>{% trans "Ja pots votar! :)" %}</p>
@@ -27,7 +27,7 @@
                         <p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea a la "%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l’Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa</a>.</p>
                       </td>
                     </tr>
-                    <tr align="left" valign="top" style="padding:10px; color: #333333;">
+                    <tr align="justify" valign="top" style="padding:10px; color: #333333;">
                       <td>
                         <p><br>{{ thanks }}</p>
                       </td>
@@ -42,7 +42,7 @@
                         </p>
                       </td>
                     </tr>
-                    <tr align="left" style="padding:10px; color: #333333; font-size: 12px; margin-top: 2rem;">
+                    <tr align="justify" style="padding:10px; color: #333333; font-size: 12px; margin-top: 2rem;">
                       <td>
                         <br>
                         <p><i>[CA] <u>Informació bàsica de protecció de dades.</u> Responsable: <strong>SOM ENERGIA SCCL.</strong> (CIF F55091367). T'informem que les teves dades identificatives i les contingudes en els correus electrònics i fitxers adjunts poden ser incorporades a les nostres bases de dades amb la finalitat de mantenir relacions professionals i/o comercials i, que seran conservades mentre es mantingui la relació. Si ho desitges, pots exercir el teu dret a accedir, rectificar i suprimir les teves dades i d’altres reconeguts normativament dirigint-te al correu emissor o a <a href="mailto:somenergia@delegado-datos.com" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">somenergia@delegado-datos.com</a>. Aquest missatge i qualsevol document que porti adjunt, si s’escau, pot ser confidencial i destinat únicament a la persona, entitat o empresa a qui ha estat enviat.</i></p>
