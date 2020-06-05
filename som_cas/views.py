@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from mama_cas.views import LoginView
 
-# Create your views here.
+from .forms import SomCasLoginForm
+
+
+class SomCasLoginView(LoginView):
+
+    form_class = SomCasLoginForm

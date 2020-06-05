@@ -1,5 +1,9 @@
 # General configuration parameters
 
+# Allowed hosts
+allowed_hosts:
+  - localhost
+
 # Super secret key.
 secret_key: 'kjs%45&dshf78sdf@(kg\jbnkl23#+'
 
@@ -23,16 +27,18 @@ databases:
 # Allowed services definitions
 ## For more options and information see: https://django-mama-cas.readthedocs.io/en/latest/settings.html
 mama_cas_services:
-  - service: r'^http[s]?://blacklight\.somenergia\.coop:6789[/]?.*'
-    callbacks:
+  - SERVICE: '^http[s]?://blacklight\.somenergia\.coop:6789[/]?.*'
+    CALLBACKS:
       - 'som_cas.callbacks.participa'
-    logout_allow: true
-    logout_url: 'http://blacklight.somenergia.coop:6789/'
-  - service: r'^http[s]?://8hours\.somenergia\.local:9876[/]?.*'
-    callbacks:
+    LOGOUT_ALLOW: true
+    LOGOUT_URL: 'http://blacklight.somenergia.coop:6789/'
+  - SERVICE: '^http[s]?://8hours\.somenergia\.local:9876[/]?.*'
+    CALLBACKS:
       - 'som_cas.callbacks.participa'
-    logout_allow: true
-    logout_url: 'http://8hours.somenergia.local:9876/logout'
+    LOGOUT_ALLOW: true
+    LOGOUT_URL: 'http://8hours.somenergia.local:9876/logout'
+
+custom_registration_services: '8hours'
 
 # Logger definitions
 logging:
@@ -43,3 +49,10 @@ logging:
 
 # Members upload dir
 upload_dir: registered_members
+
+# Email notifications
+sendgrid_api_key: 'key'
+
+email:
+  default_from: 'example@email.com'
+  bcc: 'example@email.com'

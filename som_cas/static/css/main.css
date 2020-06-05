@@ -167,13 +167,21 @@ iframe {
   color: #555555;
   line-height: 1.2;
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
 
   width: 100%;
   display: block;
 }
 
+.login100-form-title-text {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
 
+.form-title-img {
+  margin: 0 auto;
+}
 
 /*------------------------------------------------------------------
 [ Input ]*/

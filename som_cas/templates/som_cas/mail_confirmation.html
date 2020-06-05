@@ -1,0 +1,54 @@
+{% load i18n %}
+{% language user.locale %}
+
+{% trans "panell de votacions" as vote_panel %}
+{% trans "a la pàgina web de l’Assemblea" as assembly_web %}
+{% trans "Participa" as participa %}
+{% trans "Moltes gràcies per participar!" as thanks %}
+{% trans "https://assemblea.somenergia.coop" as assembly_link %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<body style="margin:0; padding:1rem; background-color:#F2F2F2; color: #333333; font-family: Arial,Helvetica,sans-serif;">
+  <center>
+        <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:640px; width:100%;" bgcolor="#FFFFFF">
+            <tr>
+                <td align="center" valign="top" style="padding:10px;">
+                  <table width="600" cellspacing="0" cellpadding="0" border="0" align="center" style="max-width:600px; width:100%;">
+                    <tr>
+                        <td align="right" valign="top" style="padding:10px 0 20px 0;">
+                            <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020.png {% else %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020-es.png {% endif %}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
+                          </td>
+                    </tr>
+                    <tr align="left" valign="top" style="padding:10px; color: #333333;">
+                      <p>{% trans "Hola"%}  {{user.first_name}}, </p>
+                      <p>{% trans "Ja pots votar! :)" %}</p>
+                      <p>{% trans "Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de 10 a 13.55 h</b>, durant l’Assemblea General" %}.</p>
+                      <p>{% trans "Donat que has accedit al" %} <a href="https://agvirtual.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "panell de votacions" %}</a>, {% trans "si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>" %}.</p>
+                      <p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea a la "%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l’Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa</a>.</p>
+                    </tr>
+                    <tr align="left" valign="top" style="padding:10px; color: #333333;">
+                            <p>{{ thanks }}</p>
+                    </tr>
+                    <tr align="left" valign="top" style="padding:10px; color: #333333;">
+                      <p>{% trans "Salut,"%}</p>
+                      <p>
+                        {% trans "L'equip de Som Energia"%}<br>
+                        <a href="https://www.somenergia.coop/ca" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">www.somenergia.coop</a><br>
+                        <a href="mailto:participa@somenergia.coop" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">participa@somenergia.coop</a><br>
+                      </p>
+                    </tr>
+                    <tr align="left" valign="top" style="padding:10px; color: #333333; font-size: 12px;">
+                      <p>[CA] Informació Bàsica de Protecció de Dades. Responsable:<br><strong>SOM ENERGIA SCCL</strong>. Finalitat: prestar-te els serveis que ens has sollicitat, atendre les teves sollicituds d'informació i enviar-te comunicacions comercials. Legitimació: Execució d'un contracte, Interès legítim del responsable o Consentiment de l'Interessat/interessada. Cessions: No es cediran les teves dades a tercers llevat obligació legal.<br>
+                      Drets: Tens dret a accedir, rectificar i suprimir les dades, així com altres drets, indicats a la informació addicional, que pots exercir a l'adreça del responsable. Informació addicional: Pots consultar informació addicional i detallada sobre Protecció de Dades <a href="https://www.somenergia.coop/ca/avis-legal/#politica-privacitat" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">aquí</a>.<br>
+                      Aquest missatge i els seus arxius adjunts van dirigits exclusivament al seu destinatari, podent contenir informació confidencial sotmesa a secret professional. No està permesa la seva reproducció o distribució sense la nostra autorització expressa. Si tu no ets la destinatària final si us plau elimina'l i informa'ns per aquesta via.</p>
+                      <p>[ES] Información Básica de Protección de Datos. Responsable:<br><strong>SOM ENERGIA SCCL.</strong> Finalidad: prestarte los servicios que nos has solicitado, atender tus solicitudes de información y enviarte comunicaciones comerciales. Legitimación: Ejecución de contrato, Interés legítimo del responsable o Consentimiento del Interesado/a. Cesiones: No se cederán tus datos a terceros salvo obligación legal.<br>
+                      Derechos: Tienes derecho a acceder, rectificar y suprimir los datos, así como otros derechos, indicados en la información adicional, que puedes ejercer en la dirección del responsable. Información adicional: Puedes consultar información adicional y detallada sobre Protección de Datos <a href="https://www.somenergia.coop/es/aviso-legal/#politica-privacidad" style="color:#707a1a; text-decoration:underline;" target="_blank" rel="noopener noreferrer">aquí</a>.<br>
+                      Este mensaje y sus archivos adjuntos van dirigidos exclusivamente a su destinatario, pudiendo contener información confidencial sometida a secreto profesional. No está permitida su reproducción o distribución sin nuestra autorización expresa. Si tú no eres la destinataria final por favor elimínalo e informa por esta vía.</p>
+                    </tr>
+                  </table>
+                </td>
+            </tr>
+        </table>
+</center>
+</body>
+{% endlanguage %}

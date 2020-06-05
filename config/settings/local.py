@@ -39,7 +39,7 @@ MAMA_CAS_LOGIN_TEMPLATE = 'som_cas/login.html'
 
 MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
-CUSTOM_REGISTRATION_SERVICES = '8hours'
+CUSTOM_REGISTRATION_SERVICES = config.get('custom_registration_services', '')
 
 UPLOAD_DIR = 'registered_members'
 

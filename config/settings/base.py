@@ -50,7 +50,8 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
 	'mama_cas',
-	'rosetta'
+	'rosetta',
+	'anymail'
 ]
 
 LOCAL_APPS = [
@@ -84,6 +85,7 @@ TEMPLATES = [
 				'django.template.context_processors.request',
 				'django.contrib.auth.context_processors.auth',
 				'django.contrib.messages.context_processors.messages',
+				'som_cas.utils.assembly_context_processors'
 			],
 		},
 	},
@@ -135,3 +137,16 @@ STATIC_ROOT = os.path.join(str(BASE_DIR), 'som_cas/static')
 ROSETTA_ENABLE_REFLANG = True
 ROSETTA_SHOW_AT_ADMIN_PANEL = True
 ROSETTA_LOGIN_URL = '/admin'
+
+# Mail conf
+ANYMAIL = {
+    'SENDGRID_API_KEY': config['sendgrid_api_key'],
+    'EMAIL_HOST': 'smtp.sendgrid.net',
+    'EMAIL_HOST_USER': 'apikey',
+    'EMAIL_HOST_PASSWORD': config['sendgrid_api_key'],
+    'EMAIL_PORT': 587,
+    'EMAIL_USE_TLS': True,
+}
+EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
+DEFAULT_FROM_EMAIL = [config['email']['default_from']]
+BCC = [config['email']['bcc']]

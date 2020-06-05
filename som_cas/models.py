@@ -1,7 +1,13 @@
+import logging
+
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext as _
+
+from .utils import send_confirmation_email
+
+logger = logging.getLogger('models')
 
 
 class RegistrationChoices:
@@ -48,7 +54,7 @@ class SomUser(AbstractUser):
         assembly = (Assembly.objects.filter(active=True) or [None])[0]
         if not assembly: return None
 
-        registration, _ = AgRegistration.objects.get_or_create(
+        registration, created = AgRegistration.objects.get_or_create(
             member=self,
             assembly=assembly,
             defaults=dict(
@@ -57,6 +63,15 @@ class SomUser(AbstractUser):
         )
         if registration.registration_type == RegistrationChoices.INPERSON:
             return None
+
+        if created:
+            try:
+                send_confirmation_email(self, 'som_cas/mail_confirmation.html')
+                registration.registration_email_sent = True
+                registration.save()
+            except Exception as e:
+                msg = "Confirmation email not sent due to '%s':"
+                logger.error(msg, e)
         return registration
 
 
@@ -121,6 +136,12 @@ class AgRegistration(models.Model):
         choices=RegistrationChoices.choices,
         verbose_name=_('Registration type'),
         help_text=_('Type of registration: if virtual or in person')
+    )
+
+    registration_email_sent = models.BooleanField(
+        default=False,
+        verbose_name=_('Sent registration email'),
+        help_text=_('Check if registration email was sent to the member')
     )
 
     def __repr__(self):
