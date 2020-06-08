@@ -51,11 +51,12 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
 	'mama_cas',
 	'rosetta',
-	'anymail'
+	'anymail',
+	'import_export',
 ]
 
 LOCAL_APPS = [
-	'som_cas'
+	'som_cas',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

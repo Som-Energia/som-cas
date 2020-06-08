@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.utils.translation import gettext as _
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 
 from .models import SomUser, AgRegistration, Assembly
 
@@ -31,6 +34,36 @@ class AssemblyAdmin(admin.ModelAdmin):
     inlines = (MemberInline, )
 
 
+class AgRegistrationResource(resources.ModelResource):
+
+    registration_date = resources.Field(
+        attribute='date',
+        column_name=_('Registration date')
+    )
+
+    member_fullname = resources.Field(
+        attribute='member__full_name',
+        column_name=_('Member name')
+    )
+
+    member_number = resources.Field(
+        attribute='member__www_soci',
+        column_name=_('Membership number')
+    )
+
+    member_vat = resources.Field(
+        attribute='member__username',
+        column_name=_('DNI/NIF/NIE')
+    )
+
+    class Meta:
+        model = AgRegistration
+        fields = (
+            'member_name', 'member_number', 'member_vat', 'registration_date',
+        )
+        import_id_fields = ('registration_date',)
+
+
 @admin.register(AgRegistration)
-class AgRegistrationAdmin(admin.ModelAdmin):
-    pass
+class AgRegistrationAdmin(ImportExportModelAdmin):
+    resource_class = AgRegistrationResource
