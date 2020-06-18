@@ -51,7 +51,8 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
 	'mama_cas',
 	'rosetta',
-	'anymail'
+	'anymail',
+    'django_rq',
 ]
 
 LOCAL_APPS = [
