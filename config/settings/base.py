@@ -53,6 +53,7 @@ THIRD_PARTY_APPS = [
 	'rosetta',
 	'anymail',
 	'import_export',
+        'django_rq',
 ]
 
 LOCAL_APPS = [

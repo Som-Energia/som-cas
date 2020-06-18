@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _, override
+from django_rq import job
 
 
 def get_user(request):
@@ -21,6 +22,7 @@ def get_user(request):
     return user
 
 
+@job('email_queue')
 def send_confirmation_email(user, email_template):
     from som_cas.models import AgRegistration
 

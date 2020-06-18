@@ -25,6 +25,8 @@ DATABASES = {
     }
 }
 
+RQ_QUEUES = config['queues']
+
 TEMPLATES[0]['OPTIONS']['context_processors'].append(
     'django.template.context_processors.debug'
 )
