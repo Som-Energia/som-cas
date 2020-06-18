@@ -39,6 +39,8 @@ DATABASES = {
     }
 }
 
+RQ_QUEUES = config['queues']
+
 MAMA_CAS_SERVICES = config.get('mama_cas_services', [])
 
 MAMA_CAS_SERVICE_BACKENDS = [

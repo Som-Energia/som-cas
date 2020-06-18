@@ -24,6 +24,18 @@ databases:
     host: 'host'
     port: '54321'
 
+# Queues definition
+queues:
+  defualt:
+    UNIX_SOCKET_PATH: 'path/to/redis.sock'
+    DB: 0
+  high:
+    HOST: localhost
+    PORT: 6379
+    DB: 0
+    PASSWORD: 'some-password'
+    DEFAULT_TIMEOUT: 360
+
 # Allowed services definitions
 ## For more options and information see: https://django-mama-cas.readthedocs.io/en/latest/settings.html
 mama_cas_services:
