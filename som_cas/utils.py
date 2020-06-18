@@ -1,12 +1,15 @@
-from config.settings.base import BCC
+import logging
 
 from django.conf import settings
 from django.contrib import auth
 from django.core.mail import EmailMessage
+from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _, override
 from django_rq import job
 
+
+logger = logging.getLogger('rq.worker')
 
 def get_user(request):
     user = auth.get_user(request)
@@ -26,23 +29,28 @@ def get_user(request):
 def send_confirmation_email(user, email_template):
     from som_cas.models import AgRegistration
 
-    user_registration = AgRegistration.objects.filter(
-        member=user,
-        assembly__active=True,
-        registration_email_sent=False
-    )
-    if user_registration:
+    try:
+        user_registration = AgRegistration.objects.get(
+            member=user,
+            assembly__active=True,
+            registration_email_sent=False
+        )
+    except ObjectDoesNotExist:
+        logger.info(f"Confirmation email has been sent already to {user}")
+    else:
         with override(user.lang):
-            if user:
-                msg = EmailMessage(
-                    _('Confirmació d’Inscripció a la Assemblea'),
-                    render_to_string(email_template, {'user': user}),
-                    '',
-                    [user.email],
-                    BCC,
-                )
-                msg.content_subtype = "html"
-                msg.send()
+            msg = EmailMessage(
+                _('Confirmació d’Inscripció a la Assemblea'),
+                render_to_string(email_template, {'user': user}),
+                '',
+                [user.email],
+                settings.BCC,
+            )
+            msg.content_subtype = "html"
+            msg.send()
+
+        user_registration.registration_email_sent = True
+        user_registration.save()
 
 
 def getActiveAssembly():
