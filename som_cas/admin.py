@@ -56,10 +56,16 @@ class AgRegistrationResource(resources.ModelResource):
         column_name=_('DNI/NIF/NIE')
     )
 
+    member_email = resources.Field(
+        attribute='member__email',
+        column_name=_('email')
+    )
+
     class Meta:
         model = AgRegistration
         fields = (
             'member_name', 'member_number', 'member_vat', 'registration_date',
+            'member_email'
         )
         import_id_fields = ('registration_date',)
 
