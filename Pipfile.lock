@@ -50,10 +50,10 @@
         },
         "django": {
             "hashes": [
-                "sha256:84f370f6acedbe1f3c41e1a02de44ac206efda3355e427139ecb785b5f596d80",
-                "sha256:e8fe3c2b2212dce6126becab7a693157f1a441a07b62ec994c046c76af5bb66d"
+                "sha256:edf0ecf6657713b0435b6757e6069466925cae70d634a3283c96b80c01e06191",
+                "sha256:f2250bd35d0f6c23e930c544629934144e5dd39a4c06092e1050c731c1712ba8"
             ],
-            "version": "==2.2.13"
+            "version": "==2.2.14"
         },
         "django-anymail": {
             "hashes": [
@@ -137,7 +137,8 @@
         },
         "openpyxl": {
             "hashes": [
-                "sha256:6e62f058d19b09b95d20ebfbfb04857ad08d0833190516c1660675f699c6186f"
+                "sha256:6e62f058d19b09b95d20ebfbfb04857ad08d0833190516c1660675f699c6186f",
+                "sha256:d88dd1480668019684c66cfff3e52a5de4ed41e9df5dd52e008cbf27af0dbf87"
             ],
             "version": "==3.0.4"
         },
@@ -395,10 +396,10 @@
         },
         "python-language-server": {
             "hashes": [
-                "sha256:36ffde2c514d418c1227ba1c8034f362339fa38128fe819e838c9bd95ac69f05",
-                "sha256:891669fffe6a6f2a74a2c6bf534bce9d425eab1c4120686ee6a5eba0e2561e91"
+                "sha256:0353b75b293d1f098a1d676a29d1a7dbb765aa11f250cfb4915e5a9ca2c2cc37",
+                "sha256:effc492a6e1c88ea5ca027ab272b39daf5699227348ea9e30afd4b62dbbaf575"
             ],
-            "version": "==0.33.3"
+            "version": "==0.34.0"
         },
         "six": {
             "hashes": [
