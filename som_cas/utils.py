@@ -57,6 +57,7 @@ def getActiveAssembly():
     from som_cas.models import Assembly
     return (Assembly.objects.filter(active=True) or [None])[0]
 
+
 def assembly_context_processors(request):
 
 	if 	settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
@@ -69,4 +70,8 @@ def assembly_context_processors(request):
 			'isAssembly': False
 		}
 
+
+def is_company(vat):
+    if vat:
+        return vat[0] not in '0123456789KLMXYZ'
 # vim: noet ts=4 sw=4

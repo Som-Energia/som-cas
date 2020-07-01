@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext as _
 
-from .utils import send_confirmation_email
+from .utils import send_confirmation_email, is_company
 
 logger = logging.getLogger('models')
 
@@ -71,6 +71,14 @@ class SomUser(AbstractUser):
                 msg = "Confirmation email not sent due to '%s':"
                 logger.error(msg, e)
         return registration
+
+    def full_name(self):
+        if not is_company(self.username):
+            return f'{self.first_name} {self.last_name}'
+        else:
+            if not self.last_name:
+                return f'{self.first_name}'
+            return f'{self.last_name} {self.first_name}'
 
 
 class Assembly(models.Model):

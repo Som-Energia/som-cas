@@ -52,11 +52,12 @@ THIRD_PARTY_APPS = [
 	'mama_cas',
 	'rosetta',
 	'anymail',
-    'django_rq',
+	'import_export',
+        'django_rq',
 ]
 
 LOCAL_APPS = [
-	'som_cas'
+	'som_cas',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
