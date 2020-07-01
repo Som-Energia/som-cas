@@ -7,7 +7,12 @@ from .models import SomUser, AgRegistration, Assembly
 
 
 class MemberInline(admin.TabularInline):
-    model = Assembly.registered.through
+    model = AgRegistration
+    fields = ('member', 'registration_email_sent', 'registration_type', )
+    raw_id_fields = ('member',)
+    readonly_fields = ('member',)
+    show_change_link = True
+    can_delete = False
     extra = 0
 
 
@@ -58,7 +63,7 @@ class AgRegistrationResource(resources.ModelResource):
 
     member_email = resources.Field(
         attribute='member__email',
-        column_name=_('email')
+        column_name=_('Email')
     )
 
     class Meta:
