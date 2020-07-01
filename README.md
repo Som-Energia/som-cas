@@ -52,6 +52,10 @@ user@host:som-cas> pipenv run ./manage runserver
 And that's it. Now you can start to develop in a new branch. Please, when you are finished, make a pull request and asign one of us. We will check the pull request and if is every thing is ok, we will acept it :D
 
 ## Changes
+### 0.3.4
+* Download census
+* Improved translations 
+
 ### 0.3.3
 * fixed concurrency problems when updating registration_email_sent attribute
 
