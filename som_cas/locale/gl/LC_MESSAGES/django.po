@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-08 10:06+0000\n"
+"POT-Creation-Date: 2020-07-01 09:41+0000\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,40 +19,44 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
-#: config/settings/base.py:110
+#: config/settings/base.py:111
 msgid "Catalan"
 msgstr ""
 
-#: config/settings/base.py:111
+#: config/settings/base.py:112
 msgid "English"
 msgstr ""
 
-#: config/settings/base.py:112
+#: config/settings/base.py:113
 msgid "Spanish"
 msgstr ""
 
-#: config/settings/base.py:113
+#: config/settings/base.py:114
 msgid "Basque"
 msgstr ""
 
-#: config/settings/base.py:114
+#: config/settings/base.py:115
 msgid "Galician"
 msgstr ""
 
-#: som_cas/admin.py:41 som_cas/models.py:138
+#: som_cas/admin.py:46 som_cas/models.py:136
 msgid "Registration date"
 msgstr ""
 
-#: som_cas/admin.py:46
+#: som_cas/admin.py:51
 msgid "Member name"
 msgstr ""
 
-#: som_cas/admin.py:51
+#: som_cas/admin.py:56
 msgid "Membership number"
 msgstr ""
 
-#: som_cas/admin.py:56
+#: som_cas/admin.py:61
 msgid "DNI/NIF/NIE"
+msgstr ""
+
+#: som_cas/admin.py:66
+msgid "Email"
 msgstr ""
 
 #: som_cas/forms.py:24
@@ -79,59 +83,59 @@ msgstr ""
 msgid "Virtual"
 msgstr ""
 
-#: som_cas/models.py:93
+#: som_cas/models.py:91
 msgid "Assembly name"
 msgstr ""
 
-#: som_cas/models.py:94
+#: som_cas/models.py:92
 msgid "Name of the assembly, eg: Asamblea 2020"
 msgstr ""
 
-#: som_cas/models.py:104
+#: som_cas/models.py:102
 msgid "Start time"
 msgstr ""
 
-#: som_cas/models.py:105
+#: som_cas/models.py:103
 msgid "Date when this occurrence end"
 msgstr ""
 
-#: som_cas/models.py:110
+#: som_cas/models.py:108
 msgid "Assembley state"
 msgstr ""
 
-#: som_cas/models.py:125
+#: som_cas/models.py:123
 msgid "Assembly"
 msgstr ""
 
-#: som_cas/models.py:126
+#: som_cas/models.py:124
 msgid "Assembly for this registration"
 msgstr ""
 
-#: som_cas/models.py:132
+#: som_cas/models.py:130
 msgid "Member"
 msgstr ""
 
-#: som_cas/models.py:133
+#: som_cas/models.py:131
 msgid "Member for this registration"
 msgstr ""
 
-#: som_cas/models.py:139
+#: som_cas/models.py:137
 msgid "Member registration date"
 msgstr ""
 
-#: som_cas/models.py:145
+#: som_cas/models.py:143
 msgid "Registration type"
 msgstr ""
 
-#: som_cas/models.py:146
+#: som_cas/models.py:144
 msgid "Type of registration: if virtual or in person"
 msgstr ""
 
-#: som_cas/models.py:151
+#: som_cas/models.py:149
 msgid "Sent registration email"
 msgstr ""
 
-#: som_cas/models.py:152
+#: som_cas/models.py:150
 msgid "Check if registration email was sent to the member"
 msgstr ""
 
@@ -257,6 +261,6 @@ msgstr ""
 msgid "L'equip de Som Energia"
 msgstr ""
 
-#: som_cas/utils.py:36
+#: som_cas/utils.py:43
 msgid "Confirmació d’Inscripció a la Assemblea"
 msgstr ""
