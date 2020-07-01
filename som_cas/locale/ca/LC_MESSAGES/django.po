@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-01 09:41+0000\n"
-"PO-Revision-Date: 2020-06-04 17:15+0000\n"
-"Last-Translator: b'  <joana.figueira@somenergia.coop>'\n"
+"PO-Revision-Date: 2020-07-01 09:48+0000\n"
+"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Catalan <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/ca/>\n"
 "Language: ca\n"
@@ -45,8 +45,6 @@ msgid "Registration date"
 msgstr ""
 
 #: som_cas/admin.py:51
-#, fuzzy
-#| msgid "Username"
 msgid "Member name"
 msgstr "Document d'Identitat"
 
