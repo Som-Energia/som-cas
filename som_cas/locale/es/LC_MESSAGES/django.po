@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-01 09:41+0000\n"
-"PO-Revision-Date: 2020-06-04 17:15+0000\n"
-"Last-Translator: b'  <joana.figueira@somenergia.coop>'\n"
+"PO-Revision-Date: 2020-07-01 09:48+0000\n"
+"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
 "Language: es\n"
@@ -45,22 +45,20 @@ msgid "Registration date"
 msgstr "Fecha de registro"
 
 #: som_cas/admin.py:51
-#, fuzzy
-#| msgid "Member"
 msgid "Member name"
 msgstr "Persona socia"
 
 #: som_cas/admin.py:56
 msgid "Membership number"
-msgstr ""
+msgstr "Número de soci@"
 
 #: som_cas/admin.py:61
 msgid "DNI/NIF/NIE"
-msgstr ""
+msgstr "DNI/NIF/NIE"
 
 #: som_cas/admin.py:66
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: som_cas/forms.py:24
 msgid "You are already registered as presential voter"
