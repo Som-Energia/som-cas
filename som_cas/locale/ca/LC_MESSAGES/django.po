@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-01 09:41+0000\n"
+"POT-Creation-Date: 2020-07-30 07:45+0000\n"
 "PO-Revision-Date: 2020-07-01 09:48+0000\n"
 "Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Catalan <http://traduccio.somenergia.coop/projects/som-cas/"
@@ -149,11 +149,11 @@ msgstr "Som Energia Authentication System"
 msgid "No active assembly"
 msgstr "No hi ha cap assemblea activa."
 
-#: som_cas/templates/som_cas/login.html:24
+#: som_cas/templates/som_cas/login.html:23
 msgid "ACCESS TO BE ABLE TO VOTE!"
 msgstr "ACCEDEIX PER PODER VOTAR!"
 
-#: som_cas/templates/som_cas/login.html:25
+#: som_cas/templates/som_cas/login.html:24
 msgid ""
 "En entrar amb les teves dades (les mateixes que per a l’Oficina Virtual), "
 "estaràs participant de l’Assemblea General!"
@@ -165,32 +165,36 @@ msgstr ""
 msgid "Engage!"
 msgstr "Participa!"
 
-#: som_cas/templates/som_cas/login.html:32
+#: som_cas/templates/som_cas/login.html:30
+msgid "Formació!"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:35
 msgid "Username"
 msgstr "Document d'Identitat"
 
-#: som_cas/templates/som_cas/login.html:33
+#: som_cas/templates/som_cas/login.html:36
 msgid "Username is required"
 msgstr "És necessari el DNI, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:34
+#: som_cas/templates/som_cas/login.html:37
 msgid "NIF, CIF o NIE"
 msgstr "NIF, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:38
+#: som_cas/templates/som_cas/login.html:41
 msgid "Password"
 msgstr "Contrasenya"
 
-#: som_cas/templates/som_cas/login.html:39
+#: som_cas/templates/som_cas/login.html:42
 msgid "Password is required"
 msgstr "És necessària la contrasenya"
 
-#: som_cas/templates/som_cas/login.html:58
-#: som_cas/templates/som_cas/login.html:60
+#: som_cas/templates/som_cas/login.html:61
+#: som_cas/templates/som_cas/login.html:63
 msgid "Forgot Password?"
 msgstr "Has oblidat la contrasenya?"
 
-#: som_cas/templates/som_cas/login.html:66
+#: som_cas/templates/som_cas/login.html:69
 msgid "Login"
 msgstr "Entrar"
 
@@ -271,7 +275,7 @@ msgstr "Salut,"
 msgid "L'equip de Som Energia"
 msgstr "L'equip de Som Energia"
 
-#: som_cas/utils.py:43
+#: som_cas/utils.py:44
 msgid "Confirmació d’Inscripció a la Assemblea"
 msgstr "Confirmació d’inscripció a l’Assemblea General"
 
