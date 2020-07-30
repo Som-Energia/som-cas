@@ -15,16 +15,19 @@
                     {% csrf_token %}
 					<img src="{% static 'images/logo-somenergia-transparent.png'%}" width="120" height="120" class="form-title-img align-top" alt="Som Energia Logo">
 
-                    {% if isAssembly and assembly ==  None %}
+                    {% if serviceName == 'ASSAMBLEA' and assembly ==  None %}
                 </form>
                 <div class="alert alert-danger m-b-36 text-center">{% trans 'No active assembly' %}</div>
-
                     {% else %}
-                        {% if isAssembly %}
+                        {% if serviceName == 'ASSAMBLEA' %}
                             <span class="login100-form-title p-b-16">{% trans 'ACCESS TO BE ABLE TO VOTE!' %}</span>
                             <span class="login100-form-title-text p-b-6">{% trans "En entrar amb les teves dades (les mateixes que per a l’Oficina Virtual), estaràs participant de l’Assemblea General!" %}</span>
-                        {% else %}
+                        {% endif %}
+                        {% if serviceName == 'PARTICIPA' %}
                             <span class="login100-form-title p-b-32">{% trans 'Engage!' %}</span>
+                        {% endif %}
+                        {% if serviceName == 'FORMACIO' %}
+                            <span class="login100-form-title p-b-32">{% trans 'Formació!' %}</span>
                         {% endif %}
 
 						{% include "_messages.html" %}

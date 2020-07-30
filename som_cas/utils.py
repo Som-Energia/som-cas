@@ -1,4 +1,5 @@
 import logging
+import re
 
 from django.conf import settings
 from django.contrib import auth
@@ -58,18 +59,18 @@ def getActiveAssembly():
     return (Assembly.objects.filter(active=True) or [None])[0]
 
 
-def assembly_context_processors(request):
+def service_context_processors(request):
+    service = request.GET.get('service', '')
+    pattern = "\w*\.somenergia\.coop"
+    registrate_service = re.search(pattern, service).group()
 
-	if 	settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-		return {
-			'isAssembly': True,
-			'assembly': getActiveAssembly()
-		}
-	else:
-		return {
-			'isAssembly': False
-		}
+    context = {
+        'serviceName': settings.REGISTRATION_SERVICES.get(registrate_service).get('service_name')
+    }
+    if settings.CUSTOM_REGISTRATION_SERVICES in service:
+        context['assembly'] = getActiveAssembly()
 
+    return context
 
 def is_company(vat):
     if vat:
