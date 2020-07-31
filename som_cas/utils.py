@@ -12,6 +12,8 @@ from django_rq import job
 
 logger = logging.getLogger('rq.worker')
 
+URL_REGEX = re.compile('https?://(?P<service>\w+\.somenergia\.coop)')
+
 def get_user(request):
     user = auth.get_user(request)
 
@@ -60,12 +62,15 @@ def getActiveAssembly():
 
 
 def service_context_processors(request):
-    service = request.GET.get('service', '')
-    pattern = "\w*\.somenergia\.coop"
-    registrate_service = re.search(pattern, service).group()
+    service = URL_REGEX.search(request.GET.get('service', ''))
+    if not service:
+        return ''
 
+    service = service.groupdict()['service']
     context = {
-        'serviceName': settings.REGISTRATION_SERVICES.get(registrate_service).get('service_name')
+        'serviceName': settings.REGISTRATION_SERVICES.get(
+            service, ''
+        ).get('service_name', '')
     }
     if settings.CUSTOM_REGISTRATION_SERVICES in service:
         context['assembly'] = getActiveAssembly()
