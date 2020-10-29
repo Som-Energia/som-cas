@@ -13,8 +13,11 @@
             <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
                 <form class="login100-form validate-form flex-sb flex-w" method="post">
                     {% csrf_token %}
-					<img src="{% static 'images/logo-somenergia-transparent.png'%}" width="120" height="120" class="form-title-img align-top" alt="Som Energia Logo">
-
+                    {% if serviceName == 'FORMACIO' %}
+                    <img src="{% static 'images/Logotip_aula_popular.png'%}" width="380" height="55" class="form-title-img align-top" alt="Som Energia Logo">
+                    {% else %}
+                     <img src="{% static 'images/logo-somenergia-transparent.png'%}" width="120" height="120" class="form-title-img align-top" alt="Som Energia Logo">
+                    {% endif %}
                     {% if serviceName == 'ASSAMBLEA' and assembly ==  None %}
                 </form>
                 <div class="alert alert-danger m-b-36 text-center">{% trans 'No active assembly' %}</div>
@@ -27,7 +30,7 @@
                             <span class="login100-form-title p-b-32">{% trans 'Engage!' %}</span>
                         {% endif %}
                         {% if serviceName == 'FORMACIO' %}
-                            <span class="login100-form-title p-b-32">{% trans 'Formació!' %}</span>
+                            <span class="login100-form-title-text p-l-60 p-r-60 p-b-16 p-t-6">{% trans "Pots accedir amb les mateixes dades que a l'Oficina Virtual de Som Energia" %}</span>
                         {% endif %}
 
 						{% include "_messages.html" %}
