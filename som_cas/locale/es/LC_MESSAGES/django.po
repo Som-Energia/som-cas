@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-30 07:45+0000\n"
+"POT-Creation-Date: 2020-10-29 12:21+0100\n"
 "PO-Revision-Date: 2020-07-01 09:48+0000\n"
 "Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
@@ -20,143 +20,123 @@ msgstr ""
 "X-Generator: Weblate 4.0.4\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: config/settings/base.py:111
-msgid "Catalan"
-msgstr "Catalán"
-
-#: config/settings/base.py:112
-msgid "English"
-msgstr "Inglés"
-
-#: config/settings/base.py:113
-msgid "Spanish"
-msgstr "Español"
-
-#: config/settings/base.py:114
-msgid "Basque"
-msgstr "Euskera"
-
-#: config/settings/base.py:115
-msgid "Galician"
-msgstr "Gallego"
-
-#: som_cas/admin.py:46 som_cas/models.py:136
+#: admin.py:46 models.py:136
 msgid "Registration date"
 msgstr "Fecha de registro"
 
-#: som_cas/admin.py:51
+#: admin.py:51
 msgid "Member name"
 msgstr "Persona socia"
 
-#: som_cas/admin.py:56
+#: admin.py:56
 msgid "Membership number"
 msgstr "Número de soci@"
 
-#: som_cas/admin.py:61
+#: admin.py:61
 msgid "DNI/NIF/NIE"
 msgstr "DNI/NIF/NIE"
 
-#: som_cas/admin.py:66
+#: admin.py:66
 msgid "Email"
 msgstr "Email"
 
-#: som_cas/forms.py:24
+#: forms.py:24
 msgid "You are already registered as presential voter"
 msgstr ""
 "O has escogido por el voto presencia, o esta asamblea ya no está activa"
 
-#: som_cas/forms.py:28
+#: forms.py:28
 msgid "Internal error while authenticating user"
 msgstr ""
 "Ha ocurrido un error interno validando el usuario. Si el error continua, "
 "contacta con participa@somenergia.coop"
 
-#: som_cas/forms.py:33
+#: forms.py:33
 msgid "The username or password is not correct"
 msgstr ""
 "El usuario o la contraseña no son correctos, o no eres socio/a de Som Energia"
 
-#: som_cas/forms.py:38
+#: forms.py:38
 msgid "This user account is disabled"
 msgstr "Esta cuenta de usuario está desabilidada"
 
-#: som_cas/models.py:19
+#: models.py:19
 msgid "In person"
 msgstr "En persona"
 
-#: som_cas/models.py:20
+#: models.py:20
 msgid "Virtual"
 msgstr "Virtual"
 
-#: som_cas/models.py:91
+#: models.py:91
 msgid "Assembly name"
 msgstr "Nombre de la asamblea"
 
-#: som_cas/models.py:92
+#: models.py:92
 msgid "Name of the assembly, eg: Asamblea 2020"
 msgstr "Nombre de la asamblea, pe, Asamblea 2020"
 
-#: som_cas/models.py:102
+#: models.py:102
 msgid "Start time"
 msgstr "Fecha de inicio"
 
-#: som_cas/models.py:103
+#: models.py:103
 msgid "Date when this occurrence end"
 msgstr "Fecha cuando esta ocurrencia termina"
 
-#: som_cas/models.py:108
+#: models.py:108
 msgid "Assembley state"
 msgstr "Estado de la asamblea"
 
-#: som_cas/models.py:123
+#: models.py:123
 msgid "Assembly"
 msgstr "Asamblea"
 
-#: som_cas/models.py:124
+#: models.py:124
 msgid "Assembly for this registration"
 msgstr "Asamblea para este censo"
 
-#: som_cas/models.py:130
+#: models.py:130
 msgid "Member"
 msgstr "Persona socia"
 
-#: som_cas/models.py:131
+#: models.py:131
 msgid "Member for this registration"
 msgstr "Persona socia para este censo"
 
-#: som_cas/models.py:137
+#: models.py:137
 msgid "Member registration date"
 msgstr "Fecha de registro de la persona socia"
 
-#: som_cas/models.py:143
+#: models.py:143
 msgid "Registration type"
 msgstr "Tipo de censo"
 
-#: som_cas/models.py:144
+#: models.py:144
 msgid "Type of registration: if virtual or in person"
 msgstr "Tipo de cens: si virtual o en persona"
 
-#: som_cas/models.py:149
+#: models.py:149
 msgid "Sent registration email"
 msgstr "¿Email de registro enviado?"
 
-#: som_cas/models.py:150
+#: models.py:150
 msgid "Check if registration email was sent to the member"
 msgstr "¿Correo de registro enviado?"
 
-#: som_cas/templates/base.html:12
+#: templates/base.html:12
 msgid "Som Energia Authentication System"
 msgstr "Som Energia Authentication System"
 
-#: som_cas/templates/som_cas/login.html:20
+#: templates/som_cas/login.html:23
 msgid "No active assembly"
 msgstr "No hay asamblea activa"
 
-#: som_cas/templates/som_cas/login.html:23
+#: templates/som_cas/login.html:26
 msgid "ACCESS TO BE ABLE TO VOTE!"
 msgstr "¡ACCEDE PARA PODER VOTAR!"
 
-#: som_cas/templates/som_cas/login.html:24
+#: templates/som_cas/login.html:27
 msgid ""
 "En entrar amb les teves dades (les mateixes que per a l’Oficina Virtual), "
 "estaràs participant de l’Assemblea General!"
@@ -164,77 +144,77 @@ msgstr ""
 "¡Al entrar con tus datos (los mismos que para la Oficina Virtual), estarás "
 "participando de la Asamblea General!"
 
-#: som_cas/templates/som_cas/login.html:27
+#: templates/som_cas/login.html:30
 msgid "Engage!"
 msgstr "Participa"
 
-#: som_cas/templates/som_cas/login.html:30
-msgid "Formació!"
+#: templates/som_cas/login.html:33
+msgid ""
+"Pots accedir amb les mateixes dades que a l'Oficina Virtual de Som Energia"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:35
+#: templates/som_cas/login.html:38
 msgid "Username"
 msgstr "Documento de identidad"
 
-#: som_cas/templates/som_cas/login.html:36
+#: templates/som_cas/login.html:39
 msgid "Username is required"
 msgstr "Es necesario el DNI, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:37
+#: templates/som_cas/login.html:40
 msgid "NIF, CIF o NIE"
 msgstr "NIF, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:41
+#: templates/som_cas/login.html:44
 msgid "Password"
 msgstr "Contraseña"
 
-#: som_cas/templates/som_cas/login.html:42
+#: templates/som_cas/login.html:45
 msgid "Password is required"
 msgstr "Es necesaria la contraseña"
 
-#: som_cas/templates/som_cas/login.html:61
-#: som_cas/templates/som_cas/login.html:63
+#: templates/som_cas/login.html:64 templates/som_cas/login.html:66
 msgid "Forgot Password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: som_cas/templates/som_cas/login.html:69
+#: templates/som_cas/login.html:72
 msgid "Login"
 msgstr "Entrar"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:4
-#: som_cas/templates/som_cas/mail_confirmation.html:26
+#: templates/som_cas/mail_confirmation.html:4
+#: templates/som_cas/mail_confirmation.html:26
 msgid "panell de votacions"
 msgstr "panel de votaciones"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:5
+#: templates/som_cas/mail_confirmation.html:5
 msgid "a la pàgina web de l’Assemblea"
 msgstr "en la página web de la Asamblea"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:6
+#: templates/som_cas/mail_confirmation.html:6
 msgid "Participa"
 msgstr "Participa"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:7
+#: templates/som_cas/mail_confirmation.html:7
 msgid "Moltes gràcies per participar!"
 msgstr "¡Muchas gracias por paticipar!"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:8
+#: templates/som_cas/mail_confirmation.html:8
 msgid "https://assemblea.somenergia.coop"
 msgstr "https://asamblea.somenergia.coop/"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:18
+#: templates/som_cas/mail_confirmation.html:18
 msgid "logo de la asamblea 2020"
 msgstr "logo de la asamblea 2020"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:23
+#: templates/som_cas/mail_confirmation.html:23
 msgid "Hola"
 msgstr "Hola"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:24
+#: templates/som_cas/mail_confirmation.html:24
 msgid "Ja pots votar! :)"
 msgstr "¡Ya puedes votar! :)"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:25
+#: templates/som_cas/mail_confirmation.html:25
 msgid ""
 "Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de "
 "10 a 13.55 h</b>, durant l’Assemblea General"
@@ -242,11 +222,11 @@ msgstr ""
 "Recuerda que el momento de hacerlo será el <b>sábado día 20</b> de junio "
 "<b>de 10 a 13.55 h</b>, durante la Asamblea General"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:26
+#: templates/som_cas/mail_confirmation.html:26
 msgid "Donat que has accedit al"
 msgstr "Dado que has accedido al"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:26
+#: templates/som_cas/mail_confirmation.html:26
 msgid ""
 "si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
 "com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest "
@@ -259,29 +239,44 @@ msgstr ""
 "con mayoría reforzada, ya que necesitan ⅔ de votos positivos sobre el <b> "
 "total de votos presentes</b>"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:27
+#: templates/som_cas/mail_confirmation.html:27
 msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
 msgstr "Encontrarás toda la información relativa al día de la Asamblea "
 
-#: som_cas/templates/som_cas/mail_confirmation.html:27
+#: templates/som_cas/mail_confirmation.html:27
 msgid "pàgina web de l’Assemblea"
 msgstr "en la página web de la Asamblea"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:27
+#: templates/som_cas/mail_confirmation.html:27
 msgid "i al"
 msgstr "y en el"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:37
+#: templates/som_cas/mail_confirmation.html:37
 msgid "Salut,"
 msgstr "Salud,"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:39
+#: templates/som_cas/mail_confirmation.html:39
 msgid "L'equip de Som Energia"
 msgstr "El equipo de Som Energia"
 
-#: som_cas/utils.py:44
+#: utils.py:46
 msgid "Confirmació d’Inscripció a la Assemblea"
 msgstr "Confirmación de inscripción a la Asamblea General"
+
+#~ msgid "Catalan"
+#~ msgstr "Catalán"
+
+#~ msgid "English"
+#~ msgstr "Inglés"
+
+#~ msgid "Spanish"
+#~ msgstr "Español"
+
+#~ msgid "Basque"
+#~ msgstr "Euskera"
+
+#~ msgid "Galician"
+#~ msgstr "Gallego"
 
 #~ msgid ""
 #~ "Login with your credentials, you are participating in the General "
