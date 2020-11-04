@@ -69,7 +69,7 @@ def service_context_processors(request):
     service = service.groupdict()['service']
     context = {
         'serviceName': settings.REGISTRATION_SERVICES.get(
-            service, ''
+            service, {}
         ).get('service_name', '')
     }
     if settings.CUSTOM_REGISTRATION_SERVICES in service:
