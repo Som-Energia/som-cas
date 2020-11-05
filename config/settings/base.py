@@ -22,7 +22,7 @@ BASE_DIR = environ.Path(__file__) - 3
 env = environ.Env()
 
 CONFIG_FILE = env.path(
-	'SOM_CAS_CONFIG', default=os.path.join(str(BASE_DIR), 'config/conf.yaml')
+    'SOM_CAS_CONFIG', default=os.path.join(str(BASE_DIR), 'config/conf.yaml')
 )
 
 try:
@@ -40,57 +40,58 @@ DEBUG = True
 
 # Application definition
 DJANGO_APPS = [
-	'django.contrib.admin',
-	'django.contrib.auth',
-	'django.contrib.contenttypes',
-	'django.contrib.sessions',
-	'django.contrib.messages',
-	'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 
 THIRD_PARTY_APPS = [
-	'mama_cas',
-	'rosetta',
-	'anymail',
-	'import_export',
+    'mama_cas',
+    'rosetta',
+    'anymail',
+    'import_export',
         'django_rq',
 ]
 
 LOCAL_APPS = [
-	'som_cas',
+    'som_cas',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
-	'django.middleware.security.SecurityMiddleware',
-	'django.contrib.sessions.middleware.SessionMiddleware',
-	'django.middleware.locale.LocaleMiddleware',
-	'django.middleware.common.CommonMiddleware',
-	'django.middleware.csrf.CsrfViewMiddleware',
-	'django.contrib.auth.middleware.AuthenticationMiddleware',
-	'som_cas.middleware.SomAuthenticationMiddleware',
-	'django.contrib.messages.middleware.MessageMiddleware',
-	'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	'som_cas.middleware.CasLanguageMiddleware'
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'som_cas.middleware.SomAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'som_cas.middleware.ERPClientMiddleware',
+    'som_cas.middleware.CasLanguageMiddleware'
 ]
 
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
-	{
-		'BACKEND': 'django.template.backends.django.DjangoTemplates',
-		'DIRS': [],
-		'APP_DIRS': True,
-		'OPTIONS': {
-			'context_processors': [
-				'django.template.context_processors.request',
-				'django.contrib.auth.context_processors.auth',
-				'django.contrib.messages.context_processors.messages',
-				'som_cas.utils.service_context_processors'
-			],
-		},
-	},
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'som_cas.context_processors.service_context_processors'
+            ],
+        },
+    },
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
@@ -98,8 +99,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 AUTH_USER_MODEL = 'som_cas.SomUser'
 
 AUTHENTICATION_BACKENDS = [
-	'som_cas.backends.SocisBackend',
-	'som_cas.backends.SomETBackend',
+    'som_cas.backends.SocisBackend',
+    'som_cas.backends.SomETBackend',
 ]
 
 # Internationalization
@@ -108,15 +109,15 @@ AUTHENTICATION_BACKENDS = [
 LANGUAGE_CODE = 'es-ES'
 
 LANGUAGES = [
-	('ca', _('Catalan')),
-	('en', _('English')),
-	('es', _('Spanish')),
-	('eu', _('Basque')),
-	('ga', _('Galician')),
+    ('ca', _('Catalan')),
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('eu', _('Basque')),
+    ('ga', _('Galician')),
 ]
 
 LOCALE_PATHS = [
-	os.path.join(str(BASE_DIR), 'som_cas/locale'),
+    os.path.join(str(BASE_DIR), 'som_cas/locale'),
 ]
 
 TIME_ZONE = 'UTC'

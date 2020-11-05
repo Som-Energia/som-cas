@@ -31,6 +31,15 @@ TEMPLATES[0]['OPTIONS']['context_processors'].append(
     'django.template.context_processors.debug'
 )
 
+erp_conf = config['erp']
+ERP = {
+    'user': erp_conf.get('user'),
+    'password': erp_conf.get('password'),
+    'db': erp_conf.get('db'),
+    'server': erp_conf.get('server'),
+}
+
+
 MAMA_CAS_SERVICES = config.get('mama_cas_services', [])
 
 MAMA_CAS_SERVICE_BACKENDS = [
