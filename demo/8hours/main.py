@@ -65,10 +65,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 CAS_SERVER_URL = 'http://localhost:8000/'
 
-SERVICE_NAME = 'http://8hours.somenergia.local:9876'
+SERVICE_NAME = 'http://8hours.somenergia.coop:9876'
 
 
-LOGOUT_URL = 'http://8hours.somenergia.local:9876/logout'
+LOGOUT_URL = 'http://8hours.somenergia.coop:9876/logout'
 
 
 @web.middleware

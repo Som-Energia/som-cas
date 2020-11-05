@@ -68,8 +68,11 @@
             $(this).find('i').addClass('fa-eye');
             showPass = 0;
         }
-        
+
     });
-    
+
+    $('.btn-help').popover({
+        container: 'body'
+    })
 
 })(jQuery);

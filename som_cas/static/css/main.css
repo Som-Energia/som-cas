@@ -260,7 +260,7 @@ iframe {
 }
 
 /*---------------------------------------------*/
-.btn-show-pass {
+.btn-show-pass, .btn-help {
   font-size: 15px;
   color: #999999;
 
@@ -282,11 +282,11 @@ iframe {
   transition: background 0.4s;
 }
 
-.btn-show-pass:hover {
+.btn-show-pass:hover, .btn-help:hover {
   color: #BBCA2F;
 }
 
-.btn-show-pass.active {
+.btn-show-pass.active, .btn-help.active {
   color: #BBCA2F;
 }
 

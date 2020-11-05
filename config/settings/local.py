@@ -43,6 +43,8 @@ MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
 CUSTOM_REGISTRATION_SERVICES = config.get('custom_registration_services', '')
 
+REGISTRATION_SERVICES = config.get('registration_services', '')
+
 UPLOAD_DIR = 'registered_members'
 
 LOGGING = {

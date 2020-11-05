@@ -1,4 +1,5 @@
 import logging
+import re
 
 from django.conf import settings
 from django.contrib import auth
@@ -10,6 +11,8 @@ from django_rq import job
 
 
 logger = logging.getLogger('rq.worker')
+
+URL_REGEX = re.compile('https?://(?P<service>\w+\.somenergia\.coop)')
 
 def get_user(request):
     user = auth.get_user(request)
@@ -58,18 +61,21 @@ def getActiveAssembly():
     return (Assembly.objects.filter(active=True) or [None])[0]
 
 
-def assembly_context_processors(request):
+def service_context_processors(request):
+    service = URL_REGEX.search(request.GET.get('service', ''))
+    if not service:
+        return ''
 
-	if 	settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-		return {
-			'isAssembly': True,
-			'assembly': getActiveAssembly()
-		}
-	else:
-		return {
-			'isAssembly': False
-		}
+    service = service.groupdict()['service']
+    context = {
+        'serviceName': settings.REGISTRATION_SERVICES.get(
+            service, {}
+        ).get('service_name', '')
+    }
+    if settings.CUSTOM_REGISTRATION_SERVICES in service:
+        context['assembly'] = getActiveAssembly()
 
+    return context
 
 def is_company(vat):
     if vat:

@@ -44,13 +44,22 @@ mama_cas_services:
       - 'som_cas.callbacks.participa'
     LOGOUT_ALLOW: true
     LOGOUT_URL: 'http://blacklight.somenergia.coop:6789/'
-  - SERVICE: '^http[s]?://8hours\.somenergia\.local:9876[/]?.*'
+  - SERVICE: '^http[s]?://8hours\.somenergia\.coop:9876[/]?.*'
     CALLBACKS:
       - 'som_cas.callbacks.participa'
     LOGOUT_ALLOW: true
-    LOGOUT_URL: 'http://8hours.somenergia.local:9876/logout'
+    LOGOUT_URL: 'http://8hours.somenergia.coop:9876/logout'
 
 custom_registration_services: '8hours'
+
+registration_services:
+  odemira.somenergia.coop:
+    service_name: PARTICIPA
+  blacklight.somenergia.coop:
+    service_name: FORMACIO
+  8hours.somenergia.coop:
+    service_name: ASSAMBLEA
+
 
 # Logger definitions
 logging:
