@@ -117,6 +117,8 @@ class LocalGroups(models.Model):
 
     lgs = LocalGroupsQuerySet.as_manager()
 
+    objects = models.Manager()
+
     def __str__(self):
         return f'<LocalGroup({self.name})>'
 
@@ -187,13 +189,16 @@ class Assembly(models.Model):
     objects = models.Manager()
 
     def clean(self):
-        if self.active == True and self.assemblies.get_active_assembly():
+        if self.active and Assembly.assemblies.get_active_assembly():
             raise ValidationError(
                 {
                     'active': _('Actually SomCas only supports one active assembly at the same time.')
                 }
             )
 
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
 
     def __repr__(self):
         return f'<Assembly({self.name})>'
