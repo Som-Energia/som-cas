@@ -10,6 +10,12 @@ def erp_con(settings):
     return _set_erp_connection(lambda self: Client(**settings.ERP))
 
 
+@pytest.fixture
+def mock_madrid_address_codes(monkeypatch):
+    address_codes = ('13', '28', '28791')
+    monkeypatch.setattr(factories.SomUser, "address_codes", address_codes)
+
+
 @pytest.fixture(autouse=True)
 def set_debug_when_testing(settings):
     settings.DEBUG = True
@@ -46,6 +52,16 @@ def old_register_in_general_assembly():
 
 
 @pytest.fixture
+def active_madridlocalgroup_assembly():
+    return factories.ActiveMadridLocalGroupAssemblyFactory.create()
+
+
+@pytest.fixture
+def active_baixmontsenylocalgroup_assembly():
+    return factories.ActiveBaixMontsenyLocalGroupAssemblyFactory.create()
+
+
+@pytest.fixture
 def user():
     return factories.SomUserFactory.build()
 
@@ -58,6 +74,11 @@ def members():
 
 @pytest.fixture
 def not_register_member():
+    return factories.AliceSomUserFactory.create()
+
+
+@pytest.fixture
+def not_register_madrid_member(mock_madrid_address_codes):
     return factories.AliceSomUserFactory.create()
 
 

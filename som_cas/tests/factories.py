@@ -52,6 +52,7 @@ class CMadridFactory(LocalGroupsFactory):
 
 
 class AssemblyFactory(factory.django.DjangoModelFactory):
+
     class Meta:
         model = Assembly
 
@@ -73,14 +74,22 @@ class InactiveGeneralAssemblyFactory(AssemblyFactory):
     active = False
 
 
-class ActiveLocalGroupAssemblyFactory(AssemblyFactory):
+class ActiveMadridLocalGroupAssemblyFactory(AssemblyFactory):
 
     name = 'Madrid Local Group Assembly'
+    active = True
+    local_group = factory.SubFactory(CMadridFactory)
+
+
+class ActiveBaixMontsenyLocalGroupAssemblyFactory(AssemblyFactory):
+
+    name = 'Baix Montseny Local Group Assembly'
     active = True
     local_group = factory.SubFactory(BaixMontsenyFactory)
 
 
 class SomUserFactory(factory.django.DjangoModelFactory):
+
     class Meta:
         model = SomUser
 
@@ -101,7 +110,6 @@ class BobSomUserFactory(SomUserFactory):
     '''
     Bob acts as already virtual assembly register member
     '''
-
     username = 'Bob'
     www_soci = 999
 
@@ -110,7 +118,6 @@ class MikaSomUserFactory(SomUserFactory):
     '''
     Mika acts as already in person assembly register member
     '''
-
     username = 'Mika'
     www_soci = 16
 

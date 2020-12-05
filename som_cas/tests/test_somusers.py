@@ -7,7 +7,7 @@ from som_cas.models import (
 )
 
 
-class TestSomUsers():
+class TestSomUsers:
 
     @pytest.mark.django_db
     def test__registered_member_in_active_virtual_assembly(
@@ -82,7 +82,7 @@ class TestSomUsers():
             [old_register_in_general_assembly, member_registry]
         assert member_registry.member, not_register_member
         assert member_registry.assembly, active_general_assembly
-        assert member_registry.registration_type, RegistrationChoices.VIRTUAL
+        assert member_registry.registration_type == RegistrationChoices.VIRTUAL
 
     @pytest.mark.django_db
     def test__registerInVirtualAssembly__otherPersonRegistered(
@@ -100,6 +100,26 @@ class TestSomUsers():
         member_registry = not_register_member.register_in_virtual_assembly()
         assert member_registry is None
         assert list(AgRegistration.objects.all()) == []
+
+    @pytest.mark.django_db
+    def test_register_member_into_localgroup_active_assembly(
+            self, active_madridlocalgroup_assembly, not_register_madrid_member,
+            erp_con
+    ):
+        member_registry = not_register_madrid_member.register_in_virtual_assembly()
+
+        assert member_registry.member == not_register_madrid_member
+        assert member_registry.assembly == active_madridlocalgroup_assembly
+        assert member_registry.registration_type == RegistrationChoices.VIRTUAL
+
+    @pytest.mark.django_db
+    def test_register_member_into_other_localgroup_active_assembly(
+            self, active_baixmontsenylocalgroup_assembly,
+            not_register_madrid_member, erp_con
+    ):
+        member_registry = not_register_madrid_member.register_in_virtual_assembly()
+
+        assert member_registry is None
 
 
 # vim: noet sw=4 ts=4
