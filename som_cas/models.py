@@ -129,7 +129,7 @@ class LocalGroups(models.Model):
 class AssemblyQuerySet(models.QuerySet):
 
     def get_active_assembly(self):
-        return self.filter(active=True)
+        return self.filter(active=True).first()
 
     def get_active_assembly_for_member(self, member):
         active_assembly_query = models.Q(

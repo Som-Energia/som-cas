@@ -4,7 +4,7 @@ from django.conf import settings
 
 from som_cas.models import Assembly
 
-URL_REGEX = re.compile('https?://(?P<service>\w+\.somenergia\.coop)')
+URL_REGEX = re.compile(r'https?://(?P<service>\w+\.somenergia\.coop)')
 
 
 def service_context_processors(request):
@@ -12,13 +12,13 @@ def service_context_processors(request):
     if not service:
         return ''
 
-    service = service.groupdict()['service']
+    service_name = settings.REGISTRATION_SERVICES.get(
+        service.groupdict()['service'], {}
+    ).get('service_name', '')
     context = {
-        'serviceName': settings.REGISTRATION_SERVICES.get(
-            service, {}
-        ).get('service_name', '')
+        'service_name': service_name
     }
-    if settings.CUSTOM_REGISTRATION_SERVICES in service:
+    if service_name == 'ASSAMBLEA':
         context['assembly'] = Assembly.assemblies.get_active_assembly()
 
     return context
