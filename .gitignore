@@ -40,3 +40,6 @@ tags
 registered_members
 # personaldata
 personaldata.py
+
+# Translations
+*.mo

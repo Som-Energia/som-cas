@@ -24,7 +24,17 @@
                     {% else %}
                         {% if service_name == 'ASSAMBLEA' %}
                             <span class="login100-form-title p-b-16">{% trans 'ACCESS TO BE ABLE TO VOTE!' %}</span>
-                            <span class="login100-form-title-text p-b-6">{% trans "En entrar amb les teves dades, estaràs participant de l’Assemblea General!" %}</span>
+                            {% if assembly.local_group is None %}
+                                <span class="login100-form-title-text p-b-6">
+                                    {% trans "En entrar amb les teves dades, estaràs participant de l’Assemblea General!" %}
+                                </span>
+                            {% else %}
+                                <span class="login100-form-title-text p-b-6">
+                                    {% blocktrans with local_group_name=assembly.local_group.name %}
+                                    "En entrar amb les teves dades, estaràs participant de l’Assemblea Territorial de {{ assembly }}"
+                                    {% endblocktrans %}
+                                    </span>
+                            {% endif %}
                         {% elif service_name == 'PARTICIPA' %}
                             <span class="login100-form-title p-b-32">{% trans 'Engage!' %}</span>
                         {% elif service_name == 'FORMACIO' %}

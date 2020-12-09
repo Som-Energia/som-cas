@@ -29,7 +29,7 @@ class TestSomCasLoginView:
         assert res.status_code == 200
         content = res.content.decode()
         assert 'logo-somenergia-transparent.png' in content
-        assert 'Assemblea General' in content
+        assert 'Asamblea General' in content
 
     @pytest.mark.django_db
     def test_inactive_general_assembly_login_view(
@@ -45,9 +45,18 @@ class TestSomCasLoginView:
         assert 'alert alert-danger' in content
         assert 'No active assembly' in content
 
-    @pytest.mark.skip("TODO")
-    def test_local_assembly_login_view(self):
-        pass
+    @pytest.mark.django_db
+    def test_local_assembly_login_view(
+        self, client, active_madridlocalgroup_assembly
+    ):
+        service = 'https://agvirtual.somenergia.coop'
+
+        res = client.get(self.BASE_URL, {'service': service})
+
+        assert res.status_code == 200
+        content = res.content.decode()
+        assert 'logo-somenergia-transparent.png' in content
+        assert 'Madrid' in content
 
     @pytest.mark.django_db
     def test_accademy_login_view(self, client):
