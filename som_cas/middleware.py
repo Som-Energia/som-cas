@@ -1,9 +1,15 @@
+import logging
+from threading import local
+
 from django.utils import translation
 from django.utils.deprecation import MiddlewareMixin
 from django.utils.functional import SimpleLazyObject
 
 from som_cas import utils
 
+_thread_locals = local()
+
+logger = logging.getLogger(__name__)
 
 class CasLanguageMiddleware(object):
     """
@@ -26,6 +32,30 @@ class CasLanguageMiddleware(object):
         return response
 
 
+def _set_erp_connection(erp_con_func):
+    setattr(_thread_locals, '_erp_con', erp_con_func.__get__(erp_con_func, local))
+
+
+def get_erp_con():
+    current_erp_con = getattr(_thread_locals, '_erp_con', None)
+    if callable(current_erp_con):
+        return current_erp_con()
+    return current_erp_con
+
+
+class ERPClientMiddleware(object):
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        _set_erp_connection(
+            lambda self: utils.ErpClientManager.get_erp_client_instance()
+        )
+        response = self.get_response(request)
+        return response
+
+
 def get_user(request):
     if not hasattr(request, '_cached_user'):
         request._cached_user = utils.get_user(request)
@@ -41,4 +71,3 @@ class SomAuthenticationMiddleware(MiddlewareMixin):
             "'django.contrib.auth.middleware.AuthenticationMiddleware'."
         ) % ("_CLASSES" if settings.MIDDLEWARE is None else "")
         request.user = SimpleLazyObject(lambda: get_user(request))
-

@@ -1,5 +1,4 @@
 import logging
-import re
 
 from django.conf import settings
 from django.contrib import auth
@@ -8,11 +7,11 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _, override
 from django_rq import job
+from erppeek import Client
 
 
 logger = logging.getLogger('rq.worker')
 
-URL_REGEX = re.compile('https?://(?P<service>\w+\.somenergia\.coop)')
 
 def get_user(request):
     user = auth.get_user(request)
@@ -21,7 +20,7 @@ def get_user(request):
         return user
 
     if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-        if user.isVirtualRegisteredInActiveAssembly():
+        if user.is_registered_in_active_virtual_assembly():
             return user
         return auth.models.AnonymousUser()
 
@@ -56,28 +55,22 @@ def send_confirmation_email(user, email_template):
         user_registration.save()
 
 
-def getActiveAssembly():
-    from som_cas.models import Assembly
-    return (Assembly.objects.filter(active=True) or [None])[0]
-
-
-def service_context_processors(request):
-    service = URL_REGEX.search(request.GET.get('service', ''))
-    if not service:
-        return ''
-
-    service = service.groupdict()['service']
-    context = {
-        'serviceName': settings.REGISTRATION_SERVICES.get(
-            service, {}
-        ).get('service_name', '')
-    }
-    if settings.CUSTOM_REGISTRATION_SERVICES in service:
-        context['assembly'] = getActiveAssembly()
-
-    return context
-
 def is_company(vat):
     if vat:
         return vat[0] not in '0123456789KLMXYZ'
+
+
+class ErpClientManager(object):
+    _client = None
+    _logger = logging.getLogger(__name__)
+
+    @classmethod
+    def get_erp_client_instance(cls):
+        if cls._client is None:
+            cls._client = Client(**settings.ERP)
+            msg = 'Connected to ERP username: %s, server: %s'
+            cls._logger.info(msg, settings.ERP['user'], settings.ERP['server'])
+        return cls._client
+
+
 # vim: noet ts=4 sw=4

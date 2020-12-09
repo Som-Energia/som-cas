@@ -1,10 +1,13 @@
+import tablib
+import yaml
 from django.contrib import admin
+from django.contrib.postgres.fields import JSONField
 from django.utils.translation import gettext as _
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
+from import_export.formats import base_formats
 
-from .models import SomUser, AgRegistration, Assembly
-
+from .models import SomUser, AgRegistration, Assembly, LocalGroups
 
 class MemberInline(admin.TabularInline):
     model = AgRegistration
@@ -36,10 +39,24 @@ class SomUserAdmin(admin.ModelAdmin):
 
 @admin.register(Assembly)
 class AssemblyAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'date',
+        'active'
+    )
+    list_filter = (
+        'name',
+        'date'
+    )
+
     inlines = (MemberInline, )
 
 
 class AgRegistrationResource(resources.ModelResource):
+    assembly = resources.Field(
+        attribute='assembly',
+        column_name=_('Assembly')
+    )
 
     registration_date = resources.Field(
         attribute='date',
@@ -77,4 +94,66 @@ class AgRegistrationResource(resources.ModelResource):
 
 @admin.register(AgRegistration)
 class AgRegistrationAdmin(ImportExportModelAdmin):
+    def assembly_name(self, obj):
+        return obj.assembly.name
+    
+    def member_vat(self, obj):
+        return obj.member.username
+
+    list_display = (
+        _('assembly_name'),
+        _('member_vat'),
+        'date',
+        'registration_type',
+        'registration_email_sent'
+    )
+    list_filter = (
+        'assembly__name',
+    )
     resource_class = AgRegistrationResource
+
+
+class LocalGroupsResource(resources.ModelResource):
+    name = resources.Field(
+        attribute='name'
+    )
+    
+    data = resources.Field(
+        attribute='data',
+    )
+
+    class Meta:
+        model = LocalGroups
+        fields = ('name', 'data', )
+        import_id_fields = ('name',)
+
+    def import_data(self, dataset, dry_run=False, raise_errors=False, use_transactions=None, collect_failed_rows=False, **kwargs):
+        new_data = [{'name': header, 'data': dataset[header][0]}
+            for header in dataset.headers
+        ]
+        new_dataset = tablib.Dataset()
+        new_dataset.dict = new_data
+
+        return super().import_data(new_dataset, dry_run=dry_run, raise_errors=raise_errors, use_transactions=use_transactions, collect_failed_rows=collect_failed_rows, **kwargs)
+
+
+def _create_dataset(cls, in_stream, **kwargs):
+    data = yaml.safe_load(in_stream)
+    dataset = tablib.Dataset()
+    dataset.dict = data if isinstance(data, list) else [data]
+    return dataset
+
+
+@admin.register(LocalGroups)
+class LocalGroupsAdmin(ImportExportModelAdmin):
+    list_display = (
+        'name',
+    )
+
+    resource_class = LocalGroupsResource
+
+    def get_import_formats(self):
+        yaml_format = base_formats.YAML
+        yaml_format.create_dataset = _create_dataset
+        return [yaml_format]
+    

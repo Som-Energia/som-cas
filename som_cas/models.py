@@ -1,10 +1,12 @@
 import logging
 
 from django.db import models
-from django.conf import settings
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.contrib.auth.models import AbstractUser
+from django.contrib.postgres.fields import JSONField
 from django.utils.translation import gettext as _
 
+from .contrib import ERPPartner
 from .utils import send_confirmation_email, is_company
 
 logger = logging.getLogger('models')
@@ -42,16 +44,11 @@ class SomUser(AbstractUser):
     def __str__(self):
         return self.__repr__()
 
-    def isVirtualRegisteredInActiveAssembly(self):
-        registry = AgRegistration.objects.filter(
-            member=self,
-            assembly__active=True,
-            registration_type=RegistrationChoices.VIRTUAL,
-        )
-        return registry.exists()
+    def is_registered_in_active_virtual_assembly(self):
+        return AgRegistration.registrations.member_in_active_virtual_assembly(self)
 
-    def registerInVirtualAssembly(self):
-        assembly = (Assembly.objects.filter(active=True) or [None])[0]
+    def register_in_virtual_assembly(self):
+        assembly = Assembly.assemblies.get_active_assembly_for_member(self)
         if not assembly: return None
 
         registration, created = AgRegistration.objects.get_or_create(
@@ -80,6 +77,75 @@ class SomUser(AbstractUser):
                 return f'{self.first_name}'
             return f'{self.last_name} {self.first_name}'
 
+    @property
+    def address_codes(self):
+        erp_partner = ERPPartner(self.username)
+        return erp_partner.address_codes
+
+    @property
+    def local_group(self):
+        if self.address_codes:
+            local_g = LocalGroups.lgs.indentify_member_local_group(
+                *self.address_codes
+            ).first()
+            return local_g.name if local_g else ''
+
+        return ''
+
+
+class LocalGroupsQuerySet(models.QuerySet):
+
+    def indentify_member_local_group(self, ccaa_code, state_code, city_code):
+        query = models.Q(data__alias__city__contains=city_code) | \
+            models.Q(data__alias__state__contains=state_code) | \
+            models.Q(data__alias__ccaa__contains=ccaa_code)
+        return self.filter(query)
+
+
+class LocalGroups(models.Model):
+
+    name = models.CharField(
+        max_length=128,
+        verbose_name=_("Local group name"),
+        help_text=_("Name of the local group")
+    )
+
+    data = JSONField(
+        verbose_name=_("Local group data"),
+        help_text=_("Cities, states and provincies related with this local group")
+    )
+
+    lgs = LocalGroupsQuerySet.as_manager()
+
+    objects = models.Manager()
+
+    def __str__(self):
+        return f'<LocalGroup({self.name})>'
+
+    def __repr__(self):
+        return self.__str__()
+
+
+class AssemblyQuerySet(models.QuerySet):
+
+    def get_active_assembly(self):
+        return self.filter(active=True).first()
+
+    def get_active_assembly_for_member(self, member):
+        active_assembly_query = models.Q(
+            active=True,
+            local_group=None
+        ) | models.Q(
+            active=True,
+            local_group__name=member.local_group
+        )
+        try:
+            assembly = self.get(active_assembly_query)
+        except ObjectDoesNotExist as e:
+            assembly = None
+        finally:
+            return assembly
+
 
 class Assembly(models.Model):
     """
@@ -87,7 +153,6 @@ class Assembly(models.Model):
     """
     name = models.CharField(
         max_length=150,
-        unique_for_year="date",
         verbose_name=_('Assembly name'),
         help_text=_('Name of the assembly, eg: Asamblea 2020')
     )
@@ -108,11 +173,58 @@ class Assembly(models.Model):
         help_text=_('Assembley state')
     )
 
+    local_group = models.ForeignKey(
+        LocalGroups,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        verbose_name=_('Local Group'),
+        help_text=_('If assembly is for a local group, set blank for '
+                    'general assembly'),
+        limit_choices_to=models.Q(name__isnull=False)
+    )
+
+    assemblies = AssemblyQuerySet.as_manager()
+
+    objects = models.Manager()
+
+    def clean(self):
+        if self.active and Assembly.assemblies.get_active_assembly():
+            raise ValidationError(
+                {
+                    'active': _('Actually SomCas only supports one active assembly at the same time.')
+                }
+            )
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
+
     def __repr__(self):
         return f'<Assembly({self.name})>'
 
     def __str__(self):
         return self.__repr__()
+
+
+class AgRegistrationQuerySet(models.QuerySet):
+
+    def member_in_active_virtual_assembly(self, member):
+        base_query = models.Q(
+            member=member,
+            assembly__active=True,
+            registration_type=RegistrationChoices.VIRTUAL
+        )
+        local_group_assembly_query = base_query & models.Q(
+            assembly__local_group__name=member.local_group
+        )
+        general_assembly_query = base_query & models.Q(
+            assembly__local_group=None
+        )
+
+        return self.filter(
+            general_assembly_query | local_group_assembly_query
+        ).exists()
 
 
 class AgRegistration(models.Model):
@@ -149,6 +261,10 @@ class AgRegistration(models.Model):
         verbose_name=_('Sent registration email'),
         help_text=_('Check if registration email was sent to the member')
     )
+
+    registrations = AgRegistrationQuerySet.as_manager()
+
+    objects = models.Manager()
 
     def __repr__(self):
         return f'<AgRegistration({self.assembly.name}, {self.member.username})>'

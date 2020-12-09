@@ -10,17 +10,22 @@ __pycache__/
 env/
 venv/
 ENV/
+.python-version
 
 # Logs
 logs
 *.log
+
+# Builds
+.tox
+.pytest_cache
+*.egg*
 
 ### Thumbnails
 ._*
 
 ### Configuration files
 *.yaml
-*.ini
 
 ### Vim template
 # Swap
@@ -39,3 +44,8 @@ Session.vim
 tags
 
 registered_members
+# personaldata
+personaldata.py
+
+# Translations
+*.mo

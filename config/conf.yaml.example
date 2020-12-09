@@ -36,6 +36,14 @@ queues:
     PASSWORD: 'some-password'
     DEFAULT_TIMEOUT: 360
 
+# ERP Connection
+erp:
+  user: user
+  password: password
+  server: http://localhost:8080
+  db: database
+  
+  
 # Allowed services definitions
 ## For more options and information see: https://django-mama-cas.readthedocs.io/en/latest/settings.html
 mama_cas_services:
