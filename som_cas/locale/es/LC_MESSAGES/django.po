@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 10:24+0000\n"
+"POT-Creation-Date: 2020-12-09 10:59+0000\n"
 "PO-Revision-Date: 2020-12-09 10:14+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
@@ -188,65 +188,65 @@ msgstr "¿Correo de registro enviado?"
 msgid "Som Energia Authentication System"
 msgstr "Som Energia Authentication System"
 
-#: som_cas/templates/som_cas/login.html:29
+#: som_cas/templates/som_cas/login.html:23
 msgid "No active assembly"
 msgstr "No hay asamblea activa"
 
-#: som_cas/templates/som_cas/login.html:32
+#: som_cas/templates/som_cas/login.html:26
 msgid "ACCESS TO BE ABLE TO VOTE!"
 msgstr "¡ACCEDE PARA PODER VOTAR!"
 
-#: som_cas/templates/som_cas/login.html:35
+#: som_cas/templates/som_cas/login.html:29
 msgid ""
 "En entrar amb les teves dades, estaràs participant de l’Assemblea General!"
 msgstr ""
 "¡Al entrar con tus datos (los mismos que para la Oficina Virtual), estarás "
 "participando de la Asamblea General!"
 
-#: som_cas/templates/som_cas/login.html:39
+#: som_cas/templates/som_cas/login.html:33
 #, python-format
 msgid ""
 "\n"
 "                                    \"En entrar amb les teves dades, estaràs "
-"participant de l’Assemblea Territorial de %(assembly)s\"\n"
+"participant de l’Assemblea Territorial de %(assembly.local_group.name)s\"\n"
 "                                    "
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:45
+#: som_cas/templates/som_cas/login.html:39
 msgid "Engage!"
 msgstr "Participa"
 
-#: som_cas/templates/som_cas/login.html:52
+#: som_cas/templates/som_cas/login.html:46
 msgid "Username"
 msgstr "Documento de identidad"
 
-#: som_cas/templates/som_cas/login.html:53
+#: som_cas/templates/som_cas/login.html:47
 msgid "Username is required"
 msgstr "Es necesario el DNI, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:54
+#: som_cas/templates/som_cas/login.html:48
 msgid ""
 "Pots accedir amb les mateixes dades que a l'Oficina Virtual de Som Energia"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:57
+#: som_cas/templates/som_cas/login.html:51
 msgid "NIF, CIF o NIE"
 msgstr "NIF, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:61
+#: som_cas/templates/som_cas/login.html:55
 msgid "Password"
 msgstr "Contraseña"
 
-#: som_cas/templates/som_cas/login.html:62
+#: som_cas/templates/som_cas/login.html:56
 msgid "Password is required"
 msgstr "Es necesaria la contraseña"
 
-#: som_cas/templates/som_cas/login.html:81
-#: som_cas/templates/som_cas/login.html:83
+#: som_cas/templates/som_cas/login.html:75
+#: som_cas/templates/som_cas/login.html:77
 msgid "Forgot Password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: som_cas/templates/som_cas/login.html:89
+#: som_cas/templates/som_cas/login.html:83
 msgid "Login"
 msgstr "Entrar"
 

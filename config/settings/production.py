@@ -33,6 +33,14 @@ DATABASES = {
     }
 }
 
+erp_conf = config['erp']
+ERP = {
+    'user': erp_conf.get('user'),
+    'password': erp_conf.get('password'),
+    'db': erp_conf.get('db'),
+    'server': erp_conf.get('server'),
+}
+
 RQ_QUEUES = config['queues']
 
 MAMA_CAS_SERVICES = config.get('mama_cas_services', [])
