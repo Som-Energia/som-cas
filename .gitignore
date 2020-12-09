@@ -10,10 +10,16 @@ __pycache__/
 env/
 venv/
 ENV/
+.python-version
 
 # Logs
 logs
 *.log
+
+# Builds
+.tox
+.pytest_cache
+*.egg*
 
 ### Thumbnails
 ._*

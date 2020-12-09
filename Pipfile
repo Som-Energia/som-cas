@@ -12,6 +12,7 @@ python-language-server = "*"
 factory-boy = "*"
 pytest = "*"
 pytest-django = "*"
+tox = "*"
 
 [packages]
 django-environ = ">=0.4.4"
