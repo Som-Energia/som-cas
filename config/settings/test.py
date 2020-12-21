@@ -2,7 +2,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 from .base import *
 
-CONFIG_FILE = os.path.join(str(BASE_DIR), 'som_cas/tests/conf_test.yaml')
+CONFIG_FILE = os.path.join(str(BASE_DIR), 'som_cas/tests/test.conf.yaml')
 
 try:
     with open(str(CONFIG_FILE), 'r') as f:
