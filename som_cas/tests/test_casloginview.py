@@ -4,19 +4,18 @@ from django.utils.translation import gettext as _
 
 from som_cas.views import SomCasLoginView
 
-
 class TestSomCasLoginView:
 
     BASE_URL = reverse('cas_login')
 
     @pytest.mark.django_db
-    def test_participa_login_view_active_assembly(self, client):
+    def test_participa_login_view(self, client):
         service = 'https://participa.somenergia.coop'
 
         res = client.get(self.BASE_URL, {'service': service})
 
         assert res.status_code == 200
-        assert 'Participa' in res.content.decode()
+        assert _('Engage!') in res.content.decode()
 
     @pytest.mark.django_db
     def test_active_general_assembly_login_view(
@@ -29,7 +28,8 @@ class TestSomCasLoginView:
         assert res.status_code == 200
         content = res.content.decode()
         assert 'logo-somenergia-transparent.png' in content
-        assert 'Asamblea General' in content
+
+        assert _('Assemblea General') in content
 
     @pytest.mark.django_db
     def test_inactive_general_assembly_login_view(
