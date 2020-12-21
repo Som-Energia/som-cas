@@ -93,6 +93,9 @@ class SomUserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = SomUser
 
+    date_joined = datetime.now()
+    last_login = datetime.now()
+
 
 class AliceSomUserFactory(SomUserFactory):
     '''

@@ -48,7 +48,7 @@ MAMA_CAS_SERVICE_BACKENDS = [
 
 MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
-REGISTRATION_SERVICES = config.get('registration_services', '')
+REGISTRATION_SERVICES = config.get('registration_services', {})
 
 UPLOAD_DIR = 'registered_members'
 

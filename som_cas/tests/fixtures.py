@@ -1,5 +1,7 @@
 import pytest
 from erppeek import Client
+from django.db import connections
+from django.contrib.auth import get_user_model
 
 from som_cas.middleware import _set_erp_connection
 from . import factories
@@ -68,8 +70,63 @@ def user():
 
 @pytest.fixture
 def members():
-    factories.AliceSomUserFactory.create()
-    factories.BobSomUserFactory.create()
+    alice = factories.AliceSomUserFactory.create()
+    alice.set_password('1234')
+    alice.save()
+
+    bob = factories.BobSomUserFactory.create()
+    bob.set_password('1234')
+    bob.save()
+
+
+@pytest.fixture(scope='function')
+def members_db(members):
+    with connections['users_db'].cursor() as cursor:
+        cursor.execute(
+            '''CREATE TABLE som_users (
+                 lang         varchar(10),
+                 www_phone    varchar(64),
+                 www_mobile   varchar(64),
+                 www_soci     integer,
+                 id           integer,
+                 last_login   timestamp,
+                 username     varchar(150),
+                 first_name   varchar(30),
+                 last_name    varchar(30),
+                 email        varchar(254),
+                 password     varchar(128),
+                 is_active    boolean,
+                 is_superuser boolean,
+                 is_staff     boolean,
+                 date_joined  timestamp
+            );
+            '''
+        )
+        for user in get_user_model().objects.all():
+            cursor.execute(
+                f'''INSERT INTO som_users values (
+                    '{user.lang}',
+                    '{user.www_phone}',
+                    '{user.www_mobile}',
+                    '{user.www_soci}',
+                    '{user.id}',
+                    '{user.last_login}',
+                    '{user.username.upper()}',
+                    '{user.first_name}',
+                    '{user.last_name}',
+                    '{user.email}',
+                    '{user.password}',
+                    '{user.is_active}',
+                    '{user.is_superuser}',
+                    '{user.is_staff}',
+                    '{user.date_joined}'
+                );
+            '''
+            )
+    yield
+
+    with connections['users_db'].cursor() as cursor:
+        cursor.execute('DROP TABLE IF EXISTS som_users')
 
 
 @pytest.fixture
