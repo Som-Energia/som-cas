@@ -4,7 +4,6 @@ from django.conf import settings
 from django.contrib import auth
 from django.core.mail import EmailMessage
 from django.core.exceptions import ObjectDoesNotExist
-from django.template import Library
 from django.template.loader import render_to_string
 from django.utils.translation import gettext as _, override
 from django_rq import job
@@ -38,9 +37,13 @@ def send_confirmation_email(member, email_template):
         logger.info(f"There is no pending registration to confirm for {member}")
     else:
         with override(member.lang):
+            context = {
+                'user': member,
+                'assembly': registration.assembly
+            }
             msg = EmailMessage(
                 _('Confirmació d’Inscripció a la Assemblea'),
-                render_to_string(email_template, {'user': member}),
+                render_to_string(email_template, context),
                 '',
                 [member.email],
                 settings.BCC,
@@ -50,20 +53,6 @@ def send_confirmation_email(member, email_template):
 
         registration.registration_email_sent = True
         registration.save()
-
-register = Library()
-
-@register.filter
-def assembly_event(value):
-    if value.is_general_assembly:
-        return _("l'Assamblea General")
-
-    conector_text = ''
-    if value.local_group.name[0].upper() in ['A', 'E', 'I', 'O', 'U']:
-        conector_text = _('l\'')
-    base_text = _("l'Assamblea del grup local de")
-
-    return f'{base_text} {conector_text}{value.local_group.name}'
 
 
 def is_company(vat):

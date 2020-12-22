@@ -61,6 +61,16 @@ class AssemblyFactory(factory.django.DjangoModelFactory):
         date_start=datetime(2020, 1, 1, tzinfo=tz.get_current_timezone())
     )
 
+    start_votation_date = factory.Faker(
+        'date_between_dates',
+        date_start=datetime(2020, 1, 1, 12, 5, tzinfo=tz.get_current_timezone())
+    )
+
+    end_votation_date = factory.Faker(
+        'date_between_dates',
+        date_start=factory.SelfAttribute('..start_votation_date')
+    )
+
 
 class ActiveGeneralAssemblyFactory(AssemblyFactory):
 
@@ -106,7 +116,9 @@ class AliceSomUserFactory(SomUserFactory):
         django_get_or_create = ('username',)
 
     username = 'Alice'
+    first_name = 'Alice'
     www_soci = 666
+    email = personaldata.email
 
 
 class BobSomUserFactory(SomUserFactory):
@@ -130,16 +142,22 @@ class AgRegistrationFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = AgRegistration
 
-    member = factory.SubFactory(BobSomUserFactory)
     date = factory.LazyFunction(datetime.now)
     registration_type = RegistrationChoices.VIRTUAL
-    registration_email_sent = True
 
 
 class ActiveAgRegistrationFactory(AgRegistrationFactory):
 
+    member = factory.SubFactory(BobSomUserFactory)
     assembly = factory.SubFactory(ActiveGeneralAssemblyFactory)
+    registration_email_sent = True
 
+
+class PendingEmailAgRegistrationFactory(AgRegistrationFactory):
+
+    member = factory.SubFactory(AliceSomUserFactory)
+    assembly = factory.SubFactory(ActiveGeneralAssemblyFactory)
+    registration_email_sent = False
 
 class SomUserActiveRegistryFactory(BobSomUserFactory):
 

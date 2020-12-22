@@ -151,4 +151,9 @@ def member_inactive_registry():
 
 @pytest.fixture
 def inperson_member_registry():
-    return factories.ActiveAgRegistrationInPersonFactory()
+    return factories.ActiveAgRegistrationInPersonFactory.create()
+
+
+@pytest.fixture
+def pending_email_member_registry():
+    return factories.PendingEmailAgRegistrationFactory.create()

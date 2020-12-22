@@ -1,11 +1,12 @@
 import pytest
+from django.core import mail
 
 from som_cas.models import (
     SomUser,
     AgRegistration,
     RegistrationChoices,
 )
-
+from som_cas.utils import send_confirmation_email
 
 class TestSomUsers:
 
@@ -121,5 +122,17 @@ class TestSomUsers:
 
         assert member_registry is None
 
+
+class TestConfirmationEmail:
+
+    @pytest.mark.django_db
+    def test_send_confirmation_email(
+        self, pending_email_member_registry
+    ):
+        email_template = 'som_cas/mail_confirmation.html'
+        member = pending_email_member_registry.member
+        send_confirmation_email(member, email_template)
+
+        assert len(mail.outbox) == 1
 
 # vim: noet sw=4 ts=4

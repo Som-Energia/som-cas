@@ -251,6 +251,7 @@ class AgRegistrationQuerySet(models.QuerySet):
             registration_email_sent=False
         )
 
+
 class AgRegistration(models.Model):
 
     assembly = models.ForeignKey(
