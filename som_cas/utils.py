@@ -1,3 +1,5 @@
+import locale
+from contextlib import contextmanager
 import logging
 
 from django.conf import settings
@@ -38,7 +40,7 @@ def send_confirmation_email(member, email_template):
     else:
         with override(member.lang):
             context = {
-                'user': member,
+                'member': member,
                 'assembly': registration.assembly
             }
             msg = EmailMessage(
@@ -58,6 +60,25 @@ def send_confirmation_email(member, email_template):
 def is_company(vat):
     if vat:
         return vat[0] not in '0123456789KLMXYZ'
+
+
+@contextmanager
+def locale_override(locale_name):
+    LOCALE_MAPPING = {
+        'es': ('es', 'UTF-8'),
+        'ca': ('ca', 'UTF-8'),
+        'eu': ('eu', 'UTF-8'),
+        'ga': ('ga', 'UTF-8'),
+        'en': ('en', 'UTF-8')
+    }
+    loc = locale.getlocale()
+
+    try:
+        yield locale.setlocale(
+            locale.LC_ALL, LOCALE_MAPPING.get(locale_name, ('ca', 'UTF-8'))
+        )
+    finally:
+        locale.setlocale(locale.LC_ALL, loc)
 
 
 class ErpClientManager(object):

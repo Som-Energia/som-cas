@@ -1,12 +1,14 @@
 import pytest
 from django.core import mail
+from django.utils.translation import gettext as _
 
 from som_cas.models import (
     SomUser,
     AgRegistration,
     RegistrationChoices,
 )
-from som_cas.utils import send_confirmation_email
+from som_cas.utils import send_confirmation_email, locale_override
+
 
 class TestSomUsers:
 
@@ -126,13 +128,24 @@ class TestSomUsers:
 class TestConfirmationEmail:
 
     @pytest.mark.django_db
-    def test_send_confirmation_email(
+    def test_send_confirmation_email_general_assembly(
         self, pending_email_member_registry
     ):
         email_template = 'som_cas/mail_confirmation.html'
         member = pending_email_member_registry.member
+        assembly = pending_email_member_registry.assembly
+
         send_confirmation_email(member, email_template)
 
         assert len(mail.outbox) == 1
+        email = mail.outbox[0]
+        assert member.email in email.to
+        assert email.subject == _('Confirmació d’Inscripció a la Assemblea')
+        assert member.first_name in email.body
+        with locale_override(member.lang):
+            assert assembly.date.strftime('%A').lower() in email.body
+            assert str(assembly.date.day) in email.body
+            assert assembly.date.strftime('%B').lower() in email.body
+            assert _('l\'Assamblea General') in email.body
 
 # vim: noet sw=4 ts=4

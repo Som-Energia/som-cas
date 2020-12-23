@@ -58,12 +58,12 @@ class AssemblyFactory(factory.django.DjangoModelFactory):
 
     date = factory.Faker(
         'date_between_dates',
-        date_start=datetime(2020, 1, 1, tzinfo=tz.get_current_timezone())
+        date_start=tz.make_aware(datetime(2020, 1, 1))
     )
 
     start_votation_date = factory.Faker(
         'date_between_dates',
-        date_start=datetime(2020, 1, 1, 12, 5, tzinfo=tz.get_current_timezone())
+        date_start=tz.make_aware(datetime(2020, 1, 1, 12, 5))
     )
 
     end_votation_date = factory.Faker(
@@ -103,8 +103,8 @@ class SomUserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = SomUser
 
-    date_joined = datetime.now()
-    last_login = datetime.now()
+    date_joined = tz.now()
+    last_login = tz.now()
 
 
 class AliceSomUserFactory(SomUserFactory):
@@ -119,6 +119,7 @@ class AliceSomUserFactory(SomUserFactory):
     first_name = 'Alice'
     www_soci = 666
     email = personaldata.email
+    lang = 'es'
 
 
 class BobSomUserFactory(SomUserFactory):
@@ -142,7 +143,7 @@ class AgRegistrationFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = AgRegistration
 
-    date = factory.LazyFunction(datetime.now)
+    date = factory.LazyFunction(tz.now)
     registration_type = RegistrationChoices.VIRTUAL
 
 
