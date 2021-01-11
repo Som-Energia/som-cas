@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 10:59+0000\n"
+"POT-Creation-Date: 2021-01-11 10:47+0100\n"
 "PO-Revision-Date: 2020-12-09 10:12+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: Catalan <http://traduccio.somenergia.coop/projects/som-cas/"
@@ -40,11 +40,11 @@ msgstr "Euskara"
 msgid "Galician"
 msgstr "Galego"
 
-#: som_cas/admin.py:58 som_cas/models.py:235
+#: som_cas/admin.py:58 som_cas/models.py:260
 msgid "Assembly"
 msgstr "Assemblea"
 
-#: som_cas/admin.py:63 som_cas/models.py:248
+#: som_cas/admin.py:63 som_cas/models.py:273
 msgid "Registration date"
 msgstr ""
 
@@ -75,14 +75,14 @@ msgid "member_vat"
 msgstr ""
 
 #: som_cas/forms.py:24
-msgid "You are already registered as presential voter"
-msgstr "Ja estàs resgitrat/da per tal de votar presencialment"
+msgid "You cannot register in this assembly"
+msgstr ""
 
 #: som_cas/forms.py:28
 msgid "Internal error while authenticating user"
 msgstr "Ha ocorregut un error intern al identificar l'usuari"
 
-#: som_cas/forms.py:33
+#: som_cas/forms.py:33 som_cas/tests/test_casloginview.py:50
 msgid "The username or password is not correct"
 msgstr ""
 "L'usuari o la contrasenya no són correctes, o no ets soci/a de Som Energia"
@@ -124,58 +124,76 @@ msgid "Name of the assembly, eg: Asamblea 2020"
 msgstr ""
 
 #: som_cas/models.py:167
-msgid "Start time"
-msgstr ""
+#, fuzzy
+#| msgid "Assembly"
+msgid "Assembly date"
+msgstr "Assemblea"
 
 #: som_cas/models.py:168
-msgid "Date when this occurrence end"
+msgid "Date and hour of this assembly"
 msgstr ""
 
-#: som_cas/models.py:173
-msgid "Assembley state"
+#: som_cas/models.py:174
+msgid "Votation start date"
+msgstr ""
+
+#: som_cas/models.py:175
+msgid "Date and hour when the votation of this assembly starts"
 msgstr ""
 
 #: som_cas/models.py:181
-msgid "Local Group"
+msgid "Votation end date"
 msgstr ""
 
 #: som_cas/models.py:182
-msgid "If assembly is for a local group, set blank for general assembly"
+msgid "Date and hour when the votation of this assembly ends"
+msgstr ""
+
+#: som_cas/models.py:187
+msgid "Assembley state"
 msgstr ""
 
 #: som_cas/models.py:195
+msgid "Local Group"
+msgstr ""
+
+#: som_cas/models.py:196
+msgid "If assembly is for a local group, set blank for general assembly"
+msgstr ""
+
+#: som_cas/models.py:213
 msgid "Actually SomCas only supports one active assembly at the same time."
 msgstr ""
 
-#: som_cas/models.py:236
+#: som_cas/models.py:261
 msgid "Assembly for this registration"
 msgstr ""
 
-#: som_cas/models.py:242
+#: som_cas/models.py:267
 msgid "Member"
 msgstr ""
 
-#: som_cas/models.py:243
+#: som_cas/models.py:268
 msgid "Member for this registration"
 msgstr ""
 
-#: som_cas/models.py:249
+#: som_cas/models.py:274
 msgid "Member registration date"
 msgstr ""
 
-#: som_cas/models.py:255
+#: som_cas/models.py:280
 msgid "Registration type"
 msgstr ""
 
-#: som_cas/models.py:256
+#: som_cas/models.py:281
 msgid "Type of registration: if virtual or in person"
 msgstr ""
 
-#: som_cas/models.py:261
+#: som_cas/models.py:286
 msgid "Sent registration email"
 msgstr "S'ha enviat el correu de registre?"
 
-#: som_cas/models.py:262
+#: som_cas/models.py:287
 msgid "Check if registration email was sent to the member"
 msgstr ""
 
@@ -202,12 +220,13 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                                    \"En entrar amb les teves dades, estaràs "
-"participant de l’Assemblea Territorial de %(assembly.local_group.name)s\"\n"
+"                                    En entrar amb les teves dades, estaràs "
+"participant de l’Assemblea Territorial de %(local_group_name)s\n"
 "                                    "
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:39
+#: som_cas/tests/test_casloginview.py:21
 msgid "Engage!"
 msgstr "Participa!"
 
@@ -245,15 +264,6 @@ msgstr "Has oblidat la contrasenya?"
 msgid "Login"
 msgstr "Entrar"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:4
-#: som_cas/templates/som_cas/mail_confirmation.html:26
-msgid "panell de votacions"
-msgstr "panell de votacions"
-
-#: som_cas/templates/som_cas/mail_confirmation.html:5
-msgid "a la pàgina web de l’Assemblea"
-msgstr "a la pàgina web de l’Assemblea"
-
 #: som_cas/templates/som_cas/mail_confirmation.html:6
 msgid "Participa"
 msgstr "Participa"
@@ -279,16 +289,20 @@ msgid "Ja pots votar! :)"
 msgstr "Ja pots votar! :)"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:25
+#, python-format
 msgid ""
-"Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de "
-"10 a 13.55 h</b>, durant l’Assemblea General"
+" Recorda que el moment per fer-ho serà el <b>%(week_day)s dia %(day)s</b> "
+"%(month)s<b> de %(start_votation_hour)s a %(end_votation_hour)s </b>, durant "
+"%(assembly_event_text)s"
 msgstr ""
-"Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de "
-"10 a 13.55 h</b>, durant l’Assemblea General"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid "Donat que has accedit al"
 msgstr "Donat que has accedit al"
+
+#: som_cas/templates/som_cas/mail_confirmation.html:26
+msgid "panell de votacions"
+msgstr "panell de votacions"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid ""
@@ -322,9 +336,38 @@ msgstr "Salut,"
 msgid "L'equip de Som Energia"
 msgstr "L'equip de Som Energia"
 
-#: som_cas/utils.py:45
+#: som_cas/templatetags/assembly_event.py:11 som_cas/tests/test_somusers.py:149
+msgid "l'Assamblea General"
+msgstr ""
+
+#: som_cas/templatetags/assembly_event.py:15
+msgid "l'"
+msgstr ""
+
+#: som_cas/templatetags/assembly_event.py:16
+msgid "l'Assamblea del grup local de"
+msgstr ""
+
+#: som_cas/tests/test_casloginview.py:63
+msgid "Assemblea General"
+msgstr ""
+
+#: som_cas/tests/test_somusers.py:143 som_cas/utils.py:47
 msgid "Confirmació d’Inscripció a la Assemblea"
 msgstr "Confirmació d’inscripció a l’Assemblea General"
+
+#~ msgid "You are already registered as presential voter"
+#~ msgstr "Ja estàs resgitrat/da per tal de votar presencialment"
+
+#~ msgid "a la pàgina web de l’Assemblea"
+#~ msgstr "a la pàgina web de l’Assemblea"
+
+#~ msgid ""
+#~ "Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny "
+#~ "<b>de 10 a 13.55 h</b>, durant l’Assemblea General"
+#~ msgstr ""
+#~ "Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny "
+#~ "<b>de 10 a 13.55 h</b>, durant l’Assemblea General"
 
 #~ msgid ""
 #~ "Login with your credentials, you are participating in the General "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-09 10:59+0000\n"
+"POT-Creation-Date: 2021-01-11 10:47+0100\n"
 "PO-Revision-Date: 2020-12-09 10:14+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
@@ -40,11 +40,11 @@ msgstr "Euskera"
 msgid "Galician"
 msgstr "Gallego"
 
-#: som_cas/admin.py:58 som_cas/models.py:235
+#: som_cas/admin.py:58 som_cas/models.py:260
 msgid "Assembly"
 msgstr "Asamblea"
 
-#: som_cas/admin.py:63 som_cas/models.py:248
+#: som_cas/admin.py:63 som_cas/models.py:273
 msgid "Registration date"
 msgstr "Fecha de registro"
 
@@ -77,9 +77,8 @@ msgid "member_vat"
 msgstr "Persona socia"
 
 #: som_cas/forms.py:24
-msgid "You are already registered as presential voter"
+msgid "You cannot register in this assembly"
 msgstr ""
-"O has escogido por el voto presencia, o esta asamblea ya no está activa"
 
 #: som_cas/forms.py:28
 msgid "Internal error while authenticating user"
@@ -87,7 +86,7 @@ msgstr ""
 "Ha ocurrido un error interno validando el usuario. Si el error continua, "
 "contacta con participa@somenergia.coop"
 
-#: som_cas/forms.py:33
+#: som_cas/forms.py:33 som_cas/tests/test_casloginview.py:50
 msgid "The username or password is not correct"
 msgstr ""
 "El usuario o la contraseña no son correctos, o no eres socio/a de Som Energia"
@@ -129,58 +128,80 @@ msgid "Name of the assembly, eg: Asamblea 2020"
 msgstr "Nombre de la asamblea, pe, Asamblea 2020"
 
 #: som_cas/models.py:167
-msgid "Start time"
-msgstr "Fecha de inicio"
+#, fuzzy
+#| msgid "Assembley state"
+msgid "Assembly date"
+msgstr "Estado de la asamblea"
 
 #: som_cas/models.py:168
-msgid "Date when this occurrence end"
-msgstr "Fecha cuando esta ocurrencia termina"
+msgid "Date and hour of this assembly"
+msgstr ""
 
-#: som_cas/models.py:173
+#: som_cas/models.py:174
+#, fuzzy
+#| msgid "Registration date"
+msgid "Votation start date"
+msgstr "Fecha de registro"
+
+#: som_cas/models.py:175
+msgid "Date and hour when the votation of this assembly starts"
+msgstr ""
+
+#: som_cas/models.py:181
+#, fuzzy
+#| msgid "Registration date"
+msgid "Votation end date"
+msgstr "Fecha de registro"
+
+#: som_cas/models.py:182
+msgid "Date and hour when the votation of this assembly ends"
+msgstr ""
+
+#: som_cas/models.py:187
 msgid "Assembley state"
 msgstr "Estado de la asamblea"
 
-#: som_cas/models.py:181
+#: som_cas/models.py:195
 msgid "Local Group"
 msgstr ""
 
-#: som_cas/models.py:182
+#: som_cas/models.py:196
 msgid "If assembly is for a local group, set blank for general assembly"
 msgstr ""
 
-#: som_cas/models.py:195
+#: som_cas/models.py:213
 msgid "Actually SomCas only supports one active assembly at the same time."
 msgstr ""
 
-#: som_cas/models.py:236
+#: som_cas/models.py:261
 msgid "Assembly for this registration"
 msgstr "Asamblea para este censo"
 
-#: som_cas/models.py:242
+#: som_cas/models.py:267
 msgid "Member"
 msgstr "Persona socia"
 
-#: som_cas/models.py:243
+#: som_cas/models.py:268
 msgid "Member for this registration"
 msgstr "Persona socia para este censo"
 
-#: som_cas/models.py:249
+#: som_cas/models.py:274
 msgid "Member registration date"
 msgstr "Fecha de registro de la persona socia"
 
-#: som_cas/models.py:255
+#: som_cas/models.py:280
 msgid "Registration type"
 msgstr "Tipo de censo"
 
-#: som_cas/models.py:256
+#: som_cas/models.py:281
 msgid "Type of registration: if virtual or in person"
 msgstr "Tipo de cens: si virtual o en persona"
 
-#: som_cas/models.py:261
+#: som_cas/models.py:286
 msgid "Sent registration email"
 msgstr "¿Email de registro enviado?"
 
-#: som_cas/models.py:262
+#: som_cas/models.py:287
 msgid "Check if registration email was sent to the member"
 msgstr "¿Correo de registro enviado?"
 
@@ -207,12 +228,13 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                                    \"En entrar amb les teves dades, estaràs "
-"participant de l’Assemblea Territorial de %(assembly.local_group.name)s\"\n"
+"                                    En entrar amb les teves dades, estaràs "
+"participant de l’Assemblea Territorial de %(local_group_name)s\n"
 "                                    "
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:39
+#: som_cas/tests/test_casloginview.py:21
 msgid "Engage!"
 msgstr "Participa"
 
@@ -250,15 +272,6 @@ msgstr "¿Olvidaste tu contraseña?"
 msgid "Login"
 msgstr "Entrar"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:4
-#: som_cas/templates/som_cas/mail_confirmation.html:26
-msgid "panell de votacions"
-msgstr "panel de votaciones"
-
-#: som_cas/templates/som_cas/mail_confirmation.html:5
-msgid "a la pàgina web de l’Assemblea"
-msgstr "en la página web de la Asamblea"
-
 #: som_cas/templates/som_cas/mail_confirmation.html:6
 msgid "Participa"
 msgstr "Participa"
@@ -284,16 +297,20 @@ msgid "Ja pots votar! :)"
 msgstr "¡Ya puedes votar! :)"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:25
+#, python-format
 msgid ""
-"Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny <b>de "
-"10 a 13.55 h</b>, durant l’Assemblea General"
+" Recorda que el moment per fer-ho serà el <b>%(week_day)s dia %(day)s</b> "
+"%(month)s<b> de %(start_votation_hour)s a %(end_votation_hour)s </b>, durant "
+"%(assembly_event_text)s"
 msgstr ""
-"Recuerda que el momento de hacerlo será el <b>sábado día 20</b> de junio "
-"<b>de 10 a 13.55 h</b>, durante la Asamblea General"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid "Donat que has accedit al"
 msgstr "Dado que has accedido al"
+
+#: som_cas/templates/som_cas/mail_confirmation.html:26
+msgid "panell de votacions"
+msgstr "panel de votaciones"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
 msgid ""
@@ -328,9 +345,47 @@ msgstr "Salud,"
 msgid "L'equip de Som Energia"
 msgstr "El equipo de Som Energia"
 
-#: som_cas/utils.py:45
+#: som_cas/templatetags/assembly_event.py:11 som_cas/tests/test_somusers.py:149
+msgid "l'Assamblea General"
+msgstr ""
+
+#: som_cas/templatetags/assembly_event.py:15
+msgid "l'"
+msgstr ""
+
+#: som_cas/templatetags/assembly_event.py:16
+msgid "l'Assamblea del grup local de"
+msgstr ""
+
+#: som_cas/tests/test_casloginview.py:63
+#, fuzzy
+#| msgid "Assembly name"
+msgid "Assemblea General"
+msgstr "Nombre de la asamblea"
+
+#: som_cas/tests/test_somusers.py:143 som_cas/utils.py:47
 msgid "Confirmació d’Inscripció a la Assemblea"
 msgstr "Confirmación de inscripción a la Asamblea General"
+
+#~ msgid "You are already registered as presential voter"
+#~ msgstr ""
+#~ "O has escogido por el voto presencia, o esta asamblea ya no está activa"
+
+#~ msgid "Start time"
+#~ msgstr "Fecha de inicio"
+
+#~ msgid "Date when this occurrence end"
+#~ msgstr "Fecha cuando esta ocurrencia termina"
+
+#~ msgid "a la pàgina web de l’Assemblea"
+#~ msgstr "en la página web de la Asamblea"
+
+#~ msgid ""
+#~ "Recorda que el moment per fer-ho serà <b>dissabte dia 20</b> de juny "
+#~ "<b>de 10 a 13.55 h</b>, durant l’Assemblea General"
+#~ msgstr ""
+#~ "Recuerda que el momento de hacerlo será el <b>sábado día 20</b> de junio "
+#~ "<b>de 10 a 13.55 h</b>, durante la Asamblea General"
 
 #~ msgid ""
 #~ "Login with your credentials, you are participating in the General "
