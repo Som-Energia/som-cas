@@ -15,13 +15,21 @@ from erppeek import Client
 logger = logging.getLogger('rq.worker')
 
 
+def is_assembly_service(service):
+    service_name = settings.REGISTRATION_SERVICES.get(
+        service, {}
+    ).get('service_name', '')
+
+    return service_name == 'ASSAMBLEA'
+
+
 def get_user(request):
     user = auth.get_user(request)
 
     if isinstance(user, auth.models.AnonymousUser):
         return user
 
-    if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
+    if is_assembly_service(request.GET.get('service', '')):
         if user.is_registered_in_active_virtual_assembly():
             return user
         return auth.models.AnonymousUser()
