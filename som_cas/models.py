@@ -207,7 +207,7 @@ class Assembly(models.Model):
         return self.local_group == None
 
     def clean(self):
-        if self.active and Assembly.assemblies.get_active_assembly():
+        if Assembly.assemblies.get_active_assembly() not in (None, self):
             raise ValidationError(
                 {
                     'active': _('Actually SomCas only supports one active assembly at the same time.')
