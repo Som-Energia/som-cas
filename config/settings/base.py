@@ -120,7 +120,7 @@ LOCALE_PATHS = [
     os.path.join(str(BASE_DIR), 'som_cas/locale'),
 ]
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
 

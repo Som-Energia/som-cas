@@ -2,7 +2,7 @@ from django.core.exceptions import ImproperlyConfigured
 
 from .base import *
 
-CONFIG_FILE = os.path.join(str(BASE_DIR), 'som_cas/tests/conf_test.yaml')
+CONFIG_FILE = os.path.join(str(BASE_DIR), 'som_cas/tests/test.conf.yaml')
 
 try:
     with open(str(CONFIG_FILE), 'r') as f:
@@ -61,9 +61,7 @@ MAMA_CAS_LOGIN_TEMPLATE = 'som_cas/login.html'
 
 MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
-CUSTOM_REGISTRATION_SERVICES = config.get('custom_registration_services', '')
-
-REGISTRATION_SERVICES = config.get('registration_services', '')
+REGISTRATION_SERVICES = config.get('registration_services', {})
 
 logging_conf = config['logging']
 

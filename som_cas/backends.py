@@ -41,9 +41,10 @@ class SocisBackend(object):
             if not self.is_soci(user):
                 return None
 
-            logger.debug(request.GET.get('service'))
+            msg = "Request authentication %s@%s"
+            logger.debug(msg, username, request.GET.get('service'))
             user.save()
-            if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
+            if self.is_assembly_service(request.GET.get('service', '')):
                 registry = user.register_in_virtual_assembly()
                 if registry is None:
                     raise RegisterException()
@@ -59,6 +60,13 @@ class SocisBackend(object):
 
     def is_soci(self, user):
         return user.www_soci is not None
+
+    def is_assembly_service(self, service):
+        service_name = settings.REGISTRATION_SERVICES.get(
+            service, {}
+        ).get('service_name', '')
+
+        return service_name == 'ASSAMBLEA'
 
     def _fetch_user_from_db(self, user_query):
         """

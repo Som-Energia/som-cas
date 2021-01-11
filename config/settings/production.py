@@ -33,6 +33,14 @@ DATABASES = {
     }
 }
 
+erp_conf = config['erp']
+ERP = {
+    'user': erp_conf.get('user'),
+    'password': erp_conf.get('password'),
+    'db': erp_conf.get('db'),
+    'server': erp_conf.get('server'),
+}
+
 RQ_QUEUES = config['queues']
 
 MAMA_CAS_SERVICES = config.get('mama_cas_services', [])
@@ -45,9 +53,7 @@ MAMA_CAS_LOGIN_TEMPLATE = 'som_cas/login.html'
 
 MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
-CUSTOM_REGISTRATION_SERVICES = config.get('custom_registration_services', '')
-
-REGISTRATION_SERVICES = config.get('registration_services', '')
+REGISTRATION_SERVICES = config.get('registration_services', {})
 
 logging_conf = config['logging']
 

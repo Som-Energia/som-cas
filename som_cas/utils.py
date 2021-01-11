@@ -1,3 +1,5 @@
+import locale
+from contextlib import contextmanager
 import logging
 
 from django.conf import settings
@@ -5,7 +7,7 @@ from django.contrib import auth
 from django.core.mail import EmailMessage
 from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import render_to_string
-from django.utils.translation import gettext_lazy as _, override
+from django.utils.translation import gettext as _, override
 from django_rq import job
 from erppeek import Client
 
@@ -28,36 +30,55 @@ def get_user(request):
 
 
 @job('email_queue')
-def send_confirmation_email(user, email_template):
+def send_confirmation_email(member, email_template):
     from som_cas.models import AgRegistration
 
     try:
-        user_registration = AgRegistration.objects.get(
-            member=user,
-            assembly__active=True,
-            registration_email_sent=False
-        )
+        registration = AgRegistration.registrations.registration_with_pending_email_confirmation(member)
     except ObjectDoesNotExist:
-        logger.info(f"Confirmation email has been sent already to {user}")
+        logger.info(f"There is no pending registration to confirm for {member}")
     else:
-        with override(user.lang):
+        with override(member.lang):
+            context = {
+                'member': member,
+                'assembly': registration.assembly
+            }
             msg = EmailMessage(
                 _('Confirmació d’Inscripció a la Assemblea'),
-                render_to_string(email_template, {'user': user}),
+                render_to_string(email_template, context),
                 '',
-                [user.email],
+                [member.email],
                 settings.BCC,
             )
             msg.content_subtype = "html"
             msg.send()
 
-        user_registration.registration_email_sent = True
-        user_registration.save()
+        registration.registration_email_sent = True
+        registration.save()
 
 
 def is_company(vat):
     if vat:
         return vat[0] not in '0123456789KLMXYZ'
+
+
+@contextmanager
+def locale_override(locale_name):
+    LOCALE_MAPPING = {
+        'es': ('es', 'UTF-8'),
+        'ca': ('ca', 'UTF-8'),
+        'eu': ('eu', 'UTF-8'),
+        'ga': ('ga', 'UTF-8'),
+        'en': ('en', 'UTF-8')
+    }
+    loc = locale.getlocale()
+
+    try:
+        yield locale.setlocale(
+            locale.LC_ALL, LOCALE_MAPPING.get(locale_name, ('ca', 'UTF-8'))
+        )
+    finally:
+        locale.setlocale(locale.LC_ALL, loc)
 
 
 class ErpClientManager(object):

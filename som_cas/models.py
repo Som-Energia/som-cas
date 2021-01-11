@@ -164,8 +164,22 @@ class Assembly(models.Model):
     )
 
     date = models.DateField(
-        verbose_name=_("Start time"),
-        help_text=_("Date when this occurrence end")
+        verbose_name=_("Assembly date"),
+        help_text=_("Date and hour of this assembly")
+    )
+
+    start_votation_date = models.DateTimeField(
+        blank=True,
+        null=True,
+        verbose_name=_("Votation start date"),
+        help_text=_("Date and hour when the votation of this assembly starts")
+    )
+
+    end_votation_date = models.DateTimeField(
+        blank=True,
+        null=True,
+        verbose_name=_("Votation end date"),
+        help_text=_("Date and hour when the votation of this assembly ends")
     )
 
     active = models.BooleanField(
@@ -187,6 +201,10 @@ class Assembly(models.Model):
     assemblies = AssemblyQuerySet.as_manager()
 
     objects = models.Manager()
+
+    @property
+    def is_general_assembly(self):
+        return self.local_group == None
 
     def clean(self):
         if self.active and Assembly.assemblies.get_active_assembly():
@@ -225,6 +243,13 @@ class AgRegistrationQuerySet(models.QuerySet):
         return self.filter(
             general_assembly_query | local_group_assembly_query
         ).exists()
+
+    def registration_with_pending_email_confirmation(self, member):
+        return self.get(
+            member=member,
+            assembly__active=True,
+            registration_email_sent=False
+        )
 
 
 class AgRegistration(models.Model):
