@@ -190,6 +190,7 @@ class SomUserInactiveRegistryFactory(AliceSomUserFactory):
 class ActiveAgRegistrationInPersonFactory(AgRegistrationFactory):
 
     assembly = factory.SubFactory(ActiveGeneralAssemblyFactory)
+    member = factory.SubFactory(MikaSomUserFactory)
     registration_type = RegistrationChoices.INPERSON
 
 

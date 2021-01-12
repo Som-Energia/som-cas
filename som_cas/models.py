@@ -204,10 +204,10 @@ class Assembly(models.Model):
 
     @property
     def is_general_assembly(self):
-        return self.local_group == None
+        return self.local_group is None
 
     def clean(self):
-        if Assembly.assemblies.get_active_assembly() not in (None, self):
+        if Assembly.assemblies.get_active_assembly() not in (None, self) and self.active:
             raise ValidationError(
                 {
                     'active': _('Actually SomCas only supports one active assembly at the same time.')

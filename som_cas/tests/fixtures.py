@@ -140,17 +140,17 @@ def not_register_madrid_member(mock_madrid_address_codes):
 
 
 @pytest.fixture
-def member_registry():
+def member_active_agregistry():
     return factories.ActiveAgRegistrationFactory.create()
 
 
 @pytest.fixture
-def member_inactive_registry():
+def member_inactive_agregistry():
     return factories.InactiveAgRegistrationFactory.create()
 
 
 @pytest.fixture
-def inperson_member_registry():
+def inperson_member_agregistry():
     return factories.ActiveAgRegistrationInPersonFactory.create()
 
 
