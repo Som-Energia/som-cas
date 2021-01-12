@@ -1,6 +1,7 @@
 import locale
-from contextlib import contextmanager
 import logging
+from contextlib import contextmanager
+from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib import auth
@@ -16,6 +17,7 @@ logger = logging.getLogger('rq.worker')
 
 
 def is_assembly_service(service):
+    service = urlparse(service).netloc.split(':')[0]
     service_name = settings.REGISTRATION_SERVICES.get(
         service, {}
     ).get('service_name', '')
