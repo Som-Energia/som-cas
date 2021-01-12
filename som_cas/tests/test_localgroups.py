@@ -44,3 +44,13 @@ class TestLocalGroups:
             mock_address_codes.return_value = ('13', '28', '28791')
 
             assert user.local_group == 'Comunidad de Madrid'
+
+    @pytest.mark.django_db
+    def test_identifyLocalGroup_matchingByState_Girona(self, user, local_group):
+        with mock.patch(
+                'som_cas.models.SomUser.address_codes',
+                new_callable=mock.PropertyMock
+        ) as mock_address_codes:
+            mock_address_codes.return_value = ('09', '17', '17142')
+
+            assert user.local_group == 'Girona'

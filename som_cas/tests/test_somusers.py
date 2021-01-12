@@ -63,7 +63,7 @@ class TestSomUsers:
         assert user_registry == member_active_agregistry
 
     @pytest.mark.django_db
-    def test__registerInVirtualAssembly__notRegistered(
+    def test__virtual_register_in_general_assembly__not_registered(
             self, active_general_assembly, not_register_member, erp_con
     ):
         member_registry = not_register_member.register_in_virtual_assembly()

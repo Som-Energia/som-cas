@@ -50,6 +50,25 @@ class CMadridFactory(LocalGroupsFactory):
         }
     }
 
+class GironaFactory(LocalGroupsFactory):
+
+    name = 'Girona'
+
+    data = {
+        'name': 'Girona',
+        'alias': {
+            'city': [
+                '17001',
+                '17003',
+                '17011',
+                '17012',
+                '17016',
+                '17234',
+                '17142',
+                '17029'
+            ]
+        }
+    }
 
 class AssemblyFactory(factory.django.DjangoModelFactory):
 
