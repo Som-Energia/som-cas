@@ -122,9 +122,25 @@ class LocalGroupsResource(resources.ModelResource):
         attribute='data',
     )
 
+    full_name = resources.Field(
+        attribute='full_name'
+    )
+
+    alias = resources.Field(
+        attribute='alias'
+    )
+    
+    email = resources.Field(
+        attribute='email'
+    )
+
+    logo = resources.Field(
+        attribute='logo'
+    )    
+
     class Meta:
         model = LocalGroups
-        fields = ('name', 'data', )
+        fields = ('name', 'data', 'full_name', 'alias', 'email', 'logo')
         import_id_fields = ('name',)
 
     def import_data(self, dataset, dry_run=False, raise_errors=False, use_transactions=None, collect_failed_rows=False, **kwargs):
@@ -148,6 +164,7 @@ def _create_dataset(cls, in_stream, **kwargs):
 class LocalGroupsAdmin(ImportExportModelAdmin):
     list_display = (
         'name',
+        'email'
     )
 
     resource_class = LocalGroupsResource
