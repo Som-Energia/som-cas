@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-14 13:02+0100\n"
-"PO-Revision-Date: 2021-01-14 12:07+0000\n"
+"PO-Revision-Date: 2021-01-14 12:15+0000\n"
 "Last-Translator: Weblate Admin <incubadoracorreu@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
@@ -66,11 +66,11 @@ msgstr "Email"
 
 #: som_cas/admin.py:104
 msgid "assembly_name"
-msgstr "Nombre de la asamblea"
+msgstr ""
 
 #: som_cas/admin.py:105
 msgid "member_vat"
-msgstr "DNI Persona socia"
+msgstr ""
 
 #: som_cas/forms.py:24
 msgid "You cannot register in this assembly"
