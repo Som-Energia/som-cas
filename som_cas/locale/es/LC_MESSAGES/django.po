@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-14 12:48+0100\n"
+"POT-Creation-Date: 2021-01-14 13:02+0100\n"
 "PO-Revision-Date: 2021-01-14 11:32+0000\n"
 "Last-Translator: Weblate Admin <incubadoracorreu@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
@@ -420,12 +420,18 @@ msgstr "Asamblea Ordinaria de la"
 msgid "Assemblea General"
 msgstr "Asamblea General"
 
-#: som_cas/tests/test_utils.py:32 som_cas/utils.py:56
+#: som_cas/tests/test_utils.py:32 som_cas/utils.py:57
 msgid "Confirmació d’inscripció a la Assemblea"
 msgstr "Confirmación de inscripción a la Asamblea"
 
-#: som_cas/tests/test_utils.py:53 som_cas/utils.py:56
+#: som_cas/tests/test_utils.py:53
 msgid "Confirmació d'inscripció {}"
+msgstr "Confirmación de inscripción {}"
+
+#: som_cas/utils.py:56
+#, fuzzy
+#| msgid "Confirmació d'inscripció {}"
+msgid "Confirmació d'inscripció"
 msgstr "Confirmación de inscripción {}"
 
 #~ msgid "You are already registered as presential voter"
