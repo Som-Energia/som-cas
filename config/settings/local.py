@@ -31,19 +31,24 @@ TEMPLATES[0]['OPTIONS']['context_processors'].append(
     'django.template.context_processors.debug'
 )
 
+erp_conf = config['erp']
+ERP = {
+    'user': erp_conf.get('user'),
+    'password': erp_conf.get('password'),
+    'db': erp_conf.get('db'),
+    'server': erp_conf.get('server'),
+}
+
+
 MAMA_CAS_SERVICES = config.get('mama_cas_services', [])
 
 MAMA_CAS_SERVICE_BACKENDS = [
     'mama_cas.services.backends.SettingsBackend'
 ]
 
-MAMA_CAS_LOGIN_TEMPLATE = 'som_cas/login.html'
-
 MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
-CUSTOM_REGISTRATION_SERVICES = config.get('custom_registration_services', '')
-
-REGISTRATION_SERVICES = config.get('registration_services', '')
+REGISTRATION_SERVICES = config.get('registration_services', {})
 
 UPLOAD_DIR = 'registered_members'
 

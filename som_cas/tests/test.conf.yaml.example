@@ -1,0 +1,74 @@
+# General configuration parameters
+
+# Super secret key.
+secret_key: 'super secret key'
+
+# Database definition
+databases:
+  ## Database for som_cas service
+  som_cas:
+    name: 'db_name'
+    user: 'user'
+    password: 'password'
+    host: 'localhost'
+    port: 6542
+  ## Database where users will be fetched
+  users_db:
+    name: 'users_db_name'
+    user: 'user'
+    password: 'password'
+    host: 'localhost'
+    port: 243654
+
+# ERP definition
+erp:
+  user: 'username'
+  password: 'password'
+  server: 'http://server.local:4523'
+  db: 'db_name'
+
+# Queues definition
+queues:
+  email_queue:
+## Redis instance
+    HOST: 'localhost'
+    PORT: 6379
+    DB: 0
+    DEFAULT_TIMEOUT: 360
+
+# Allowed services definitions
+## For more options and information see: https://django-mama-cas.readthedocs.io/en/latest/settings.html
+mama_cas_services:
+  - SERVICE: ^https://service.domain\.com[/]?.*
+    CALLBACKS:
+      - 'som_cas.callbacks.service'
+    LOGOUT_ALLOW: true
+    LOGOUT_URL: "https://service.somenergia.coop/logout"
+  - SERVICE: ^http[s]?://service2\.domain\.coop[/]?.*
+    CALLBACKS:
+      - 'som_cas.callbacks.service2'
+    LOGOUT_ALLOW: false
+    LOGOUT_URL: 'https://service2.somenergia.coop:4433/logout'
+
+# Services that need some special treatment
+registration_services:
+  service.somenergia.coop:
+    service_name: AGVIRTUAL
+  service2.somenergia.coop:
+    service_name: ASSAMBLEA
+
+# Logger definitions
+logging:
+  ## Level definition for log messages. Can be: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: 'INFO'
+  ## Place where lives the log file
+  file: 'path_to_log/som_cas.log'
+
+# Members upload dir
+upload_dir: upload_dir
+
+# Email notifications
+sendgrid_api_key: 'api_key'
+email:
+  default_from: "Alice <alice@service2.coop>"
+  bcc: 'bob@service.com'

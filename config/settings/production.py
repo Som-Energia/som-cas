@@ -1,8 +1,6 @@
-import yaml
 from django.core.exceptions import ImproperlyConfigured
 
 from .base import *
-
 
 DEBUG = False
 
@@ -10,11 +8,7 @@ SECRET_KEY = config['secret_key']
 
 ALLOWED_HOSTS = config['allowed_hosts']
 
-
 UPLOAD_DIR = config['upload_dir']
-
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 db_conf = config['databases']
 if not db_conf.get('users_db', False):
@@ -39,6 +33,14 @@ DATABASES = {
     }
 }
 
+erp_conf = config['erp']
+ERP = {
+    'user': erp_conf.get('user'),
+    'password': erp_conf.get('password'),
+    'db': erp_conf.get('db'),
+    'server': erp_conf.get('server'),
+}
+
 RQ_QUEUES = config['queues']
 
 MAMA_CAS_SERVICES = config.get('mama_cas_services', [])
@@ -51,7 +53,7 @@ MAMA_CAS_LOGIN_TEMPLATE = 'som_cas/login.html'
 
 MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
-CUSTOM_REGISTRATION_SERVICES = config.get('custom_registration_services', '')
+REGISTRATION_SERVICES = config.get('registration_services', {})
 
 logging_conf = config['logging']
 

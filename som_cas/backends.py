@@ -6,6 +6,7 @@ from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth.hashers import check_password
 from django.db import connections
 
+from .utils import is_assembly_service
 
 logger = logging.getLogger(__name__)
 
@@ -41,10 +42,11 @@ class SocisBackend(object):
             if not self.is_soci(user):
                 return None
 
-            logger.debug(request.GET.get('service'))
+            msg = "Request authentication %s@%s"
+            logger.debug(msg, username, request.GET.get('service'))
             user.save()
-            if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
-                registry = user.registerInVirtualAssembly()
+            if is_assembly_service(request.GET.get('service', '')):
+                registry = user.register_in_virtual_assembly()
                 if registry is None:
                     raise RegisterException()
             return user

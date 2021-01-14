@@ -20,8 +20,8 @@ class SomCasLoginForm(LoginForm):
             try:
                 self.user = authenticate(request=self.request, username=username, password=password)
             except RegisterException:
-                logger.exception("A presential user %s tried to register into virtual assembly", username)
-                error_msg = _('You are already registered as presential voter')
+                logger.info("A presential user or a user from a different local group %s tried to register into actual virtual assembly", username)
+                error_msg = _('You cannot register in this assembly')
                 raise forms.ValidationError(error_msg)
             except Exception:
                 logger.exception("Error authenticating %s" % username)
