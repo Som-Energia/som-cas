@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-11 10:47+0100\n"
+"POT-Creation-Date: 2021-01-14 10:38+0100\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,11 +39,11 @@ msgstr ""
 msgid "Galician"
 msgstr ""
 
-#: som_cas/admin.py:58 som_cas/models.py:260
+#: som_cas/admin.py:58 som_cas/models.py:301
 msgid "Assembly"
 msgstr ""
 
-#: som_cas/admin.py:63 som_cas/models.py:273
+#: som_cas/admin.py:63 som_cas/models.py:314
 msgid "Registration date"
 msgstr ""
 
@@ -87,107 +87,135 @@ msgstr ""
 msgid "This user account is disabled"
 msgstr ""
 
-#: som_cas/models.py:21
+#: som_cas/models.py:23
 msgid "In person"
 msgstr ""
 
-#: som_cas/models.py:22
+#: som_cas/models.py:24
 msgid "Virtual"
 msgstr ""
 
-#: som_cas/models.py:109
+#: som_cas/models.py:118
 msgid "Local group name"
 msgstr ""
 
-#: som_cas/models.py:110
+#: som_cas/models.py:119
 msgid "Name of the local group"
 msgstr ""
 
-#: som_cas/models.py:114
+#: som_cas/models.py:126
+msgid "Local group full name"
+msgstr ""
+
+#: som_cas/models.py:127
+msgid "Name of the local group, ex: Grup Local de Girona"
+msgstr ""
+
+#: som_cas/models.py:134
+msgid "Local group alias name"
+msgstr ""
+
+#: som_cas/models.py:135
+msgid "Alias of the local group, ex: CT Girona"
+msgstr ""
+
+#: som_cas/models.py:142 som_cas/models.py:143
+msgid "Local group email"
+msgstr ""
+
+#: som_cas/models.py:150
+msgid "Local group logo"
+msgstr ""
+
+#: som_cas/models.py:151
+msgid "Logo of the local group"
+msgstr ""
+
+#: som_cas/models.py:155
 msgid "Local group data"
 msgstr ""
 
-#: som_cas/models.py:115
+#: som_cas/models.py:156
 msgid "Cities, states and provincies related with this local group"
 msgstr ""
 
-#: som_cas/models.py:156
+#: som_cas/models.py:197
 msgid "Assembly name"
 msgstr ""
 
-#: som_cas/models.py:157
+#: som_cas/models.py:198
 msgid "Name of the assembly, eg: Asamblea 2020"
 msgstr ""
 
-#: som_cas/models.py:167
+#: som_cas/models.py:208
 msgid "Assembly date"
 msgstr ""
 
-#: som_cas/models.py:168
+#: som_cas/models.py:209
 msgid "Date and hour of this assembly"
 msgstr ""
 
-#: som_cas/models.py:174
+#: som_cas/models.py:215
 msgid "Votation start date"
 msgstr ""
 
-#: som_cas/models.py:175
+#: som_cas/models.py:216
 msgid "Date and hour when the votation of this assembly starts"
 msgstr ""
 
-#: som_cas/models.py:181
+#: som_cas/models.py:222
 msgid "Votation end date"
 msgstr ""
 
-#: som_cas/models.py:182
+#: som_cas/models.py:223
 msgid "Date and hour when the votation of this assembly ends"
 msgstr ""
 
-#: som_cas/models.py:187
+#: som_cas/models.py:228
 msgid "Assembley state"
 msgstr ""
 
-#: som_cas/models.py:195
+#: som_cas/models.py:236
 msgid "Local Group"
 msgstr ""
 
-#: som_cas/models.py:196
+#: som_cas/models.py:237
 msgid "If assembly is for a local group, set blank for general assembly"
 msgstr ""
 
-#: som_cas/models.py:213
+#: som_cas/models.py:254
 msgid "Actually SomCas only supports one active assembly at the same time."
 msgstr ""
 
-#: som_cas/models.py:261
+#: som_cas/models.py:302
 msgid "Assembly for this registration"
 msgstr ""
 
-#: som_cas/models.py:267
+#: som_cas/models.py:308
 msgid "Member"
 msgstr ""
 
-#: som_cas/models.py:268
+#: som_cas/models.py:309
 msgid "Member for this registration"
 msgstr ""
 
-#: som_cas/models.py:274
+#: som_cas/models.py:315
 msgid "Member registration date"
 msgstr ""
 
-#: som_cas/models.py:280
+#: som_cas/models.py:321
 msgid "Registration type"
 msgstr ""
 
-#: som_cas/models.py:281
+#: som_cas/models.py:322
 msgid "Type of registration: if virtual or in person"
 msgstr ""
 
-#: som_cas/models.py:286
+#: som_cas/models.py:327
 msgid "Sent registration email"
 msgstr ""
 
-#: som_cas/models.py:287
+#: som_cas/models.py:328
 msgid "Check if registration email was sent to the member"
 msgstr ""
 
@@ -268,19 +296,49 @@ msgstr ""
 msgid "https://assemblea.somenergia.coop"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:18
+#: som_cas/templates/som_cas/mail_confirmation.html:19
+#: som_cas/templates/som_cas/mail_confirmation.html:49
 msgid "logo de la asamblea 2020"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:23
+#: som_cas/templates/som_cas/mail_confirmation.html:24
+#: som_cas/templates/som_cas/mail_confirmation.html:54
 msgid "Hola"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:24
+#: som_cas/templates/som_cas/mail_confirmation.html:26
+#, python-format
+msgid ""
+" T'has registrat correctament per votar a <b>%(assembly_event_text)s</b>,  "
+"que serà el proper\n"
+"                          <b>%(week_day)s %(day)s %(month)s</b>"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:28
+#, python-format
+msgid ""
+" Les votacions seran el mateix dia, de  <b>%(start_votation_hour)s a "
+"%(end_votation_hour)s</b>\n"
+"                            <b> de %(start_votation_hour)s a "
+"%(end_votation_hour)s </b>, a través del <a href=\"https://agvirtual."
+"somenergia.coop/consultations?locale=%(LANGUAGE_CODE)s\" target=\"_blank\" "
+"style=\"color:#707a1a; text-decoration:underline;\" rel=\"noopener noreferrer"
+"\">panell de votacions</a> al que acabes d'accedir. "
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:34
+msgid "Gràcies per participar-hi!"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:39
+msgid "Salutacions,"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:55
 msgid "Ja pots votar! :)"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:25
+#: som_cas/templates/som_cas/mail_confirmation.html:56
 #, python-format
 msgid ""
 " Recorda que el moment per fer-ho serà el <b>%(week_day)s dia %(day)s</b> "
@@ -288,15 +346,15 @@ msgid ""
 "%(assembly_event_text)s"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:26
+#: som_cas/templates/som_cas/mail_confirmation.html:57
 msgid "Donat que has accedit al"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:26
+#: som_cas/templates/som_cas/mail_confirmation.html:57
 msgid "panell de votacions"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:26
+#: som_cas/templates/som_cas/mail_confirmation.html:57
 msgid ""
 "si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
 "com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest "
@@ -304,27 +362,27 @@ msgid ""
 "que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:27
+#: som_cas/templates/som_cas/mail_confirmation.html:58
 msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:27
+#: som_cas/templates/som_cas/mail_confirmation.html:58
 msgid "pàgina web de l’Assemblea"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:27
+#: som_cas/templates/som_cas/mail_confirmation.html:58
 msgid "i al"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:37
+#: som_cas/templates/som_cas/mail_confirmation.html:69
 msgid "Salut,"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:39
+#: som_cas/templates/som_cas/mail_confirmation.html:71
 msgid "L'equip de Som Energia"
 msgstr ""
 
-#: som_cas/templatetags/assembly_event.py:11 som_cas/tests/test_somusers.py:149
+#: som_cas/templatetags/assembly_event.py:11 som_cas/tests/test_utils.py:38
 msgid "l'Assamblea General"
 msgstr ""
 
@@ -333,13 +391,17 @@ msgid "l'"
 msgstr ""
 
 #: som_cas/templatetags/assembly_event.py:16
-msgid "l'Assamblea del grup local de"
+msgid "l'Assemblea Ordinària de la"
 msgstr ""
 
 #: som_cas/tests/test_casloginview.py:63
 msgid "Assemblea General"
 msgstr ""
 
-#: som_cas/tests/test_somusers.py:143 som_cas/utils.py:47
-msgid "Confirmació d’Inscripció a la Assemblea"
+#: som_cas/tests/test_utils.py:32 som_cas/utils.py:56
+msgid "Confirmació d’inscripció a la Assemblea"
+msgstr ""
+
+#: som_cas/tests/test_utils.py:53 som_cas/utils.py:56
+msgid "Confirmació d'inscripció {}"
 msgstr ""
