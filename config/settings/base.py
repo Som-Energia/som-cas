@@ -136,6 +136,8 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(str(BASE_DIR), 'som_cas/static')
 
+MEDIA_ROOT = config.get('media_root', os.path.join(str(BASE_DIR), 'som_cas/media'))
+
 # Rosetta conf
 ROSETTA_ENABLE_REFLANG = True
 ROSETTA_SHOW_AT_ADMIN_PANEL = True

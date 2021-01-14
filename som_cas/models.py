@@ -1,7 +1,9 @@
+import os
 import logging
 
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.contrib.postgres.fields import JSONField
 from django.utils.translation import gettext as _
@@ -104,12 +106,51 @@ class LocalGroupsQuerySet(models.QuerySet):
 
 class LocalGroups(models.Model):
 
+    def gls_logo_path(instance, filename):
+        return os.path.join(
+            settings.UPLOAD_DIR,
+            '{0}/{1}'.format(instance.name, filename)
+        )
+
+
     name = models.CharField(
         max_length=128,
         verbose_name=_("Local group name"),
         help_text=_("Name of the local group")
     )
+    
+    full_name = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,
+        verbose_name=_("Local group full name"),
+        help_text=_("Name of the local group, ex: Grup Local de Girona")
+    )
 
+    alias = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,        
+        verbose_name=_("Local group alias name"),
+        help_text=_("Alias of the local group, ex: CT Girona")
+    )
+    
+    email = models.CharField(
+        max_length=128,
+        blank=True,
+        null=True,
+        verbose_name=_("Local group email"),
+        help_text=_("Local group email")
+    )
+
+    logo = models.ImageField(
+        blank=True,
+        null=True,
+        upload_to=gls_logo_path,
+        verbose_name=_("Local group logo"),
+        help_text=_("Logo of the local group")
+    )
+    
     data = JSONField(
         verbose_name=_("Local group data"),
         help_text=_("Cities, states and provincies related with this local group")

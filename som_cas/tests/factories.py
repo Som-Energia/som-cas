@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 import factory
+from django.conf import settings
 from django.utils import timezone as tz
 from som_cas.models import (AgRegistration, Assembly, LocalGroups,
                             RegistrationChoices, SomUser)
@@ -42,6 +43,14 @@ class AlmeriaFactory(LocalGroupsFactory):
 class CMadridFactory(LocalGroupsFactory):
 
     name = 'Comunidad de Madrid'
+
+    full_name = 'Coordinadora Territorial de Madrid'
+
+    alias = 'CT Madrid'
+
+    email = personaldata.lg_email
+
+    logo = f'{settings.MEDIA_ROOT}/uploads/CT Madrid/logo_gl_madrid.png'
 
     data = {
         'name': 'Comunidad de Madrid',
