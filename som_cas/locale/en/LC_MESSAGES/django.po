@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-14 12:48+0100\n"
+"POT-Creation-Date: 2021-01-14 13:02+0100\n"
 "PO-Revision-Date: 2020-12-09 10:11+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -396,10 +396,14 @@ msgstr ""
 msgid "Assemblea General"
 msgstr ""
 
-#: som_cas/tests/test_utils.py:32 som_cas/utils.py:56
+#: som_cas/tests/test_utils.py:32 som_cas/utils.py:57
 msgid "Confirmació d’inscripció a la Assemblea"
 msgstr ""
 
-#: som_cas/tests/test_utils.py:53 som_cas/utils.py:56
+#: som_cas/tests/test_utils.py:53
 msgid "Confirmació d'inscripció {}"
+msgstr ""
+
+#: som_cas/utils.py:56
+msgid "Confirmació d'inscripció"
 msgstr ""
