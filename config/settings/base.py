@@ -136,6 +136,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(str(BASE_DIR), 'som_cas/static')
 
+MEDIA_URL = config.get('media_url')
 MEDIA_ROOT = config.get('media_root', os.path.join(str(BASE_DIR), 'som_cas/media'))
 
 # Rosetta conf
