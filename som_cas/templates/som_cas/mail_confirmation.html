@@ -16,7 +16,7 @@
                     {% if assembly.local_group is not None %}
                     <tr>
                         <td align="right" valign="top" style="padding:10px 0 20px 0;">
-                            <img src="{{ assembly.local_group.logo }}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
+                            <img src="{{ assembiy.local_group.logo.url }}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
                         </td>
                     </tr>
                       <tr align="justify" valign="top" style="padding:10px; color: #333333;">
@@ -25,8 +25,7 @@
 
                           <p>{% blocktrans with week_day=assembly.date|date:'l'|lower day=assembly.date|date:'j' month=assembly.date|date:'E'|lower assembly_event_text=assembly|assembly_event|safe %} T'has registrat correctament per votar a <b>{{ assembly_event_text }}</b>,  que serà el proper
                           <b>{{ week_day }} {{ day }} {{ month }}</b>{% endblocktrans %}.</p>
-                          <p> {% blocktrans with start_votation_hour=assembly.start_votation_date|date:'H:i' end_votation_hour=assembly.end_votation_date|date:'H:i' %} Les votacions seran el mateix dia, de  <b>{{ start_votation_hour }} a {{ end_votation_hour }}</b>
-                            <b> de {{ start_votation_hour }} a {{ end_votation_hour }} </b>, a través del <a href="https://agvirtual.somenergia.coop/consultations?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">panell de votacions</a> al que acabes d'accedir. {% endblocktrans %}</p>
+                          <p> {% blocktrans with start_votation_hour=assembly.start_votation_date|date:'H:i' end_votation_hour=assembly.end_votation_date|date:'H:i' %} Les votacions seran el mateix dia, de  <b>{{ start_votation_hour }} a {{ end_votation_hour }}</b>, a través del <a href="https://agvirtual.somenergia.coop/consultations?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">panell de votacions</a> al que acabes d'accedir. {% endblocktrans %}</p>
                       </td>
                       </tr>
                         <tr align="justify" valign="top" style="padding:10px; color: #333333;">
