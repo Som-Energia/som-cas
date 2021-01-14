@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 import factory
+from django.conf import settings
 from django.utils import timezone as tz
 from som_cas.models import (AgRegistration, Assembly, LocalGroups,
                             RegistrationChoices, SomUser)
@@ -43,6 +44,14 @@ class CMadridFactory(LocalGroupsFactory):
 
     name = 'Comunidad de Madrid'
 
+    full_name = 'Coordinadora Territorial de Madrid'
+
+    alias = 'CT Madrid'
+
+    email = personaldata.lg_email
+
+    logo = f'{settings.MEDIA_ROOT}/uploads/CT Madrid/logo_gl_madrid.png'
+
     data = {
         'name': 'Comunidad de Madrid',
         'alias': {
@@ -50,6 +59,25 @@ class CMadridFactory(LocalGroupsFactory):
         }
     }
 
+class GironaFactory(LocalGroupsFactory):
+
+    name = 'Girona'
+
+    data = {
+        'name': 'Girona',
+        'alias': {
+            'city': [
+                '17001',
+                '17003',
+                '17011',
+                '17012',
+                '17016',
+                '17234',
+                '17142',
+                '17029'
+            ]
+        }
+    }
 
 class AssemblyFactory(factory.django.DjangoModelFactory):
 
@@ -160,6 +188,12 @@ class PendingEmailAgRegistrationFactory(AgRegistrationFactory):
     assembly = factory.SubFactory(ActiveGeneralAssemblyFactory)
     registration_email_sent = False
 
+class PendingEmailLocalGroupRegistrationFactory(AgRegistrationFactory):
+
+    member = factory.SubFactory(AliceSomUserFactory)
+    assembly = factory.SubFactory(ActiveMadridLocalGroupAssemblyFactory)
+    registration_email_sent = False
+
 class SomUserActiveRegistryFactory(BobSomUserFactory):
 
     registered = factory.RelatedFactory(
@@ -190,6 +224,7 @@ class SomUserInactiveRegistryFactory(AliceSomUserFactory):
 class ActiveAgRegistrationInPersonFactory(AgRegistrationFactory):
 
     assembly = factory.SubFactory(ActiveGeneralAssemblyFactory)
+    member = factory.SubFactory(MikaSomUserFactory)
     registration_type = RegistrationChoices.INPERSON
 
 

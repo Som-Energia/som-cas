@@ -7,12 +7,12 @@ from som_cas.middleware import _set_erp_connection
 from . import factories
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def erp_con(settings):
     return _set_erp_connection(lambda self: Client(**settings.ERP))
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def mock_madrid_address_codes(monkeypatch):
     address_codes = ('13', '28', '28791')
     monkeypatch.setattr(factories.SomUser, "address_codes", address_codes)
@@ -23,14 +23,15 @@ def set_debug_when_testing(settings):
     settings.DEBUG = True
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def local_group():
     factories.BaixMontsenyFactory.create()
     factories.AlmeriaFactory.create()
     factories.CMadridFactory.create()
+    factories.GironaFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def assemblies():
     factories.ActiveGeneralAssamblyFactory.create()
     factories.InactiveGenerealAssamblyFactory.create()
@@ -38,37 +39,37 @@ def assemblies():
     factories.InactiveGeneralAssemblyFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def active_general_assembly():
     return factories.ActiveGeneralAssemblyFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def inactive_general_assembly():
     return factories.InactiveGeneralAssemblyFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def old_register_in_general_assembly():
     return factories.OldAgRegistrationFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def active_madridlocalgroup_assembly():
     return factories.ActiveMadridLocalGroupAssemblyFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def active_baixmontsenylocalgroup_assembly():
     return factories.ActiveBaixMontsenyLocalGroupAssemblyFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def user():
     return factories.SomUserFactory.build()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def members():
     alice = factories.AliceSomUserFactory.create()
     alice.set_password('1234')
@@ -129,31 +130,36 @@ def members_db(members):
         cursor.execute('DROP TABLE IF EXISTS som_users')
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def not_register_member():
     return factories.AliceSomUserFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def not_register_madrid_member(mock_madrid_address_codes):
     return factories.AliceSomUserFactory.create()
 
 
-@pytest.fixture
-def member_registry():
+@pytest.fixture(scope='function')
+def member_active_agregistry():
     return factories.ActiveAgRegistrationFactory.create()
 
 
-@pytest.fixture
-def member_inactive_registry():
+@pytest.fixture(scope='function')
+def member_inactive_agregistry():
     return factories.InactiveAgRegistrationFactory.create()
 
 
-@pytest.fixture
-def inperson_member_registry():
+@pytest.fixture(scope='function')
+def inperson_member_agregistry():
     return factories.ActiveAgRegistrationInPersonFactory.create()
 
 
-@pytest.fixture
+@pytest.fixture(scope='function')
 def pending_email_member_registry():
     return factories.PendingEmailAgRegistrationFactory.create()
+
+
+@pytest.fixture(scope='function')
+def pending_email_member_registry_localgroup_assembly():
+    return factories.PendingEmailLocalGroupRegistrationFactory.create()

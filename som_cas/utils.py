@@ -1,6 +1,7 @@
 import locale
-from contextlib import contextmanager
 import logging
+from contextlib import contextmanager
+from urllib.parse import urlparse
 
 from django.conf import settings
 from django.contrib import auth
@@ -15,13 +16,22 @@ from erppeek import Client
 logger = logging.getLogger('rq.worker')
 
 
+def is_assembly_service(service):
+    service = urlparse(service).netloc.split(':')[0]
+    service_name = settings.REGISTRATION_SERVICES.get(
+        service, {}
+    ).get('service_name', '')
+
+    return service_name == 'ASSAMBLEA'
+
+
 def get_user(request):
     user = auth.get_user(request)
 
     if isinstance(user, auth.models.AnonymousUser):
         return user
 
-    if settings.CUSTOM_REGISTRATION_SERVICES in request.GET.get('service', ''):
+    if is_assembly_service(request.GET.get('service', '')):
         if user.is_registered_in_active_virtual_assembly():
             return user
         return auth.models.AnonymousUser()
@@ -43,8 +53,9 @@ def send_confirmation_email(member, email_template):
                 'member': member,
                 'assembly': registration.assembly
             }
+            subject = _("Confirmació d'inscripció {}".format(registration.assembly.local_group.alias)) if registration.assembly.local_group is not None else _('Confirmació d’inscripció a la Assemblea')
             msg = EmailMessage(
-                _('Confirmació d’Inscripció a la Assemblea'),
+                subject,
                 render_to_string(email_template, context),
                 '',
                 [member.email],
