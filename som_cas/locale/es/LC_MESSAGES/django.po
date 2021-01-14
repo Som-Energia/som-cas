@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-14 10:38+0100\n"
-"PO-Revision-Date: 2021-01-14 10:54+0000\n"
+"PO-Revision-Date: 2021-01-14 11:32+0000\n"
 "Last-Translator: Weblate Admin <incubadoracorreu@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
@@ -250,6 +250,10 @@ msgid ""
 "participant de l’Assemblea Territorial de %(local_group_name)s\n"
 "                                    "
 msgstr ""
+"\n"
+"                                    Al entrar tus datos, estarás "
+"participando de la Asamblea Territorial de %(local_group_name)s\n"
+"                                    "
 
 #: som_cas/templates/som_cas/login.html:39
 #: som_cas/tests/test_casloginview.py:21
@@ -304,12 +308,12 @@ msgid "https://assemblea.somenergia.coop"
 msgstr "https://asamblea.somenergia.coop/"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:19
-#: som_cas/templates/som_cas/mail_confirmation.html:49
+#: som_cas/templates/som_cas/mail_confirmation.html:48
 msgid "logo de la asamblea 2020"
 msgstr "logo de la asamblea 2020"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:24
-#: som_cas/templates/som_cas/mail_confirmation.html:54
+#: som_cas/templates/som_cas/mail_confirmation.html:53
 msgid "Hola"
 msgstr "Hola"
 
@@ -320,42 +324,38 @@ msgid ""
 "que serà el proper\n"
 "                          <b>%(week_day)s %(day)s %(month)s</b>"
 msgstr ""
-" Te has registrado correctamente para votar en la "
-"<b>%(assembly_event_text)s</b>,  que será el próximo\n"
+" Te has registrado correctamente para votar en la <b>"
+"%(assembly_event_text)s</b>,  que será el próximo\n"
 "                          <b>%(week_day)s %(day)s %(month)s</b>"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:28
 #, python-format
 msgid ""
-" Les votacions seran el mateix dia, de  <b>%(start_votation_hour)s a "
-"%(end_votation_hour)s</b>\n"
-"                            <b> de %(start_votation_hour)s a "
-"%(end_votation_hour)s </b>, a través del <a href=\"https://agvirtual."
+"Les votacions seran el mateix dia, de  <b>%(start_votation_hour)s a "
+"%(end_votation_hour)s</b>, a través del <a href=\"https://agvirtual."
 "somenergia.coop/consultations?locale=%(LANGUAGE_CODE)s\" target=\"_blank\" "
 "style=\"color:#707a1a; text-decoration:underline;\" rel=\"noopener noreferrer"
 "\">panell de votacions</a> al que acabes d'accedir. "
 msgstr ""
-" Las votaciones serán el mismo día, de  <b>%(start_votation_hour)s a "
-"%(end_votation_hour)s</b>\n"
-"                            <b> de %(start_votation_hour)s a "
-"%(end_votation_hour)s </b>, a través del <a href=\"https://agvirtual."
+"Las votaciones serán el mismo día, de  <b>%(start_votation_hour)s a "
+"%(end_votation_hour)s</b>, a través del <a href=\"https://agvirtual."
 "somenergia.coop/consultations?locale=%(LANGUAGE_CODE)s\" target=\"_blank\" "
 "style=\"color:#707a1a; text-decoration:underline;\" rel=\"noopener "
 "noreferrer\">panel de votaciones</a> al que acabas de acceder. "
 
-#: som_cas/templates/som_cas/mail_confirmation.html:34
+#: som_cas/templates/som_cas/mail_confirmation.html:33
 msgid "Gràcies per participar-hi!"
 msgstr "¡Muchas gracias por participar!"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:39
+#: som_cas/templates/som_cas/mail_confirmation.html:38
 msgid "Salutacions,"
 msgstr "Saludos,"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:55
+#: som_cas/templates/som_cas/mail_confirmation.html:54
 msgid "Ja pots votar! :)"
 msgstr "¡Ya puedes votar! :)"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:56
+#: som_cas/templates/som_cas/mail_confirmation.html:55
 #, python-format
 msgid ""
 " Recorda que el moment per fer-ho serà el <b>%(week_day)s dia %(day)s</b> "
@@ -363,15 +363,15 @@ msgid ""
 "%(assembly_event_text)s"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:57
+#: som_cas/templates/som_cas/mail_confirmation.html:56
 msgid "Donat que has accedit al"
 msgstr "Dado que has accedido al"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:57
+#: som_cas/templates/som_cas/mail_confirmation.html:56
 msgid "panell de votacions"
 msgstr "panel de votaciones"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:57
+#: som_cas/templates/som_cas/mail_confirmation.html:56
 msgid ""
 "si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
 "com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest "
@@ -384,23 +384,23 @@ msgstr ""
 "con mayoría reforzada, ya que necesitan ⅔ de votos positivos sobre el <b> "
 "total de votos presentes</b>"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:58
+#: som_cas/templates/som_cas/mail_confirmation.html:57
 msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
 msgstr "Encontrarás toda la información relativa al día de la Asamblea "
 
-#: som_cas/templates/som_cas/mail_confirmation.html:58
+#: som_cas/templates/som_cas/mail_confirmation.html:57
 msgid "pàgina web de l’Assemblea"
 msgstr "en la página web de la Asamblea"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:58
+#: som_cas/templates/som_cas/mail_confirmation.html:57
 msgid "i al"
 msgstr "y en el"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:69
+#: som_cas/templates/som_cas/mail_confirmation.html:68
 msgid "Salut,"
 msgstr "Salud,"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:71
+#: som_cas/templates/som_cas/mail_confirmation.html:70
 msgid "L'equip de Som Energia"
 msgstr "El equipo de Som Energia"
 
