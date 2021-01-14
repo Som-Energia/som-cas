@@ -158,3 +158,8 @@ def inperson_member_agregistry():
 @pytest.fixture(scope='function')
 def pending_email_member_registry():
     return factories.PendingEmailAgRegistrationFactory.create()
+
+
+@pytest.fixture(scope='function')
+def pending_email_member_registry_localgroup_assembly():
+    return factories.PendingEmailLocalGroupRegistrationFactory.create()

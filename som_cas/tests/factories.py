@@ -188,6 +188,12 @@ class PendingEmailAgRegistrationFactory(AgRegistrationFactory):
     assembly = factory.SubFactory(ActiveGeneralAssemblyFactory)
     registration_email_sent = False
 
+class PendingEmailLocalGroupRegistrationFactory(AgRegistrationFactory):
+
+    member = factory.SubFactory(AliceSomUserFactory)
+    assembly = factory.SubFactory(ActiveMadridLocalGroupAssemblyFactory)
+    registration_email_sent = False
+
 class SomUserActiveRegistryFactory(BobSomUserFactory):
 
     registered = factory.RelatedFactory(

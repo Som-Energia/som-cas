@@ -53,8 +53,9 @@ def send_confirmation_email(member, email_template):
                 'member': member,
                 'assembly': registration.assembly
             }
+            subject = _("Confirmació d'inscripció {}".format(registration.assembly.local_group.alias)) if registration.assembly.local_group is not None else _('Confirmació d’inscripció a la Assemblea')
             msg = EmailMessage(
-                _('Confirmació d’Inscripció a la Assemblea'),
+                subject,
                 render_to_string(email_template, context),
                 '',
                 [member.email],
