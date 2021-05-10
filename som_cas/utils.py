@@ -22,7 +22,7 @@ def is_assembly_service(service):
         service, {}
     ).get('service_name', '')
 
-    return service_name == 'ASSAMBLEA'
+    return service_name == 'ASSEMBLEA'
 
 
 def get_user(request):
@@ -53,7 +53,7 @@ def send_confirmation_email(member, email_template):
                 'member': member,
                 'assembly': registration.assembly
             }
-            base_subject = _("Confirmació d'inscripció") 
+            base_subject = _("Confirmació d'inscripció")
             subject = f'{base_subject} {registration.assembly.local_group.alias}' if registration.assembly.local_group is not None else _('Confirmació d’inscripció a la Assemblea')
             msg = EmailMessage(
                 subject,
