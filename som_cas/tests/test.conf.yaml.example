@@ -55,7 +55,7 @@ registration_services:
   service.somenergia.coop:
     service_name: AGVIRTUAL
   service2.somenergia.coop:
-    service_name: ASSAMBLEA
+    service_name: ASSEMBLEA
 
 # Logger definitions
 logging:

@@ -85,18 +85,21 @@ class AssemblyFactory(factory.django.DjangoModelFactory):
         model = Assembly
 
     date = factory.Faker(
-        'date_between_dates',
-        date_start=tz.make_aware(datetime(2020, 1, 1))
+        'date_time_between_dates',
+        datetime_start=tz.make_aware(datetime(2020, 1, 1)),
+        tzinfo=tz.now().tzinfo
     )
 
     start_votation_date = factory.Faker(
-        'date_between_dates',
-        date_start=tz.make_aware(datetime(2020, 1, 1, 12, 5))
+        'date_time_between_dates',
+        datetime_start=tz.make_aware(datetime(2020, 1, 1, 12, 5)),
+        tzinfo=tz.now().tzinfo
     )
 
     end_votation_date = factory.Faker(
-        'date_between_dates',
-        date_start=factory.SelfAttribute('..start_votation_date')
+        'date_time_between_dates',
+        datetime_start=factory.SelfAttribute('..start_votation_date'),
+        tzinfo=tz.now().tzinfo
     )
 
 
@@ -112,11 +115,48 @@ class InactiveGeneralAssemblyFactory(AssemblyFactory):
     active = False
 
 
+class ActiveForthcomingAssemblyFactory(AssemblyFactory):
+
+    name = 'General Assambly'
+
+    active = True
+
+    date = factory.Faker(
+        'date_time_between_dates',
+        datetime_start=tz.now(),
+        datetime_end=tz.now() + timedelta(days=30),
+        tzinfo=tz.now().tzinfo
+    )
+
+
+class InactiveForthcomingAssemblyFactory(AssemblyFactory):
+
+    name = 'General Assambly'
+
+    active = False
+
+    date = factory.Faker(
+        'date_time_between_dates',
+        datetime_start=tz.now(),
+        datetime_end=tz.now() + timedelta(days=30),
+        tzinfo=tz.now().tzinfo
+    )
+
+
 class ActiveMadridLocalGroupAssemblyFactory(AssemblyFactory):
 
     name = 'Madrid Local Group Assembly'
+
     active = True
+
     local_group = factory.SubFactory(CMadridFactory)
+
+    date = factory.Faker(
+        'date_time_between_dates',
+        datetime_start=tz.now(),
+        datetime_end=tz.now() + timedelta(days=30),
+        tzinfo=tz.now().tzinfo
+    )
 
 
 class ActiveBaixMontsenyLocalGroupAssemblyFactory(AssemblyFactory):

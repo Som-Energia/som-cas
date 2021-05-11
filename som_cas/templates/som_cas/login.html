@@ -18,11 +18,18 @@
                     {% else %}
                       <img src="{% static 'images/logo-somenergia-transparent.png'%}" width="120" height="120" class="form-title-img align-top" alt="Som Energia Logo">
                     {% endif %}
-                    {% if service_name == 'ASSAMBLEA' and assembly is None %}
-                </form>
-                <div class="alert alert-danger m-b-36 text-center">{% trans 'No active assembly' %}</div>
+                    {% if service_name == 'ASSEMBLEA' and assembly is None %}
+                      <div class="alert alert-danger m-b-36 text-center">{% trans 'No active assembly' %}</div>
+                    {% elif service_name == 'ASSEMBLEA' and not assembly.active %}
+                      <div class="alert alert-danger m-b-36 text-center">
+                          <p>
+                              {% blocktrans with week_day=assembly.date|date:'l'|lower day=assembly.date|date:'j' month=assembly.date|date:'E'|lower start_votation_hour=assembly.start_votation_date|date:'H' %}
+                              Podràs accedir al panell de votacions a partir del {{ week_day }} {{ day }} de {{ month }} a les {{ start_votation_hour }}h (hora peninsular). Moltes gràcies!
+                              {% endblocktrans %}
+                          </p>
+                      </div>
                     {% else %}
-                        {% if service_name == 'ASSAMBLEA' %}
+                        {% if service_name == 'ASSEMBLEA' %}
                             <span class="login100-form-title p-b-16">{% trans 'ACCESS TO BE ABLE TO VOTE!' %}</span>
                             {% if assembly.local_group is None %}
                                 <span class="login100-form-title-text p-b-6">
@@ -82,7 +89,8 @@
                         <div class="container-login100-form-btn">
                             <button class="login100-form-btn"  type="submit">{% trans "Login" %} </button>
                         </div>
-                {% endif %}
+                    {% endif %}
+                </form>
             </div>
         </div>
     </div>

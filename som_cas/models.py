@@ -1,15 +1,16 @@
-import os
 import logging
+import os
 
-from django.db import models
-from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.contrib.postgres.fields import JSONField
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext as _
 
 from .contrib import ERPPartner
-from .utils import send_confirmation_email, is_company
+from .utils import is_company, send_confirmation_email
 
 logger = logging.getLogger('models')
 
@@ -118,7 +119,7 @@ class LocalGroups(models.Model):
         verbose_name=_("Local group name"),
         help_text=_("Name of the local group")
     )
-    
+
     full_name = models.CharField(
         max_length=128,
         blank=True,
@@ -130,11 +131,11 @@ class LocalGroups(models.Model):
     alias = models.CharField(
         max_length=128,
         blank=True,
-        null=True,        
+        null=True,
         verbose_name=_("Local group alias name"),
         help_text=_("Alias of the local group, ex: CT Girona")
     )
-    
+
     email = models.CharField(
         max_length=128,
         blank=True,
@@ -150,7 +151,7 @@ class LocalGroups(models.Model):
         verbose_name=_("Local group logo"),
         help_text=_("Logo of the local group")
     )
-    
+
     data = JSONField(
         verbose_name=_("Local group data"),
         help_text=_("Cities, states and provincies related with this local group")
@@ -186,6 +187,9 @@ class AssemblyQuerySet(models.QuerySet):
             assembly = None
         finally:
             return assembly
+
+    def get_forthcoming_assembly(self):
+        return self.filter(date__gte=timezone.now()).first()
 
 
 class Assembly(models.Model):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-14 13:02+0100\n"
+"POT-Creation-Date: 2021-05-11 15:19+0200\n"
 "PO-Revision-Date: 2018-04-09 12:13+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,11 +39,11 @@ msgstr ""
 msgid "Galician"
 msgstr ""
 
-#: som_cas/admin.py:58 som_cas/models.py:301
+#: som_cas/admin.py:58 som_cas/models.py:305
 msgid "Assembly"
 msgstr ""
 
-#: som_cas/admin.py:63 som_cas/models.py:314
+#: som_cas/admin.py:63 som_cas/models.py:318
 msgid "Registration date"
 msgstr ""
 
@@ -87,135 +87,135 @@ msgstr ""
 msgid "This user account is disabled"
 msgstr ""
 
-#: som_cas/models.py:23
+#: som_cas/models.py:24
 msgid "In person"
 msgstr ""
 
-#: som_cas/models.py:24
+#: som_cas/models.py:25
 msgid "Virtual"
 msgstr ""
 
-#: som_cas/models.py:118
+#: som_cas/models.py:119
 msgid "Local group name"
 msgstr ""
 
-#: som_cas/models.py:119
+#: som_cas/models.py:120
 msgid "Name of the local group"
 msgstr ""
 
-#: som_cas/models.py:126
+#: som_cas/models.py:127
 msgid "Local group full name"
 msgstr ""
 
-#: som_cas/models.py:127
+#: som_cas/models.py:128
 msgid "Name of the local group, ex: Grup Local de Girona"
 msgstr ""
 
-#: som_cas/models.py:134
+#: som_cas/models.py:135
 msgid "Local group alias name"
 msgstr ""
 
-#: som_cas/models.py:135
+#: som_cas/models.py:136
 msgid "Alias of the local group, ex: CT Girona"
 msgstr ""
 
-#: som_cas/models.py:142 som_cas/models.py:143
+#: som_cas/models.py:143 som_cas/models.py:144
 msgid "Local group email"
 msgstr ""
 
-#: som_cas/models.py:150
+#: som_cas/models.py:151
 msgid "Local group logo"
 msgstr ""
 
-#: som_cas/models.py:151
+#: som_cas/models.py:152
 msgid "Logo of the local group"
 msgstr ""
 
-#: som_cas/models.py:155
+#: som_cas/models.py:156
 msgid "Local group data"
 msgstr ""
 
-#: som_cas/models.py:156
+#: som_cas/models.py:157
 msgid "Cities, states and provincies related with this local group"
 msgstr ""
 
-#: som_cas/models.py:197
+#: som_cas/models.py:201
 msgid "Assembly name"
 msgstr ""
 
-#: som_cas/models.py:198
+#: som_cas/models.py:202
 msgid "Name of the assembly, eg: Asamblea 2020"
 msgstr ""
 
-#: som_cas/models.py:208
+#: som_cas/models.py:212
 msgid "Assembly date"
 msgstr ""
 
-#: som_cas/models.py:209
+#: som_cas/models.py:213
 msgid "Date and hour of this assembly"
 msgstr ""
 
-#: som_cas/models.py:215
+#: som_cas/models.py:219
 msgid "Votation start date"
 msgstr ""
 
-#: som_cas/models.py:216
+#: som_cas/models.py:220
 msgid "Date and hour when the votation of this assembly starts"
 msgstr ""
 
-#: som_cas/models.py:222
+#: som_cas/models.py:226
 msgid "Votation end date"
 msgstr ""
 
-#: som_cas/models.py:223
+#: som_cas/models.py:227
 msgid "Date and hour when the votation of this assembly ends"
 msgstr ""
 
-#: som_cas/models.py:228
+#: som_cas/models.py:232
 msgid "Assembley state"
 msgstr ""
 
-#: som_cas/models.py:236
+#: som_cas/models.py:240
 msgid "Local Group"
 msgstr ""
 
-#: som_cas/models.py:237
+#: som_cas/models.py:241
 msgid "If assembly is for a local group, set blank for general assembly"
 msgstr ""
 
-#: som_cas/models.py:254
+#: som_cas/models.py:258
 msgid "Actually SomCas only supports one active assembly at the same time."
 msgstr ""
 
-#: som_cas/models.py:302
+#: som_cas/models.py:306
 msgid "Assembly for this registration"
 msgstr ""
 
-#: som_cas/models.py:308
+#: som_cas/models.py:312
 msgid "Member"
 msgstr ""
 
-#: som_cas/models.py:309
+#: som_cas/models.py:313
 msgid "Member for this registration"
 msgstr ""
 
-#: som_cas/models.py:315
+#: som_cas/models.py:319
 msgid "Member registration date"
 msgstr ""
 
-#: som_cas/models.py:321
+#: som_cas/models.py:325
 msgid "Registration type"
 msgstr ""
 
-#: som_cas/models.py:322
+#: som_cas/models.py:326
 msgid "Type of registration: if virtual or in person"
 msgstr ""
 
-#: som_cas/models.py:327
+#: som_cas/models.py:331
 msgid "Sent registration email"
 msgstr ""
 
-#: som_cas/models.py:328
+#: som_cas/models.py:332
 msgid "Check if registration email was sent to the member"
 msgstr ""
 
@@ -223,20 +223,30 @@ msgstr ""
 msgid "Som Energia Authentication System"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:23
+#: som_cas/templates/som_cas/login.html:22
 msgid "No active assembly"
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:26
+#, python-format
+msgid ""
+"\n"
+"                              Podràs accedir al panell de votacions a partir "
+"del %(week_day)s %(day)s de %(month)s a les %(start_votation_hour)sh (hora "
+"peninsular). Moltes gràcies!\n"
+"                              "
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:33
 msgid "ACCESS TO BE ABLE TO VOTE!"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:29
+#: som_cas/templates/som_cas/login.html:36
 msgid ""
 "En entrar amb les teves dades, estaràs participant de l’Assemblea General!"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:33
+#: som_cas/templates/som_cas/login.html:40
 #, python-format
 msgid ""
 "\n"
@@ -245,42 +255,42 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:39
+#: som_cas/templates/som_cas/login.html:46
 #: som_cas/tests/test_casloginview.py:21
 msgid "Engage!"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:46
+#: som_cas/templates/som_cas/login.html:53
 msgid "Username"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:47
+#: som_cas/templates/som_cas/login.html:54
 msgid "Username is required"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:48
+#: som_cas/templates/som_cas/login.html:55
 msgid ""
 "Pots accedir amb les mateixes dades que a l'Oficina Virtual de Som Energia"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:51
+#: som_cas/templates/som_cas/login.html:58
 msgid "NIF, CIF o NIE"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:55
+#: som_cas/templates/som_cas/login.html:62
 msgid "Password"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:56
+#: som_cas/templates/som_cas/login.html:63
 msgid "Password is required"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:75
-#: som_cas/templates/som_cas/login.html:77
+#: som_cas/templates/som_cas/login.html:82
+#: som_cas/templates/som_cas/login.html:84
 msgid "Forgot Password?"
 msgstr ""
 
-#: som_cas/templates/som_cas/login.html:83
+#: som_cas/templates/som_cas/login.html:90
 msgid "Login"
 msgstr ""
 

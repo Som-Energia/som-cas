@@ -36,7 +36,7 @@ class TestUtils:
             assert str(assembly.date.day) in email.body
             assert assembly.date.strftime('%B').lower() in email.body
             assert _('l\'Assamblea General') in email.body
-    
+
     @pytest.mark.django_db
     def test_send_confirmation_email_localgroup_assembly(
         self, pending_email_member_registry_localgroup_assembly
@@ -58,4 +58,4 @@ class TestUtils:
             assert assembly.date.strftime('%B').lower() in email.body
             assert assembly.local_group.full_name in email.body
             assert assembly.local_group.email in email.body
-            assert assembly.local_group.logo.path in email.body
+            assert assembly.local_group.logo.url in email.body
