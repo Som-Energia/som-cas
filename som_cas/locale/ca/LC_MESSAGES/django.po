@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-14 13:02+0100\n"
-"PO-Revision-Date: 2021-01-14 12:07+0000\n"
-"Last-Translator: Weblate Admin <incubadoracorreu@somenergia.coop>\n"
+"POT-Creation-Date: 2021-05-11 15:19+0200\n"
+"PO-Revision-Date: 2021-05-11 14:13+0000\n"
+"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Catalan <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/ca/>\n"
 "Language: ca\n"
@@ -40,13 +40,13 @@ msgstr "Euskara"
 msgid "Galician"
 msgstr "Galego"
 
-#: som_cas/admin.py:58 som_cas/models.py:301
+#: som_cas/admin.py:58 som_cas/models.py:305
 msgid "Assembly"
 msgstr "Assemblea"
 
-#: som_cas/admin.py:63 som_cas/models.py:314
+#: som_cas/admin.py:63 som_cas/models.py:318
 msgid "Registration date"
-msgstr ""
+msgstr "Data de registre"
 
 #: som_cas/admin.py:68
 msgid "Member name"
@@ -54,29 +54,27 @@ msgstr "Document d'Identitat"
 
 #: som_cas/admin.py:73
 msgid "Membership number"
-msgstr ""
+msgstr "Numero de soci"
 
 #: som_cas/admin.py:78
 msgid "DNI/NIF/NIE"
-msgstr ""
+msgstr "DNI/NIF/NIE"
 
 #: som_cas/admin.py:83
 msgid "Email"
-msgstr ""
+msgstr "Correu electrònic"
 
 #: som_cas/admin.py:104
-#, fuzzy
-#| msgid "Assembly"
 msgid "assembly_name"
 msgstr "Assemblea"
 
 #: som_cas/admin.py:105
 msgid "member_vat"
-msgstr ""
+msgstr "CIF/NIF Soci/a"
 
 #: som_cas/forms.py:24
 msgid "You cannot register in this assembly"
-msgstr ""
+msgstr "No pots registra-te en aquesta assemblea"
 
 #: som_cas/forms.py:28
 msgid "Internal error while authenticating user"
@@ -91,160 +89,176 @@ msgstr ""
 msgid "This user account is disabled"
 msgstr "Aquest usuari està desactivat"
 
-#: som_cas/models.py:23
+#: som_cas/models.py:24
 msgid "In person"
 msgstr "En persona"
 
-#: som_cas/models.py:24
+#: som_cas/models.py:25
 msgid "Virtual"
 msgstr "Virtual"
 
-#: som_cas/models.py:118
-msgid "Local group name"
-msgstr ""
-
 #: som_cas/models.py:119
-msgid "Name of the local group"
-msgstr ""
+msgid "Local group name"
+msgstr "Nom del grup local"
 
-#: som_cas/models.py:126
-msgid "Local group full name"
-msgstr ""
+#: som_cas/models.py:120
+msgid "Name of the local group"
+msgstr "Nom del grup local"
 
 #: som_cas/models.py:127
-msgid "Name of the local group, ex: Grup Local de Girona"
-msgstr ""
+msgid "Local group full name"
+msgstr "Nom complert del grup local"
 
-#: som_cas/models.py:134
-msgid "Local group alias name"
-msgstr ""
+#: som_cas/models.py:128
+msgid "Name of the local group, ex: Grup Local de Girona"
+msgstr "Nom complert del grup local, pe: Grup Local de Girona"
 
 #: som_cas/models.py:135
+msgid "Local group alias name"
+msgstr "Alias del grup local"
+
+#: som_cas/models.py:136
 msgid "Alias of the local group, ex: CT Girona"
-msgstr ""
+msgstr "Alias del grup local, pe: CT Girona"
 
-#: som_cas/models.py:142 som_cas/models.py:143
+#: som_cas/models.py:143 som_cas/models.py:144
 msgid "Local group email"
-msgstr ""
-
-#: som_cas/models.py:150
-msgid "Local group logo"
-msgstr ""
+msgstr "Email del grup local"
 
 #: som_cas/models.py:151
-msgid "Logo of the local group"
-msgstr ""
+msgid "Local group logo"
+msgstr "Logo del grup local"
 
-#: som_cas/models.py:155
-msgid "Local group data"
-msgstr ""
+#: som_cas/models.py:152
+msgid "Logo of the local group"
+msgstr "Logo del grup local"
 
 #: som_cas/models.py:156
+msgid "Local group data"
+msgstr "Datos del grup local"
+
+#: som_cas/models.py:157
 msgid "Cities, states and provincies related with this local group"
 msgstr ""
+"Ciutats, províncies i comunitat autònoma relacionades amb aquest grup local"
 
-#: som_cas/models.py:197
+#: som_cas/models.py:201
 msgid "Assembly name"
-msgstr ""
+msgstr "Nom de l'assemblea"
 
-#: som_cas/models.py:198
+#: som_cas/models.py:202
 msgid "Name of the assembly, eg: Asamblea 2020"
-msgstr ""
+msgstr "Nom de l'assemblea, pe: Assemblea 2020"
 
-#: som_cas/models.py:208
-#, fuzzy
-#| msgid "Assembly"
+#: som_cas/models.py:212
 msgid "Assembly date"
-msgstr "Assemblea"
+msgstr "Data de l'assemblea"
 
-#: som_cas/models.py:209
+#: som_cas/models.py:213
 msgid "Date and hour of this assembly"
-msgstr ""
+msgstr "Data i hora per aquesta assemblea"
 
-#: som_cas/models.py:215
+#: som_cas/models.py:219
 msgid "Votation start date"
-msgstr ""
+msgstr "Data d'inici de la votació"
 
-#: som_cas/models.py:216
+#: som_cas/models.py:220
 msgid "Date and hour when the votation of this assembly starts"
-msgstr ""
+msgstr "Data i hora de començament de la votació per aquesta assemblea"
 
-#: som_cas/models.py:222
+#: som_cas/models.py:226
 msgid "Votation end date"
-msgstr ""
+msgstr "Data de finalització de la votació"
 
-#: som_cas/models.py:223
+#: som_cas/models.py:227
 msgid "Date and hour when the votation of this assembly ends"
-msgstr ""
+msgstr "Data i hora de finalització de la votació per aquesta assemblea"
 
-#: som_cas/models.py:228
+#: som_cas/models.py:232
 msgid "Assembley state"
-msgstr ""
+msgstr "Estat de l'Assemblea"
 
-#: som_cas/models.py:236
+#: som_cas/models.py:240
 msgid "Local Group"
-msgstr ""
+msgstr "Grup Local"
 
-#: som_cas/models.py:237
+#: som_cas/models.py:241
 msgid "If assembly is for a local group, set blank for general assembly"
 msgstr ""
+"Marca si l'assemblea és per un grup local, deixar en blanc per l'assemblea "
+"general"
 
-#: som_cas/models.py:254
+#: som_cas/models.py:258
 msgid "Actually SomCas only supports one active assembly at the same time."
-msgstr ""
+msgstr "Actualment SomCas només suporta una assemblea activa al mateix temps."
 
-#: som_cas/models.py:302
+#: som_cas/models.py:306
 msgid "Assembly for this registration"
-msgstr ""
+msgstr "Assemblea per aquest registre"
 
-#: som_cas/models.py:308
+#: som_cas/models.py:312
 msgid "Member"
-msgstr ""
+msgstr "Soci/a"
 
-#: som_cas/models.py:309
+#: som_cas/models.py:313
 msgid "Member for this registration"
-msgstr ""
+msgstr "Soci/a per aquest registre"
 
-#: som_cas/models.py:315
+#: som_cas/models.py:319
 msgid "Member registration date"
-msgstr ""
+msgstr "Data de registre per aquest soci/a"
 
-#: som_cas/models.py:321
+#: som_cas/models.py:325
 msgid "Registration type"
-msgstr ""
+msgstr "Tipus de registre"
 
-#: som_cas/models.py:322
+#: som_cas/models.py:326
 msgid "Type of registration: if virtual or in person"
-msgstr ""
+msgstr "Tipus de registre: virtual o en persona"
 
-#: som_cas/models.py:327
+#: som_cas/models.py:331
 msgid "Sent registration email"
 msgstr "S'ha enviat el correu de registre?"
 
-#: som_cas/models.py:328
+#: som_cas/models.py:332
 msgid "Check if registration email was sent to the member"
-msgstr ""
+msgstr "Marcat si el email de registre va ser enviat a aquest soci/a"
 
 #: som_cas/templates/base.html:12
 msgid "Som Energia Authentication System"
 msgstr "Som Energia Authentication System"
 
-#: som_cas/templates/som_cas/login.html:23
+#: som_cas/templates/som_cas/login.html:22
 msgid "No active assembly"
 msgstr "No hi ha cap assemblea activa."
 
 #: som_cas/templates/som_cas/login.html:26
+#, python-format
+msgid ""
+"\n"
+"                              Podràs accedir al panell de votacions a partir "
+"del %(week_day)s %(day)s de %(month)s a les %(start_votation_hour)sh (hora "
+"peninsular). Moltes gràcies!\n"
+"                              "
+msgstr ""
+"\n"
+"                              Podràs accedir al panell de votacions a partir "
+"del %(week_day)s %(day)s de %(month)s a les %(start_votation_hour)sh (hora "
+"peninsular). Moltes gràcies!\n"
+"                              "
+
+#: som_cas/templates/som_cas/login.html:33
 msgid "ACCESS TO BE ABLE TO VOTE!"
 msgstr "ACCEDEIX PER PODER VOTAR!"
 
-#: som_cas/templates/som_cas/login.html:29
+#: som_cas/templates/som_cas/login.html:36
 msgid ""
 "En entrar amb les teves dades, estaràs participant de l’Assemblea General!"
 msgstr ""
 "En entrar amb les teves dades (les mateixes que per a l’Oficina Virtual), "
 "estaràs participant de l’Assemblea General!"
 
-#: som_cas/templates/som_cas/login.html:33
+#: som_cas/templates/som_cas/login.html:40
 #, python-format
 msgid ""
 "\n"
@@ -252,43 +266,48 @@ msgid ""
 "participant de l’Assemblea Territorial de %(local_group_name)s\n"
 "                                    "
 msgstr ""
+"\n"
+"                                    En entrar amb les teves dades, estaràs "
+"participant de l’Assemblea Territorial de %(local_group_name)s\n"
+"                                    "
 
-#: som_cas/templates/som_cas/login.html:39
+#: som_cas/templates/som_cas/login.html:46
 #: som_cas/tests/test_casloginview.py:21
 msgid "Engage!"
 msgstr "Participa!"
 
-#: som_cas/templates/som_cas/login.html:46
+#: som_cas/templates/som_cas/login.html:53
 msgid "Username"
 msgstr "Document d'Identitat"
 
-#: som_cas/templates/som_cas/login.html:47
+#: som_cas/templates/som_cas/login.html:54
 msgid "Username is required"
 msgstr "És necessari el DNI, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:48
+#: som_cas/templates/som_cas/login.html:55
 msgid ""
 "Pots accedir amb les mateixes dades que a l'Oficina Virtual de Som Energia"
 msgstr ""
+"Pots accedir amb les mateixes dades que a l'Oficina Virtual de Som Energia"
 
-#: som_cas/templates/som_cas/login.html:51
+#: som_cas/templates/som_cas/login.html:58
 msgid "NIF, CIF o NIE"
 msgstr "NIF, CIF o NIE"
 
-#: som_cas/templates/som_cas/login.html:55
+#: som_cas/templates/som_cas/login.html:62
 msgid "Password"
 msgstr "Contrasenya"
 
-#: som_cas/templates/som_cas/login.html:56
+#: som_cas/templates/som_cas/login.html:63
 msgid "Password is required"
 msgstr "És necessària la contrasenya"
 
-#: som_cas/templates/som_cas/login.html:75
-#: som_cas/templates/som_cas/login.html:77
+#: som_cas/templates/som_cas/login.html:82
+#: som_cas/templates/som_cas/login.html:84
 msgid "Forgot Password?"
 msgstr "Has oblidat la contrasenya?"
 
-#: som_cas/templates/som_cas/login.html:83
+#: som_cas/templates/som_cas/login.html:90
 msgid "Login"
 msgstr "Entrar"
 
@@ -321,6 +340,9 @@ msgid ""
 "que serà el proper\n"
 "                          <b>%(week_day)s %(day)s %(month)s</b>"
 msgstr ""
+" T'has registrat correctament per votar a <b>%(assembly_event_text)s</b>,  "
+"que serà el proper\n"
+"                          <b>%(week_day)s %(day)s %(month)s</b>"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:28
 #, python-format
@@ -338,14 +360,10 @@ msgstr ""
 "\">panell de votacions</a> al que acabes d'accedir. "
 
 #: som_cas/templates/som_cas/mail_confirmation.html:33
-#, fuzzy
-#| msgid "Moltes gràcies per participar!"
 msgid "Gràcies per participar-hi!"
 msgstr "Moltes gràcies per participar!"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:38
-#, fuzzy
-#| msgid "Salut,"
 msgid "Salutacions,"
 msgstr "Salut,"
 
@@ -360,6 +378,9 @@ msgid ""
 "%(month)s<b> de %(start_votation_hour)s a %(end_votation_hour)s </b>, durant "
 "%(assembly_event_text)s"
 msgstr ""
+" Recorda que el moment per fer-ho serà el <b>%(week_day)s dia %(day)s</b> "
+"%(month)s<b> de %(start_votation_hour)s a %(end_votation_hour)s </b>, durant "
+"%(assembly_event_text)s"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:56
 msgid "Donat que has accedit al"
@@ -403,31 +424,27 @@ msgstr "L'equip de Som Energia"
 
 #: som_cas/templatetags/assembly_event.py:11 som_cas/tests/test_utils.py:38
 msgid "l'Assamblea General"
-msgstr ""
+msgstr "l'Assamblea General"
 
 #: som_cas/templatetags/assembly_event.py:15
 msgid "l'"
-msgstr ""
+msgstr "l'"
 
 #: som_cas/templatetags/assembly_event.py:16
 msgid "l'Assemblea Ordinària de la"
-msgstr ""
+msgstr "l'Assemblea Ordinària de la"
 
 #: som_cas/tests/test_casloginview.py:63
 msgid "Assemblea General"
-msgstr ""
+msgstr "Assemblea General"
 
 #: som_cas/tests/test_utils.py:32 som_cas/utils.py:57
-#, fuzzy
-#| msgid "Confirmació d’Inscripció a la Assemblea"
 msgid "Confirmació d’inscripció a la Assemblea"
 msgstr "Confirmació d’inscripció a l’Assemblea General"
 
 #: som_cas/tests/test_utils.py:53
-#, fuzzy
-#| msgid "Confirmació d’Inscripció a la Assemblea"
 msgid "Confirmació d'inscripció {}"
-msgstr "Confirmació d’inscripció a l’Assemblea General"
+msgstr "Confirmació d’inscripció {}"
 
 #: som_cas/utils.py:56
 msgid "Confirmació d'inscripció"
