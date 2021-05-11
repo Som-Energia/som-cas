@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-11 15:19+0200\n"
-"PO-Revision-Date: 2021-05-11 14:13+0000\n"
+"PO-Revision-Date: 2021-05-11 14:32+0000\n"
 "Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
@@ -187,7 +187,7 @@ msgstr "Grupo Local"
 
 #: som_cas/models.py:241
 msgid "If assembly is for a local group, set blank for general assembly"
-msgstr "Si la asamblea es de un grupo local, dejar en blanco"
+msgstr "Si es la Asamblea General, dejar en blanco"
 
 #: som_cas/models.py:258
 msgid "Actually SomCas only supports one active assembly at the same time."
