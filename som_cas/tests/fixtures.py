@@ -40,6 +40,24 @@ def assemblies():
 
 
 @pytest.fixture(scope='function')
+def assemblies_with_active_forthcoming_assembly():
+    factories.ActiveForthcomingAssemblyFactory.create()
+    factories.InactiveForthcomingAssemblyFactory.create()
+    factories.InactiveGeneralAssemblyFactory.create()
+    factories.InactiveGeneralAssemblyFactory.create()
+
+
+@pytest.fixture(scope='function')
+def active_forthcoming_assembly():
+    return factories.ActiveForthcomingAssemblyFactory.create()
+
+
+@pytest.fixture(scope='function')
+def inactive_forthcoming_assembly():
+    return factories.InactiveForthcomingAssemblyFactory.create()
+
+
+@pytest.fixture(scope='function')
 def active_general_assembly():
     return factories.ActiveGeneralAssemblyFactory.create()
 
