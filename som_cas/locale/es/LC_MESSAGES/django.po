@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-11 15:19+0200\n"
-"PO-Revision-Date: 2021-01-14 12:15+0000\n"
-"Last-Translator: Weblate Admin <incubadoracorreu@somenergia.coop>\n"
+"PO-Revision-Date: 2021-05-11 14:13+0000\n"
+"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
 "Language: es\n"
@@ -66,11 +66,11 @@ msgstr "Email"
 
 #: som_cas/admin.py:104
 msgid "assembly_name"
-msgstr ""
+msgstr "Nombre de la asamblea"
 
 #: som_cas/admin.py:105
 msgid "member_vat"
-msgstr ""
+msgstr "NIF/CIF soci@"
 
 #: som_cas/forms.py:24
 msgid "You cannot register in this assembly"
@@ -109,27 +109,27 @@ msgstr "Nombre del Grupo Local"
 
 #: som_cas/models.py:127
 msgid "Local group full name"
-msgstr ""
+msgstr "Nombre completro del grupo local"
 
 #: som_cas/models.py:128
 msgid "Name of the local group, ex: Grup Local de Girona"
-msgstr ""
+msgstr "Nombre del grupo local, ej: Grup Local de Girona"
 
 #: som_cas/models.py:135
 msgid "Local group alias name"
-msgstr ""
+msgstr "Alias del grupo local"
 
 #: som_cas/models.py:136
 msgid "Alias of the local group, ex: CT Girona"
-msgstr ""
+msgstr "Alias del grupo local, ej: CT Girona"
 
 #: som_cas/models.py:143 som_cas/models.py:144
 msgid "Local group email"
-msgstr ""
+msgstr "Email del grupo local"
 
 #: som_cas/models.py:151
 msgid "Local group logo"
-msgstr ""
+msgstr "Logo del grupo local"
 
 #: som_cas/models.py:152
 msgid "Logo of the local group"
@@ -142,6 +142,8 @@ msgstr "Información del grupo local"
 #: som_cas/models.py:157
 msgid "Cities, states and provincies related with this local group"
 msgstr ""
+"Ciudades, provincias y comunidades autonónomas relacionadas con este grupo "
+"local"
 
 #: som_cas/models.py:201
 msgid "Assembly name"
@@ -173,7 +175,7 @@ msgstr "Fecha final de la votación"
 
 #: som_cas/models.py:227
 msgid "Date and hour when the votation of this assembly ends"
-msgstr ""
+msgstr "Fecha y hora cuando la votación de esta asamblea termina"
 
 #: som_cas/models.py:232
 msgid "Assembley state"
@@ -185,11 +187,11 @@ msgstr "Grupo Local"
 
 #: som_cas/models.py:241
 msgid "If assembly is for a local group, set blank for general assembly"
-msgstr ""
+msgstr "Si la asamblea es de un grupo local, dejar en blanco"
 
 #: som_cas/models.py:258
 msgid "Actually SomCas only supports one active assembly at the same time."
-msgstr ""
+msgstr "Actualmente SomCas solo soporta una asamblea activa al mismo tiempo."
 
 #: som_cas/models.py:306
 msgid "Assembly for this registration"
@@ -240,6 +242,11 @@ msgid ""
 "peninsular). Moltes gràcies!\n"
 "                              "
 msgstr ""
+"\n"
+"                              Podrás acceder al panel de votaciones a partir "
+"del %(week_day)s %(day)s de %(month)s a las %(start_votation_hour)sh (hora "
+"peninsular). ¡Muchas gracias!\n"
+"                              "
 
 #: som_cas/templates/som_cas/login.html:33
 msgid "ACCESS TO BE ABLE TO VOTE!"
@@ -372,6 +379,9 @@ msgid ""
 "%(month)s<b> de %(start_votation_hour)s a %(end_votation_hour)s </b>, durant "
 "%(assembly_event_text)s"
 msgstr ""
+" Recueda que el momento de hacerlo será el <b>%(week_day)s dia %(day)s</b> "
+"%(month)s<b> de %(start_votation_hour)s a %(end_votation_hour)s </b>, durant "
+"e%(assembly_event_text)s"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:56
 msgid "Donat que has accedit al"
@@ -416,7 +426,7 @@ msgstr "El equipo de Som Energia"
 
 #: som_cas/templatetags/assembly_event.py:11 som_cas/tests/test_utils.py:38
 msgid "l'Assamblea General"
-msgstr ""
+msgstr "la Asamblea General"
 
 #: som_cas/templatetags/assembly_event.py:15
 msgid "l'"
