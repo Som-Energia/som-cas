@@ -52,6 +52,9 @@ user@host:som-cas> pipenv run ./manage runserver
 And that's it. Now you can start to develop in a new branch. Please, when you are finished, make a pull request and asign one of us. We will check the pull request and if is every thing is ok, we will acept it :D
 
 ## Changes
+### 0.5.1
+* Fixed bug in service discover regex 
+
 ### 0.5.0
 * Added local groups assemblyes registration 
 * Tests improvemets
