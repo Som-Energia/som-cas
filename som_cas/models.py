@@ -6,6 +6,7 @@ from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 from django.contrib.postgres.fields import JSONField
+from django.utils import timezone
 from django.utils.translation import gettext as _
 
 from .contrib import ERPPartner
@@ -186,6 +187,9 @@ class AssemblyQuerySet(models.QuerySet):
             assembly = None
         finally:
             return assembly
+
+    def get_forthcoming_assembly(self):
+        return self.filter(date__gte=timezone.now()).first()
 
 
 class Assembly(models.Model):

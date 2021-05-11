@@ -50,8 +50,8 @@ class TestSomCasLoginView:
         assert _('The username or password is not correct') in res.content.decode()
 
     @pytest.mark.django_db
-    def test_active_general_assembly_login_view(
-            self, client, active_general_assembly
+    def test_active_forthcoming_general_assembly_login_view(
+            self, client, active_forthcoming_assembly
     ):
         service = 'https://agvirtual.somenergia.coop'
 

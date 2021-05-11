@@ -112,6 +112,34 @@ class InactiveGeneralAssemblyFactory(AssemblyFactory):
     active = False
 
 
+class ActiveForthcomingAssemblyFactory(AssemblyFactory):
+
+    name = 'General Assambly'
+
+    active = True
+
+    date = factory.Faker(
+        'date_time_between_dates',
+        datetime_start=tz.now(),
+        datetime_end=tz.now() + timedelta(days=30),
+        tzinfo=tz.now().tzinfo
+    )
+
+
+class InactiveForthcomingAssemblyFactory(AssemblyFactory):
+
+    name = 'General Assambly'
+
+    active = False
+
+    date = factory.Faker(
+        'date_time_between_dates',
+        datetime_start=tz.now(),
+        datetime_end=tz.now() + timedelta(days=30),
+        tzinfo=tz.now().tzinfo
+    )
+
+
 class ActiveMadridLocalGroupAssemblyFactory(AssemblyFactory):
 
     name = 'Madrid Local Group Assembly'

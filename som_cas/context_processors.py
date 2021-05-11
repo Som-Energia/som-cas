@@ -19,6 +19,6 @@ def service_context_processors(request):
         'service_name': service_name
     }
     if service_name == 'ASSEMBLEA':
-        context['assembly'] = Assembly.assemblies.get_active_assembly()
+        context['assembly'] = Assembly.assemblies.get_forthcoming_assembly()
 
     return context
