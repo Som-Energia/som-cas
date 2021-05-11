@@ -96,13 +96,13 @@ class AgRegistrationResource(resources.ModelResource):
 class AgRegistrationAdmin(ImportExportModelAdmin):
     def assembly_name(self, obj):
         return obj.assembly.name
-    
+
     def member_vat(self, obj):
         return obj.member.username
 
     list_display = (
-        _('assembly_name'),
-        _('member_vat'),
+        'assembly_name',
+        'member_vat',
         'date',
         'registration_type',
         'registration_email_sent'
@@ -117,7 +117,7 @@ class LocalGroupsResource(resources.ModelResource):
     name = resources.Field(
         attribute='name'
     )
-    
+
     data = resources.Field(
         attribute='data',
     )
@@ -129,14 +129,14 @@ class LocalGroupsResource(resources.ModelResource):
     alias = resources.Field(
         attribute='alias'
     )
-    
+
     email = resources.Field(
         attribute='email'
     )
 
     logo = resources.Field(
         attribute='logo'
-    )    
+    )
 
     class Meta:
         model = LocalGroups
@@ -173,4 +173,3 @@ class LocalGroupsAdmin(ImportExportModelAdmin):
         yaml_format = base_formats.YAML
         yaml_format.create_dataset = _create_dataset
         return [yaml_format]
-    
