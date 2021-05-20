@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-20 16:52+0200\n"
-"PO-Revision-Date: 2021-05-11 14:13+0000\n"
+"PO-Revision-Date: 2021-05-20 15:01+0000\n"
 "Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Catalan <http://traduccio.somenergia.coop/projects/som-cas/"
 "cas/ca/>\n"
@@ -41,8 +41,6 @@ msgid "Galician"
 msgstr "Galego"
 
 #: som_cas/admin.py:42
-#, fuzzy
-#| msgid "Member"
 msgid "member"
 msgstr "Soci/a"
 
@@ -365,23 +363,15 @@ msgid "Salutacions,"
 msgstr "Salut,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:48
-#, fuzzy
-#| msgid "logo de la asamblea 2020"
 msgid "logo de la asamblea 2021"
-msgstr "logo de l'assamblea 2020"
+msgstr "logo de l'assemblea 2021"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:54
 msgid "Ja pots votar! :)"
 msgstr "Ja pots votar! :)"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:55
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                              Podràs accedir al panell de votacions a "
-#| "partir del %(week_day)s %(day)s de %(month)s a les "
-#| "%(start_votation_hour)sh (hora peninsular). Moltes gràcies!\n"
-#| "                              "
+#, python-format
 msgid ""
 "\n"
 "                                Recorda fer-ho <b>fins les "
@@ -390,10 +380,10 @@ msgid ""
 "                                "
 msgstr ""
 "\n"
-"                              Podràs accedir al panell de votacions a partir "
-"del %(week_day)s %(day)s de %(month)s a les %(start_votation_hour)sh (hora "
-"peninsular). Moltes gràcies!\n"
-"                              "
+"                                Recorda fer-ho <b>fins les "
+"%(end_votation_hour)s del dia d'avui</b>, %(week_day)s %(day)s de %(month)s "
+"de %(year)s.\n"
+"                                "
 
 #: som_cas/templates/som_cas/mail_confirmation.html:59
 msgid "Donat que has accedit al"
@@ -404,13 +394,6 @@ msgid "panell de votacions"
 msgstr "panell de votacions"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:59
-#, fuzzy
-#| msgid ""
-#| "si finalment no efectues cap votació el dia de l’Assemblea, "
-#| "comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les "
-#| "preguntes</b>. Aquest fet és rellevant per a les preguntes que s’aproven "
-#| "per majoria reforçada, ja que necessiten ⅔ de vots positius sobre el "
-#| "<b>total de vots presents</b>"
 msgid ""
 "si finalment no efectues cap votació, comptabilitzaràs com a <b>vot present "
 "que s’ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a "
@@ -418,14 +401,13 @@ msgid ""
 "l'ordre del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de "
 "vots presents</b>"
 msgstr ""
-"si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
-"com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest "
-"fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja "
-"que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>"
+"si finalment no efectues cap votació, comptabilitzaràs com a <b>vot present "
+"que s’ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a "
+"les preguntes que s’aproven per majoria reforçada (punts 10 i 20 al 26 de "
+"l'ordre del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de "
+"vots presents</b>"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-#, fuzzy
-#| msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
 msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la"
 msgstr "Trobaràs tota la informació relativa al dia de l’Assemblea a la"
 
@@ -466,10 +448,8 @@ msgid "Confirmació d’inscripció a la Assemblea"
 msgstr "Confirmació d’inscripció a l’Assemblea General"
 
 #: som_cas/tests/test_utils.py:38
-#, fuzzy
-#| msgid "Assembly"
 msgid "l'Assemblea"
-msgstr "Assemblea"
+msgstr "l'Assemblea"
 
 #: som_cas/tests/test_utils.py:53
 msgid "Confirmació d'inscripció {}"
