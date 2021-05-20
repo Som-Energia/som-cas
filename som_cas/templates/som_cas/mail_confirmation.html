@@ -45,34 +45,36 @@
                     {% else %}
                     <tr>
                         <td align="right" valign="top" style="padding:10px 0 20px 0;">
-                            <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020.png {% else %} https://www.somenergia.coop/wp-content/uploads/2020/05/som-assemblea-2020-es.png {% endif %}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
+                            <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/wp-content/uploads/2021/05/som-assemblea-2021-ca.png {% else %} https://www.somenergia.coop/wp-content/uploads/2021/05/som-assemblea-2021-es.png {% endif %}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2021" %}">
                         </td>
                     </tr>
-                      <tr align="justify" valign="top" style="padding:10px; color: #333333;">
+                    <tr align="justify" valign="top" style="padding:10px; color: #333333;">
                         <td>
                             <p>{% trans "Hola"%} {{member.first_name}}, </p>
                             <p>{% trans "Ja pots votar! :)" %}</p>
-                            <p>{% blocktrans with week_day=assembly.date|date:'l'|lower day=assembly.date|date:'j' month=assembly.date|date:'E'|lower start_votation_hour=assembly.start_votation_date|date:'H:i' end_votation_hour=assembly.end_votation_date|date:'H:i' assembly_event_text=assembly|assembly_event|safe %} Recorda que el moment per fer-ho serà el <b>{{ week_day }} dia {{ day }}</b> {{ month }}<b> de {{ start_votation_hour }} a {{ end_votation_hour }} </b>, durant {{ assembly_event_text }}{% endblocktrans %}.</p>
-                            <p>{% trans "Donat que has accedit al" %} <a href="https://agvirtual.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "panell de votacions" %}</a>, {% trans "si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>" %}.</p>
-                            <p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea a la "%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l’Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa</a>.</p>
-
-                          </td>
-                        </tr>
-                        <tr align="justify" valign="top" style="padding:10px; color: #333333;">
-                          <td>
+                            <p>{% blocktrans with week_day=assembly.date|date:'l'|lower day=assembly.date|date:'j' month=assembly.date|date:'E'|lower year=assembly.date|date:'Y' end_votation_hour=assembly.end_votation_date|date:'H:i' assembly_event_text=assembly|assembly_event|safe %}
+                                Recorda fer-ho <b>fins les {{ end_votation_hour }} del dia d'avui</b>, {{ week_day }} {{ day }} de {{ month }} de {{year}}.
+                                {% endblocktrans %}
+                            </p>
+                            <p>{% trans "Donat que has accedit al" %} <a href="https://agvirtual.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "panell de votacions" %}</a>, {% trans "si finalment no efectues cap votació, comptabilitzaràs com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a les preguntes que s’aproven per majoria reforçada (punts 10 i 20 al 26 de l'ordre del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>" %}.</p>
+                            <p>{% trans "Trobaràs tota la informació relativa al dia de l’Assemblea a la"%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l’Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa</a>.</p>
+                        </td>
+                    </tr>
+                    <tr align="justify" valign="top" style="padding:10px; color: #333333;">
+                        <td>
                             <p><br>{{ thanks }}</p>
-                          </td>
-                        </tr>
-                        <tr align="left" valign="top" style="padding:10px; color: #333333;">
-                          <td>
+                        </td>
+                    </tr>
+                    <tr align="left" valign="top" style="padding:10px; color: #333333;">
+                        <td>
                             <p><br>{% trans "Salut," %}</p>
                             <p>
                               {% trans "L'equip de Som Energia" %}<br>
                               <a href="https://www.somenergia.coop/ca" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">www.somenergia.coop</a><br>
                               <a href="mailto:participa@somenergia.coop" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">participa@somenergia.coop</a><br>
                             </p>
-                          </td>
-                        </tr>
+                        </td>
+                    </tr>
                     {% endif %}
                     <tr align="justify" style="padding:10px; color: #333333; font-size: 12px; margin-top: 2rem;">
                       <td>

@@ -36,6 +36,25 @@ class SomUserAdmin(admin.ModelAdmin):
         })
     )
 
+    def member_number(self, obj):
+        return obj.www_soci
+
+    member_number.short_description = _('member')
+
+    list_display = ('username', 'member_number', 'email', )
+    search_fields = ('username', 'email', )
+
+
+    def get_search_results(self, request, queryset, search_term):
+        queryset, use_distinct = super().get_search_results(request, queryset, search_term)
+        try:
+            search_term_as_int = int(search_term)
+        except ValueError:
+            pass
+        else:
+            queryset |= self.model.objects.filter(www_soci=search_term_as_int)
+        return queryset, use_distinct
+
 
 @admin.register(Assembly)
 class AssemblyAdmin(admin.ModelAdmin):
@@ -54,7 +73,7 @@ class AssemblyAdmin(admin.ModelAdmin):
 
 class AgRegistrationResource(resources.ModelResource):
     assembly = resources.Field(
-        attribute='assembly',
+        attribute='assembly__name',
         column_name=_('Assembly')
     )
 
@@ -89,11 +108,13 @@ class AgRegistrationResource(resources.ModelResource):
             'member_name', 'member_number', 'member_vat', 'registration_date',
             'member_email'
         )
-        import_id_fields = ('registration_date',)
+        import_id_fields = ('registration_date', 'member_vat',)
+
 
 
 @admin.register(AgRegistration)
 class AgRegistrationAdmin(ImportExportModelAdmin):
+
     def assembly_name(self, obj):
         return obj.assembly.name
 
@@ -111,6 +132,8 @@ class AgRegistrationAdmin(ImportExportModelAdmin):
         'assembly__name',
     )
     resource_class = AgRegistrationResource
+    search_fields = ('assembly__name', 'member__username',)
+    autocomplete_fields = ('member',)
 
 
 class LocalGroupsResource(resources.ModelResource):
