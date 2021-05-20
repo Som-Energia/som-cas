@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-11 15:19+0200\n"
+"POT-Creation-Date: 2021-05-20 16:52+0200\n"
 "PO-Revision-Date: 2020-12-09 10:11+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,36 +38,32 @@ msgstr ""
 msgid "Galician"
 msgstr ""
 
-#: som_cas/admin.py:58 som_cas/models.py:305
+#: som_cas/admin.py:42
+msgid "member"
+msgstr ""
+
+#: som_cas/admin.py:77 som_cas/models.py:305
 msgid "Assembly"
 msgstr ""
 
-#: som_cas/admin.py:63 som_cas/models.py:318
+#: som_cas/admin.py:82 som_cas/models.py:318
 msgid "Registration date"
 msgstr ""
 
-#: som_cas/admin.py:68
+#: som_cas/admin.py:87
 msgid "Member name"
 msgstr ""
 
-#: som_cas/admin.py:73
+#: som_cas/admin.py:92
 msgid "Membership number"
 msgstr ""
 
-#: som_cas/admin.py:78
+#: som_cas/admin.py:97
 msgid "DNI/NIF/NIE"
 msgstr ""
 
-#: som_cas/admin.py:83
+#: som_cas/admin.py:102
 msgid "Email"
-msgstr ""
-
-#: som_cas/admin.py:104
-msgid "assembly_name"
-msgstr ""
-
-#: som_cas/admin.py:105
-msgid "member_vat"
 msgstr ""
 
 #: som_cas/forms.py:24
@@ -307,7 +303,6 @@ msgid "https://assemblea.somenergia.coop"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:19
-#: som_cas/templates/som_cas/mail_confirmation.html:48
 msgid "logo de la asamblea 2020"
 msgstr ""
 
@@ -342,6 +337,10 @@ msgstr ""
 msgid "Salutacions,"
 msgstr ""
 
+#: som_cas/templates/som_cas/mail_confirmation.html:48
+msgid "logo de la asamblea 2021"
+msgstr ""
+
 #: som_cas/templates/som_cas/mail_confirmation.html:54
 msgid "Ja pots votar! :)"
 msgstr ""
@@ -349,48 +348,51 @@ msgstr ""
 #: som_cas/templates/som_cas/mail_confirmation.html:55
 #, python-format
 msgid ""
-" Recorda que el moment per fer-ho serà el <b>%(week_day)s dia %(day)s</b> "
-"%(month)s<b> de %(start_votation_hour)s a %(end_votation_hour)s </b>, durant "
-"%(assembly_event_text)s"
+"\n"
+"                                Recorda fer-ho <b>fins les "
+"%(end_votation_hour)s del dia d'avui</b>, %(week_day)s %(day)s de %(month)s "
+"de %(year)s.\n"
+"                                "
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:56
+#: som_cas/templates/som_cas/mail_confirmation.html:59
 msgid "Donat que has accedit al"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:56
+#: som_cas/templates/som_cas/mail_confirmation.html:59
 msgid "panell de votacions"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:56
+#: som_cas/templates/som_cas/mail_confirmation.html:59
 msgid ""
-"si finalment no efectues cap votació el dia de l’Assemblea, comptabilitzaràs "
-"com a <b>vot present que s’ha abstingut en totes les preguntes</b>. Aquest "
-"fet és rellevant per a les preguntes que s’aproven per majoria reforçada, ja "
-"que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>"
+"si finalment no efectues cap votació, comptabilitzaràs com a <b>vot present "
+"que s’ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a "
+"les preguntes que s’aproven per majoria reforçada (punts 10 i 20 al 26 de "
+"l'ordre del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de "
+"vots presents</b>"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:57
-msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la "
+#: som_cas/templates/som_cas/mail_confirmation.html:60
+msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:57
+#: som_cas/templates/som_cas/mail_confirmation.html:60
 msgid "pàgina web de l’Assemblea"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:57
+#: som_cas/templates/som_cas/mail_confirmation.html:60
 msgid "i al"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:68
+#: som_cas/templates/som_cas/mail_confirmation.html:70
 msgid "Salut,"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:70
+#: som_cas/templates/som_cas/mail_confirmation.html:72
 msgid "L'equip de Som Energia"
 msgstr ""
 
-#: som_cas/templatetags/assembly_event.py:11 som_cas/tests/test_utils.py:38
+#: som_cas/templatetags/assembly_event.py:11
 msgid "l'Assamblea General"
 msgstr ""
 
@@ -408,6 +410,10 @@ msgstr ""
 
 #: som_cas/tests/test_utils.py:32 som_cas/utils.py:57
 msgid "Confirmació d’inscripció a la Assemblea"
+msgstr ""
+
+#: som_cas/tests/test_utils.py:38
+msgid "l'Assemblea"
 msgstr ""
 
 #: som_cas/tests/test_utils.py:53
