@@ -1,6 +1,6 @@
 import pytest
 from django.core import mail
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext as _, override
 
 from som_cas.utils import is_assembly_service, send_confirmation_email, locale_override
 
@@ -9,11 +9,9 @@ class TestUtils:
 
     def test_is_assembly_service(self, erp_con):
         service = 'https://agvirtual.somenergia.coop'
-
         assert is_assembly_service(service)
 
     def test_is_assembly_service_empty_service(self, erp_con):
-
         assert not is_assembly_service('')
 
     @pytest.mark.django_db
@@ -29,13 +27,14 @@ class TestUtils:
         assert len(mail.outbox) == 1
         email = mail.outbox[0]
         assert member.email in email.to
-        assert email.subject == _('Confirmació d’inscripció a la Assemblea')
         assert member.first_name in email.body
+        with override(member.lang):
+            assert email.subject == _('Confirmació d\'inscripció a la Assemblea')
+            assert _("l'Assemblea") in email.body
         with locale_override(member.lang):
             assert assembly.date.strftime('%A').lower() in email.body
             assert str(assembly.date.day) in email.body
             assert assembly.date.strftime('%B').lower() in email.body
-            assert _('l\'Assemblea') in email.body
 
     @pytest.mark.django_db
     def test_send_confirmation_email_localgroup_assembly(
