@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 16:52+0200\n"
+"POT-Creation-Date: 2021-05-20 17:26+0200\n"
 "PO-Revision-Date: 2021-05-20 15:01+0000\n"
 "Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
@@ -395,10 +395,17 @@ msgid "panell de votacions"
 msgstr "panel de votaciones"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:59
+#, fuzzy
+#| msgid ""
+#| "si finalment no efectues cap votació, comptabilitzaràs com a <b>vot "
+#| "present que s’ha abstingut en totes les preguntes</b>. Aquest fet és "
+#| "rellevant per a les preguntes que s’aproven per majoria reforçada (punts "
+#| "10 i 20 al 26 de l'ordre del dia), ja que necessiten ⅔ de vots positius "
+#| "sobre el <b>total de vots presents</b>"
 msgid ""
 "si finalment no efectues cap votació, comptabilitzaràs com a <b>vot present "
-"que s’ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a "
-"les preguntes que s’aproven per majoria reforçada (punts 10 i 20 al 26 de "
+"que s'ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a "
+"les preguntes que s'aproven per majoria reforçada (punts 10 i 20 al 26 de "
 "l'ordre del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de "
 "vots presents</b>"
 msgstr ""
@@ -409,11 +416,15 @@ msgstr ""
 "necesitan ⅔ de votos positivos sobre el <b> total de votos presentes</b>"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la"
+#, fuzzy
+#| msgid "Trobaràs tota la informació relativa al dia de l’Assemblea a la"
+msgid "Trobaràs tota la informació relativa al dia de l'Assemblea a la"
 msgstr "Encontrarás toda la información relativa al día de la Asamblea"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-msgid "pàgina web de l’Assemblea"
+#, fuzzy
+#| msgid "pàgina web de l’Assemblea"
+msgid "pàgina web de l'Assemblea"
 msgstr "en la página web de la Asamblea"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
@@ -445,14 +456,16 @@ msgid "Assemblea General"
 msgstr "Asamblea General"
 
 #: som_cas/tests/test_utils.py:32 som_cas/utils.py:57
-msgid "Confirmació d’inscripció a la Assemblea"
+#, fuzzy
+#| msgid "Confirmació d’inscripció a la Assemblea"
+msgid "Confirmació d'inscripció a la Assemblea"
 msgstr "Confirmación de inscripción a la Asamblea"
 
-#: som_cas/tests/test_utils.py:38
+#: som_cas/tests/test_utils.py:33
 msgid "l'Assemblea"
 msgstr "la Asamblea"
 
-#: som_cas/tests/test_utils.py:53
+#: som_cas/tests/test_utils.py:52
 msgid "Confirmació d'inscripció {}"
 msgstr "Confirmación de inscripción {}"
 
