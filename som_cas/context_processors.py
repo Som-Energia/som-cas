@@ -4,7 +4,7 @@ from django.conf import settings
 
 from som_cas.models import Assembly
 
-URL_REGEX = re.compile(r'https?://(?P<service>\w+\.(\w+\.)*somenergia\.coop)')
+URL_REGEX = re.compile(r'https?://(?P<service>[\w-]+\.([\w-]+\.)*somenergia\.coop)')
 
 
 def service_context_processors(request):
