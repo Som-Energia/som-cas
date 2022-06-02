@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-01 09:55+0200\n"
+"POT-Creation-Date: 2022-06-02 08:13+0200\n"
 "PO-Revision-Date: 2021-05-24 12:53+0000\n"
 "Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
 "Language-Team: Catalan <http://traduccio.somenergia.coop/projects/som-cas/"
@@ -411,13 +411,11 @@ msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:61
 msgid ""
-"I per tal que el cens de participació sigui similar a totes les preguntes, "
-"també et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
+"Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
 "preguntes del panell de votació.</b> Això ens facilita després el registre "
 "de les decisions preses en l'Assemblea als òrgans oficials de l'Administració"
 msgstr ""
-"I per tal que el cens de participació sigui similar a totes les preguntes, "
-"també et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
+"Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
 "preguntes del panell de votació.</b> Això ens facilita després el registre "
 "de les decisions preses en l'Assemblea als òrgans oficials de l'Administració"
 
@@ -457,15 +455,15 @@ msgstr "l'Assemblea Ordinària de la"
 msgid "Assemblea General"
 msgstr "Assemblea General"
 
-#: som_cas/tests/test_utils.py:33 som_cas/utils.py:57
+#: som_cas/tests/test_utils.py:32 som_cas/utils.py:57
 msgid "Confirmació d'inscripció a la Assemblea"
 msgstr "Confirmació d'inscripció a l'Assemblea"
 
-#: som_cas/tests/test_utils.py:34
+#: som_cas/tests/test_utils.py:33
 msgid "l'Assemblea"
 msgstr "l'Assemblea"
 
-#: som_cas/tests/test_utils.py:53
+#: som_cas/tests/test_utils.py:52
 msgid "Confirmació d'inscripció {}"
 msgstr "Confirmació d’inscripció {}"
 
