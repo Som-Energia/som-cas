@@ -55,6 +55,8 @@ MAMA_CAS_FOLLOW_LOGOUT_URL = True
 
 REGISTRATION_SERVICES = config.get('registration_services', {})
 
+DATA_UPLOAD_MAX_NUMBER_FIELDS = None
+
 logging_conf = config['logging']
 
 LOGGING = {
