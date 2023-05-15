@@ -399,7 +399,7 @@ msgstr "panell de votacions"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
 msgid "et demanem que tinguis en compte les consideracions següents:"
-msgstr "et demanem que tinguis en compte les següents consideracions"
+msgstr "et demanem que tinguis en compte les següents consideracions:"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:61
 msgid ""
