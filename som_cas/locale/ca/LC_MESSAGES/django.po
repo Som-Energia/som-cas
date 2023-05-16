@@ -425,17 +425,17 @@ msgstr "i al"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:63
 msgid "Finalment,"
-msgstr ""
+msgstr "Finalment,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:63
 msgid "aquí"
-msgstr ""
+msgstr "aquí"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:63
 msgid ""
 " t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest "
 "mateix correu."
-msgstr ""
+msgstr "t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest mateix correu."
 
 #: som_cas/templates/som_cas/mail_confirmation.html:74
 msgid "Salut,"
