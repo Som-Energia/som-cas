@@ -321,7 +321,7 @@ msgstr "https://assemblea2023.somenergia.coop"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:9
 msgid "https://drive.google.com/file/d/11sAYuXt60nIqpmNS-RxPq3v7H2Q01Wz0/view"
-msgstr ""
+msgstr "https://drive.google.com/file/d/11sAYuXt60nIqpmNS-RxPq3v7H2Q01Wz0/view"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:20
 msgid "logo de la asamblea 2020"
