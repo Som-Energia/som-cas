@@ -6,6 +6,7 @@
 {% trans "Participa" as participa %}
 {% trans "Moltes gràcies per participar!" as thanks %}
 {% trans "https://assemblea.somenergia.coop" as assembly_link %}
+{% trans "https://drive.google.com/file/d/11sAYuXt60nIqpmNS-RxPq3v7H2Q01Wz0/view" as how_to_vote_link %}
 {% get_current_language as LANGUAGE_CODE %}
 
 <body style="margin:0; padding:1rem; background-color:#F2F2F2; color: #333333; font-family: Arial,Helvetica,sans-serif;">
@@ -16,7 +17,7 @@
                     {% if assembly.local_group is not None %}
                     <tr>
                         <td align="right" valign="top" style="padding:10px 0 20px 0;">
-                            <img src="{{ assembly.local_group.logo.url }}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
+                            <img src="{{ assembly.local_group.logo.url }}" width="130" height="70" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2020" %}">
                         </td>
                     </tr>
                       <tr align="justify" valign="top" style="padding:10px; color: #333333;">
@@ -45,7 +46,7 @@
                     {% else %}
                     <tr>
                         <td align="right" valign="top" style="padding:10px 0 20px 0;">
-                            <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/wp-content/uploads/2022/05/Logotip_Assemblea2022_CA.png {% else %} https://www.somenergia.coop/wp-content/uploads/2022/05/Logotipo_Asamblea2022_ES.png {% endif %}" width="130" height="50" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2021" %}">
+                            <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/logo/Assemblea2023_CA-01.jpg {% else %} https://www.somenergia.coop/logo/Assemblea2023_ES-01.jpg {% endif %}" width="130" height="70" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2021" %}">
                         </td>
                     </tr>
                     <tr align="justify" valign="top" style="padding:10px; color: #333333;">
@@ -56,10 +57,11 @@
                                 Recorda que pots fer-ho <b>fins a les {{ end_votation_hour }} h del dia d'avui</b>, {{ week_day }} {{ day }} de {{ month }} de {{year}}.
                                 {% endblocktrans %}
                             </p>
-                            <p>{% trans "Donat que has accedit al" %} <a href="https://agvirtual.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "panell de votacions" %}</a>, {% trans "et demanem que tinguis en compte les següents consideracions" %}:</p>
-                            <p>{% trans "És important que en les preguntes que necessiten ser <b>aprovades per majoria reforçada</b> (les referents a les modificacions estatutàries), puguis emetre el vot de manera conscient, ja que <b>és rellevant que aquests punts s'aprovin</b>" %}.</p>
+                            <p>{% trans "Donat que has accedit al" %} <a href="https://agvirtual.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "panell de votacions" %}</a>, {% trans "et demanem que tinguis en compte les consideracions següents:" %}</p>
                             <p>{% trans "Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les preguntes del panell de votació.</b> Això ens facilita després el registre de les decisions preses en l'Assemblea als òrgans oficials de l'Administració" %}.</p>
-                            <p>{% trans "Trobaràs tota la informació relativa al dia de l'Assemblea a la"%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l'Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop/general_assemblies/SomAG2021?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa</a>.</p>
+                            <p>{% trans "Trobaràs tota la informació relativa al dia de l'Assemblea a la"%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l'Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop/users/sign_in?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa</a>.</p>
+                            <p>{% trans "Finalment,"%} <a href="{{ how_to_vote_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "aquí" %}</a> {% trans " t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest mateix correu." %}</p>
+
                         </td>
                     </tr>
                     <tr align="justify" valign="top" style="padding:10px; color: #333333;">
