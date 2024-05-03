@@ -49,3 +49,6 @@ personaldata.py
 
 # Translations
 *.mo
+
+# Infraestructure
+local-infrastructure
