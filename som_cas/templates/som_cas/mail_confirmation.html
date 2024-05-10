@@ -4,9 +4,9 @@
 {% language member.lang %}
 
 {% trans "Participa" as participa %}
-{% trans "Moltes gràcies per participar!" as thanks %}
-{% trans "https://assemblea.somenergia.coop" as assembly_link %}
-{% trans "https://drive.google.com/file/d/11sAYuXt60nIqpmNS-RxPq3v7H2Q01Wz0/view" as how_to_vote_link %}
+{% trans "Moltes gràcies per participar-hi!" as thanks %}
+{% trans "https://assemblea2024.somenergia.coop" as assembly_link %}
+{% trans "https://drive.google.com/file/d/1icgHJ7us9gXnwnbx8vbha0I38ZgRD9LV/view" as how_to_vote_link %}
 {% get_current_language as LANGUAGE_CODE %}
 
 <body style="margin:0; padding:1rem; background-color:#F2F2F2; color: #333333; font-family: Arial,Helvetica,sans-serif;">
@@ -57,8 +57,15 @@
                                 Recorda que pots fer-ho <b>fins a les {{ end_votation_hour }} h del dia d'avui</b>, {{ week_day }} {{ day }} de {{ month }} de {{year}}.
                                 {% endblocktrans %}
                             </p>
-                            <p>{% trans "Donat que has accedit al" %} <a href="https://agvirtual.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "panell de votacions" %}</a>, {% trans "et demanem que tinguis en compte les consideracions següents:" %}</p>
-                            <p>{% trans "Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les preguntes del panell de votació.</b> Això ens facilita després el registre de les decisions preses en l'Assemblea als òrgans oficials de l'Administració" %}.</p>
+                            <p>{% trans "Com que has accedit al" %} <a href="https://agvirtual.somenergia.coop?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "panell de votacions" %}</a>, {% trans "et demanem que tinguis en compte el següent:" %}</p>
+                            <ol>
+                              <li>
+                                {% trans "Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les preguntes del panell de votació.</b> Això ens facilita després el registre de les decisions preses en l'Assemblea als òrgans oficials de l'Administració" %}.
+                              </li>
+                              <li>
+                                {% trans "Si finalment no votes, comptabilitzaràs com a <b>vot present que s'ha abstingut en totes les preguntes.</b> Aquest fet és rellevant per a les preguntes que s'aproven per majoria reforçada (punts 9,10,11 i 17 de l'ordre del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de vots presents</b>" %}.
+                              </li>
+                          </ol>
                             <p>{% trans "Trobaràs tota la informació relativa al dia de l'Assemblea a la"%} <a href="{{ assembly_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "pàgina web de l'Assemblea" %}</a> {% trans "i al" %} <a href="https://participa.somenergia.coop/users/sign_in?locale={{ LANGUAGE_CODE }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">Participa</a>.</p>
                             <p>{% trans "Finalment,"%} <a href="{{ how_to_vote_link }}" target="_blank" style="color:#707a1a; text-decoration:underline;" rel="noopener noreferrer">{% trans "aquí" %}</a> {% trans " t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest mateix correu." %}</p>
 
