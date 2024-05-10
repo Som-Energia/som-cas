@@ -44,10 +44,10 @@
                           </td>
                         </tr>
                     {% else %}
-                    <tr>
-                        <td align="right" valign="top" style="padding:10px 0 20px 0;">
-                            <img src="{% if LANGUAGE_CODE == 'ca' %} https://www.somenergia.coop/logo/Assemblea2023_CA-01.jpg {% else %} https://www.somenergia.coop/logo/Assemblea2023_ES-01.jpg {% endif %}" width="130" height="70" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "logo de la asamblea 2021" %}">
-                        </td>
+                    <tr> 
+                      <td align="right" valign="top" style="padding:10px 0 20px 0;">
+                        <img src="{% trans "ASSEMBLY_LOGO_URL" %}" width="130" height="70" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "ASSEMBLY_LOGO_ALT" %}">
+                      </td>
                     </tr>
                     <tr align="justify" valign="top" style="padding:10px; color: #333333;">
                         <td>
