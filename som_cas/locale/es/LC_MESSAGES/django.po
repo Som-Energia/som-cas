@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-10 11:42+0200\n"
-"PO-Revision-Date: 2021-05-24 12:53+0000\n"
-"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
-"Language-Team: Spanish <http://traduccio.somenergia.coop/projects/som-cas/"
+"PO-Revision-Date: 2024-05-13 08:36+0000\n"
+"Last-Translator: Beatriz Plana <beatriz.plana@somenergia.coop>\n"
+"Language-Team: Spanish <https://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1.1\n"
+"X-Generator: Weblate 5.5\n"
 "X-Translated-Using: django-rosetta 0.9.5\n"
 
 #: config/settings/base.py:112
@@ -318,17 +318,12 @@ msgid "Moltes gràcies per participar-hi!"
 msgstr "¡Muchas gracias por participar!"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:8
-#, fuzzy
-#| msgid "https://assemblea.somenergia.coop"
 msgid "https://assemblea2024.somenergia.coop"
-msgstr "https://asamblea.somenergia.coop/"
+msgstr "https://asamblea2024.somenergia.coop/"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:9
-#, fuzzy
-#| msgid ""
-#| "https://drive.google.com/file/d/11sAYuXt60nIqpmNS-RxPq3v7H2Q01Wz0/view"
 msgid "https://drive.google.com/file/d/1icgHJ7us9gXnwnbx8vbha0I38ZgRD9LV/view"
-msgstr "https://drive.google.com/file/d/1DfkQ4H_7MtpllySQpMY6nWp3FfdQ-O4m/view"
+msgstr "https://drive.google.com/file/d/1Oivuxh4FfRsMp6xN3wVrm1xXa2Z40CwD/view"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:20
 msgid "logo de la asamblea 2020"
@@ -375,11 +370,11 @@ msgstr "Saludos,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
 msgid "ASSEMBLY_LOGO_URL"
-msgstr ""
+msgstr "ASSEMBLY_LOGO_URL"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
 msgid "ASSEMBLY_LOGO_ALT"
-msgstr ""
+msgstr "ASSEMBLY_LOGO_ALT"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:55
 msgid "Ja pots votar! :)"
@@ -411,10 +406,8 @@ msgid "panell de votacions"
 msgstr "panel de votaciones"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-#, fuzzy
-#| msgid "et demanem que tinguis en compte les consideracions següents:"
 msgid "et demanem que tinguis en compte el següent:"
-msgstr "te pedimos que tengas en cuenta las siguientes consideraciones:"
+msgstr "te pedimos que tengas en cuenta lo siguiente:"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:63
 msgid ""
@@ -428,13 +421,6 @@ msgstr ""
 "Administración"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:66
-#, fuzzy
-#| msgid ""
-#| "si finalment no efectues cap votació, comptabilitzaràs com a <b>vot "
-#| "present que s'ha abstingut en totes les preguntes</b>. Aquest fet és "
-#| "rellevant per a les preguntes que s'aproven per majoria reforçada (punts "
-#| "10 i del 20 al 26 de l'ordre del dia), ja que necessiten ⅔ de vots "
-#| "positius sobre el <b>total de vots presents</b>"
 msgid ""
 "Si finalment no votes, comptabilitzaràs com a <b>vot present que s'ha "
 "abstingut en totes les preguntes.</b> Aquest fet és rellevant per a les "
@@ -442,11 +428,11 @@ msgid ""
 "del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de vots "
 "presents</b>"
 msgstr ""
-"si finalmente no efectúas ninguna votación, contabilizarás como <b> voto "
-"presente que se ha abstenido en todas las preguntas</b>. Este hecho es "
-"relevante para las preguntas que se aprueban con mayoría reforzada (puntos "
-"10 y del 20 al 26 del orden del día), ya que necesitan ⅔ de votos positivos "
-"sobre el <b> total de votos presentes</b>"
+"si finalmente no votas, contabilizarás como <b> voto presente que se ha "
+"abstenido en todas las preguntas</b>. Este hecho es relevante para las "
+"preguntas que se aprueban con mayoría reforzada (puntos 9, 10, 11 y 17 del "
+"orden del día), ya que necesitan ⅔ de votos positivos sobre el <b> total de "
+"votos presentes</b>"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:69
 msgid "Trobaràs tota la informació relativa al dia de l'Assemblea a la"
