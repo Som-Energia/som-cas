@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-10 11:42+0200\n"
-"PO-Revision-Date: 2024-05-14 10:17+0000\n"
+"PO-Revision-Date: 2024-05-14 10:51+0000\n"
 "Last-Translator: Weblate Admin <frontend@somenergia.coop>\n"
 "Language-Team: Spanish <https://traduccio.somenergia.coop/projects/som-cas/"
 "cas/es/>\n"
@@ -368,7 +368,7 @@ msgstr "Saludos,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
 msgid "ASSEMBLY_LOGO_URL"
-msgstr "https://drive.google.com/file/d/1Nbm2TGmzZ4NpMEnJyWi7-Cj2sMDWW7ft/view"
+msgstr "https://www.somenergia.coop/logo/Assemblea2024_ES.jpg"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
 msgid "ASSEMBLY_LOGO_ALT"
