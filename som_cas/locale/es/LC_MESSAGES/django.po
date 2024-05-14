@@ -368,9 +368,7 @@ msgstr "Saludos,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
 msgid "ASSEMBLY_LOGO_URL"
-msgstr ""
-"https://drive.google.com/file/d/1Nbm2TGmzZ4NpMEnJyWi7-Cj2sMDWW7ft/"
-"view?usp=sharing"
+msgstr "https://drive.google.com/file/d/1Nbm2TGmzZ4NpMEnJyWi7-Cj2sMDWW7ft/view"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
 msgid "ASSEMBLY_LOGO_ALT"

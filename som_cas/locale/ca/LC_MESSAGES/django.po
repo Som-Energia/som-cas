@@ -366,7 +366,6 @@ msgid "Salutacions,"
 msgstr "Salut,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
-#, fuzzy
 msgid "ASSEMBLY_LOGO_URL"
 msgstr "https://drive.google.com/file/d/18hGlMWUnOddmhWPXrKU-m9DwS7ApuxWK/view"
 
