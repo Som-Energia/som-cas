@@ -312,8 +312,6 @@ msgid "Participa"
 msgstr "Participa"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:7
-#, fuzzy
-#| msgid "Moltes gràcies per participar!"
 msgid "Moltes gràcies per participar-hi!"
 msgstr "¡Muchas gracias por participar!"
 
@@ -397,8 +395,6 @@ msgstr ""
 "                                "
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-#, fuzzy
-#| msgid "Donat que has accedit al"
 msgid "Com que has accedit al"
 msgstr "Dado que has accedido al"
 

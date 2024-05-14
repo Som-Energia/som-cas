@@ -370,8 +370,6 @@ msgid "panell de votacions"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-#, fuzzy
-#| msgid "et demanem que tinguis en compte les consideracions següents:"
 msgid "et demanem que tinguis en compte el següent:"
 msgstr "te pedimos que tengas en cuenta las siguientes consideraciones"
 

@@ -311,21 +311,14 @@ msgid "Participa"
 msgstr "Participa"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:7
-#, fuzzy
-#| msgid "Moltes gràcies per participar!"
 msgid "Moltes gràcies per participar-hi!"
 msgstr "Moltes gràcies per participar!"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:8
-#, fuzzy
-#| msgid "https://assemblea.somenergia.coop"
 msgid "https://assemblea2024.somenergia.coop"
 msgstr "https://assemblea2023.somenergia.coop"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:9
-#, fuzzy
-#| msgid ""
-#| "https://drive.google.com/file/d/11sAYuXt60nIqpmNS-RxPq3v7H2Q01Wz0/view"
 msgid "https://drive.google.com/file/d/1icgHJ7us9gXnwnbx8vbha0I38ZgRD9LV/view"
 msgstr "https://drive.google.com/file/d/11sAYuXt60nIqpmNS-RxPq3v7H2Q01Wz0/view"
 
@@ -373,7 +366,6 @@ msgid "Salutacions,"
 msgstr "Salut,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
-#, fuzzy
 msgid "ASSEMBLY_LOGO_URL"
 msgstr "https://drive.google.com/file/d/18hGlMWUnOddmhWPXrKU-m9DwS7ApuxWK/view"
 
@@ -401,8 +393,6 @@ msgstr ""
 "                                "
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-#, fuzzy
-#| msgid "Donat que has accedit al"
 msgid "Com que has accedit al"
 msgstr "Donat que has accedit al"
 
@@ -411,8 +401,6 @@ msgid "panell de votacions"
 msgstr "panell de votacions"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-#, fuzzy
-#| msgid "et demanem que tinguis en compte les consideracions següents:"
 msgid "et demanem que tinguis en compte el següent:"
 msgstr "et demanem que tinguis en compte les següents consideracions:"
 
@@ -427,13 +415,6 @@ msgstr ""
 "de les decisions preses en l'Assemblea als òrgans oficials de l'Administració"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:66
-#, fuzzy
-#| msgid ""
-#| "si finalment no efectues cap votació, comptabilitzaràs com a <b>vot "
-#| "present que s'ha abstingut en totes les preguntes</b>. Aquest fet és "
-#| "rellevant per a les preguntes que s'aproven per majoria reforçada (punts "
-#| "10 i del 20 al 26 de l'ordre del dia), ja que necessiten ⅔ de vots "
-#| "positius sobre el <b>total de vots presents</b>"
 msgid ""
 "Si finalment no votes, comptabilitzaràs com a <b>vot present que s'ha "
 "abstingut en totes les preguntes.</b> Aquest fet és rellevant per a les "
