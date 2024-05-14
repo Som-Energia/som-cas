@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-10 11:42+0200\n"
-"PO-Revision-Date: 2021-05-24 12:53+0000\n"
-"Last-Translator: Juan Pedro Sánchez Nula <juanpe.sanchez@somenergia.coop>\n"
-"Language-Team: Catalan <http://traduccio.somenergia.coop/projects/som-cas/"
+"PO-Revision-Date: 2024-05-14 10:00+0000\n"
+"Last-Translator: Weblate Admin <frontend@somenergia.coop>\n"
+"Language-Team: Catalan <https://traduccio.somenergia.coop/projects/som-cas/"
 "cas/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.1.1\n"
+"X-Generator: Weblate 5.5\n"
 "X-Translated-Using: django-rosetta 0.9.6\n"
 
 #: config/settings/base.py:112
@@ -373,12 +373,13 @@ msgid "Salutacions,"
 msgstr "Salut,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
+#, fuzzy
 msgid "ASSEMBLY_LOGO_URL"
-msgstr ""
+msgstr "https://drive.google.com/file/d/18hGlMWUnOddmhWPXrKU-m9DwS7ApuxWK/view"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:49
 msgid "ASSEMBLY_LOGO_ALT"
-msgstr ""
+msgstr "Logo de l'assemblea 2024"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:55
 msgid "Ja pots votar! :)"
