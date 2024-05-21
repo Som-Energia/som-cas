@@ -316,7 +316,7 @@ msgstr "Moltes gràcies per participar!"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:8
 msgid "https://assemblea2024.somenergia.coop"
-msgstr "https://assemblea2023.somenergia.coop"
+msgstr "https://assemblea2024.somenergia.coop"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:9
 msgid "https://drive.google.com/file/d/1icgHJ7us9gXnwnbx8vbha0I38ZgRD9LV/view"
