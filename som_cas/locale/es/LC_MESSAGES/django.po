@@ -439,7 +439,7 @@ msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:73
 msgid "Salut,"
-msgstr "Salud,"
+msgstr "Saludos,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:75
 msgid "L'equip de Som Energia"
@@ -463,7 +463,7 @@ msgstr "Asamblea General"
 
 #: som_cas/tests/test_utils.py:32 som_cas/utils.py:57
 msgid "Confirmació d'inscripció a la Assemblea"
-msgstr "Confirmación de inscripción"
+msgstr "¡Ya puedes votar en la Asamblea!"
 
 #: som_cas/tests/test_utils.py:33
 msgid "l'Assemblea"
