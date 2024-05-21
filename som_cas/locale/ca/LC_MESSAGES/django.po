@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-10 11:42+0200\n"
-"PO-Revision-Date: 2024-05-14 10:51+0000\n"
-"Last-Translator: Weblate Admin <frontend@somenergia.coop>\n"
+"PO-Revision-Date: 2024-05-21 09:44+0000\n"
+"Last-Translator: Joana Figueira <joana.figueira@somenergia.coop>\n"
 "Language-Team: Catalan <https://traduccio.somenergia.coop/projects/som-cas/"
 "cas/ca/>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.5.5\n"
 "X-Translated-Using: django-rosetta 0.9.6\n"
 
 #: config/settings/base.py:112
@@ -320,7 +320,7 @@ msgstr "https://assemblea2023.somenergia.coop"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:9
 msgid "https://drive.google.com/file/d/1icgHJ7us9gXnwnbx8vbha0I38ZgRD9LV/view"
-msgstr "https://drive.google.com/file/d/11sAYuXt60nIqpmNS-RxPq3v7H2Q01Wz0/view"
+msgstr "https://drive.google.com/file/d/1wf1g5DnqJj5Z1DmXRWfiiRzC7RIDqgf-/view"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:20
 msgid "logo de la asamblea 2020"
@@ -437,6 +437,7 @@ msgid "pàgina web de l'Assemblea"
 msgstr "pàgina web de l'Assemblea"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:69
+#, fuzzy
 msgid "i al"
 msgstr "i al"
 
@@ -482,7 +483,7 @@ msgstr "Assemblea General"
 
 #: som_cas/tests/test_utils.py:32 som_cas/utils.py:57
 msgid "Confirmació d'inscripció a la Assemblea"
-msgstr "Confirmació d'inscripció a l'Assemblea"
+msgstr "Ja pots votar a l’Assemblea!"
 
 #: som_cas/tests/test_utils.py:33
 msgid "l'Assemblea"
