@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-10 11:42+0200\n"
+"POT-Creation-Date: 2024-05-21 15:09+0200\n"
 "PO-Revision-Date: 2024-05-21 09:44+0000\n"
 "Last-Translator: Joana Figueira <joana.figueira@somenergia.coop>\n"
 "Language-Team: Catalan <https://traduccio.somenergia.coop/projects/som-cas/"
@@ -393,7 +393,7 @@ msgstr ""
 "                                "
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-msgid "Com que has accedit al"
+msgid "Donat que has accedit a"
 msgstr "Donat que has accedit al"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
@@ -401,55 +401,34 @@ msgid "panell de votacions"
 msgstr "panell de votacions"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:60
-msgid "et demanem que tinguis en compte el següent:"
-msgstr "et demanem que tinguis en compte les següents consideracions:"
-
-#: som_cas/templates/som_cas/mail_confirmation.html:63
 msgid ""
-"Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
-"preguntes del panell de votació.</b> Això ens facilita després el registre "
-"de les decisions preses en l'Assemblea als òrgans oficials de l'Administració"
+"et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
+"preguntes del panell de votació.</b>"
 msgstr ""
-"Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
-"preguntes del panell de votació.</b> Això ens facilita després el registre "
-"de les decisions preses en l'Assemblea als òrgans oficials de l'Administració"
+"et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
+"preguntes del panell de votació.</b>"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:66
-msgid ""
-"Si finalment no votes, comptabilitzaràs com a <b>vot present que s'ha "
-"abstingut en totes les preguntes.</b> Aquest fet és rellevant per a les "
-"preguntes que s'aproven per majoria reforçada (punts 9,10,11 i 17 de l'ordre "
-"del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de vots "
-"presents</b>"
-msgstr ""
-"si finalment no efectues cap votació, comptabilitzaràs com a <b>vot present "
-"que s'ha abstingut en totes les preguntes</b>. Aquest fet és rellevant per a "
-"les preguntes que s'aproven per majoria reforçada (punts 10 i del 20 al 26 "
-"de l'ordre del dia), ja que necessiten ⅔ de vots positius sobre el <b>total "
-"de vots presents</b>"
-
-#: som_cas/templates/som_cas/mail_confirmation.html:69
+#: som_cas/templates/som_cas/mail_confirmation.html:61
 msgid "Trobaràs tota la informació relativa al dia de l'Assemblea a la"
 msgstr "Trobaràs tota la informació relativa al dia de l'Assemblea a la"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:69
+#: som_cas/templates/som_cas/mail_confirmation.html:61
 msgid "pàgina web de l'Assemblea"
 msgstr "pàgina web de l'Assemblea"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:69
-#, fuzzy
+#: som_cas/templates/som_cas/mail_confirmation.html:61
 msgid "i al"
 msgstr "i al"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:70
+#: som_cas/templates/som_cas/mail_confirmation.html:62
 msgid "Finalment,"
 msgstr "Finalment,"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:70
+#: som_cas/templates/som_cas/mail_confirmation.html:62
 msgid "aquí"
 msgstr "aquí"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:70
+#: som_cas/templates/som_cas/mail_confirmation.html:62
 msgid ""
 " t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest "
 "mateix correu."
@@ -457,11 +436,11 @@ msgstr ""
 "t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest "
 "mateix correu."
 
-#: som_cas/templates/som_cas/mail_confirmation.html:81
+#: som_cas/templates/som_cas/mail_confirmation.html:73
 msgid "Salut,"
 msgstr "Salut,"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:83
+#: som_cas/templates/som_cas/mail_confirmation.html:75
 msgid "L'equip de Som Energia"
 msgstr "L'equip de Som Energia"
 
@@ -496,6 +475,22 @@ msgstr "Confirmació d’inscripció {}"
 #: som_cas/utils.py:56
 msgid "Confirmació d'inscripció"
 msgstr "Confirmació d’inscripció"
+
+#~ msgid "et demanem que tinguis en compte el següent:"
+#~ msgstr "et demanem que tinguis en compte les següents consideracions:"
+
+#~ msgid ""
+#~ "Si finalment no votes, comptabilitzaràs com a <b>vot present que s'ha "
+#~ "abstingut en totes les preguntes.</b> Aquest fet és rellevant per a les "
+#~ "preguntes que s'aproven per majoria reforçada (punts 9,10,11 i 17 de "
+#~ "l'ordre del dia), ja que necessiten ⅔ de vots positius sobre el <b>total "
+#~ "de vots presents</b>"
+#~ msgstr ""
+#~ "si finalment no efectues cap votació, comptabilitzaràs com a <b>vot "
+#~ "present que s'ha abstingut en totes les preguntes</b>. Aquest fet és "
+#~ "rellevant per a les preguntes que s'aproven per majoria reforçada (punts "
+#~ "10 i del 20 al 26 de l'ordre del dia), ja que necessiten ⅔ de vots "
+#~ "positius sobre el <b>total de vots presents</b>"
 
 #~ msgid "logo de la asamblea 2021"
 #~ msgstr "logo de l'assemblea 2021"
