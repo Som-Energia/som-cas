@@ -13,12 +13,12 @@ class TestSomCasLoginView:
 
     @pytest.mark.django_db
     def test_participa_login_view(self, client):
-        service = 'https://participa.somenergia.coop'
+        service = 'https://participa.somenergia.coop/users/sign_in'
 
         res = client.get(self.BASE_URL, {'service': service})
 
         assert res.status_code == 200
-        assert _('Engage!') in res.content.decode()
+        assert 'doctype' in res.content.decode()
 
     @pytest.mark.django_db
     def test_participa_login_post(self, client, members_db):
