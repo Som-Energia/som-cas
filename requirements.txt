@@ -5,7 +5,7 @@ django-environ==0.4.5
 django-mama-cas==2.4.0
 django-rosetta==0.9.3
 django==2.2.12
-idna==2.9
+idna==3.7
 polib==1.1.0
 psycopg2==2.8.5
 pytz==2019.3
