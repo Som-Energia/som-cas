@@ -42,6 +42,8 @@ Session.vim
 
 # Auto-generated tag files
 tags
+tags.lock
+tags.temp
 
 registered_members
 # personaldata
@@ -49,3 +51,6 @@ personaldata.py
 
 # Translations
 *.mo
+
+# Infraestructure
+local-infrastructure
