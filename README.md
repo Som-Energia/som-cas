@@ -52,6 +52,9 @@ user@host:som-cas> pipenv run ./manage runserver
 And that's it. Now you can start to develop in a new branch. Please, when you are finished, make a pull request and asign one of us. We will check the pull request and if is every thing is ok, we will acept it :D
 
 ## Changes
+### 0.7.1
+* Adapted texts and logo for 2023 general assembly
+
 ### 0.7.0
 * Adapted texts for 2022 general assembly
 * In Django 2.2 pyscopg version must be <2.9

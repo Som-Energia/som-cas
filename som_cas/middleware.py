@@ -1,5 +1,6 @@
 import logging
 from threading import local
+from urllib import parse
 
 from django.utils import translation
 from django.utils.deprecation import MiddlewareMixin
@@ -10,6 +11,30 @@ from som_cas import utils
 _thread_locals = local()
 
 logger = logging.getLogger(__name__)
+
+
+class CasRedirectMiddleware(object):
+    """
+    Middleware to detect redirections in service url
+    """
+
+    def get_redirect_url(self, request):
+        service = request.GET.get('service', '')
+        parsed_service = parse.urlparse(service)
+        return parse.parse_qs(parsed_service.query).get('redirect_to')
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        redirect_url = self.get_redirect_url(request)
+        if redirect_url:
+            request.GET = request.GET.copy()
+            request.GET['service'] = redirect_url[0]
+
+        response = self.get_response(request)
+        return response
+
 
 class CasLanguageMiddleware(object):
     """

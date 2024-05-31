@@ -8,7 +8,7 @@ from som_cas.utils import is_assembly_service, send_confirmation_email, locale_o
 class TestUtils:
 
     def test_is_assembly_service(self, erp_con):
-        service = 'https://agvirtual.somenergia.coop'
+        service = 'https://service2.somenergia.coop'
         assert is_assembly_service(service)
 
     def test_is_assembly_service_empty_service(self, erp_con):
