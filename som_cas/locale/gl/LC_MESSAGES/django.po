@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-02 08:13+0200\n"
+"POT-Creation-Date: 2024-05-10 11:42+0200\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -252,7 +251,6 @@ msgid ""
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:46
-#: som_cas/tests/test_casloginview.py:21
 msgid "Engage!"
 msgstr ""
 
@@ -295,23 +293,27 @@ msgid "Participa"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:7
-msgid "Moltes gràcies per participar!"
+msgid "Moltes gràcies per participar-hi!"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:8
-msgid "https://assemblea.somenergia.coop"
+msgid "https://assemblea2024.somenergia.coop"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:19
+#: som_cas/templates/som_cas/mail_confirmation.html:9
+msgid "https://drive.google.com/file/d/1icgHJ7us9gXnwnbx8vbha0I38ZgRD9LV/view"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:20
 msgid "logo de la asamblea 2020"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:24
-#: som_cas/templates/som_cas/mail_confirmation.html:53
+#: som_cas/templates/som_cas/mail_confirmation.html:25
+#: som_cas/templates/som_cas/mail_confirmation.html:54
 msgid "Hola"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:26
+#: som_cas/templates/som_cas/mail_confirmation.html:27
 #, python-format
 msgid ""
 " T'has registrat correctament per votar a <b>%(assembly_event_text)s</b>,  "
@@ -319,7 +321,7 @@ msgid ""
 "                          <b>%(week_day)s %(day)s %(month)s</b>"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:28
+#: som_cas/templates/som_cas/mail_confirmation.html:29
 #, python-format
 msgid ""
 "Les votacions seran el mateix dia, de  <b>%(start_votation_hour)s a "
@@ -329,23 +331,27 @@ msgid ""
 "\">panell de votacions</a> al que acabes d'accedir. "
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:33
+#: som_cas/templates/som_cas/mail_confirmation.html:34
 msgid "Gràcies per participar-hi!"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:38
+#: som_cas/templates/som_cas/mail_confirmation.html:39
 msgid "Salutacions,"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:48
-msgid "logo de la asamblea 2021"
+#: som_cas/templates/som_cas/mail_confirmation.html:49
+msgid "ASSEMBLY_LOGO_URL"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:54
-msgid "Ja pots votar! :)"
+#: som_cas/templates/som_cas/mail_confirmation.html:49
+msgid "ASSEMBLY_LOGO_ALT"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:55
+msgid "Ja pots votar! :)"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:56
 #, python-format
 msgid ""
 "\n"
@@ -355,31 +361,19 @@ msgid ""
 "                                "
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:59
-msgid "Donat que has accedit al"
+#: som_cas/templates/som_cas/mail_confirmation.html:60
+msgid "Com que has accedit al"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:59
+#: som_cas/templates/som_cas/mail_confirmation.html:60
 msgid "panell de votacions"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:59
-msgid "et demanem que tinguis en compte les següents consideracions"
+#: som_cas/templates/som_cas/mail_confirmation.html:60
+msgid "et demanem que tinguis en compte el següent:"
 msgstr "te pedimos que tengas en cuenta las siguientes consideraciones"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:60
-msgid ""
-"És important que en les preguntes que necessiten ser <b>aprovades per "
-"majoria reforçada</b> (les referents a les modificacions estatutàries), "
-"puguis emetre el vot de manera conscient, ja que <b>és rellevant que aquests "
-"punts s'aprovin</b>"
-msgstr ""
-"Es importante que en las preguntas que <b>necesiten ser aprobadas por "
-"mayoría reforzada</b> (las referentes a las modificaciones estatutarias), "
-"puedas emitir el voto de manera consciente, dado que <b>es relevante que "
-"estos puntos se aprueben</b>"
-
-#: som_cas/templates/som_cas/mail_confirmation.html:61
+#: som_cas/templates/som_cas/mail_confirmation.html:63
 msgid ""
 "Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
 "preguntes del panell de votació.</b> Això ens facilita després el registre "
@@ -390,23 +384,46 @@ msgstr ""
 "de las decisiones tomadas en la Asamblea en los órganos oficiales de la "
 "Administración"
 
-#: som_cas/templates/som_cas/mail_confirmation.html:62
+#: som_cas/templates/som_cas/mail_confirmation.html:66
+msgid ""
+"Si finalment no votes, comptabilitzaràs com a <b>vot present que s'ha "
+"abstingut en totes les preguntes.</b> Aquest fet és rellevant per a les "
+"preguntes que s'aproven per majoria reforçada (punts 9,10,11 i 17 de l'ordre "
+"del dia), ja que necessiten ⅔ de vots positius sobre el <b>total de vots "
+"presents</b>"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:69
 msgid "Trobaràs tota la informació relativa al dia de l'Assemblea a la"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:62
+#: som_cas/templates/som_cas/mail_confirmation.html:69
 msgid "pàgina web de l'Assemblea"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:62
+#: som_cas/templates/som_cas/mail_confirmation.html:69
 msgid "i al"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:72
+#: som_cas/templates/som_cas/mail_confirmation.html:70
+msgid "Finalment,"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:70
+msgid "aquí"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:70
+msgid ""
+" t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest "
+"mateix correu."
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:81
 msgid "Salut,"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:74
+#: som_cas/templates/som_cas/mail_confirmation.html:83
 msgid "L'equip de Som Energia"
 msgstr ""
 
@@ -441,3 +458,14 @@ msgstr ""
 #: som_cas/utils.py:56
 msgid "Confirmació d'inscripció"
 msgstr ""
+
+#~ msgid ""
+#~ "És important que en les preguntes que necessiten ser <b>aprovades per "
+#~ "majoria reforçada</b> (les referents a les modificacions estatutàries), "
+#~ "puguis emetre el vot de manera conscient, ja que <b>és rellevant que "
+#~ "aquests punts s'aprovin</b>"
+#~ msgstr ""
+#~ "Es importante que en las preguntas que <b>necesiten ser aprobadas por "
+#~ "mayoría reforzada</b> (las referentes a las modificaciones estatutarias), "
+#~ "puedas emitir el voto de manera consciente, dado que <b>es relevante que "
+#~ "estos puntos se aprueben</b>"
