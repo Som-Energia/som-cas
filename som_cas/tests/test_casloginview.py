@@ -13,14 +13,14 @@ class TestSomCasLoginView:
 
     @pytest.mark.django_db
     def test_participa_login_view(self, client):
-        service = 'https://participa.somenergia.coop/users/sign_in'
+        service = 'https://participa.somenergia.coop'
 
         res = client.get(self.BASE_URL, {'service': service})
 
         assert res.status_code == 200
         assert 'doctype' in res.content.decode()
 
-    @pytest.mark.django_db
+    @pytest.mark.django_db(databases=['default', 'users_db'])
     def test_participa_login_post(self, client, members_db):
         service = 'https://participa.somenergia.coop'
         url = f'{self.BASE_URL}?service={service}'
@@ -36,7 +36,7 @@ class TestSomCasLoginView:
         assert 'ticket' in response_query
         assert response_query.get('ticket', None) is not None
 
-    @pytest.mark.django_db
+    @pytest.mark.django_db(databases=['default', 'users_db'])
     def test_participa_login_post_bad_password(self, client, members_db):
         service = 'https://participa.somenergia.coop'
         url = f'{self.BASE_URL}?service={service}'
@@ -91,7 +91,7 @@ class TestSomCasLoginView:
 
     @pytest.mark.django_db
     def test_accademy_login_view(self, client):
-        service = 'https://formacio.somenergia.coop'
+        service = 'https://aulapopular.somenergia.coop/'
 
         res = client.get(self.BASE_URL, {'service': service})
 
