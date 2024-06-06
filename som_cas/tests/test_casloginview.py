@@ -5,10 +5,8 @@ from django.http.request import QueryDict
 from django.urls import reverse
 from django.utils.translation import gettext as _
 
-from som_cas.views import SomCasLoginView
 
 class TestSomCasLoginView:
-
     BASE_URL = reverse('cas_login')
 
     @pytest.mark.django_db
@@ -51,7 +49,7 @@ class TestSomCasLoginView:
 
     @pytest.mark.django_db
     def test_active_forthcoming_general_assembly_login_view(
-            self, client, active_forthcoming_assembly
+        self, client, active_forthcoming_assembly
     ):
         service = 'https://agvirtual.somenergia.coop'
 
@@ -64,7 +62,7 @@ class TestSomCasLoginView:
 
     @pytest.mark.django_db
     def test_inactive_general_assembly_login_view(
-            self, client, inactive_general_assembly
+        self, client, inactive_general_assembly
     ):
         service = 'https://agvirtual.somenergia.coop'
 
