@@ -1,5 +1,9 @@
 ## CHANGELOG
 
+### 0.8.0 (2024-06-07)
+* Add middleware to detect redirects in service url
+* Update dependencies
+
 ### 0.7.1
 * Adapted texts and logo for 2023 general assembly
 
