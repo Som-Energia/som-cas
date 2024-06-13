@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### 0.8.1 (2024-06-13)
+* FIX 2024 assembly details
+
 ### 0.8.0 (2024-06-07)
 * Add middleware to detect redirects in service url
 * Update dependencies
