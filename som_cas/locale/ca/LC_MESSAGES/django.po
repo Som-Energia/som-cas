@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-22 09:02+0200\n"
-"PO-Revision-Date: 2024-05-21 09:44+0000\n"
-"Last-Translator: Joana Figueira <joana.figueira@somenergia.coop>\n"
+"PO-Revision-Date: 2024-06-13 13:09+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Catalan <https://traduccio.somenergia.coop/projects/som-cas/"
 "cas/ca/>\n"
 "Language: ca\n"
@@ -441,6 +441,7 @@ msgstr ""
 "mateix correu."
 
 #: som_cas/templates/som_cas/mail_confirmation.html:75
+#, fuzzy
 msgid "Salut,"
 msgstr "Salut,"
 
