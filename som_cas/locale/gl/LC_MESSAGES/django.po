@@ -345,7 +345,7 @@ msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:50
 msgid "ASSEMBLY_LOGO_URL"
-msgstr ""
+msgstr "https://www.somenergia.coop/logo/Logo-AG25extra-GA.png"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:50
 msgid "ASSEMBLY_LOGO_ALT"

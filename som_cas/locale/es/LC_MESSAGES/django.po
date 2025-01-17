@@ -372,7 +372,7 @@ msgstr "Saludos,"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:50
 msgid "ASSEMBLY_LOGO_URL"
-msgstr "https://www.somenergia.coop/logo/Assemblea2024_ES.jpg"
+msgstr "https://www.somenergia.coop/logo/Logo-AG25extra-ES.png"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:50
 msgid "ASSEMBLY_LOGO_ALT"
