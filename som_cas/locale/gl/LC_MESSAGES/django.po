@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 09:02+0200\n"
+"POT-Creation-Date: 2025-01-20 16:27+0100\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
-#: config/settings/base.py:112
+#: config/settings/base.py:113
 msgid "Catalan"
 msgstr ""
 
-#: config/settings/base.py:113
+#: config/settings/base.py:114
 msgid "English"
 msgstr ""
 
-#: config/settings/base.py:114
+#: config/settings/base.py:115
 msgid "Spanish"
 msgstr ""
 
-#: config/settings/base.py:115
+#: config/settings/base.py:116
 msgid "Basque"
 msgstr ""
 
-#: config/settings/base.py:116
+#: config/settings/base.py:117
 msgid "Galician"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Internal error while authenticating user"
 msgstr ""
 
-#: som_cas/forms.py:33 som_cas/tests/test_casloginview.py:50
+#: som_cas/forms.py:33 som_cas/tests/test_casloginview.py:48
 msgid "The username or password is not correct"
 msgstr ""
 
@@ -293,6 +293,8 @@ msgid "Participa"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:7
+#: som_cas/templates/som_cas/mail_confirmation.html:38
+#: som_cas/templates/som_cas/mail_confirmation.html:69
 msgid "Moltes gràcies per participar-hi!"
 msgstr ""
 
@@ -313,113 +315,84 @@ msgid "logo de la asamblea 2020"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:26
-#: som_cas/templates/som_cas/mail_confirmation.html:55
+#: som_cas/templates/som_cas/mail_confirmation.html:57
 msgid "Hola"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:28
-#, python-format
+#: som_cas/templates/som_cas/mail_confirmation.html:59
 msgid ""
-" T'has registrat correctament per votar a <b>%(assembly_event_text)s</b>,  "
-"que serà el proper\n"
-"                          <b>%(week_day)s %(day)s %(month)s</b>"
+"Ja t'has registrat al cens oficial de l'Assemblea General Extraordinària. Si "
+"no ho has fet encara, <b>ja pots votar!</b> :)"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:30
-#, python-format
+#: som_cas/templates/som_cas/mail_confirmation.html:29
+#: som_cas/templates/som_cas/mail_confirmation.html:60
 msgid ""
-"Les votacions seran el mateix dia, de  <b>%(start_votation_hour)s a "
-"%(end_votation_hour)s</b>, a través del <a href=\"https://agvirtual."
-"somenergia.coop/consultations?locale=%(LANGUAGE_CODE)s\" target=\"_blank\" "
-"style=\"color:#707a1a; text-decoration:underline;\" rel=\"noopener noreferrer"
-"\">panell de votacions</a> al que acabes d'accedir. "
+"Recorda que en aquesta Assemblea General Extraordinària <b>hi ha establerts "
+"aquests uns horaris de votació</b>:"
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:31
+#: som_cas/templates/som_cas/mail_confirmation.html:62
+msgid ""
+"<b>De 10 a 10.25 h</b>: Votació del punt de revocació de Sofia Kukulka Luque "
+"com a membre d'Intervenció de Comptes."
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:32
+#: som_cas/templates/som_cas/mail_confirmation.html:63
+msgid ""
+"<b>De 10.30 a 12.45 h</b>: Si s'aprova la baixa de Sofia Kukulka Luque, "
+"votació d'una nova persona membre d'Intervenció de Comptes."
+msgstr ""
+
+#: som_cas/templates/som_cas/mail_confirmation.html:33
+#: som_cas/templates/som_cas/mail_confirmation.html:64
+msgid ""
+"<b>De 10 a 12.45 h</b>: Votació del punt de la figura de sòcia de treball "
+"més el punt de facultar el Consell Rector per executar i inscriure els "
+"acords adoptats."
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:35
-msgid "Gràcies per participar-hi!"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:40
-msgid "Salutacions,"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:50
-msgid "ASSEMBLY_LOGO_URL"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:50
-msgid "ASSEMBLY_LOGO_ALT"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:56
-msgid "Ja pots votar! :)"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:57
-#, python-format
+#: som_cas/templates/som_cas/mail_confirmation.html:66
 msgid ""
-"\n"
-"                                Recorda que pots fer-ho <b>fins a les "
-"%(end_votation_hour)s h del dia d'avui</b>, %(week_day)s %(day)s de "
-"%(month)s de %(year)s.\n"
-"                                "
+"Com que has accedit al <a href='https://agvirtual.somenergia.coop/?"
+"locale=ca' target='_blank' style='color:#707a1a; text-decoration:"
+"underline;'>panell de votacions</a>, et convidem que emetis el teu vot a "
+"<b><u>totes les preguntes del panell de votació</u></b>."
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:61
-msgid "Donat que has accedit a"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:62
-msgid "panell de votacions"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:62
-#, fuzzy
-#| msgid ""
-#| "Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
-#| "preguntes del panell de votació.</b> Això ens facilita després el "
-#| "registre de les decisions preses en l'Assemblea als òrgans oficials de "
-#| "l'Administració"
+#: som_cas/templates/som_cas/mail_confirmation.html:36
+#: som_cas/templates/som_cas/mail_confirmation.html:67
 msgid ""
-"et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
-"preguntes del panell de votació.</b>"
-msgstr ""
-"Te invitamos a que emitas tu voto (sí, no o abstención) <b>en todas las "
-"preguntas del panel de votación</b>. Esto nos facilita después el registro "
-"de las decisiones tomadas en la Asamblea en los órganos oficiales de la "
-"Administración"
-
-#: som_cas/templates/som_cas/mail_confirmation.html:63
-msgid "Trobaràs tota la informació relativa al dia de l'Assemblea a la"
+"Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <a "
+"href='https://assembleaextra25.somenergia.coop/' target='_blank' "
+"style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a> i "
+"al <a href='https://participa.somenergia.coop/users/sign_in?locale=ca' "
+"target='_blank' style='color:#707a1a; text-decoration:underline;'>Participa</"
+"a>."
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:63
-msgid "pàgina web de l'Assemblea"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:63
-msgid "i al"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:64
-msgid "Finalment,"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:64
-msgid "aquí"
-msgstr ""
-
-#: som_cas/templates/som_cas/mail_confirmation.html:64
+#: som_cas/templates/som_cas/mail_confirmation.html:37
+#: som_cas/templates/som_cas/mail_confirmation.html:68
 msgid ""
-" t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest "
+"Finalment, <a href='https://next.somenergia.coop/s/gGnKWYXz95fE5XY' "
+"target='_blank' style='color:#707a1a; text-decoration:underline;'>aquí</a> "
+"t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest "
 "mateix correu."
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:75
-msgid "Salut,"
+#: som_cas/templates/som_cas/mail_confirmation.html:52
+msgid "ASSEMBLY_LOGO_URL"
+msgstr "https://www.somenergia.coop/logo/Logo-AG25extra-GA.png"
+
+#: som_cas/templates/som_cas/mail_confirmation.html:52
+msgid "ASSEMBLY_LOGO_ALT"
 msgstr ""
 
-#: som_cas/templates/som_cas/mail_confirmation.html:77
+#: som_cas/templates/som_cas/mail_confirmation.html:76
 msgid "L'equip de Som Energia"
 msgstr ""
 
@@ -435,7 +408,7 @@ msgstr ""
 msgid "l'Assemblea Ordinària de la"
 msgstr ""
 
-#: som_cas/tests/test_casloginview.py:63
+#: som_cas/tests/test_casloginview.py:61
 msgid "Assemblea General"
 msgstr ""
 
@@ -454,6 +427,21 @@ msgstr ""
 #: som_cas/utils.py:56
 msgid "Confirmació d'inscripció"
 msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "Et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
+#~| "preguntes del panell de votació.</b> Això ens facilita després el "
+#~| "registre de les decisions preses en l'Assemblea als òrgans oficials de "
+#~| "l'Administració"
+#~ msgid ""
+#~ "et convidem que emetis el teu vot (sí, no o abstenció) a <b>totes les "
+#~ "preguntes del panell de votació.</b>"
+#~ msgstr ""
+#~ "Te invitamos a que emitas tu voto (sí, no o abstención) <b>en todas las "
+#~ "preguntas del panel de votación</b>. Esto nos facilita después el "
+#~ "registro de las decisiones tomadas en la Asamblea en los órganos "
+#~ "oficiales de la Administración"
 
 #~ msgid "et demanem que tinguis en compte el següent:"
 #~ msgstr "te pedimos que tengas en cuenta las siguientes consideraciones"
