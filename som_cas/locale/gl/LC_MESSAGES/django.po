@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-20 16:27+0100\n"
+"POT-Creation-Date: 2025-01-24 11:38+0100\n"
 "PO-Revision-Date: 2018-04-09 12:09+0000\n"
 "Last-Translator: b'  <juanpe.sanchez@somenergia.coop>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -330,7 +330,7 @@ msgstr ""
 #: som_cas/templates/som_cas/mail_confirmation.html:60
 msgid ""
 "Recorda que en aquesta Assemblea General Extraordinària <b>hi ha establerts "
-"aquests uns horaris de votació</b>:"
+"aquests horaris de votació</b>:"
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:31
@@ -358,30 +358,30 @@ msgstr ""
 #: som_cas/templates/som_cas/mail_confirmation.html:35
 #: som_cas/templates/som_cas/mail_confirmation.html:66
 msgid ""
-"Com que has accedit al <a href='https://agvirtual.somenergia.coop/?"
+"Com que has accedit al <b><a href='https://agvirtual.somenergia.coop/?"
 "locale=ca' target='_blank' style='color:#707a1a; text-decoration:"
-"underline;'>panell de votacions</a>, et convidem que emetis el teu vot a "
+"underline;'>panell de votacions</a></b>, et convidem que emetis el teu vot a "
 "<b><u>totes les preguntes del panell de votació</u></b>."
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:36
 #: som_cas/templates/som_cas/mail_confirmation.html:67
 msgid ""
-"Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <a "
-"href='https://assembleaextra25.somenergia.coop/' target='_blank' "
-"style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a> i "
-"al <a href='https://participa.somenergia.coop/users/sign_in?locale=ca' "
-"target='_blank' style='color:#707a1a; text-decoration:underline;'>Participa</"
-"a>."
+"Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <b><a "
+"href='https://assembleaextra25.somenergia.coop/'' target='_blank' "
+"style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a></b> "
+"i al <b><a href='https://participa.somenergia.coop/users/sign_in?locale=ca' "
+"target='_blank' style='color:#707a1a; text-decoration:"
+"underline;''>Participa</a></b>."
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:37
 #: som_cas/templates/som_cas/mail_confirmation.html:68
 msgid ""
-"Finalment, <a href='https://next.somenergia.coop/s/gGnKWYXz95fE5XY' "
-"target='_blank' style='color:#707a1a; text-decoration:underline;'>aquí</a> "
-"t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest "
-"mateix correu."
+"Finalment, <b><a href='https://next.somenergia.coop/s/gGnKWYXz95fE5XY' "
+"target='_blank' style='color:#707a1a; text-decoration:underline;'>aquí</a></"
+"b> t'expliquem pas a pas com votar, en cas d'incidència pots respondre "
+"aquest mateix correu."
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:52
