@@ -5,8 +5,8 @@
 
 {% trans "Participa" as participa %}
 {% trans "Moltes gràcies per participar-hi!" as thanks %}
-{% trans "https://assemblea2024.somenergia.coop" as assembly_link %}
-{% trans "https://participa.somenergia.coop/general_assemblies/SomAG2024" as participa_link %}
+{% trans "https://assemblea2025.somenergia.coop" as assembly_link %}
+{% trans "https://participa.somenergia.coop/" as participa_link %}
 {% trans "https://drive.google.com/file/d/1icgHJ7us9gXnwnbx8vbha0I38ZgRD9LV/view" as how_to_vote_link %}
 {% get_current_language as LANGUAGE_CODE %}
 
@@ -25,17 +25,17 @@
                         <td>
                           <p>{% trans "Hola"%} {{member.first_name}}, </p>
 
-                          <p>{% trans "Ja t'has registrat al cens oficial de l'Assemblea General Extraordinària. Si no ho has fet encara, <b>ja pots votar!</b> :)" %}</p>
-                          <p>{% trans "Recorda que en aquesta Assemblea General Extraordinària <b>hi ha establerts aquests horaris de votació</b>:" %}</p>
-                          <ul>
-                            <li>{% trans "<b>De 10 a 10.25 h</b>: Votació del punt de revocació de Sofia Kukulka Luque com a membre d'Intervenció de Comptes." %}</li>
-                            <li>{% trans "<b>De 10.30 a 12.45 h</b>: Si s'aprova la baixa de Sofia Kukulka Luque, votació d'una nova persona membre d'Intervenció de Comptes." %}</li>
-                            <li>{% trans "<b>De 10 a 12.45 h</b>: Votació del punt de la figura de sòcia de treball més el punt de facultar el Consell Rector per executar i inscriure els acords adoptats." %}</li>
-                          </ul>
-                          <p>{% trans "Com que has accedit al <b><a href='https://agvirtual.somenergia.coop/?locale=ca' target='_blank' style='color:#707a1a; text-decoration:underline;'>panell de votacions</a></b>, et convidem que emetis el teu vot a <b><u>totes les preguntes del panell de votació</u></b>." %}</p>
-                          <p>{% trans "Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <b><a href='https://assembleaextra25.somenergia.coop/'' target='_blank' style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a></b> i al <b><a href='https://participa.somenergia.coop/users/sign_in?locale=ca' target='_blank' style='color:#707a1a; text-decoration:underline;''>Participa</a></b>." %}</p>
-                          <p>{% trans "Finalment, <b><a href='https://next.somenergia.coop/s/gGnKWYXz95fE5XY' target='_blank' style='color:#707a1a; text-decoration:underline;'>aquí</a></b> t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest mateix correu." %}</p>
+                          <p>{% trans "Ja pots votar!" %}</p>
+
+                          <p>{% trans "Recorda que pots fer-ho <b>fins a les 13:45 del dia d'avui</b>, dissabte 31 de maig de 2025:" %}</p>
+
+                          <p>{% trans "Donat que has accedit al <b><a href='https://agvirtual.somenergia.coop/users/sign_in' target='_blank' style='color:#707a1a; text-decoration:underline;'>panell de votacions</a></b>, et convidem que emetis el teu vot (opcions: sí, no o abstenció) a <b><u>totes les preguntes del panell de votació</u></b>." %}</p>
+
+                          <p>{% trans "Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <b><a href='https://assemblea25.somenergia.coop/'' target='_blank' style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a></b> i al <b><a href='https://participa.somenergia.coop/users/sign_in?locale=ca' target='_blank' style='color:#707a1a; text-decoration:underline;''>Participa</a></b>." %}</p>
+
+                          <p>{% trans "Finalment, <b><a href='h' target='_blank' style='color:#707a1a; text-decoration:underline;'>aquí</a></b> t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest mateix correu." %}</p>
                           <p>{% trans "Moltes gràcies per participar-hi!" %}</p>
+                          <p>{% trans "Salut i bona energia!" %}</p>
                       </td>
                       </tr>
                         <tr align="left" valign="top" style="padding:10px; color: #333333;">
@@ -47,26 +47,26 @@
                           </td>
                         </tr>
                     {% else %}
-                    <tr> 
+                    <tr>
                       <td align="right" valign="top" style="padding:10px 0 20px 0;">
                         <img src="{% trans "ASSEMBLY_LOGO_URL" %}" width="130" height="70" style="margin:0; padding:0; border:none; display:block;" border="0" alt="{% trans "ASSEMBLY_LOGO_ALT" %}">
                       </td>
                     </tr>
                     <tr align="justify" valign="top" style="padding:10px; color: #333333;">
                         <td>
-                          <p>{% trans "Hola"%} {{member.first_name}}, </p>
+                            <p>{% trans "Hola"%} {{member.first_name}}, </p>
 
-                          <p>{% trans "Ja t'has registrat al cens oficial de l'Assemblea General Extraordinària. Si no ho has fet encara, <b>ja pots votar!</b> :)" %}</p>
-                          <p>{% trans "Recorda que en aquesta Assemblea General Extraordinària <b>hi ha establerts aquests horaris de votació</b>:" %}</p>
-                          <ul>
-                            <li>{% trans "<b>De 10 a 10.25 h</b>: Votació del punt de revocació de Sofia Kukulka Luque com a membre d'Intervenció de Comptes." %}</li>
-                            <li>{% trans "<b>De 10.30 a 12.45 h</b>: Si s'aprova la baixa de Sofia Kukulka Luque, votació d'una nova persona membre d'Intervenció de Comptes." %}</li>
-                            <li>{% trans "<b>De 10 a 12.45 h</b>: Votació del punt de la figura de sòcia de treball més el punt de facultar el Consell Rector per executar i inscriure els acords adoptats." %}</li>
-                          </ul>
-                          <p>{% trans "Com que has accedit al <b><a href='https://agvirtual.somenergia.coop/?locale=ca' target='_blank' style='color:#707a1a; text-decoration:underline;'>panell de votacions</a></b>, et convidem que emetis el teu vot a <b><u>totes les preguntes del panell de votació</u></b>." %}</p>
-                          <p>{% trans "Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <b><a href='https://assembleaextra25.somenergia.coop/'' target='_blank' style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a></b> i al <b><a href='https://participa.somenergia.coop/users/sign_in?locale=ca' target='_blank' style='color:#707a1a; text-decoration:underline;''>Participa</a></b>." %}</p>
-                          <p>{% trans "Finalment, <b><a href='https://next.somenergia.coop/s/gGnKWYXz95fE5XY' target='_blank' style='color:#707a1a; text-decoration:underline;'>aquí</a></b> t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest mateix correu." %}</p>
-                          <p>{% trans "Moltes gràcies per participar-hi!" %}</p>
+                            <p>{% trans "Ja pots votar!" %}</p>
+
+                            <p>{% trans "Recorda que pots fer-ho <b>fins a les 13:45 del dia d'avui</b>, dissabte 31 de maig de 2025:" %}</p>
+
+                            <p>{% trans "Donat que has accedit al <b><a href='https://agvirtual.somenergia.coop/users/sign_in' target='_blank' style='color:#707a1a; text-decoration:underline;'>panell de votacions</a></b>, et convidem que emetis el teu vot (opcions: sí, no o abstenció) a <b><u>totes les preguntes del panell de votació</u></b>." %}</p>
+
+                            <p>{% trans "Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <b><a href='https://assemblea25.somenergia.coop/'' target='_blank' style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a></b> i al <b><a href='https://participa.somenergia.coop/users/sign_in?locale=ca' target='_blank' style='color:#707a1a; text-decoration:underline;''>Participa</a></b>." %}</p>
+
+                            <p>{% trans "Finalment, <b><a href='h' target='_blank' style='color:#707a1a; text-decoration:underline;'>aquí</a></b> t'expliquem pas a pas com votar, en cas d'incidència pots respondre aquest mateix correu." %}</p>
+                            <p>{% trans "Moltes gràcies per participar-hi!" %}</p>
+                            <p>{% trans "Salut i bona energia!" %}</p>
 
                         </td>
                     </tr>
