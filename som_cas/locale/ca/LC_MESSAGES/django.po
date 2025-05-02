@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-29 12:23+0200\n"
-"PO-Revision-Date: 2025-04-30 12:22+0000\n"
+"PO-Revision-Date: 2025-05-02 08:36+0000\n"
 "Last-Translator: Weblate Admin <frontend@somenergia.coop>\n"
 "Language-Team: Catalan <https://traduccio.somenergia.coop/projects/som-cas/"
 "cas/ca/>\n"
@@ -348,7 +348,6 @@ msgstr "Ja pots votar! :)"
 
 #: som_cas/templates/som_cas/mail_confirmation.html:30
 #: som_cas/templates/som_cas/mail_confirmation.html:61
-#, fuzzy
 msgid ""
 "Recorda que pots fer-ho <b>fins a les 13:45 del dia d'avui</b>, dissabte 31 "
 "de maig de 2025:"
@@ -365,14 +364,15 @@ msgid ""
 "(opcions: sí, no o abstenció) a <b><u>totes les preguntes del panell de "
 "votació</u></b>."
 msgstr ""
-"Donat que has accedit al <b><a href='https://agvirtual.somenergia.coop/users/"
-"sign_in' target='_blank' style='color:#707a1a; text-decoration:underline;"
+"Donat que has accedit al <b><a href='https://agvirtual.somenergia.coop/"
+"?locale=ca' target='_blank' style='color:#707a1a; text-decoration:underline;"
 "'>panell de votacions</a></b>, et convidem a que emetis el teu vot (opcions: "
 "sí, no o abstenció) a <b><u>totes les preguntes del panell de "
 "votació</u></b>."
 
 #: som_cas/templates/som_cas/mail_confirmation.html:34
 #: som_cas/templates/som_cas/mail_confirmation.html:65
+#, fuzzy
 msgid ""
 "Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <b><a "
 "href='https://assemblea25.somenergia.coop/'' target='_blank' style='color:"
@@ -382,7 +382,7 @@ msgid ""
 "underline;''>Participa</a></b>."
 msgstr ""
 "Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <b><a "
-"href='https://assemblea25.somenergia.coop/' target='_blank' "
+"href='https://assemblea2025.somenergia.coop/' target='_blank' "
 "style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a></b> "
 "i al <b><a href='https://participa.somenergia.coop/users/sign_in?locale=ca' "
 "target='_blank' style='color:#707a1a; text-"
