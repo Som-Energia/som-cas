@@ -100,6 +100,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 AUTH_USER_MODEL = 'som_cas.SomUser'
 
 AUTHENTICATION_BACKENDS = [
+    'som_cas.backends.UsuarisBackend',
     'som_cas.backends.SocisBackend',
     'som_cas.backends.SomETBackend',
 ]
