@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### unreleased
+### 0.9.0 (2025-07-01)
 - NEW users backend
 
 ### 0.8.1 (2024-06-13)
