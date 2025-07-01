@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### unreleased
+- NEW users backend
+
 ### 0.8.1 (2024-06-13)
 * FIX 2024 assembly details
 
