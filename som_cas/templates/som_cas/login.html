@@ -11,17 +11,17 @@
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-                <form class="login100-form validate-form flex-sb flex-w" method="post">
+                <form class="login100-form validate-form flex-c flex-w" method="post">
                     {% csrf_token %}
                     {% if service_name == 'FORMACIO' %}
                       <img src="{% static 'images/Logotip_aula_popular.png'%}" width="380" height="55" class="form-title-img align-top" alt="Som Energia Logo">
                     {% else %}
-                      <img src="{% static 'images/logo-somenergia-transparent.png'%}" width="120" height="120" class="form-title-img align-top" alt="Som Energia Logo">
+                      <img src="{% static 'images/logo-somenergia-transparent.png'%}" width="250" height="150" class="form-title-img align-top" alt="Som Energia Logo">
                     {% endif %}
                     {% if service_name == 'ASSEMBLEA' and assembly is None %}
-                      <div class="alert alert-danger m-b-36 text-center">{% trans 'No active assembly' %}</div>
+                      <div class="alert alert-danger m-b-36 m-t-36 text-center">{% trans 'No active assembly' %}</div>
                     {% elif service_name == 'ASSEMBLEA' and not assembly.active %}
-                      <div class="alert alert-danger m-b-36 text-center">
+                      <div class="alert alert-danger m-b-36 m-t-36 text-center">
                           <p>
                               {% blocktrans with week_day=assembly.date|date:'l'|lower day=assembly.date|date:'j' month=assembly.date|date:'E'|lower start_votation_hour=assembly.start_votation_date|date:'H' %}
                               Podràs accedir al panell de votacions a partir del {{ week_day }} {{ day }} de {{ month }} a les {{ start_votation_hour }}h (hora peninsular). Moltes gràcies!
