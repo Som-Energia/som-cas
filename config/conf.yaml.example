@@ -85,3 +85,8 @@ sendgrid_api_key: 'key'
 email:
   default_from: 'example@email.com'
   bcc: 'example@email.com'
+
+authentication_backends:
+  - 'som_cas.backends.SocisBackend'
+  - 'som_cas.backends.SomETBackend'
+  - 'som_cas.backends.UsuarisBackend'

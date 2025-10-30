@@ -99,11 +99,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 AUTH_USER_MODEL = 'som_cas.SomUser'
 
-AUTHENTICATION_BACKENDS = [
-    'som_cas.backends.UsuarisBackend',
-    'som_cas.backends.SocisBackend',
-    'som_cas.backends.SomETBackend',
-]
+AUTHENTICATION_BACKENDS = config.get('authentication_backends', ['som_cas.backends.SocisBackend'])
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
