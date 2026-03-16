@@ -79,15 +79,17 @@
                             <div id=forgot_pass>
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% if LANGUAGE_CODE != 'en' %}
-                                    <a href="https://oficinavirtual.somenergia.coop/{{ LANGUAGE_CODE }}/registro/" class="txt3" target="_blank"> {% trans 'Forgot Password?' %} </a>
+                                    <a href="https://oficinavirtual.somenergia.coop/{{ LANGUAGE_CODE }}/registro/" class="txt4" target="_blank"> {% trans 'Forgot Password?' %} </a>
                                 {% else %}
-                                    <a href="https://oficinavirtual.somenergia.coop/registro/" class="txt3" target="_blank"> {% trans 'Forgot Password?' %} </a>
+                                    <a href="https://oficinavirtual.somenergia.coop/registro/" class="txt4" target="_blank"> {% trans 'Forgot Password?' %} </a>
                                 {% endif %}
                             </div>
                         </div>
-
                         <div class="container-login100-form-btn">
                             <button class="login100-form-btn"  type="submit">{% trans "Login" %} </button>
+                        </div>
+                        <div class="txt3 p-t-11">
+                            <b>{% trans "Finalidad" %}</b> {% trans "Acceso al espacio virtual de la cooperativa para utilizar las herramientas de participación. " %} <b>{% trans "Derechos: " %}</b> {% trans "Puedes acceder, rectificar y suprimir tus datos, así como ejercer otros derechos, en somenergia@delegado-datos.com. " %} <b> {% trans "Información adicional: " %}</b><a href="https://participa.somenergia.coop/pages/terms-of-service?locale=es" class="txt4" target="_blank"> {% trans "Aviso legal y condiciones de uso." %}</a>
                         </div>
                     {% endif %}
                 </form>

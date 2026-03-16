@@ -6,6 +6,7 @@
 
 body, html {
 	height: 100%;
+  font-family: "Outfit";
 }
 
 /*---------------------------------------------*/
@@ -13,7 +14,7 @@ a {
 	/*font-family: Raleway-Regular;*/
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: #0c4c27;
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
@@ -28,7 +29,7 @@ a:focus {
 a:hover {
 	text-decoration: none;
   /*color: #BBCA2F;*/
-  color: #BBCA2F;
+  color: #B6E471;
 }
 
 /*---------------------------------------------*/
@@ -120,6 +121,12 @@ iframe {
   line-height: 1.4;
 }
 
+.txt4 {
+  /*font-family: Raleway-Regular;*/
+  font-size: 13px;
+  color: #0c4c27;
+  line-height: 1.4;
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
@@ -219,8 +226,8 @@ iframe {
   top: -1px;
   left: -1px;
   pointer-events: none;
-  border: 1px solid #BBCA2F;
-  border-radius: 3px;
+  border: 1px solid #B6E471;
+  border-radius: 8px;
 
   visibility: hidden;
   opacity: 0;
@@ -283,11 +290,11 @@ iframe {
 }
 
 .btn-show-pass:hover, .btn-help:hover {
-  color: #BBCA2F;
+  color: #B6E471;
 }
 
 .btn-show-pass.active, .btn-help.active {
-  color: #BBCA2F;
+  color: #cdff80;
 }
 
 /*==================================================================
@@ -338,7 +345,7 @@ iframe {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #BBCA2F;
+  color: #cdff80;
 }
 
 
@@ -357,7 +364,7 @@ iframe {
 .login100-form-btn {
   /*font-family: Raleway-Bold;*/
   font-size: 16px;
-  color: #fff;
+  color: #0b2e34;
   line-height: 1.2;
 
   display: -webkit-box;
@@ -370,7 +377,7 @@ iframe {
   padding: 0 20px;
   min-width: 150px;
   height: 55px;
-  background-color: #333333;
+  background-color: #cdff80;
   border-radius: 27px;
 
   -webkit-transition: all 0.4s;
@@ -380,7 +387,7 @@ iframe {
 }
 
 .login100-form-btn:hover {
-  background-color: #BBCA2F;
+  background-color: #B6E471;
 }
 
 
