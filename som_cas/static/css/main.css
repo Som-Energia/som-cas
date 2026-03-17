@@ -1,6 +1,6 @@
 :root {
   --border-radius: 8px;
-  --link-color: #0b2e34;
+  --link-color: #0c4c27;
   --primary-color: #cdff80;
   --text-color: #0b2e34;
   --text-placeholder: #999999;
@@ -354,7 +354,6 @@ iframe {
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
