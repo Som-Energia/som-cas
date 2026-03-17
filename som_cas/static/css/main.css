@@ -1,3 +1,14 @@
+:root {
+  --border-radius: 8px;
+  --link-color: #0b2e34;
+  --primary-color: #cdff80;
+  --text-color: #0b2e34;
+  --text-placeholder: #999999;
+  --btn-color: var(--link-color);
+  --hover-color: #b6e471;
+  --danger-color: #c80000;
+}
+
 * {
 	margin: 0px;
 	padding: 0px;
@@ -6,15 +17,14 @@
 
 body, html {
 	height: 100%;
-  font-family: "Outfit";
+  font-family: 'Outfit', sans-serif;
 }
 
 /*---------------------------------------------*/
 a {
-	/*font-family: Raleway-Regular;*/
 	font-size: 14px;
 	line-height: 1.7;
-	color: #0c4c27;
+	color: var(--link-color);
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
@@ -28,8 +38,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  /*color: #BBCA2F;*/
-  color: #B6E471;
+  color: var(--hover-color);
 }
 
 /*---------------------------------------------*/
@@ -38,10 +47,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	/*font-family: Raleway-Regular;*/
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: var(--text-color);
 	margin: 0px;
 }
 
@@ -66,15 +74,15 @@ textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
-input::-webkit-input-placeholder { color: #999999;}
-input:-moz-placeholder { color: #999999;}
-input::-moz-placeholder { color: #999999;}
-input:-ms-input-placeholder { color: #999999;}
+input::-webkit-input-placeholder { color: var(--text-placeholder);}
+input:-moz-placeholder { color: var(--text-placeholder);}
+input::-moz-placeholder { color: var(--text-placeholder);}
+input:-ms-input-placeholder { color: var(--text-placeholder);}
 
-textarea::-webkit-input-placeholder { color: #999999;}
-textarea:-moz-placeholder { color: #999999;}
-textarea::-moz-placeholder { color: #999999;}
-textarea:-ms-input-placeholder { color: #999999;}
+textarea::-webkit-input-placeholder { color: var(--text-placeholder);}
+textarea:-moz-placeholder { color: var(--text-placeholder);}
+textarea::-moz-placeholder { color: var(--text-placeholder);}
+textarea:-ms-input-placeholder { color: var(--text-placeholder);}
 
 label {
   display: block;
@@ -100,31 +108,27 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  /*font-family: Raleway-SemiBold;*/
   font-size: 13px;
-  color: #555555;
+  color: var(--text-color);
   line-height: 1.4;
   text-transform: uppercase;
 }
 
 .txt2 {
-  /*font-family: Raleway-Regular;*/
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color);
   line-height: 1.4;
 }
 
 .txt3 {
-  /*font-family: Raleway-Regular;*/
   font-size: 13px;
-  color: #555555;
+  color: var(--text-color);
   line-height: 1.4;
 }
 
 .txt4 {
-  /*font-family: Raleway-Regular;*/
   font-size: 13px;
-  color: #0c4c27;
+  color: var(--link-color);
   line-height: 1.4;
 }
 
@@ -156,7 +160,7 @@ iframe {
 .wrap-login100 {
   width: 560px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   position: relative;
 }
 
@@ -169,9 +173,8 @@ iframe {
 }
 
 .login100-form-title {
-  /*font-family: Raleway-Medium;*/
   font-size: 30px;
-  color: #555555;
+  color: var(--text-color);
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
@@ -198,14 +201,13 @@ iframe {
   position: relative;
   background-color: #fff;
   border: 1px solid #e6e6e6;
-  border-radius: 2px;
+  border-radius: var(--border-radius);
 }
 
 
 /*---------------------------------------------*/
 .input100 {
-  /*font-family: Raleway-Medium;*/
-  color: #555555;
+  color: var(--text-color);
   line-height: 1.2;
   font-size: 18px;
 
@@ -226,8 +228,8 @@ iframe {
   top: -1px;
   left: -1px;
   pointer-events: none;
-  border: 1px solid #B6E471;
-  border-radius: 8px;
+  border: 1px solid var(--link-color);
+  border-radius: var(--border-radius);
 
   visibility: hidden;
   opacity: 0;
@@ -269,7 +271,7 @@ iframe {
 /*---------------------------------------------*/
 .btn-show-pass, .btn-help {
   font-size: 15px;
-  color: #999999;
+  color: var(--text-color);
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -290,11 +292,11 @@ iframe {
 }
 
 .btn-show-pass:hover, .btn-help:hover {
-  color: #B6E471;
+  color: var(--hover-color);
 }
 
 .btn-show-pass.active, .btn-help.active {
-  color: #cdff80;
+  color: var(--primary-color);
 }
 
 /*==================================================================
@@ -307,7 +309,7 @@ iframe {
 .label-checkbox100 {
   /*font-family: Raleway-Regular;*/
   font-size: 13px;
-  color: #999999;
+  color: var(--text-color);
   line-height: 1.4;
 
   display: block;
@@ -332,7 +334,7 @@ iframe {
   position: absolute;
   width: 18px;
   height: 18px;
-  border-radius: 2px;
+  border-radius: var(--border-radius);
   background: #fff;
   border: 1px solid #e6e6e6;
   left: 0;
@@ -345,7 +347,7 @@ iframe {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #cdff80;
+  color: var(--primary-color);
 }
 
 
@@ -362,9 +364,8 @@ iframe {
 }
 
 .login100-form-btn {
-  /*font-family: Raleway-Bold;*/
   font-size: 16px;
-  color: #0b2e34;
+  color: var(--btn-color);
   line-height: 1.2;
 
   display: -webkit-box;
@@ -377,7 +378,7 @@ iframe {
   padding: 0 20px;
   min-width: 150px;
   height: 55px;
-  background-color: #cdff80;
+  background-color: var(--primary-color);
   border-radius: 27px;
 
   -webkit-transition: all 0.4s;
@@ -387,7 +388,7 @@ iframe {
 }
 
 .login100-form-btn:hover {
-  background-color: #B6E471;
+  background-color: var(--hover-color);
 }
 
 
@@ -407,7 +408,7 @@ iframe {
   position: absolute;
   max-width: 70%;
   background-color: #fff;
-  border: 1px solid #c80000;
+  border: 1px solid var(--danger-color);
   border-radius: 3px;
   padding: 4px 25px 5px 10px;
   top: 50%;
@@ -419,8 +420,7 @@ iframe {
   right: 12px;
   pointer-events: none;
 
-  /*font-family: Raleway-Medium;*/
-  color: #c80000;
+  color: var(--danger-color);
   font-size: 14px;
   line-height: 1.4;
   text-align: left;
@@ -439,7 +439,7 @@ iframe {
   font-family: FontAwesome;
   display: block;
   position: absolute;
-  color: #c80000;
+  color: var(--danger-color);
   font-size: 18px;
   top: 50%;
   -webkit-transform: translateY(-50%);
