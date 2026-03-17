@@ -312,9 +312,7 @@ msgid "Finalidad: "
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:92
-msgid ""
-"Acceso al espacio virtual de la cooperativa para utilizar las herramientas "
-"de participación. "
+msgid "Acceso al espacio virtual de la cooperativa para utilizar las herramientas de participación. "
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:92
@@ -322,16 +320,15 @@ msgid "Derechos: "
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:92
-msgid ""
-"Pots accedir, rectificar, suprimir les teves dades i altres drets a somenergia@delegado-datos.com. "
+msgid "Puedes acceder, rectificar y suprimir tus datos, así como ejercer otros derechos, en somenergia@delegado-datos.com. "
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:92
-msgid "Informació addicional: "
+msgid "Información adicional: "
 msgstr ""
 
 #: som_cas/templates/som_cas/login.html:92
-msgid "Avís legal i condicions d’ús."
+msgid "Aviso legal y condiciones de uso."
 msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:6
