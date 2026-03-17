@@ -34,11 +34,12 @@ a {
 
 a:focus {
 	outline: none !important;
+	color: var(--link-color);
 }
 
 a:hover {
-	text-decoration: none;
-  color: var(--hover-color);
+	text-decoration: underline;
+	color: var(--link-color);
 }
 
 /*---------------------------------------------*/
