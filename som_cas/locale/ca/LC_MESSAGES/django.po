@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 12:23+0200\n"
+"POT-Creation-Date: 2026-03-16 16:39+0100\n"
 "PO-Revision-Date: 2025-05-06 12:33+0000\n"
 "Last-Translator: Weblate Admin <frontend@somenergia.coop>\n"
 "Language-Team: Catalan <https://traduccio.somenergia.coop/projects/som-cas/"
@@ -20,23 +20,23 @@ msgstr ""
 "X-Generator: Weblate 5.7.2\n"
 "X-Translated-Using: django-rosetta 0.9.6\n"
 
-#: config/settings/base.py:113
+#: config/settings/base.py:114
 msgid "Catalan"
 msgstr "Català"
 
-#: config/settings/base.py:114
+#: config/settings/base.py:115
 msgid "English"
 msgstr "Anglès"
 
-#: config/settings/base.py:115
+#: config/settings/base.py:116
 msgid "Spanish"
 msgstr "Castellà"
 
-#: config/settings/base.py:116
+#: config/settings/base.py:117
 msgid "Basque"
 msgstr "Euskara"
 
-#: config/settings/base.py:117
+#: config/settings/base.py:118
 msgid "Galician"
 msgstr "Galego"
 
@@ -302,9 +302,35 @@ msgstr "És necessària la contrasenya"
 msgid "Forgot Password?"
 msgstr "Has oblidat la contrasenya?"
 
-#: som_cas/templates/som_cas/login.html:90
+#: som_cas/templates/som_cas/login.html:89
 msgid "Login"
 msgstr "Entrar"
+
+#: som_cas/templates/som_cas/login.html:92
+msgid "Finalitat:"
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:92
+msgid ""
+"Accés a l’espai virtual de la cooperativa per utilitzar eines participació "
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:92
+msgid "Drets: "
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:92
+msgid ""
+"Pots accedir, rectificar, suprimir les teves dades i altres drets a somenergia@delegado-datos.com. "
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:92
+msgid "Informació addicional: "
+msgstr ""
+
+#: som_cas/templates/som_cas/login.html:92
+msgid "Avís legal i condicions d’ús."
+msgstr ""
 
 #: som_cas/templates/som_cas/mail_confirmation.html:6
 msgid "Participa"
@@ -364,10 +390,10 @@ msgid ""
 "(opcions: sí, no o abstenció) a <b><u>totes les preguntes del panell de "
 "votació</u></b>."
 msgstr ""
-"Donat que has accedit al <b><a href='https://agvirtual.somenergia.coop/"
-"?locale=ca' target='_blank' style='color:#707a1a; text-decoration:underline;"
-"'>panell de votacions</a></b>, et convidem a que emetis el teu vot (opcions: "
-"sí, no o abstenció) a <b><u>totes les preguntes del panell de "
+"Donat que has accedit al <b><a href='https://agvirtual.somenergia.coop/?"
+"locale=ca' target='_blank' style='color:#707a1a; text-decoration:"
+"underline;'>panell de votacions</a></b>, et convidem a que emetis el teu vot "
+"(opcions: sí, no o abstenció) a <b><u>totes les preguntes del panell de "
 "votació</u></b>."
 
 #: som_cas/templates/som_cas/mail_confirmation.html:34
@@ -381,11 +407,11 @@ msgid ""
 "underline;''>Participa</a></b>."
 msgstr ""
 "Trobaràs tota la informació relativa al dia de l'Assemblea a la pàgina <b><a "
-"href='https://assemblea2025.somenergia.coop/' target='_blank' "
-"style='color:#707a1a; text-decoration:underline;'>web de l'Assemblea</a></b> "
-"i al <b><a href='https://participa.somenergia.coop/general_assemblies/"
-"SomAG2025?locale=ca' target='_blank' style='color:#707a1a; text-"
-"decoration:underline;'>Participa</a></b>."
+"href='https://assemblea2025.somenergia.coop/' target='_blank' style='color:"
+"#707a1a; text-decoration:underline;'>web de l'Assemblea</a></b> i al <b><a "
+"href='https://participa.somenergia.coop/general_assemblies/SomAG2025?"
+"locale=ca' target='_blank' style='color:#707a1a; text-decoration:"
+"underline;'>Participa</a></b>."
 
 #: som_cas/templates/som_cas/mail_confirmation.html:36
 #: som_cas/templates/som_cas/mail_confirmation.html:67
