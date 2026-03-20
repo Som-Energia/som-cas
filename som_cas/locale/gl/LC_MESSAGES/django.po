@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-16 16:39+0100\n"
-"PO-Revision-Date: 2025-04-29 11:45+0000\n"
+"PO-Revision-Date: 2026-03-20 10:32+0000\n"
 "Last-Translator: Weblate Admin <frontend@somenergia.coop>\n"
 "Language-Team: Galician <https://traduccio.somenergia.coop/projects/som-cas/"
 "cas/gl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.13.3\n"
 "X-Translated-Using: django-rosetta 0.8.1\n"
 
 #: config/settings/base.py:114
@@ -258,7 +258,7 @@ msgstr ""
 
 #: som_cas/templates/som_cas/login.html:53
 msgid "Username"
-msgstr ""
+msgstr "Documento de identidade"
 
 #: som_cas/templates/som_cas/login.html:54
 msgid "Username is required"
@@ -288,7 +288,7 @@ msgstr ""
 
 #: som_cas/templates/som_cas/login.html:89
 msgid "Login"
-msgstr ""
+msgstr "Entrar"
 
 #: som_cas/templates/som_cas/login.html:92
 msgid "Finalidad: "
