@@ -57,7 +57,7 @@ class TestSomCasLoginView:
 
         assert res.status_code == 200
         content = res.content.decode()
-        assert 'logo-somenergia-transparent.png' in content
+        assert 'logo-somenergia-transparent.svg' in content
         assert _('Assemblea General') in content
 
     @pytest.mark.django_db
@@ -70,7 +70,7 @@ class TestSomCasLoginView:
 
         assert res.status_code == 200
         content = res.content.decode()
-        assert 'logo-somenergia-transparent.png' in content
+        assert 'logo-somenergia-transparent.svg' in content
         assert 'alert alert-danger' in content
         assert 'No active assembly' in content
 
@@ -84,7 +84,7 @@ class TestSomCasLoginView:
 
         assert res.status_code == 200
         content = res.content.decode()
-        assert 'logo-somenergia-transparent.png' in content
+        assert 'logo-somenergia-transparent.svg' in content
         assert 'Madrid' in content
 
     @pytest.mark.django_db
