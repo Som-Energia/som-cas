@@ -64,7 +64,7 @@ class SomUser(AbstractUser):
         if registration.registration_type == RegistrationChoices.INPERSON:
             return None
 
-        if created:
+        if created and settings.SEND_CONFIRMATION_MAIL:
             try:
                 send_confirmation_email.delay(self, 'som_cas/mail_confirmation.html')
             except Exception as e:

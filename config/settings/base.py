@@ -158,3 +158,4 @@ ANYMAIL = {
 EMAIL_BACKEND = "anymail.backends.sendgrid.EmailBackend"
 DEFAULT_FROM_EMAIL = [config['email']['default_from']]
 BCC = [config['email']['bcc']]
+SEND_CONFIRMATION_MAIL = config.get('send_confirmation_mail', True)

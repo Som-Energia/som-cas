@@ -85,3 +85,6 @@ sendgrid_api_key: 'key'
 email:
   default_from: 'example@email.com'
   bcc: 'example@email.com'
+
+# Feature flags
+send_confirmation_mail: true
