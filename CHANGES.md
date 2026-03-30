@@ -3,6 +3,7 @@
 ### unreleased
 - Apply corporative styles
 - Add legal text
+- IMP: move backends to config
 
 ### 0.9.0 (2025-07-01)
 - NEW users backend
