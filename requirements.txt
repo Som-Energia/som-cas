@@ -13,5 +13,5 @@ pyyaml==5.3.1
 requests==2.23.0
 six==1.14.0
 sqlparse==0.3.1
-urllib3==1.25.8
+urllib3==1.26.19
 uwsgi==2.0.18
